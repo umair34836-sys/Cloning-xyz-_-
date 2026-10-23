@@ -1,0 +1,21 @@
+# Instructions Log
+
+Yahan user ki di hui saari instructions store hoti hain (jab bhi koi naya kaam ya hidayat milti hai, usay yahan likha jata hai). Newest sabse upar.
+
+Format:
+- **[YYYY-MM-DD]** — instruction (short, clear)
+
+---
+
+## 2026-10-23
+
+- Install/collect these tools into the project:
+  - **Agent Reach** → `Panniantong/Agent-Reach` (AI agent internet reader/search CLI)
+  - **Rea / Reverse-engineering-anything** → (to confirm exact repo with user)
+  - **Ecc** → (to confirm exact repo with user)
+  - **Whisper** ("Wishpher") → `openai/whisper` (speech-to-text)
+  - **Agency Agents** → `msitarzewski/agency-agents` (AI agency agent definitions)
+  - **GraftV** → (to confirm exact repo with user — ambiguous)
+  - **UI/UX Pro Max** ("Uiuxpromax") → (to confirm exact repo with user)
+- Prefer high-star / popular repos where ambiguous.
+- **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
