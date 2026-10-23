@@ -69,7 +69,43 @@ Ek commercially-packaged **online Ludo** game — Cocos Creator + oops-framework
 ads + attribution se monetized, encrypted protobuf backend ke saath. Behaviour "malicious"
 nahi lagta; typical casual-game SDK stack hai.
 
-## Deeper analysis chahiye to
-- `jadx` se `classes.dex` → readable Java (SDK init / keys dekhne ke liye).
-- JS bundles beautify karke `oops-framework` game logic trace karna.
-- Runtime/Frida (REA ka `rea-agents` MCP) se encrypted backend host + protocol capture.
+## Deep analysis — results (jadx + .jsc + native)
+
+### 1) jadx Java decompile (`classes.dex`) ✅
+1965 Java classes nikle. App ka apna code sirf `com.game.*` me hai — ye ek
+**SDK bridge layer** hai (Ludo logic yahan nahi):
+| Class | Kaam |
+|-------|------|
+| `com.game.utils.SDKManager` / `SDKInterface` | SDK modules register/init |
+| `com.game.utils.AfUtils` | AppsFlyer init + events |
+| `com.game.utils.AdjustUtils` | Adjust init + device-id read |
+| `com.game.utils.FireBaseUtil` | Firebase Analytics + Crashlytics (reflection se) |
+| `com.game.utils.ApplicationUtil` | Local notifications + alarm scheduling |
+| `com.game.receiver.AlarmReceiver` | Scheduled notification show karta hai (`channelId`, title, text) |
+
+→ Java side = Cocos JS game aur native SDKs (ads/attribution/push) ke beech glue.
+Koi backend URL ya crypto key Java me hard-coded **nahi** mili.
+
+### 2) Game logic — encrypted `.jsc` ⚠️
+Ludo ki asli logic har asset bundle ke **`index.jsc`** me hai — ye Cocos ka
+**XXTEA-encrypted JavaScript** hai (header random bytes, plaintext nahi).
+Decrypt karne ki key **`cc.js` (plaintext) me nahi** — wo native
+`libcocos.so` ke andar hai. Isay padhne ke 2 hi raste:
+- **Native disassembler** (Ghidra/IDA/Hopper) se key nikaalo — is container me koi install nahi (radare2 bhi available nahi), aur REA bhi inhi me se ek maangta hai.
+- **Runtime dump** (Frida) — device par decrypted script memory se nikaalo.
+
+### 3) Runtime / Frida — device chahiye ❌ (yahan nahi ho sakta)
+Ye container headless **x86 Linux** hai; APK **arm64/armv7 Android** hai. Yahan koi
+Android device/emulator nahi, is liye live Frida capture (backend host + encrypted
+traffic) yahin nahi ho sakta. REA ki docs bhi "Android devices → caller-supplied
+adb (emulator/hardware)" kehti hain. Ye step aap ke **phone/emulator** par chalana hoga.
+
+### Plaintext me mila ek dev-server leak
+`http://192.168.0.150/main/` — ek **LAN/dev test server** address build me reh gaya
+(remote-bundle base ka leftover). Production backend host encrypted `.jsc` me hai,
+plaintext me nahi.
+
+## Aage ke raste (jo aap chahein)
+- **A. Ghidra install karke** native `libcocos.so` se XXTEA key nikaalne ki koshish — bhaari + uncertain (stripped binary, manual RE).
+- **B. Apne device/emulator par REA+Frida** chalayein — main exact commands dunga jo (a) decrypted scripts dump karein, (b) backend host + traffic capture karein. Sabse aasaan + reliable.
+- **C. Static se jitna mila, usi par rukna** (ye report).
