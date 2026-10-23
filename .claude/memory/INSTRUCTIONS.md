@@ -15,7 +15,7 @@ Format:
   - **Ecc** → `affaan-m/ECC` (Everything Claude Code, installed)
   - **Whisper** ("Wishpher") → `openai/whisper` (installed)
   - **Agency Agents** → `msitarzewski/agency-agents` (installed)
-  - **GraftV** → UNRESOLVED (koi repo match nahi — URL chahiye)
-  - **UI/UX Pro Max** ("Uiuxpromax") → `prakharbhanu88-star/uiux-pro-max-skill` (best-guess, installed)
+  - **GraftV / Graft** → `NanoNets/Graft` (user ne URL diya, installed)
+  - **UI/UX Pro Max** ("Uiuxpromax") → `nextlevelbuilder/ui-ux-pro-max-skill` (user ne URL diya, installed)
 - Prefer high-star / popular repos where ambiguous. Install method: **git submodules** under `tools/`.
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.

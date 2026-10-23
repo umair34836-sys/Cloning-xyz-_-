@@ -18,7 +18,8 @@ Format:
 - Ambiguous names resolve ki (best-guess high-star, user ki marzi se):
   - "Rea / reverse engineering anything" → `morluto/rea` (~371k) — "Reverse Engineer Anything" (user-confirmed; "REA" ek known tool/acronym hai).
   - "Ecc" → `affaan-m/ECC` (~287k) — "Everything Claude Code" agent harness.
-  - "UI/UX Pro Max" → `prakharbhanu88-star/uiux-pro-max-skill` (low confidence, ~8 stars).
+  - "UI/UX Pro Max" → `nextlevelbuilder/ui-ux-pro-max-skill` (user-confirmed).
+  - "GraftV / Graft" → `NanoNets/Graft` (user-confirmed). Repo ka actual naam sirf "Graft" hai.
 - Poori list ka theme: zyada tar **Claude Code skills / agent packs** hain (ECC, agency-agents, reverse-skill, uiux-pro-max, agent-reach) + whisper (speech model).
 - Install method: user ne **git submodules** choose kiya. Shallow add: `git -c protocol.file.allow=always submodule add --depth 1 <url> tools/<name>`.
 - Disk ~30G free; sab submodules mila kar ~120M. ECC sabse bara (~76M).

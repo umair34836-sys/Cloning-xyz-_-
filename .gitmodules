@@ -7,12 +7,15 @@
 [submodule "tools/agency-agents"]
 	path = tools/agency-agents
 	url = https://github.com/msitarzewski/agency-agents.git
-[submodule "tools/uiux-pro-max"]
-	path = tools/uiux-pro-max
-	url = https://github.com/prakharbhanu88-star/uiux-pro-max-skill.git
 [submodule "tools/whisper"]
 	path = tools/whisper
 	url = https://github.com/openai/whisper.git
 [submodule "tools/rea"]
 	path = tools/rea
 	url = https://github.com/morluto/rea.git
+[submodule "tools/uiux-pro-max"]
+	path = tools/uiux-pro-max
+	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
+[submodule "tools/graft"]
+	path = tools/graft
+	url = https://github.com/NanoNets/Graft.git
