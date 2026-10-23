@@ -1,9 +1,6 @@
 [submodule "tools/agent-reach"]
 	path = tools/agent-reach
 	url = https://github.com/Panniantong/Agent-Reach.git
-[submodule "tools/reverse-skill"]
-	path = tools/reverse-skill
-	url = https://github.com/zhaoxuya520/reverse-skill.git
 [submodule "tools/ecc"]
 	path = tools/ecc
 	url = https://github.com/affaan-m/ECC.git
@@ -16,3 +13,6 @@
 [submodule "tools/whisper"]
 	path = tools/whisper
 	url = https://github.com/openai/whisper.git
+[submodule "tools/rea"]
+	path = tools/rea
+	url = https://github.com/morluto/rea.git

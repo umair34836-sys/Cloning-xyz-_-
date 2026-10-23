@@ -16,7 +16,7 @@ Format:
   - "Wishpher" → `openai/whisper` (~111k stars).
   - "Agency agents" → `msitarzewski/agency-agents` (~163k stars).
 - Ambiguous names resolve ki (best-guess high-star, user ki marzi se):
-  - "Rea / reverse engineering anything" → `zhaoxuya520/reverse-skill` (~43k) — "Reverse Engineering Skill Router Pack".
+  - "Rea / reverse engineering anything" → `morluto/rea` (~371k) — "Reverse Engineer Anything" (user-confirmed; "REA" ek known tool/acronym hai).
   - "Ecc" → `affaan-m/ECC` (~287k) — "Everything Claude Code" agent harness.
   - "UI/UX Pro Max" → `prakharbhanu88-star/uiux-pro-max-skill` (low confidence, ~8 stars).
 - Poori list ka theme: zyada tar **Claude Code skills / agent packs** hain (ECC, agency-agents, reverse-skill, uiux-pro-max, agent-reach) + whisper (speech model).

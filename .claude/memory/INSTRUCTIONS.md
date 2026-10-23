@@ -11,7 +11,7 @@ Format:
 
 - Install/collect these tools into the project:
   - **Agent Reach** → `Panniantong/Agent-Reach` (AI agent internet reader/search CLI)
-  - **Rea / Reverse-engineering-anything** → `zhaoxuya520/reverse-skill` (best-guess, installed)
+  - **Rea / Reverse-engineering-anything** → `morluto/rea` (~371k stars, "Reverse Engineer Anything", confirmed by user, installed)
   - **Ecc** → `affaan-m/ECC` (Everything Claude Code, installed)
   - **Whisper** ("Wishpher") → `openai/whisper` (installed)
   - **Agency Agents** → `msitarzewski/agency-agents` (installed)

@@ -6,7 +6,7 @@ tor par `tools/` me add kiye gaye hain (shallow, `--depth 1`).
 | Tool (user ka naam) | Repo (submodule) | Stars (approx) | Path | Status |
 |---------------------|------------------|----------------|------|--------|
 | Agent reach | [`Panniantong/Agent-Reach`](https://github.com/Panniantong/Agent-Reach) | ~101k | `tools/agent-reach` | ✅ installed |
-| Rea / reverse-engineering-anything | [`zhaoxuya520/reverse-skill`](https://github.com/zhaoxuya520/reverse-skill) | ~43k | `tools/reverse-skill` | ✅ installed (best-guess) |
+| Rea / reverse-engineering-anything | [`morluto/rea`](https://github.com/morluto/rea) (Reverse Engineer Anything) | ~371k | `tools/rea` | ✅ installed (confirmed) |
 | Ecc | [`affaan-m/ECC`](https://github.com/affaan-m/ECC) (Everything Claude Code) | ~287k | `tools/ecc` | ✅ installed (best-guess) |
 | Wishpher (Whisper) | [`openai/whisper`](https://github.com/openai/whisper) | ~111k | `tools/whisper` | ✅ installed |
 | Agency agents | [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) | ~163k | `tools/agency-agents` | ✅ installed |
