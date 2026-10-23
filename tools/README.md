@@ -1,17 +1,25 @@
 # Tools
 
-User ne jo tools install/collect karne ko kaha, unka status yahan track hota hai.
+User ne jo tools install karne ko kaha, unki final status. Sab git **submodules** ke
+tor par `tools/` me add kiye gaye hain (shallow, `--depth 1`).
 
-| Tool (user ka naam) | Matched repo | Stars (approx) | Status |
-|---------------------|--------------|----------------|--------|
-| Agent reach | [`Panniantong/Agent-Reach`](https://github.com/Panniantong/Agent-Reach) | ~101k | matched, install pending |
-| Wishpher (Whisper) | [`openai/whisper`](https://github.com/openai/whisper) | ~111k | matched, install pending |
-| Agency agents | [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) | ~163k | matched, install pending |
-| Rea / reverse-engineering-anything | ❓ | — | **needs confirmation** |
-| Ecc | ❓ | — | **needs confirmation** |
-| GraftV | ❓ | — | **needs confirmation** |
-| UI/UX Pro Max (Uiuxpromax) | ❓ | — | **needs confirmation** |
+| Tool (user ka naam) | Repo (submodule) | Stars (approx) | Path | Status |
+|---------------------|------------------|----------------|------|--------|
+| Agent reach | [`Panniantong/Agent-Reach`](https://github.com/Panniantong/Agent-Reach) | ~101k | `tools/agent-reach` | ✅ installed |
+| Rea / reverse-engineering-anything | [`zhaoxuya520/reverse-skill`](https://github.com/zhaoxuya520/reverse-skill) | ~43k | `tools/reverse-skill` | ✅ installed (best-guess) |
+| Ecc | [`affaan-m/ECC`](https://github.com/affaan-m/ECC) (Everything Claude Code) | ~287k | `tools/ecc` | ✅ installed (best-guess) |
+| Wishpher (Whisper) | [`openai/whisper`](https://github.com/openai/whisper) | ~111k | `tools/whisper` | ✅ installed |
+| Agency agents | [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) | ~163k | `tools/agency-agents` | ✅ installed |
+| UI/UX Pro Max | [`prakharbhanu88-star/uiux-pro-max-skill`](https://github.com/prakharbhanu88-star/uiux-pro-max-skill) | ~8 | `tools/uiux-pro-max` | ⚠️ installed (best-guess, low confidence) |
+| GraftV | — | — | — | ❌ **unresolved** — GitHub par koi clear match nahi mila. User se exact URL chahiye. |
 
-## Install method
+## Submodules clone karna (fresh checkout ke baad)
 
-Decide: git submodules, plain clones (gitignored), or reference-only. (Pending user choice.)
+```bash
+git submodule update --init --recursive
+```
+
+## Note
+
+- UI/UX Pro Max ka high-star canonical repo clear nahi tha; closest name-match pick ki.
+- GraftV ke liye koi repo nahi mili — user URL de to add kar denge.

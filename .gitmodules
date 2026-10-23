@@ -1,0 +1,18 @@
+[submodule "tools/agent-reach"]
+	path = tools/agent-reach
+	url = https://github.com/Panniantong/Agent-Reach.git
+[submodule "tools/reverse-skill"]
+	path = tools/reverse-skill
+	url = https://github.com/zhaoxuya520/reverse-skill.git
+[submodule "tools/ecc"]
+	path = tools/ecc
+	url = https://github.com/affaan-m/ECC.git
+[submodule "tools/agency-agents"]
+	path = tools/agency-agents
+	url = https://github.com/msitarzewski/agency-agents.git
+[submodule "tools/uiux-pro-max"]
+	path = tools/uiux-pro-max
+	url = https://github.com/prakharbhanu88-star/uiux-pro-max-skill.git
+[submodule "tools/whisper"]
+	path = tools/whisper
+	url = https://github.com/openai/whisper.git

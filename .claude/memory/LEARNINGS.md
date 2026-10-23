@@ -15,4 +15,10 @@ Format:
   - "Agent reach" → `Panniantong/Agent-Reach` (~101k stars).
   - "Wishpher" → `openai/whisper` (~111k stars).
   - "Agency agents" → `msitarzewski/agency-agents` (~163k stars).
-- Tool names jo abhi ambiguous hain (user se confirm karni hain): "Rea / reverse engineering anything", "Ecc", "GraftV", "UI/UX Pro Max".
+- Ambiguous names resolve ki (best-guess high-star, user ki marzi se):
+  - "Rea / reverse engineering anything" → `zhaoxuya520/reverse-skill` (~43k) — "Reverse Engineering Skill Router Pack".
+  - "Ecc" → `affaan-m/ECC` (~287k) — "Everything Claude Code" agent harness.
+  - "UI/UX Pro Max" → `prakharbhanu88-star/uiux-pro-max-skill` (low confidence, ~8 stars).
+- Poori list ka theme: zyada tar **Claude Code skills / agent packs** hain (ECC, agency-agents, reverse-skill, uiux-pro-max, agent-reach) + whisper (speech model).
+- Install method: user ne **git submodules** choose kiya. Shallow add: `git -c protocol.file.allow=always submodule add --depth 1 <url> tools/<name>`.
+- Disk ~30G free; sab submodules mila kar ~120M. ECC sabse bara (~76M).
