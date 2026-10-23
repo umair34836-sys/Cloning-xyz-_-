@@ -12,3 +12,8 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 6. **Branch discipline** — Development designated branch par: `ccr-7349d8d1-89knkk`. Bina explicit permission ke doosri branch par push na karo.
 7. **High-star preference** — Jab tool/repo ambiguous ho to popular / high-star wala prefer karo, lekin confirm user se.
 8. **No PR without asking** — Pull request tab tak na banao jab tak user explicitly na kahe.
+
+## Boundaries (2026-10-23)
+- Reverse-engineering / APK analysis sirf **educational ya owner-authorized** maqsad ke liye.
+- NAHI karna: game outcome "prediction"/win-hacks, kisi aur ke live backend par chalne wala clone, doosre users ka data nikalna, ya fairness/RNG todna. Chahe "fraud niyat nahi" kaha jaye — mechanism cheating/abuse ho to decline.
+- Online games server-authoritative hote hain → client decrypt se winner predict karna technically bhi namumkin; aisi request ko educational explanation me convert karo.
