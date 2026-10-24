@@ -10,7 +10,7 @@ Format:
 ## 2026-10-24
 
 - **rea se JAR decompile**: rea ka Java path sirf Android/JADX lane hai (APK ke liye), lekin JADX zip me `.class` bhi parhta hai → jar ko `.apk` naam se copy karo. `inspect_android_package` fail hoga (AndroidManifest nahi) magar `search_android_classes` / `inspect_android_class` / `inspect_android_method` kaam karte hain. Engine: `REA_JADX_MCP_JAR=jadx-headless-mcp-0.7.1-all.jar` (SHA-256 verify). CLI har call pe ~5s reload karta hai; `rea --mcp` (stdio) session warm rehta hai → ~130ms/method. Script: `analysis/lifestealz-2.21.1/scripts/extract.mjs`.
-- rea class output me imports/extends/modifiers nahi hote — full file shape ke liye Vineflower (`org.vineflower:vineflower` Maven Central se) saath chalao.
+- rea class output me imports/extends/modifiers nahi hote. User sirf rea output chahta hai — Vineflower/doosre decompiler ka output commit na karo (zarurat ho to pehle poocho).
 - rea-agents engine `node >=22.23.4` maangta hai; 22.22.0 par bhi CLI chal gaya (sirf npm warning).
 - Minecraft plugin decompile se pehle `META-INF/maven/*/pom.xml` me license check karo (LifeStealZ = GPL-3.0, upstream source GitHub par hai).
 

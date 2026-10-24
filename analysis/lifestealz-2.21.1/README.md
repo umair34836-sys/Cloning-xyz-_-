@@ -13,9 +13,8 @@ LifeSteal SMP plugin for Paper/Spigot by Kartoffelchipss / ZetaPlugins.
 
 | Path | Contents |
 |------|----------|
-| `rea/` | **Primary output.** Decompiled with [REA](../../tools/rea) (`rea --mcp`, JADX lane, jadx-headless-mcp 0.7.1). One file per class, rebuilt method by method. |
+| `rea/` | Decompiled with [REA](../../tools/rea) (`rea --mcp`, JADX lane, jadx-headless-mcp 0.7.1). One file per class, rebuilt method by method. |
 | `rea/rea-manifest.json` | Per-method record from rea: signature, overload index, Java vs smali, body status, markers. |
-| `vineflower/` | Same 100 classes decompiled with Vineflower 1.10.1 as complete compilation units (package, imports, class headers). Use alongside `rea/` when you need the full file shape. |
 | `resources/` | `plugin.yml`, `config.yml`, `items.yml`, `storage.yml`, `geyser_players.yml`, `lang/*.yml` from the jar. |
 | `scripts/` | `mcp.mjs` (tiny MCP stdio client) and `extract.mjs` (the rea extraction driver) to reproduce `rea/`. |
 
@@ -47,8 +46,8 @@ Bukkit plugin has no Android manifest; class/method tools are unaffected.
 
 **Limits of the rea view:** rea returns members, not whole files — so class
 modifiers, `extends`/`implements`, imports and annotations are missing, and
-field types are fully qualified. Each file says so in its header; use
-`vineflower/` for that information.
+field types are fully qualified. Each file says so in its header; the upstream
+GitHub source has the complete files.
 
 ## Plugin overview (from the decompiled code)
 
