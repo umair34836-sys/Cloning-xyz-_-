@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-10-24
+
+- Same 7 repos ko `tools/` me git submodules (shallow, `--depth 1`) ke tor par install karne ka dobara kaha: agent-reach, rea, ecc, whisper, agency-agents, uiux-pro-max (`ui-ux-pro-max-skill`), graft. Pehle se registered the → verify kiye + `.gitmodules` me `shallow = true` add kiya.
+
 ## 2026-10-23
 
 - Install/collect these tools into the project:

@@ -16,9 +16,12 @@ tor par `tools/` me add kiye gaye hain (shallow, `--depth 1`).
 ## Submodules clone karna (fresh checkout ke baad)
 
 ```bash
-git submodule update --init --recursive
+git submodule update --init --depth 1
 ```
+
+`.gitmodules` me har submodule par `shallow = true` set hai, isliye `git clone --recurse-submodules` bhi sirf latest commit (depth 1) layega.
 
 ## Note
 
 - Saare 7 tools ab installed hain (user ne UI/UX Pro Max aur Graft ke exact URLs de diye).
+- 2026-10-24: Re-verify kiya — saare 7 submodules `--depth 1` se clone hue aur pinned commits par checkout ho gaye.

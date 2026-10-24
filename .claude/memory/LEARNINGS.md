@@ -7,6 +7,11 @@ Format:
 
 ---
 
+## 2026-10-24
+
+- **Submodules fresh clone me khaali hote hain**: cloud session repo ko bina `--recurse-submodules` ke clone karta hai, isliye `tools/*` folders empty dikhte hain (`git submodule status` me `-` prefix). Install "missing" nahi hai — `git submodule update --init --depth 1` chalao. `.gitmodules` me `shallow = true` rakhne se future clones bhi shallow rehte hain.
+- Har session ki designated branch alag ho sakti hai (is session me `claude/upbeat-clarke-9eluwc`); system jo branch de wahi use karo.
+
 ## 2026-10-23
 
 - **Google Drive download (cloud env)**: file ko "Anyone with the link" share karna zaroori hai, aur network policy me `drive.google.com` + `drive.usercontent.google.com` allow hone chahiye. Bari files ka asal download: `https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t`. gdown proxy ke peeche aksar fail hota hai → direct curl use karo.

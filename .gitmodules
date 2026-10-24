@@ -1,21 +1,28 @@
 [submodule "tools/agent-reach"]
 	path = tools/agent-reach
 	url = https://github.com/Panniantong/Agent-Reach.git
+	shallow = true
 [submodule "tools/ecc"]
 	path = tools/ecc
 	url = https://github.com/affaan-m/ECC.git
+	shallow = true
 [submodule "tools/agency-agents"]
 	path = tools/agency-agents
 	url = https://github.com/msitarzewski/agency-agents.git
+	shallow = true
 [submodule "tools/whisper"]
 	path = tools/whisper
 	url = https://github.com/openai/whisper.git
+	shallow = true
 [submodule "tools/rea"]
 	path = tools/rea
 	url = https://github.com/morluto/rea.git
+	shallow = true
 [submodule "tools/uiux-pro-max"]
 	path = tools/uiux-pro-max
 	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
+	shallow = true
 [submodule "tools/graft"]
 	path = tools/graft
 	url = https://github.com/NanoNets/Graft.git
+	shallow = true
