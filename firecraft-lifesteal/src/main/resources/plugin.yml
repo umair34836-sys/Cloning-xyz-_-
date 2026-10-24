@@ -1,0 +1,37 @@
+name: FireSteal
+version: '1.0.0'
+main: com.firecraft.firesteal.FireSteal
+api-version: '1.20'
+author: FireCraft SMP
+description: Original LifeSteal plugin for FireCraft SMP.
+softdepend:
+    - PlaceholderAPI
+
+commands:
+    firesteal:
+        aliases: [fs, lifesteal]
+        description: FireSteal admin commands
+        permission: firesteal.admin
+        permission-message: §cYou don't have permission.
+    withdraw:
+        aliases: [withdrawheart]
+        description: Withdraw a heart into an item
+        permission: firesteal.withdraw
+        permission-message: §cYou don't have permission.
+    hearts:
+        description: View your (or another player's) hearts
+        permission: firesteal.hearts
+
+permissions:
+    firesteal.admin:
+        description: Use admin commands (sethearts, give, revive, eliminate, reload)
+        default: op
+    firesteal.withdraw:
+        description: Withdraw a heart into an item
+        default: true
+    firesteal.hearts:
+        description: View hearts
+        default: true
+    firesteal.hearts.others:
+        description: View other players' hearts
+        default: op
