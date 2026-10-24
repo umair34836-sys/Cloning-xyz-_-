@@ -9,6 +9,8 @@ Format:
 
 ## 2026-10-24
 
+- `lifestealz-2.21.1.jar` (Minecraft plugin) decompile karo — **rea tool use karna hai** (user ne mid-task kaha). Output: `analysis/lifestealz-2.21.1/`.
+
 - Same 7 repos ko `tools/` me git submodules (shallow, `--depth 1`) ke tor par install karne ka dobara kaha: agent-reach, rea, ecc, whisper, agency-agents, uiux-pro-max (`ui-ux-pro-max-skill`), graft. Pehle se registered the → verify kiye + `.gitmodules` me `shallow = true` add kiya.
 
 ## 2026-10-23

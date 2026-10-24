@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-10-24
+
+- **`&&` chain me missing tool**: `cpio` env me nahi tha → uske baad wale `cp` (resources/scripts) chup-chaap skip ho gaye. **Bachao:** copy ke liye `tar cf - … | tar xf - -C …` ya `cp -r` use karo, aur commit se pehle `git status`/`ls` se har expected folder verify karo.
+
 ## 2026-10-23
 
 - Reminder: tool names kabhi blindly guess karke install na karo agar repo clearly match na ho — flag karo.
