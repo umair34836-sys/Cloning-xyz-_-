@@ -107,3 +107,25 @@ Main brute-force test nahi karunga, lekin confirm karein:
 3. **H3** — link token hardening.
 4. **M1/M2** — HSTS + CSP headers.
 5. **M3/M4/M5** — version hide, spec gating, rate limits.
+
+---
+
+## RE-TEST (2026-10-24) — fixes verify
+
+| Pehla finding | Ab status |
+|---------------|-----------|
+| M1 HSTS missing | ✅ **FIXED** — `Strict-Transport-Security: max-age=31536000; includeSubDomains` |
+| M2 CSP missing | ✅ **FIXED** — strong CSP (`object-src 'none'`, script-src me `unsafe-inline` nahi, hash-based, `frame-ancestors 'self'`, `base-uri 'self'`) |
+| M3 /api/health version leak | ✅ **FIXED** — ab sirf `{"ok":true}` |
+| H2 SSRF auth-ordering (from-url 400 unauth) | ✅ **FIXED** — ab unauth GET/POST dono **401** (auth sabse pehle; metadata-URL probe process se pehle block) |
+
+Naye safe checks (sab clean):
+- CORS arbitrary origin reflect nahi karta; TRACE 501 (off); bad method 400.
+- Har malformed/injection/path-traversal probe (`limit=abc'`, giant id, `..%2f..%2fetc%2fpasswd`) **auth-first 401** — processing se pehle hi ruk jata hai.
+- OpenAPI: global security `key`, **koi explicit no-auth endpoint nahi** (22/22 auth).
+
+### Abhi bhi (external se test nahi ho sakta — authenticated chahiye)
+- **H1 IDOR** (`/photos/{id}`/`/file`) aur **H3 temp-link token strength** — ye **real/test account** ke baghair safely verify nahi ho sakte (live user-data). 2-account self-test report me upar diya hai.
+- **M4 openapi/developers public** (200) — agar dev-API by-design hai to theek.
+
+**Natija:** external attack surface ab **solid** hai. Baaki sirf authenticated-logic (IDOR/link) reh gaya.
