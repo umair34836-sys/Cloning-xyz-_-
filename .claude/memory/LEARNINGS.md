@@ -9,6 +9,10 @@ Format:
 
 ## 2026-10-24
 
+- **LifeStealZ source**: `github.com/ZetaPlugins/LifeStealZ`, tag `2.21.1` (commit 8627f29) = uploaded jar (har `.class` byte-identical). Copy: `projects/lifestealz/`.
+- **Build fix**: upstream `worldguard-bukkit 7.1.0-SNAPSHOT` ab Java 25 (class v69) se compiled hai → JDK 21 par compile fail (Lombok ke "cannot find symbol" errors sirf side-effect hain). `pom.xml` me `7.0.13` pin kiya (scope `provided`, runtime par server ka WorldGuard use hota hai). Build: `mvn -B package -DskipTests` → `target/lifestealz-2.21.1.jar`.
+- Repo ke andar external project ka `mvn` build auto-mode classifier ne block kiya — build scratchpad me karo, ya user se permission lo.
+
 - **rea se JAR decompile**: rea ka Java path sirf Android/JADX lane hai (APK ke liye), lekin JADX zip me `.class` bhi parhta hai → jar ko `.apk` naam se copy karo. `inspect_android_package` fail hoga (AndroidManifest nahi) magar `search_android_classes` / `inspect_android_class` / `inspect_android_method` kaam karte hain. Engine: `REA_JADX_MCP_JAR=jadx-headless-mcp-0.7.1-all.jar` (SHA-256 verify). CLI har call pe ~5s reload karta hai; `rea --mcp` (stdio) session warm rehta hai → ~130ms/method. Script: `analysis/lifestealz-2.21.1/scripts/extract.mjs`.
 - rea class output me imports/extends/modifiers nahi hote. User sirf rea output chahta hai — Vineflower/doosre decompiler ka output commit na karo (zarurat ho to pehle poocho).
 - rea-agents engine `node >=22.23.4` maangta hai; 22.22.0 par bhi CLI chal gaya (sirf npm warning).

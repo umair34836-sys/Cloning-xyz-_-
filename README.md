@@ -7,6 +7,8 @@ instructions, rules, learnings, and mistakes.
 
 - `.claude/memory/` — persistent memory (instructions, rules, learnings, mistakes)
 - `tools/` — collected tools and their install status
+- `projects/lifestealz/` — LifeStealZ 2.21.1 original source (GPL-3.0), modify karne ke liye
+- `analysis/` — reports + decompiled output
 - `CLAUDE.md` — guidance for Claude Code (memory workflow + branch rules)
 
 ## Memory system

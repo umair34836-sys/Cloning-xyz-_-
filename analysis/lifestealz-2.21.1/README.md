@@ -6,8 +6,9 @@ LifeSteal SMP plugin for Paper/Spigot by Kartoffelchipss / ZetaPlugins.
 
 > **License:** LifeStealZ is open source under **GPL-3.0**
 > (`META-INF/maven/.../pom.xml` → https://github.com/ZetaPlugins/LifeStealZ).
-> This decompiled copy stays under the same license. The upstream repository
-> has the original, commented source — prefer it for anything you build on.
+> This decompiled copy stays under the same license. The original source for
+> this exact version (upstream tag `2.21.1`) is in [`projects/lifestealz/`](../../projects/lifestealz) —
+> built from it, every `.class` file is byte-identical to the uploaded jar. Modify that, not this.
 
 ## What's here
 
