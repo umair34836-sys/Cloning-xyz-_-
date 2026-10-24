@@ -9,6 +9,8 @@ Format:
 
 ## 2026-10-24
 
+- **Jev = TypeSafe AI ka System One decision model** (hosted API, `TYPESAFE_API_KEY` chahiye). Official org: `github.com/typesafe-ai` (skills, typesafe-sdk-python, typesafe-sdk-js, system-one-adapter-python). PyPI `typesafe-sdk` → import `typesafe_sdk` (NOT `typesafe`). npm `@typesafe-ai/sdk`. "jev" naam ambiguous tha (JEB decompiler bhi) → user se poochha, sahi tha.
+
 - **LifeStealZ source**: `github.com/ZetaPlugins/LifeStealZ`, tag `2.21.1` (commit 8627f29) = uploaded jar (har `.class` byte-identical). Copy: `projects/lifestealz/`.
 - **Build fix**: upstream `worldguard-bukkit 7.1.0-SNAPSHOT` ab Java 25 (class v69) se compiled hai → JDK 21 par compile fail (Lombok ke "cannot find symbol" errors sirf side-effect hain). `pom.xml` me `7.0.13` pin kiya (scope `provided`, runtime par server ka WorldGuard use hota hai). Build: `mvn -B package -DskipTests` → `target/lifestealz-2.21.1.jar`.
 - Repo ke andar external project ka `mvn` build auto-mode classifier ne block kiya — build scratchpad me karo, ya user se permission lo.

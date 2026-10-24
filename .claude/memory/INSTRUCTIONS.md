@@ -9,6 +9,8 @@ Format:
 
 ## 2026-10-24
 
+- LifeStealZ kaam **pause** — pehle "jev" tool install karo. User ne clarify kiya: "Jev AI" (TypeSafe AI, trending). → `tools/jev-skills`, `tools/jev-sdk-python`, `tools/jev-sdk-js` submodules. LifeStealZ modification baad me resume karna hai (user batayega kya badalna hai).
+
 - LifeStealZ ka source code mile to batao — user usay **modify** karna chahta hai. → Upstream tag `2.21.1` `projects/lifestealz/` me rakha.
 
 - `lifestealz-2.21.1.jar` (Minecraft plugin) decompile karo — **rea tool use karna hai** (user ne mid-task kaha). Output: `analysis/lifestealz-2.21.1/`.

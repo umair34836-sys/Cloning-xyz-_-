@@ -26,3 +26,15 @@
 	path = tools/graft
 	url = https://github.com/NanoNets/Graft.git
 	shallow = true
+[submodule "tools/jev-skills"]
+	path = tools/jev-skills
+	url = https://github.com/typesafe-ai/skills.git
+	shallow = true
+[submodule "tools/jev-sdk-python"]
+	path = tools/jev-sdk-python
+	url = https://github.com/typesafe-ai/typesafe-sdk-python.git
+	shallow = true
+[submodule "tools/jev-sdk-js"]
+	path = tools/jev-sdk-js
+	url = https://github.com/typesafe-ai/typesafe-sdk-js.git
+	shallow = true
