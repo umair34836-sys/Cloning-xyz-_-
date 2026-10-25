@@ -10,6 +10,7 @@ Format:
 ## 2026-10-25
 
 - Sawal: Kya Minecraft plugin bana sakte hain jo server ke andar ki jagah ki picture/image console command se nikale (bina server join kiye), taake Claude world ko visually dekh sake? → Jawab diya: haan possible hai (BlueMap/Chunky render, custom Paper raycast plugin, ya Mineflayer bot + prismarine-viewer). Abhi sirf sawal tha, build ka faisla user karega.
+- User ne custom plugin (console command se picture) ka idea/spec maanga taake build karwa sake → `docs/worldlens-plugin-idea.md` likha (commands, render modes, async renderer, HTTP API, MCP, moderation, phases).
 
 ## 2026-10-23
 
