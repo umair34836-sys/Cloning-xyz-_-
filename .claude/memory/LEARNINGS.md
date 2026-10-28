@@ -54,3 +54,6 @@ Format:
 - **3D texturing rules (skills se):** non-metal albedo sRGB 30–240, metal ≥ ~110 aur highlight base rang se tint; stone/dirt/wool par specular nahi; layering base→macro→mid→micro→edge→cavity dirt; AO max ~35%; har panel ±5% hue ±10% value; voxel readability ke liye ≤16–32 rang; tinted (grass/leaves) albedo grey rakho.
 - **HD pack size:** 4x mob skins noisy PNG = 137MB. Mobs 2x + palette PNG (quantize) = Java 6.9MB zip. RGBA quantize alpha badal deta hai — alpha exact compare karo, warna RGBA rakho.
 - Java mcmeta `animation.width/height` pixel me hain — HD me scale karna padta hai.
+- **Shapes QA ka tareeqa:** har category ki contact sheet (12 col, 64px, naam ke saath) banao aur saari dekho — random sample se blobs miss ho jate hain.
+- Bedrock me animated item frames alag files nahi, ek patti hoti hai: `compass_atlas`, `lodestonecompass_atlas`, `recovery_compass_atlas`, `watch_atlas` (clock) — 16xN, har 16px ek frame. Java me `clock_00..63`, `compass_00..31` alag files.
+- Bedrock naam: `boat_oak`, `chest_boat_*`, `bucket_water/lava/milk/axolotl...`, `minecart_normal/chest/furnace/hopper/tnt/command_block`, `book_normal/enchanted/writable/written/portfolio`, `map_empty/filled/locked` + explorer `map_desert_pyramid` waghaira.

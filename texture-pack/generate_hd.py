@@ -681,6 +681,10 @@ def petal(alb, hgt, alpha, cy, cx, L, Wd, ang, colr, H, W):
 
 
 def hd_plant(c):
+    import shapes_hd
+    sp = shapes_hd.plant_special(c)
+    if sp is not None:
+        return sp
     r = c.rng(122); H, W = c.H * S, c.W * S
     p = c.pal
     alb = np.zeros((H, W, 3)); hgt = np.zeros((H, W)); alpha = np.zeros((H, W))
@@ -893,7 +897,7 @@ def hi_armor(c, piece, overlay=False):
     leather = c.base.startswith("leather_")
     col = g.mat_color(c.base, c.pal) if any(c.base.startswith(k + "_") for k in g.MATS) else c.pal.main
     if leather:
-        col = c.pal.main
+        col = np.array((205.0, 205.0, 205.0))   # dye multiply se tint hota hai -> halka grey base
     allm = upmask(rows, "HhD")
     dm = upmask(rows, "D") & allm
     if overlay:
@@ -1023,6 +1027,10 @@ def hi_inspired(c):
 
 def hi_item(c):
     b = c.base
+    import shapes_hd
+    sp = shapes_hd.item_special(c)
+    if sp is not None:
+        return sp
     fn = g.item_design(c)
     if fn is g.i_inspired:
         return hi_inspired(c)
@@ -1101,6 +1109,8 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
         sc = ENT_S if kind == "entity" else S
         return np.zeros((h * sc, w * sc, 4), np.uint8)
     fh = g.frame_height(w, h, mcmeta) if (mcmeta or animated_hint) else h
+    if kind == "item" and name.rsplit(".", 1)[0].endswith("_atlas") and h > w and h % w == 0:
+        fh = w                                   # Bedrock compass/watch atlas = frames ki patti
     nf = h // fh
     frames = []
     for t in range(nf):
@@ -1110,8 +1120,13 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
         c = Ctx(small, name, kind, t, nf)
         full = bool((small[..., 3] == 255).all())
         if kind == "block":
+            import shapes_hd
             fn = g.block_family(c, full)
             hd = LOW2HD.get(fn)
+            if has(c.base, "sniffer_egg", "turtle_egg"):
+                fn, hd = g.g_masked, shapes_hd.egg_shell
+            elif fn is g.g_masked and shapes_hd.plant_special(c) is not None:
+                fn, hd = g.g_plant, hd_plant      # vines / dripleaf jaise masked me chale gaye the
             img = hd(c) if hd else hd_finish(c, fn(c))
             if fn not in (g.g_leaves, g.g_glass, g.g_plant, g.g_masked, g.g_flame, g.g_capped_side, g.g_destroy) and not full:
                 img[..., 3] = small[..., 3].repeat(S, 0).repeat(S, 1)

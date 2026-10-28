@@ -27,3 +27,5 @@ Format:
 - **Ghalti:** `destroy_stage_*` naam me "stage" tha to plant/crop generator chal gaya. **Bachao:** keyword-matching me khaas cases (destroy, overlay, PBR) pehle handle karo, phir random sample sheet dekh kar verify karo.
 - **Ghalti:** `git submodule add` se GitHub skills seedha repo me daalne ki koshish — auto-mode ne "Untrusted Code Integration" kehkar roka. **Bachao:** pehle scratchpad me sirf padhne ke liye clone karo; repo me install ke liye user se saaf ijazat lo.
 - **Ghalti:** Metal albedo clamp (≥110) ne netherite (purple-grey) ko gulaabi bana diya. **Bachao:** clamp ke baad showcase dekh kar rang check karo; dark metals ke liye neutral grey base do.
+- **Ghalti:** Leather armor ka base `pal.main` (gehra grey ~54) rakha — dye multiply hone par item kaala dikhta. **Bachao:** tinted textures (leather, grass, leaves) ka base halka/neutral grey (~200) rakho.
+- **Ghalti:** Fallback "inspired" items (boats, buckets, sherds...) gol dhabbe ban gaye aur random sample me pakde nahi gaye. **Bachao:** har category ki POORI contact sheet dekho; aam families ke liye apna vector template banao.

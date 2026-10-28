@@ -9,6 +9,7 @@ Minecraft ke blocks, items aur mobs ke liye **original** textures, Java 26.2 aur
 | `dist/FireCraft-Remastered-Java-26.2.zip` | Java 26.2 (resource pack format 88) — 2790 textures |
 | `dist/FireCraft-Remastered-Bedrock.mcpack` | Bedrock / Geyser players — 3058 textures |
 | `showcase-hd.png` | HD designs ka preview |
+| `showcase-shapes.png` | Theek ki gayi shapes (clock, compass, boats, buckets, coral, phool...) |
 | `showcase.png` | 16x designs ka preview |
 | `pack_icon.png` | Pack icon (Future Gallery ke Pro editor se banaya) |
 
@@ -47,6 +48,18 @@ ke rules lagte hain:
 - Har brick/takhta ±5% hue, ±10% value alag; mossy blocks par kaai daraaron me
 - Readability: blocks ≤32 rang (voxel-style palette rule) taake noise ka mush na bane
 - Lava/glowstone jaise emissive blocks par saaya kam
+
+### Khaas shapes — `shapes_hd.py`
+
+Jo items/paude pehle gol dhabba ban jate the, unke apne vector designs (16-unit coordinates, har hissa
+apni dome roshni ke saath):
+
+- **Clock / compass / recovery & lodestone compass:** har frame me sui ghoomti hai (Java `_00..` files aur Bedrock `*_atlas` pattiyan dono); clock me din/raat ka aasmaan
+- **Boats, chest boats, bamboo raft · buckets** (pani/lava/doodh/powder snow + andar machhli) · **minecarts** (chest, furnace, TNT, hopper, command)
+- **Books** (normal, enchanted, writable, written, knowledge) · **maps** (khali, bhari, explorer `X`, locked)
+- **Pottery sherds · smithing templates · banner patterns · horse/nautilus armor · harness** (16 dye rang)
+- **Paude:** coral (shaakhein) aur coral fan, dripleaf, lily pad, lambe phool (lilac/peony/rose/sunflower upar-neeche), pink petals/wildflowers/leaf litter, cocoa, sugar cane, vines aur chamakte cave-vine ber, sniffer/turtle egg ka chhilka
+- Leather armor/horse armor ka base halka grey (205) — dye ka tint sahi aata hai
 
 ## Dobara banana
 
