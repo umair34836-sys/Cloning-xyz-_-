@@ -45,3 +45,5 @@ Format:
 - Player positions: `worldlens_command` → `execute as @a run data get entity @s Pos` (aur `... Dimension`). Bedrock names (`.Name`) bhi isi se aa jaate hain.
 - WorldLens `worldlens_top`/`worldlens_shot` par **10 s cooldown** hai aur parallel calls fail hoti hain — ek ek karke chalao (beech me `timeout 11 tail -f /dev/null` se wait).
 - Underground player (y < 0) ke liye top map sirf surface dikhata hai — unki exact eye position se `worldlens_shot` lo. Surface players ke liye ~30 blocks peeche, y ~95, pitch ~35 se aerial shot achha aata hai.
+- **WorldLens players/mobs render NAHI karta** — sirf blocks. Player stationary ho tab bhi shot me nazar nahi aata. Workaround: camera ko player ke chest par aim karo (player image ke centre me aata hai), phir PIL se centre par player-size box + naam ka marker lagao (height px ≈ (H/2)/tan(fov/2) / distance per block).
+- Fast aim formula: camera = player se 5 blocks south (z+5), y = feet+3, yaw 180, pitch 21.8°. Pos query ke foran baad shot lo — players (khaas kar Bedrock) tez move karte hain.

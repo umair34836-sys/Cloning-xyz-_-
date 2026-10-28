@@ -24,3 +24,4 @@ Format:
 
 - "worldlens connector connect ker k mere server ka status dekao" → WorldLens MCP (`worldlens_status`) se FireCraft SMP ka status check kiya (TPS 20, MSPT ~8.2, 3/20 players online).
 - "all players k ass pass k images nikalker mujhe doo" → Har online player ka top-down map + camera shot WorldLens se liya, `worldlens-shots/2026-10-28/` me save kiya aur user ko bheja.
+- "exact player k ass pass dekao jis me player bhi nazar aye" → Har player ke 4-5 blocks paas se close-up shot liya (camera seedha player ki taraf), aur player ki jagah laal marker + naam lagaya. Files: `worldlens-shots/2026-10-28/players-closeup/`.

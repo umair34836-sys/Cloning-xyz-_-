@@ -19,3 +19,7 @@ Format:
 - User ne baar baar kaha: LifeStealZ (kisi aur ka published plugin) ko REA se decompile karke "uski files use karo / clone banao". Ye **copyright infringement** hai — decline kiya (chahe tool REA ho). Issue tool nahi, ownership hai: LifeStealZ user ka apna nahi (author: KartoffelChipss/ZetaPlugins).
 - Legit raasta jo diya: **original** lifesteal plugin (FireSteal) scratch se banaya `firecraft-lifesteal/` me — same mechanics, par original code + hardened (anti-dupe, signed heart items, prepared statements, anti-farm, Electron-style clamps). REA sirf user ke APNE / owner-authorized binary par use hoga.
 - REA se decompiled 3rd-party code ko naye plugin me copy karna = NAHI (IP reminder bhi).
+
+## 2026-10-28
+
+- **Ghalti:** Pehli dafa player images me player nazar nahi aaya, aur shot se pehle aim calculate karne me der hui to player hil gaya. **Bachao:** WorldLens entities nahi dikhata, is liye pehle hi marker approach use karo aur user ko bata do. Position lete hi foran shot lo (simple fixed offset, script ka wait nahi).
