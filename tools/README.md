@@ -12,6 +12,9 @@ tor par `tools/` me add kiye gaye hain (shallow, `--depth 1`).
 | Agency agents | [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) | ~163k | `tools/agency-agents` | ✅ installed |
 | UI/UX Pro Max | [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | — | `tools/uiux-pro-max` | ✅ installed (user-confirmed) |
 | GraftV / Graft | [`NanoNets/Graft`](https://github.com/NanoNets/Graft) | — | `tools/graft` | ✅ installed (user-confirmed) |
+| 3D artist: Blender skills (94) | [`arjun988/blender-skills`](https://github.com/arjun988/blender-skills) | ~400 | `tools/blender-skills` | ✅ installed (texture-workflow, materials, realistic/voxel/pixel styles...) |
+| 3D artist: CC Blender skill | [`RobLe3/cc-blender-skill`](https://github.com/RobLe3/cc-blender-skill) | — | `tools/cc-blender-skill` | ✅ installed (materials, lighting, look calibration) |
+| 3D artist: Design skillstack | [`freshtechbro/claudedesignskills`](https://github.com/freshtechbro/claudedesignskills) | — | `tools/claudedesignskills` | ✅ installed (substance-3d-texturing PBR) |
 
 ## Submodules clone karna (fresh checkout ke baad)
 
@@ -21,4 +24,5 @@ git submodule update --init --recursive
 
 ## Note
 
+- 3D artist skills (texture pack ke liye) bhi installed hain — seekhe hue rules `texture-pack/README.md` me.
 - Saare 7 tools ab installed hain (user ne UI/UX Pro Max aur Graft ke exact URLs de diye).

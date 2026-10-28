@@ -19,3 +19,12 @@
 [submodule "tools/graft"]
 	path = tools/graft
 	url = https://github.com/NanoNets/Graft.git
+[submodule "tools/blender-skills"]
+	path = tools/blender-skills
+	url = https://github.com/arjun988/blender-skills.git
+[submodule "tools/cc-blender-skill"]
+	path = tools/cc-blender-skill
+	url = https://github.com/RobLe3/cc-blender-skill.git
+[submodule "tools/claudedesignskills"]
+	path = tools/claudedesignskills
+	url = https://github.com/freshtechbro/claudedesignskills.git
