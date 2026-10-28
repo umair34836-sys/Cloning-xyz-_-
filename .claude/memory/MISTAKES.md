@@ -23,3 +23,5 @@ Format:
 ## 2026-10-28
 
 - **Ghalti:** Pehli dafa player images me player nazar nahi aaya, aur shot se pehle aim calculate karne me der hui to player hil gaya. **Bachao:** WorldLens entities nahi dikhata, is liye pehle hi marker approach use karo aur user ko bata do. Position lete hi foran shot lo (simple fixed offset, script ka wait nahi).
+- **Ghalti:** Texture pack me pehle "reference ke 2x2 layout + apna noise" wala tareeqa chalaya — user ko kharab aur copy jaisa laga. **Bachao:** "khud banao / copyright safe" ka matlab hai **original design** (naam se family pehchano, sirf palette lo). Pehle 10-20 textures ka preview user ko dikhao, phir poora pack banao.
+- **Ghalti:** `destroy_stage_*` naam me "stage" tha to plant/crop generator chal gaya. **Bachao:** keyword-matching me khaas cases (destroy, overlay, PBR) pehle handle karo, phir random sample sheet dekh kar verify karo.
