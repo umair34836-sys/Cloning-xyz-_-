@@ -11,6 +11,7 @@ Format:
 
 - Agent Reach se research: Pakistan me reh kar INR wallet me receive/hold/transfer karne wala app hai? → Result: koi legal app nahi (Indian wallets ko Indian KYC chahiye, UPI intl numbers me Pakistan nahi, NRO/NRE ke liye Pakistani nationals ko RBI approval, Wise/Payoneer INR support nahi, May 2025 se India-Pak curbs). Legal raasta: freelance platform (Upwork/Fiverr) + Payoneer/bank. Crypto/hawala risky — warn kiya.
 - Sawal: Pakistan me doosre mulk ki SIM se PayPal chalana real hai ya fake? → Research (Agent Reach): PayPal Pakistan me officially nahi (Sep 2026 tak); foreign SIM/address se account banana user agreement ke khilaf, account limit + 180 din fund hold. Legal: Xoom (PayPal ki service) se bahar wale Pakistan bhej sakte hain; freelance ke liye Payoneer/platform.
+- User chahta hai Pakistan me reh kar bahar (USD) account ho jisme client se payment le aur client/supplier ko de, PKR me convert na ho. → Research: (1) Payoneer — USD/EUR/GBP balance hold, local receiving details, Payoneer users ko pay, card eligibility par (USD 100/6 maah). (2) Bank ESFCA/Freelancer Digital Account (UBL, SCB, etc.) — 50% ya USD 5,000/maah (jo zyada) FCY me rakh sakte, wahan se bahar pay bina SBP approval, FCY debit card; SBP EPD CL 06/2026 (Apr 2026) ne process asaan kiya. (3) US LLC (Stripe Atlas) — Stripe chalega, lekin Mercury/Relay Pakistan residents ko mana, Wise USD details nahi deta; banking mushkil. Tax: FBR 0.25% (PSEB registered) ya 1%.
 
 ## 2026-10-25
 
