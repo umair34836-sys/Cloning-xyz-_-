@@ -10,6 +10,7 @@ Format:
 ## 2026-10-28
 
 - Agent Reach se research: Pakistan me reh kar INR wallet me receive/hold/transfer karne wala app hai? → Result: koi legal app nahi (Indian wallets ko Indian KYC chahiye, UPI intl numbers me Pakistan nahi, NRO/NRE ke liye Pakistani nationals ko RBI approval, Wise/Payoneer INR support nahi, May 2025 se India-Pak curbs). Legal raasta: freelance platform (Upwork/Fiverr) + Payoneer/bank. Crypto/hawala risky — warn kiya.
+- Sawal: Pakistan me doosre mulk ki SIM se PayPal chalana real hai ya fake? → Research (Agent Reach): PayPal Pakistan me officially nahi (Sep 2026 tak); foreign SIM/address se account banana user agreement ke khilaf, account limit + 180 din fund hold. Legal: Xoom (PayPal ki service) se bahar wale Pakistan bhej sakte hain; freelance ke liye Payoneer/platform.
 
 ## 2026-10-25
 
