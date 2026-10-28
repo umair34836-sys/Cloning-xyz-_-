@@ -51,3 +51,6 @@ Format:
 - **Minecraft references:** `misode/mcmeta` tags (`26.2-assets`, `26.2-summary`...) git clone se milte hain (api.github.com 403 hai, git/raw chalta hai). Bedrock: `Mojang/bedrock-samples` sparse `resource_pack`. 26.2 = resource pack format 88; pack.mcmeta me `min_format`/`max_format`.
 - Bedrock textures me ~3000 PBR maps (`_mers`, `_normal`, `_heightmap` + `.texture_set.json`) hote hain — inhein redesign mat karo.
 - Tinted textures (leaves, grass, leather armor) grey hoti hain; leather armor ka base grey hi rehna chahiye aur `_overlay` naye shape se match hona chahiye.
+- **3D texturing rules (skills se):** non-metal albedo sRGB 30–240, metal ≥ ~110 aur highlight base rang se tint; stone/dirt/wool par specular nahi; layering base→macro→mid→micro→edge→cavity dirt; AO max ~35%; har panel ±5% hue ±10% value; voxel readability ke liye ≤16–32 rang; tinted (grass/leaves) albedo grey rakho.
+- **HD pack size:** 4x mob skins noisy PNG = 137MB. Mobs 2x + palette PNG (quantize) = Java 6.9MB zip. RGBA quantize alpha badal deta hai — alpha exact compare karo, warna RGBA rakho.
+- Java mcmeta `animation.width/height` pixel me hain — HD me scale karna padta hai.

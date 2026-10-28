@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Bani hui textures ko installable packs me band karta hai.
 
-Usage: package.py <build-dir> <dist-dir>
-  <build-dir>/java    -> dist/FireCraft-Remastered-Java-26.2.zip
-  <build-dir>/bedrock -> dist/FireCraft-Remastered-Bedrock.mcpack
+Usage: package.py <build-dir> <dist-dir> [--hd]
+  <build-dir>/java    -> dist/FireCraft-Remastered[-HD]-Java-26.2.zip
+  <build-dir>/bedrock -> dist/FireCraft-Remastered[-HD]-Bedrock.mcpack
 """
 import json, os, sys, zipfile
 from PIL import Image
@@ -31,10 +31,16 @@ def icon(size):
 
 
 def main():
+    global NAME, DESC, HEADER_UUID, MODULE_UUID
     build, dist = sys.argv[1:3]
+    tag = ""
+    if "--hd" in sys.argv[3:]:
+        tag = "-HD"
+        NAME, DESC = NAME + " HD", "Realistic 64x textures for FireCraft SMP — blocks, items & mobs"
+        HEADER_UUID, MODULE_UUID = "9a2d7c4e-31b8-4f6a-a5e2-6c0d8b1f7e94", "e15b3f80-7c2a-4d9e-b6f1-3a8c5d2e0b67"
     os.makedirs(dist, exist_ok=True)
 
-    java = os.path.join(dist, "FireCraft-Remastered-Java-26.2.zip")
+    java = os.path.join(dist, f"FireCraft-Remastered{tag}-Java-26.2.zip")
     with zipfile.ZipFile(java, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         zf.writestr("pack.mcmeta", json.dumps({"pack": {
             "description": f"§6{NAME}§r\n§7{DESC}",
@@ -44,7 +50,7 @@ def main():
         zipdir(zf, os.path.join(build, "java"))
     os.remove(os.path.join(dist, ".pack.png"))
 
-    bedrock = os.path.join(dist, "FireCraft-Remastered-Bedrock.mcpack")
+    bedrock = os.path.join(dist, f"FireCraft-Remastered{tag}-Bedrock.mcpack")
     with zipfile.ZipFile(bedrock, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         zf.writestr("manifest.json", json.dumps({
             "format_version": 2,
