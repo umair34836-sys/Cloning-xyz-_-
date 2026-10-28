@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-10-28
+
+- Agent Reach se research: Pakistan me reh kar INR wallet me receive/hold/transfer karne wala app hai? → Result: koi legal app nahi (Indian wallets ko Indian KYC chahiye, UPI intl numbers me Pakistan nahi, NRO/NRE ke liye Pakistani nationals ko RBI approval, Wise/Payoneer INR support nahi, May 2025 se India-Pak curbs). Legal raasta: freelance platform (Upwork/Fiverr) + Payoneer/bank. Crypto/hawala risky — warn kiya.
+
 ## 2026-10-25
 
 - Sawal: Kya Minecraft plugin bana sakte hain jo server ke andar ki jagah ki picture/image console command se nikale (bina server join kiye), taake Claude world ko visually dekh sake? → Jawab diya: haan possible hai (BlueMap/Chunky render, custom Paper raycast plugin, ya Mineflayer bot + prismarine-viewer). Abhi sirf sawal tha, build ka faisla user karega.

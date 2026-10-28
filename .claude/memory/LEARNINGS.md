@@ -38,3 +38,9 @@ Format:
 - Static analysis se EXE run kiye baghair: config.js/auth.js/server.js/tunnel.js + Electron main.cjs padh kar auth model samjha. App well-secured tha (DNS-rebind defense, Electron sandbox, scrypt). Main gap: installer unsigned + token-in-URL + gateway register.php verify.
 - `video.talkember.site` ko bhi network allowlist karna pada.
 - **gallery re-test (2026-10-24)**: HSTS+CSP added, /api/health version removed, from-url ab auth-first 401 (SSRF ordering fixed). Sab injection/path-traversal probes 401 (auth-first). Baaki IDOR + temp-link = authenticated-only, test account ke baghair verify nahi.
+
+## 2026-10-28 — Agent Reach chalana
+
+- `tools/agent-reach` submodule fresh clone me khaali hota hai: `git submodule update --init --depth 1 tools/agent-reach`, phir `pip install tools/agent-reach`.
+- Use: `agent-reach channels`, `agent-reach web search "<q>" --limit 5`, `agent-reach reddit search "<q>"`, `agent-reach youtube search "<q>"`. Output JSON hota hai (`items[].title/url/text`), output ko `head -c` se mat kaato warna JSON parse nahi hota — file me save karo.
+
