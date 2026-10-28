@@ -38,3 +38,7 @@ Format:
 - Static analysis se EXE run kiye baghair: config.js/auth.js/server.js/tunnel.js + Electron main.cjs padh kar auth model samjha. App well-secured tha (DNS-rebind defense, Electron sandbox, scrypt). Main gap: installer unsigned + token-in-URL + gateway register.php verify.
 - `video.talkember.site` ko bhi network allowlist karna pada.
 - **gallery re-test (2026-10-24)**: HSTS+CSP added, /api/health version removed, from-url ab auth-first 401 (SSRF ordering fixed). Sab injection/path-traversal probes 401 (auth-first). Baaki IDOR + temp-link = authenticated-only, test account ke baghair verify nahi.
+
+## 2026-10-28
+
+- **WorldLens connector** (`mcp__worldlens__*`) = FireCraft SMP (Paper) ka camera + console. Server status ke liye `worldlens_status` (TPS, MSPT, players, worlds). Tools deferred hain — pehle ToolSearch se load karo. Spawn ≈ x 675, y 70, z 57 ('world').

@@ -19,3 +19,7 @@ Format:
   - **UI/UX Pro Max** ("Uiuxpromax") → `nextlevelbuilder/ui-ux-pro-max-skill` (user ne URL diya, installed)
 - Prefer high-star / popular repos where ambiguous. Install method: **git submodules** under `tools/`.
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
+
+## 2026-10-28
+
+- "worldlens connector connect ker k mere server ka status dekao" → WorldLens MCP (`worldlens_status`) se FireCraft SMP ka status check kiya (TPS 20, MSPT ~8.2, 3/20 players online).
