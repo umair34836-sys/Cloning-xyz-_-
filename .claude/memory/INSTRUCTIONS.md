@@ -23,3 +23,4 @@ Format:
 ## 2026-10-28
 
 - "worldlens connector connect ker k mere server ka status dekao" → WorldLens MCP (`worldlens_status`) se FireCraft SMP ka status check kiya (TPS 20, MSPT ~8.2, 3/20 players online).
+- "all players k ass pass k images nikalker mujhe doo" → Har online player ka top-down map + camera shot WorldLens se liya, `worldlens-shots/2026-10-28/` me save kiya aur user ko bheja.

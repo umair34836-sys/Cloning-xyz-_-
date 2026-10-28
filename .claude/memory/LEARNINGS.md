@@ -42,3 +42,6 @@ Format:
 ## 2026-10-28
 
 - **WorldLens connector** (`mcp__worldlens__*`) = FireCraft SMP (Paper) ka camera + console. Server status ke liye `worldlens_status` (TPS, MSPT, players, worlds). Tools deferred hain — pehle ToolSearch se load karo. Spawn ≈ x 675, y 70, z 57 ('world').
+- Player positions: `worldlens_command` → `execute as @a run data get entity @s Pos` (aur `... Dimension`). Bedrock names (`.Name`) bhi isi se aa jaate hain.
+- WorldLens `worldlens_top`/`worldlens_shot` par **10 s cooldown** hai aur parallel calls fail hoti hain — ek ek karke chalao (beech me `timeout 11 tail -f /dev/null` se wait).
+- Underground player (y < 0) ke liye top map sirf surface dikhata hai — unki exact eye position se `worldlens_shot` lo. Surface players ke liye ~30 blocks peeche, y ~95, pitch ~35 se aerial shot achha aata hai.
