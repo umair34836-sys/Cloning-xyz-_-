@@ -58,3 +58,4 @@ Format:
 - Discord tools (WorldLens) image/attachment bhej ya padh nahi sakte — owner ki image messages text "" dikhti hain.
 - Base photos repo me commit nahi ki (reports/worldlens/bases/ gitignored) — privacy.
 - Kick reason console log me hota hai; WorldLens command output me nahi aata. AuthMe checks: `authme accounts <name|ip>`, `authme lastlogin`, `authme getip`. LifeStealZ: `lifestealz hearts get <p>`. firecraft MCP: get_user(ign) se website account/application.
+- "lost connection: Disconnected" = client ne connection toda (server kick hota to "kicked" + reason). GrimAC 2.3.74 ka shaded packetevents 2.13.1 MC 26.2 par "Unknown entity metadata type id: 105" deta hai → affected player desync/disconnect. Fix: Grim update; temp: grim.exempt.

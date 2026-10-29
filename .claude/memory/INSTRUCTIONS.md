@@ -9,7 +9,7 @@ Format:
 
 ## 2026-10-29
 
-- **Owner (Discord 11:07/11:09):** SHREYAS_UNKNOWN kick check + fix. Checked all (whitelist/AuthMe/IP/ban/hearts OK); kick post-login, reason sirf console log me. **PENDING:** owner se kick reason/log line ka wait. Last handled owner msg: 1565321764467114056.
+- **Owner (Discord 11:07/11:09):** SHREYAS_UNKNOWN kick check + fix. Checked all (whitelist/AuthMe/IP/ban/hearts OK); kick post-login, reason sirf console log me. Owner ne latest.log diya → root cause: GrimAC 2.3.74 (bundled packetevents 2.13.1) MC 26.2 metadata type 105 error sirf Shreyas ke join par → client disconnect. Options diye: Grim update (best) / grim.exempt (owner 'haan exempt' ka wait) / vanilla client. **PENDING owner choice.** Last handled owner msg: 1565321764467114056.
 - **Owner (Discord 10:10):** "Op wale players ko owner na banaye" → fix proposed (firecraft.owner false on default/member/creator/developer). DONE ✅ 12:05 UTC (owner 'Haan'); owner group par firecraft.owner true bhi set kiya. Last handled owner msg: 1565306813895803011.
 - **Owner (Discord 09:21):** player bases (surface + underground) ki 4-side photos #media me, coords hide. Done: 12 photos (3 bases) → Discord bot image upload nahi kar sakta, owner ko Claude chat me diye. 09:53 attachment-only msg: text me poocha (pending). Last handled owner msg: 1565302592261587056.
 - **09:05 UTC hourly run done.** Owner (smp-chat 08:10): Itskillerxd1 ka 4h ban owner ne lagaya — unban nahi. Open issues: ranks restore, tab list, op=OWNER display, lag.
