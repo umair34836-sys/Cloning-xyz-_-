@@ -1,0 +1,21 @@
+# FireCraft SMP — /nv : Night Vision ON/OFF (Java + Bedrock/Geyser dono ke liye)
+# Rakhna: plugins/Skript/scripts/nv.sk   phir console me:  sk reload nv
+#
+# Ye sirf "nv_on" tag badalta hai. Spawn ke neeche (673..682, -63, 56) wale command blocks
+# har tick tag wale players ko Night Vision dete hain (maut / doodh ke baad bhi wapas),
+# aur /trigger nv bhi isi tag se chalta hai — dono tareeqe ek hi system hain.
+
+command /nv:
+    aliases: nightvision
+    description: Night Vision ON/OFF
+    usage: /nv
+    executable by: players
+    trigger:
+        if scoreboard tags of player contains "nv_on":
+            execute console command "tag %player% remove nv_on"
+            execute console command "effect clear %player% night_vision"
+            send "&7Night Vision: &cOFF" to player
+        else:
+            execute console command "tag %player% add nv_on"
+            execute console command "effect give %player% night_vision infinite 0 true"
+            send "&7Night Vision: &aON &8(band karne ke liye dobara /nv)" to player

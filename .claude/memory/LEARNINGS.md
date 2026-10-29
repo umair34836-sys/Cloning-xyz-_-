@@ -68,4 +68,6 @@ Format:
 - `sheet_hd.py` ko texture root aur `block/x.png` jaisa relative path do — sirf `x.png` dene se `kind_of` galat kind deta hai aur purana 16x look aata hai.
 - **Bedrock fullbright 2025-26:** custom shaders/materials RenderDragon me band — shader wale fullbright packs sirf patched client (BetterRenderDragon) par. Resource pack se jo chalta hai: subpacks (gear icon slider, per-player), `fogs/*.json` (fog door), `lighting/*.json` (sirf Vibrant Visuals: ambient/moon illuminance), textures ki gamma-lift. Manifest v3 `settings` toggle sirf Molang (models/render controllers) tak — textures swap nahi karta.
 - Bedrock subpacks: default = aakhri (sab se oonche memory_tier wala) subpack, is liye "ON" ko list me aakhir me rakho. Pack update ke liye header version badhao (1.1.0).
+- FireCraft server (Paper 26.2): Skript 2.16.2, WorldGuard, Geyser/Floodgate, LuckPerms waghaira. WorldLens console se command blocks chalte hain (enable-command-block on). Console se plugin files/scripts nahi likh sakte — file wali cheez owner ko upload karni padti hai.
+- 26.x gamerule naam snake_case hain (`command_block_output`), tellraw SNBT text (`{text:"..",color:".."}`) chalta hai.
 
