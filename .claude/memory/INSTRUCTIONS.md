@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-29
 
+- **Owner (Discord, 08:34 UTC):** har minute check mat karo; jab owner bot ko mention kare tab dekho. → 1-min cron 4f1d341e band kiya. Mentions ab hourly check me uthaye jate hain. Last handled owner msg: 1565282698782576641.
 - **08:10 UTC hourly run done:** digest + manager report + appreciation (owner rank) posted. Owner se decision pending: (1) manager ne saare LP ranks delete kiye — ok? (2) Itskillerxd1 unban. Appreciated so far: Geyser, ticket system, beacon check, owner rank setup.
 - **Hourly staff digest:** har ghante bot se saare Discord channels dekho (#owner-private ke ilawa), #staff-chat me har chat ki short summary + in-game chat summary do, aur batao kaunsi chats staff ko dekhni hain — taake staff up-to-date rahe. (Hourly task step 3.)
 - **Staff appreciation:** jab staff sahi kaam kare to #staff-chat me tag karke specific appreciation do (hourly check me). Pehla appreciation (techshot — Geyser, ticket system, beacon check) bheja ✅ (connector wapis aane par).
