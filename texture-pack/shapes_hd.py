@@ -398,7 +398,10 @@ def item_special(c):
         return None
     if b.startswith("egg_") or b.startswith("spawn_egg"):      # Bedrock spawn eggs
         return h.hi_shape(c, "egg")
-    import items_hd
+    import items_hd, items2_hd
+    out = items2_hd.special(c)           # A-Z review ke baad wale items
+    if out is not None:
+        return out
     out = items_hd.special(c)            # tools, bundles, food
     if out is not None:
         return out

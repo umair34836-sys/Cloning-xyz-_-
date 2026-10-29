@@ -65,8 +65,11 @@ def clamp_albedo(alb, metal=False):
     """PBR rule (Substance pbr_channel_guide): non-metal albedo sRGB 30..240, metal >= ~128."""
     lum = alb @ LUM
     lo, hi = (110.0, 250.0) if metal else (30.0, 240.0)
-    f = np.where(lum < lo, lo / np.maximum(lum, 1), np.where(lum > hi, hi / np.maximum(lum, 1), 1.0))
-    return np.clip(alb * f[..., None], 0, 255)
+    # gehre rang: grey JODO (multiply se laal/neela jhukaav phat jata tha), roshan: dheere neeche
+    lift = np.clip(lo - lum, 0, None)
+    out = alb + lift[..., None] if not metal else alb * np.where(lum < lo, np.minimum(lo / np.maximum(lum, 1), 3.0), 1.0)[..., None]
+    f = np.where(lum > hi, hi / np.maximum(lum, 1), 1.0)
+    return np.clip(out * f[..., None], 0, 255)
 
 
 def light(alb, hgt, k=2.5, spec=0.0, shin=24, amb=0.5, ao=1.6, wrap=True, mask=None,
@@ -376,9 +379,9 @@ def hd_leaves(c):
     opaque = bool((c.ref[..., 3] > 0).all())
     if opaque:
         alb[:] = shade(col, 0.4); alpha[:] = 255
-    n = int(H * W / (S * S) * 0.42)
+    n = int(H * W / (S * S) * 0.5)
     for _ in range(n):
-        L = r.uniform(1.8, 3.2) * S
+        L = r.uniform(1.2, 2.3) * S
         paint_leaf(alb, hgt, alpha, r.random() * H, r.random() * W, L, L * r.uniform(0.38, 0.5),
                    r.uniform(0, 2 * math.pi), shade(col, r.uniform(0.72, 1.12)), H, W)
     rgb = light(alb, hgt, k=2.2, amb=0.45)
@@ -662,14 +665,21 @@ def hd_masked(c, s=None, soft=None, fur=0.0):
     det = fbm(H, W, r, max(2, s), 3)
     fine = fbm(H, W, r, 1, 1)
     strands = fbm(H, W, r, max(2, s // 2), 2, 1) if fur else 0
-    b = c.base
+    b = c.name.lower() if c.kind == "entity" else c.base
     spec, metal = 0.0, False
-    if not fur and has(b, "log", "wood", "planks", "door", "trapdoor", "campfire", "ladder", "sign", "fence",
-                       "barrel", "chest", "lectern", "bed", "scaffold", "bamboo", "composter"):
+    if has(b, "banner", "/bed/", "harness", "saddle") or (c.kind == "entity" and has(b, "leather")):
+        weave = np.where(((grid(H, W)[1] // max(1, s // 2)) + (grid(H, W)[0] // max(1, s // 2))) % 2 == 0, 1.0, 0.0)
+        det = 0.5 + 0.25 * (weave - 0.5) + 0.4 * (det - 0.5)            # kapde ki bunai
+    elif has(b, "decorated_pot", "pottery"):
+        det = 0.5 + 0.6 * (fbm(H, W, r, 1, 2) - 0.5) + 0.3 * (det - 0.5)  # pakki mitti ka grain
+    elif not fur and has(b, "log", "wood", "planks", "door", "trapdoor", "campfire", "ladder", "sign", "fence",
+                       "barrel", "chest", "lectern", "bed", "scaffold", "bamboo", "composter", "boat", "armorstand",
+                       "shield", "oak", "spruce", "birch", "jungle", "acacia", "cherry", "mangrove"):
         grain = fbm(H, W, r, max(4, 2 * s), 3, 1)          # lakdi ki dhaariyan
         det = 0.5 * det + 0.9 * (grain - 0.5) + 0.5
     elif not fur and has(b, "iron", "chain", "bars", "anvil", "lantern", "rail", "hopper", "cauldron", "copper",
-                         "bell", "lightning_rod", "grate", "chain"):
+                         "bell", "lightning_rod", "grate", "chain", "gold", "diamond", "netherite", "minecart",
+                         "equipment", "conduit", "trident"):
         det = 0.5 * det + 0.6 * (fbm(H, W, r, 1, 2, max(4, W // 3)) - 0.5) + 0.5   # brushed metal
         spec, metal = 0.5, True
     lum = (col @ LUM)[..., None]
@@ -950,6 +960,8 @@ def hi_shape(c, kind):
     sat = np.ptp(p.colors, 1) / np.maximum(p.colors.max(1), 1)
     vivid = p.colors[(sat * (p.colors @ LUM)).argmax()]
     bright = p.sorted[-2] if len(p.sorted) > 2 else p.light
+    if c.base == "sugar":
+        vivid = np.array((244, 244, 246.0))
     col = {"gem": mix(p.accent, p.light, 0.3), "dust": vivid, "nugget": bright, "ingot": bright, "raw": p.main}.get(kind, p.main)
     if kind in ("ingot", "nugget") and any(c.base.startswith(k + "_") for k in g.MATS):
         col = g.mat_color(c.base, p)
@@ -1125,6 +1137,8 @@ GEO_DIR = os.environ.get("FIRECRAFT_BEDROCK_RP", "")   # Bedrock resource_pack (
 
 def hd_mob(c):
     s = ENT_S
+    if has(c.name.lower(), "markings"):
+        return hd_masked(c, s, soft=1, fur=0.0)          # dhabbe crisp rahein
     img = hd_masked(c, s, soft=2 * s, fur=0.18)
     if GEO_DIR:
         import mobs_hd
@@ -1195,19 +1209,30 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
             import shapes_hd
             fn = g.block_family(c, full)
             hd = LOW2HD.get(fn)
-            import details_hd
+            import details_hd, blocks_hd2
             hd = details_hd.override(c, fn, hd)
-            if has(c.base, "sniffer_egg", "turtle_egg"):
+            special = blocks_hd2.override(c, fn, full)
+            if special is None and (not full or c.base.startswith("sniffer_egg")):
+                import cutouts_hd
+                special = cutouts_hd.override(c, fn)
+            if special is not None:
+                fn, hd = g.g_stone, special      # g_stone = full opaque family (alpha nahi badalta)
+            if has(c.base, "turtle_egg") and special is None:
                 fn, hd = g.g_masked, shapes_hd.egg_shell
             elif fn is g.g_masked and shapes_hd.plant_special(c) is not None:
                 fn, hd = g.g_plant, hd_plant      # vines / dripleaf jaise masked me chale gaye the
             img = hd(c) if hd else hd_finish(c, fn(c))
-            if fn not in (g.g_leaves, g.g_glass, g.g_plant, g.g_masked, g.g_flame, g.g_capped_side, g.g_destroy) and not full:
+            if fn not in (g.g_leaves, g.g_glass, g.g_plant, g.g_masked, g.g_flame, g.g_capped_side, g.g_destroy) \
+                    and not full and not getattr(hd, "own_alpha", False):
                 img[..., 3] = small[..., 3].repeat(S, 0).repeat(S, 1)
+
         elif kind == "item":
             img = hi_item(c)
         else:
             img = hd_mob(c)
+        if kind == "block" and c.base.startswith("polished_") and full:
+            import blocks_hd2
+            img = blocks_hd2.polished_sheen(img)
         if kind == "block" and has(c.base, *EMISSIVE):
             img[..., :3] = np.clip(img[..., :3] * 0.6 + blur(img[..., :3], 2) * 0.4 * 1.25, 0, 255)  # khud roshni deta hai
         if kind == "block" and nf == 1 and QUANT:

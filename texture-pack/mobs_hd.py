@@ -131,19 +131,22 @@ def faces_for(rel, W, H, rp_dir):
 
 
 MATERIAL = [
+    ("golem", ("iron_golem", "copper_golem")),
+    ("wet", ("frog", "axolotl", "tadpole", "dolphin", "squid")),
+    ("glowskin", ("allay", "vex")),
     ("fur", ("cow", "mooshroom", "sheep", "wolf", "fox", "cat", "ocelot", "horse", "donkey", "mule", "llama",
              "bear", "rabbit", "goat", "panda", "camel", "sniffer", "hoglin", "zoglin", "bat", "bee", "trader_llama")),
-    ("feather", ("chicken", "parrot", "phantom", "allay", "vex")),
+    ("feather", ("chicken", "parrot", "phantom")),
     ("bone", ("skeleton", "stray", "bogged", "wither")),
     ("slime", ("slime", "magma")),
-    ("metal", ("iron_golem", "copper_golem", "golem")),
     ("plant", ("creeper", "creaking")),
     ("chitin", ("spider", "endermite", "silverfish", "shulker")),
-    ("scales", ("cod", "salmon", "tropical", "pufferfish", "fish", "guardian", "turtle", "frog", "tadpole", "nautilus")),
+    ("scales", ("cod", "salmon", "tropical", "pufferfish", "fish", "guardian", "turtle", "nautilus", "dragon")),
     ("skin", ("pig", "villager", "witch", "illager", "pillager", "vindicator", "evoker", "zombie", "husk", "drowned",
-              "player", "piglin", "steve", "alex", "wandering_trader", "enderman", "blaze", "ghast", "dolphin",
-              "axolotl", "warden", "ravager", "strider", "squid", "breeze", "armadillo")),
+              "player", "piglin", "steve", "alex", "wandering_trader", "enderman", "blaze", "ghast",
+              "warden", "ravager", "strider", "breeze", "armadillo")),
 ]
+CLOTH = ("villager", "illager", "pillager", "vindicator", "evoker", "witch", "wandering_trader", "zombie_villager")
 
 
 def material_of(name):
@@ -158,20 +161,42 @@ def detail(mat, H, W, r, s):
     """Material ka apna surface: tone multiplier + height."""
     yy, xx = h.grid(H, W)
     if mat == "fur":
-        strands = h.fbm(H, W, r, s * 3, 3, 1)
-        fine = h.fbm(H, W, r, s, 2, 1)
-        tufts = h.fbm(H, W, r, s * 2, 2)
-        return 0.82 + 0.22 * strands + 0.1 * fine + 0.06 * tufts, 0.5 * strands + 0.3 * tufts + 0.2 * fine, 0.0
+        # chhote guchhe (clumps) + chhote resho ke strokes, lambi lakdi jaisi dhaariyan nahi
+        clump = h.fbm(H, W, r, s * 2, 3)
+        short = h.fbm(H, W, r, max(1, s // 2), 2, max(1, s // 4)) if s >= 2 else h.fbm(H, W, r, 1, 1)
+        stroke = np.sin((xx * 0.9 + yy * 0.5 + 6 * clump) * 1.6 / max(1, s / 2))
+        t = 0.84 + 0.18 * clump + 0.08 * short + 0.05 * stroke
+        return t, 0.45 * clump + 0.25 * short + 0.1 * stroke, 0.0
+    if mat == "wet":
+        n = h.fbm(H, W, r, s * 4, 3)
+        spots = h.nrm(h.fbm(H, W, r, s * 2, 2)) > 0.78
+        return np.where(spots, 0.8, 0.95 + 0.08 * n), 0.2 * n, 0.6
+    if mat == "glowskin":
+        n = h.fbm(H, W, r, s * 4, 3)
+        return 1.0 + 0.1 * n, 0.2 * n, 0.4
+    if mat == "golem":
+        P = 4 * s
+        py, px = yy % P, xx % P
+        edge = np.minimum.reduce([py, px, P - py, P - px])
+        rivet = (np.hypot(py - s, px - s) < s * 0.45)
+        rust = h.nrm(h.fbm(H, W, r, s * 3, 3)) > 0.72
+        t = np.where(edge < s * 0.4, 0.8, 0.96 + 0.06 * h.fbm(H, W, r, 1, 2, s * 4))
+        t = np.where(rivet, 1.15, np.where(rust, 0.78, t))
+        return t, 0.4 * np.clip(edge / s, 0, 1) + 0.3 * rivet, 0.5
     if mat == "feather":
         sz = 1.5 * s
         arc = np.abs(((xx / sz + (np.floor(yy / sz) % 2) * 0.5) % 1) - 0.5) + ((yy / sz) % 1) * 0.4
         return 0.92 + 0.14 * (1 - arc), 0.4 * (1 - arc), 0.05
     if mat == "scales":
-        sz = 1.2 * s
-        cy = (yy / sz) % 1
-        cx = (xx / sz + (np.floor(yy / sz) % 2) * 0.5) % 1
-        rim = np.hypot(cx - 0.5, cy - 0.1)
-        return 0.9 + 0.16 * np.clip(1 - rim, 0, 1), 0.5 * np.clip(1 - rim, 0, 1), 0.35
+        # ek doosre par chadhe hue gol chhilke (har chhilka neeche se gol, upar wala uske upar)
+        sz = 1.4 * s
+        row = np.floor(yy / (sz * 0.6))
+        cx = xx / sz + (row % 2) * 0.5
+        fx = cx - np.floor(cx) - 0.5
+        fy = (yy / (sz * 0.6)) - row
+        d = np.hypot(fx, (fy - 0.0) * 0.8)
+        t = 0.92 + 0.12 * (1 - np.clip(d / 0.7, 0, 1)) - 0.05 * ((d > 0.5) & (d < 0.58))
+        return t, 0.5 * (1 - np.clip(d / 0.7, 0, 1)), 0.4
     if mat == "bone":
         n = h.fbm(H, W, r, s * 4, 3)
         cr = h.ridged(h.fbm(H, W, r, s * 6, 3)) > 0.975
@@ -209,6 +234,7 @@ def render(c, s, rp_dir, base_img):
     r = c.rng(500)
     mask = (ref[..., 3] > 0).repeat(s, 0).repeat(s, 1)
     mat = material_of(c.name)
+    cloth = any(w in c.name.lower() for w in CLOTH)
     tone_d, hgt_d, spec = detail(mat, H, W, r, s)
     out = base_img.copy()
     rgb = out[..., :3].copy()
@@ -257,13 +283,22 @@ def render(c, s, rp_dir, base_img):
             ao = np.where(ry < 0.7 * s, 1.07, np.where((Y1 - Y0 - 1) - ry < 0.7 * s, 0.9, 1.0))
         sel = mask[Y0:Y1, X0:X1]
         tone = ft * ao * tone_d[Y0:Y1, X0:X1]
+        if cloth and "head" not in f["bone"] and "hat" not in f["bone"]:
+            yy_, xx_ = h.grid(Y1 - Y0, X1 - X0)
+            weave = np.where(((xx_ // max(1, s // 2)) + (yy_ // max(1, s // 2))) % 2 == 0, 1.04, 0.96)
+            folds = 1 + 0.06 * np.sin(xx_ / (Y1 - Y0 + 1) * 6.0 * math.pi)
+            tone = ft * ao * weave * folds * (0.95 + 0.05 * tone_d[Y0:Y1, X0:X1])
         a_patch = alb[Y0:Y1, X0:X1]
         import details_hd
         a_patch[sel] = details_hd.entity_detail(np.clip(col * tone[..., None], 0, 255), col, tone_d[Y0:Y1, X0:X1])[sel]
         h_patch = hgt[Y0:Y1, X0:X1]
         h_patch[sel] = (0.5 + hgt_d[Y0:Y1, X0:X1] * 0.5)[sel]
-        if f["face"] == "north" and "head" in f["bone"] and f["cube"] == 0:
-            eye_faces.append((X0, Y0, X1, Y1))
+        if f["face"] == "north" and f["cube"] == 0 and ("head" in f["bone"] or not eye_faces and
+                                                       any(w in c.name.lower() for w in ("ghast", "slime", "magma", "guardian", "blaze"))):
+            if "head" in f["bone"]:
+                eye_faces.insert(0, (X0, Y0, X1, Y1))
+            else:
+                eye_faces.append((X0, Y0, X1, Y1))
     lit = h.light(alb, hgt, k=1.6, spec=spec, shin=24, wrap=False, dirt=0.15)
     rgb[mask] = lit[mask]
     if not any(w in c.name.lower() for w in g.NO_FACE):
@@ -273,7 +308,105 @@ def render(c, s, rp_dir, base_img):
     return out
 
 
+FACE_STYLE = [
+    ("none", ("warden", "creaking", "shulker", "endermite", "silverfish", "breeze", "armor")),
+    ("creeper", ("creeper",)),
+    ("spider", ("spider",)),
+    ("skull", ("skeleton", "stray", "bogged", "wither")),
+    ("ender", ("enderman",)),
+    ("single", ("guardian",)),
+    ("ghast", ("ghast",)),
+    ("golem", ("golem",)),
+    ("human", ("villager", "illager", "pillager", "vindicator", "evoker", "witch", "zombie", "husk", "drowned",
+               "player", "steve", "alex", "wandering_trader", "piglin", "ravager")),
+]
+
+
+def face_style(name):
+    n = name.lower()
+    for st, words in FACE_STYLE:
+        if any(w in n for w in words):
+            return st
+    return "animal"
+
+
+def ellipse(face, cx, cy, rx, ry, col):
+    hh, ww = face.shape[:2]
+    yy, xx = h.grid(hh, ww)
+    m = ((xx - cx) / max(rx, 0.5)) ** 2 + ((yy - cy) / max(ry, 0.5)) ** 2 < 1
+    face[m] = col
+    return m
+
+
 def draw_eyes(rgb, X0, Y0, X1, Y1, c):
+    style = face_style(c.name)
+    if style == "none":
+        return
+    fw, fh = X1 - X0, Y1 - Y0
+    if fw < 8 or fh < 6:
+        return
+    face = rgb[Y0:Y1, X0:X1]
+    skin = np.median(face.reshape(-1, 3), 0)
+    dark = np.array((20, 18, 24.0))
+    if style == "creeper":
+        for ex in (0.25, 0.625):
+            face[int(fh * 0.25):int(fh * 0.5), int(fw * ex):int(fw * (ex + 0.25))] = dark
+        face[int(fh * 0.5):int(fh * 0.75), int(fw * 0.375):int(fw * 0.625)] = dark
+        face[int(fh * 0.62):int(fh * 0.9), int(fw * 0.25):int(fw * 0.375)] = dark
+        face[int(fh * 0.62):int(fh * 0.9), int(fw * 0.625):int(fw * 0.75)] = dark
+        return
+    if style == "spider":
+        for ex, ey, r_ in ((0.3, 0.45, 0.09), (0.7, 0.45, 0.09), (0.18, 0.3, 0.05), (0.82, 0.3, 0.05),
+                           (0.4, 0.28, 0.045), (0.6, 0.28, 0.045), (0.12, 0.55, 0.04), (0.88, 0.55, 0.04)):
+            ellipse(face, fw * ex, fh * ey, fw * r_, fw * r_, (230, 30, 30))
+            ellipse(face, fw * ex - fw * r_ * 0.3, fh * ey - fw * r_ * 0.3, fw * r_ * 0.3, fw * r_ * 0.3, (255, 160, 150))
+        return
+    if style == "skull":
+        for ex in (0.3, 0.7):
+            ellipse(face, fw * ex, fh * 0.48, fw * 0.12, fh * 0.11, dark)
+        ellipse(face, fw * 0.5, fh * 0.66, fw * 0.05, fh * 0.06, dark)
+        face[int(fh * 0.8):int(fh * 0.84), int(fw * 0.28):int(fw * 0.72)] = shade(skin, 0.5)
+        for k in range(5):
+            x = int(fw * (0.3 + k * 0.1))
+            face[int(fh * 0.76):int(fh * 0.88), x:x + max(1, fw // 64)] = shade(skin, 0.5)
+        return
+    if style == "ender":
+        for ex in (0.28, 0.72):
+            ellipse(face, fw * ex, fh * 0.55, fw * 0.16, fh * 0.05, (230, 120, 255))
+        return
+    if style == "single":
+        ellipse(face, fw * 0.5, fh * 0.5, fw * 0.22, fh * 0.22, (236, 230, 220))
+        ellipse(face, fw * 0.5, fh * 0.5, fw * 0.12, fh * 0.12, (230, 150, 40))
+        ellipse(face, fw * 0.5, fh * 0.5, fw * 0.05, fh * 0.12, dark)
+        return
+    if style == "ghast":
+        for ex in (0.28, 0.72):
+            face[int(fh * 0.4):int(fh * 0.45), int(fw * (ex - 0.12)):int(fw * (ex + 0.12))] = dark
+            face[int(fh * 0.45):int(fh * 0.7), int(fw * (ex - 0.02)):int(fw * (ex + 0.02))] = (170, 190, 210)
+        ellipse(face, fw * 0.5, fh * 0.75, fw * 0.12, fh * 0.06, dark)
+        return
+    if style == "golem":
+        for ex in (0.32, 0.68):
+            ellipse(face, fw * ex, fh * 0.45, fw * 0.09, fh * 0.06, (60, 20, 20))
+            ellipse(face, fw * ex, fh * 0.45, fw * 0.04, fh * 0.03, (240, 60, 40))
+        face[int(fh * 0.5):int(fh * 0.8), int(fw * 0.44):int(fw * 0.56)] = shade(skin, 0.8)
+        return
+    if style == "animal":
+        for ex in (0.2, 0.8):
+            ellipse(face, fw * ex, fh * 0.42, fw * 0.075, fh * 0.09, dark)
+            ellipse(face, fw * ex - fw * 0.02, fh * 0.39, fw * 0.025, fh * 0.03, (250, 250, 250))
+        if "panda" in c.name.lower():
+            for ex in (0.2, 0.8):
+                m = np.zeros(face.shape[:2], bool)
+                yy, xx = h.grid(fh, fw)
+                m = (((xx - fw * ex) / (fw * 0.15)) ** 2 + ((yy - fh * 0.45) / (fh * 0.2)) ** 2 < 1)
+                face[m] = (30, 30, 34)
+                ellipse(face, fw * ex, fh * 0.42, fw * 0.05, fh * 0.06, (240, 240, 240))
+        return
+    _human_eyes(rgb, X0, Y0, X1, Y1, c)
+
+
+def _human_eyes(rgb, X0, Y0, X1, Y1, c):
     fw, fh = X1 - X0, Y1 - Y0
     if fw < 8 or fh < 6:
         return
