@@ -9,7 +9,10 @@ Minecraft ke blocks, items aur mobs ke liye **original** textures, Java 26.2 aur
 | `dist/FireCraft-Remastered-Java-26.2.zip` | Java 26.2 (resource pack format 88) — 2790 textures |
 | `dist/FireCraft-Remastered-Bedrock.mcpack` | Bedrock / Geyser players — 3058 textures |
 | `showcase-hd.png` | HD designs ka preview |
+| `showcase-final.png` | Final: naye tools, food, bundles, detail wale blocks |
+| `showcase-mobs.png` | Final mob skins (geometry ke hisaab se har chehra) |
 | `showcase-shapes.png` | Theek ki gayi shapes (clock, compass, boats, buckets, coral, phool...) |
+| `DETAIL_TESTS.md` | 5 test rounds ka report (detail score) |
 | `showcase.png` | 16x designs ka preview |
 | `pack_icon.png` | Pack icon (Future Gallery ke Pro editor se banaya) |
 
@@ -61,6 +64,21 @@ apni dome roshni ke saath):
 - **Paude:** coral (shaakhein) aur coral fan, dripleaf, lily pad, lambe phool (lilac/peony/rose/sunflower upar-neeche), pink petals/wildflowers/leaf litter, cocoa, sugar cane, vines aur chamakte cave-vine ber, sniffer/turtle egg ka chhilka
 - Leather armor/horse armor ka base halka grey (205) — dye ka tint sahi aata hai
 
+### Tools, food, bundles, mobs — `items_hd.py`, `mobs_hd.py`, `details_hd.py`
+
+- **Tools:** har tool ek "handle frame" me banta hai — sword (fuller, tez dhaar, lipti grip, gol guard),
+  pickaxe (beech se mota, dono taraf nukeela mudha sir), axe (patla gala, beard wali dhaar, peeche poll),
+  shovel (dish wala phal, ridge, socket), hoe (L blade)
+- **Food:** steak (charbi, grill), drumstick, machhli (scales, aankh, pakki), apple/golden apple, bread,
+  cookie, pie, cake, carrot, potato, beetroot, melon, berries, soups (bowl), spider eye, rotten flesh,
+  dried kelp, chorus fruit, honey bottle, egg
+- **Bundles:** rassi wali thaili + open front/back, 16 dye rang (Java `red_bundle`, Bedrock `bundle_red`)
+- **Mobs (4x):** Bedrock geometry (`models/entity`, `entity/*.entity.json`) se har cube ka har chehra;
+  chehre ki roshni, material (fur/feather/skin/scales/bone/slime/metal/plant/chitin), aankhein sir ke saamne
+  wale chehre par. Java ke liye 4th argument me Bedrock resource_pack ka path do.
+- **Detail passes:** `details_hd.py` (concrete, terracotta, panels, obsidian, dragon egg, aag, gehre rang) —
+  dekho `DETAIL_TESTS.md`
+
 ## Dobara banana
 
 ```bash
@@ -70,7 +88,7 @@ python3 generate.py java ref/java-assets build/java
 python3 generate.py bedrock ref/bedrock/resource_pack build/bedrock
 python3 package.py build dist
 # HD:
-python3 generate_hd.py java ref/java-assets build_hd/java
+python3 generate_hd.py java ref/java-assets build_hd/java ref/bedrock/resource_pack
 python3 generate_hd.py bedrock ref/bedrock/resource_pack build_hd/bedrock
 python3 package.py build_hd dist --hd
 ```

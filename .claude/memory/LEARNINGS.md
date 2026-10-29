@@ -57,3 +57,7 @@ Format:
 - **Shapes QA ka tareeqa:** har category ki contact sheet (12 col, 64px, naam ke saath) banao aur saari dekho — random sample se blobs miss ho jate hain.
 - Bedrock me animated item frames alag files nahi, ek patti hoti hai: `compass_atlas`, `lodestonecompass_atlas`, `recovery_compass_atlas`, `watch_atlas` (clock) — 16xN, har 16px ek frame. Java me `clock_00..63`, `compass_00..31` alag files.
 - Bedrock naam: `boat_oak`, `chest_boat_*`, `bucket_water/lava/milk/axolotl...`, `minecart_normal/chest/furnace/hopper/tnt/command_block`, `book_normal/enchanted/writable/written/portfolio`, `map_empty/filled/locked` + explorer `map_desert_pyramid` waghaira.
+- **Mobs ka face map:** Bedrock `models/entity/*.geo.json` (format 1.8 `geometry.x[:parent]` + 1.12 `minecraft:geometry`) + `entity/*.entity.json` (textures↔geometry). Box UV: up(u+d,v,w,d) down(u+d+w,v,w,d) east(u,v+d,d,h) north/front(u+d,v+d,w,h) west(u+d+w,v+d,d,h) south(u+2d+w,v+d,w,h). Java 64x64 skin par Bedrock 64x32 layout: scale sirf width se (uniform), warna aankhein jism par chali jati hain.
+- **Detail score** = mean|L - blur(L)| × (1+log(colors)/6) — kam-detail textures dhoondhne ka achha automatic test; phir contact sheet aankh se dekho (bugs jaise naam-matching galti sirf aankh se pakde jate hain).
+- 4-neighbour erosion distance se dome par "+" jaisi patiyan banti hain — 4/8 neighbour baari baari + blur karo. Highlights ko 205 ke upar soft roll-off do.
+- Palette PNG se 4x mob skins Java me sirf ~8MB; Bedrock TGA ke liye `compression="tga_rle"`.

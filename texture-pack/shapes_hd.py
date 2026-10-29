@@ -47,13 +47,22 @@ class Cv:
     def poly(self, pts):
         return h.poly(self.X, self.Y, pts)
 
-    def part(self, m, col, spec=0.0, shin=24, metal=False, wood=False, noise=0.08, dome=1.6, flat=False, glow=False):
-        """Ek hissa: apni dome height + roshni + material detail, phir upar chipkao."""
+    def local(self, ox, oy, dx, dy):
+        """Tool/handle ka apna frame: A = handle ke saath, B = upar-baayein taraf (perpendicular)."""
+        n = math.hypot(dx, dy); dx, dy = dx / n, dy / n
+        rx, ry = self.X - ox, self.Y - oy
+        return rx * dx + ry * dy, -(rx * -dy + ry * dx)
+
+    def part(self, m, col, spec=0.0, shin=24, metal=False, wood=False, noise=0.08, dome=1.6, flat=False, glow=False,
+             hmap=None):
+        """Ek hissa: apni dome height (ya diya hua hmap) + roshni + material detail, phir upar chipkao."""
         if not m.any():
             return
         col = np.asarray(col, float)
         d = h.dist_inside(m, 3 * S)
         hgt = np.zeros(m.shape) if flat else np.sqrt(np.clip(d / (dome * S), 0, 1))
+        if hmap is not None:
+            hgt = hmap
         if wood:
             tone = 0.86 + 0.24 * h.fbm(self.H, self.W, self.r, 4, 2, 1)
         else:
@@ -94,8 +103,12 @@ DYES = {"white": (236, 236, 236), "light_gray": (160, 160, 156), "gray": (82, 86
 
 
 def dye_of(base, default):
+    """Java: 'red_bundle', Bedrock: 'bundle_red' / 'bundle_light_blue_open_front' — dono samjho."""
+    tok = "_" + base + "_"
     for k in sorted(DYES, key=len, reverse=True):
-        if base.startswith(k + "_"):
+        if "_" + k + "_" in tok:
+            if k in ("blue", "gray") and ("_light_" + k + "_") in tok:
+                continue
             return np.array(DYES[k], float)
     return default
 WOOD, PAPER = (150, 104, 58), (228, 214, 178)
@@ -383,6 +396,12 @@ def item_special(c):
     b = c.base
     if c.H != 16 or c.W != 16:
         return None
+    if b.startswith("egg_") or b.startswith("spawn_egg"):      # Bedrock spawn eggs
+        return h.hi_shape(c, "egg")
+    import items_hd
+    out = items_hd.special(c)            # tools, bundles, food
+    if out is not None:
+        return out
     if b.startswith("clock") or b.startswith("watch"):
         return clock(c)
     if b.startswith("recovery_compass"):
@@ -608,8 +627,9 @@ def egg_shell(c):
     p = c.pal
     base, spot = p.main, p.second if np.abs(p.second - p.main).sum() > 40 else shade(p.main, 0.7)
     n = h.fbm(H, W, r, 8, 3)
-    alb = h.tone_col(base, 0.9 + 0.2 * n)
-    spots = h.fbm(H, W, r, 4, 2) > 0.66
+    grain = h.fbm(H, W, r, 1, 1)
+    alb = h.tone_col(base, 0.88 + 0.2 * n + 0.1 * (grain - 0.5))
+    spots = (h.fbm(H, W, r, 4, 2) > 0.6) | (h.fbm(H, W, r, 2, 1) > 0.78) | (r.random((H, W)) > 0.97)
     alb[spots] = h.tone_col(spot, 0.9 + 0.2 * n)[spots]
     if has(c.base, "crack") or has(c.base, "slight") or has(c.base, "very"):
         cr = h.ridged(h.fbm(H, W, r, H // 2, 3)) > (0.97 if has(c.base, "slight") else 0.94)

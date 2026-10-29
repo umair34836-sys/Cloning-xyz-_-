@@ -17,7 +17,7 @@ import generate as g
 
 S = 4                 # 16x -> 64x
 g.MATS["netherite"] = (104, 100, 106)  # neutral gehra metal (metal albedo >= ~110 rule ke baad gulaabi na lage)
-ENT_S = 2             # mobs ki skins 2x (4x par pack 150MB+ ho jata tha)
+ENT_S = 4             # mobs ki skins 4x (palette PNG se size qaboo me)
 LUM = g.LUM
 shade, mix, has, Ctx = g.shade, g.mix, g.has, g.Ctx
 
@@ -97,6 +97,8 @@ def light(alb, hgt, k=2.5, spec=0.0, shin=24, amb=0.5, ao=1.6, wrap=True, mask=N
         col = col + (s * spec * 255)[..., None] * tint
     if emissive is not None:
         col = np.where(emissive[..., None], alb, col)
+    # soft highlight roll-off (lookdev: pure white se bacho) — 205 ke upar dheere dheere
+    col = np.where(col > 205, 205 + (col - 205) * 0.5, col)
     return np.clip(col, 18, 250)
 
 
@@ -114,16 +116,23 @@ def wrapd(a, b, n):
     return np.minimum(d, n - d)
 
 
+def erode8(m):
+    p = np.pad(m, 1)
+    return (m & p[:-2, 1:-1] & p[2:, 1:-1] & p[1:-1, :-2] & p[1:-1, 2:]
+            & p[:-2, :-2] & p[:-2, 2:] & p[2:, :-2] & p[2:, 2:])
+
+
 def dist_inside(m, maxd=12):
-    """Mask ke andar kinare se faasla (erosion count) -> dome height ke liye."""
+    """Mask ke andar kinare se faasla -> dome height. 4/8-neighbour erosion baari baari
+    (octagon contours, gol ke qareeb) + halka blur, taake gol cheezon par +/chokor patiyan na banein."""
     d = np.zeros(m.shape)
     cur = m.copy()
     for i in range(maxd):
         d += cur
-        cur = g.erode(cur)
+        cur = erode8(cur) if i % 2 else g.erode(cur)
         if not cur.any():
             break
-    return d
+    return blur(d, 2, wrap=False) * m
 
 
 def voronoi(H, W, pts):
@@ -653,10 +662,22 @@ def hd_masked(c, s=None, soft=None, fur=0.0):
     det = fbm(H, W, r, max(2, s), 3)
     fine = fbm(H, W, r, 1, 1)
     strands = fbm(H, W, r, max(2, s // 2), 2, 1) if fur else 0
-    col = col * (0.9 + 0.12 * det + 0.08 * (fine - 0.5) + fur * (strands - 0.5))[..., None]
+    b = c.base
+    spec, metal = 0.0, False
+    if not fur and has(b, "log", "wood", "planks", "door", "trapdoor", "campfire", "ladder", "sign", "fence",
+                       "barrel", "chest", "lectern", "bed", "scaffold", "bamboo", "composter"):
+        grain = fbm(H, W, r, max(4, 2 * s), 3, 1)          # lakdi ki dhaariyan
+        det = 0.5 * det + 0.9 * (grain - 0.5) + 0.5
+    elif not fur and has(b, "iron", "chain", "bars", "anvil", "lantern", "rail", "hopper", "cauldron", "copper",
+                         "bell", "lightning_rod", "grate", "chain"):
+        det = 0.5 * det + 0.6 * (fbm(H, W, r, 1, 2, max(4, W // 3)) - 0.5) + 0.5   # brushed metal
+        spec, metal = 0.5, True
+    lum = (col @ LUM)[..., None]
+    col = col * (0.88 + 0.16 * det + 0.1 * (fine - 0.5) + fur * (strands - 0.5))[..., None] \
+        + ((det - 0.5) * 30)[..., None] * (1 - lum / 255)
     d = dist_inside(mk, maxd=s)
-    hgt = np.clip(d / s, 0, 1) * 0.6 + 0.25 * det + 0.15 * fine + fur * strands
-    rgb = light(col, hgt, k=2.0, wrap=False)
+    hgt = np.clip(d / s, 0, 1) * 0.6 + 0.3 * det + 0.15 * fine + fur * strands
+    rgb = light(col, hgt, k=2.2, wrap=False, spec=spec, shin=26, metal=metal)
     out = np.zeros((H, W, 4)); out[..., :3] = rgb; out[..., 3] = m
     return out
 
@@ -980,22 +1001,37 @@ def hi_shape(c, kind):
             spec = 0.5
         else:
             m = ((X - 8) ** 2 / 16 + (Y - 10) ** 2 / 16 < 1) | ((np.abs(X - 8) < (Y - 2) * 0.5) & (Y < 10) & (Y > 2))
-            spec = 0.5
+            spec = 0.8
+            shin = 50
         d = dist_inside(m, 4 * S)
         hgt = np.sqrt(np.clip(d / (3 * S), 0, 1))
         alb = tone_col(col, 0.92 + 0.12 * fbm(H, H, r, 2 * S, 3))
         if kind == "egg":
             sec_c = p.second if np.abs(p.second - col).sum() > 50 else shade(col, 0.6)
-            for _ in range(7):
-                sy, sx = r.uniform(3, 14), r.uniform(4, 12)
-                sm = (np.hypot((Y - sy) * 1.2, X - sx) < r.uniform(0.6, 1.3)) & m
-                alb[sm] = sec_c
+            grain = fbm(H, H, r, 1, 1)
+            alb = alb * (0.93 + 0.14 * grain)[..., None] + ((grain - 0.5) * 40 * (1 - (col @ LUM) / 255))[..., None]
+            for k in range(14):
+                sy, sx = r.uniform(2.5, 14.5), r.uniform(3.5, 12.5)
+                rr = r.uniform(0.35, 1.4) if k < 10 else r.uniform(1.4, 2.0)
+                sm = (np.hypot((Y - sy) * 1.15, X - sx) < rr) & m
+                alb[sm] = tone_col(sec_c, 0.9 + 0.2 * grain)[sm]
+            hl = ((X - 6.2) ** 2 / 1.6 + (Y - 5.4) ** 2 / 3.2) < 1
+            alb[hl & m] = np.clip(alb[hl & m] * 1.25 + 30, 0, 255)
         if kind == "disc":
             dd = np.hypot(X - 8, Y - 8)
-            alb = tone_col(col, 0.75 + 0.1 * np.sin(dd * 14))
-            lab = dd < 2.6
-            alb[lab] = p.accent
-            hgt = np.where(lab, 0.6, 0.4)
+            ang = np.arctan2(Y - 8, X - 8)
+            grooves = np.sin(dd * 9) * 0.5 + np.sin(dd * 23) * 0.3
+            sheen = np.clip(np.cos(2 * (ang + 0.8)), 0, 1) ** 6          # vinyl par chamakti lakeer
+            dark = col if (col @ LUM) < 90 else shade(col, 0.45)
+            alb = tone_col(dark, 0.85 + 0.12 * grooves) + (sheen * 70)[..., None]
+            lab = dd < 2.8
+            alb[lab] = tone_col(p.accent, 1.0 + 0.1 * np.sin(dd[lab] * 6))
+            alb[(dd > 2.4) & (dd < 2.8)] = shade(p.accent, 0.6)
+            hgt = np.where(lab, 0.6, 0.4 + 0.04 * grooves)
+        if kind == "dye":   # sheeshe jaisa qatra: andar ki roshni + upar chamak
+            inner = ((X - 9.2) ** 2 / 3.0 + (Y - 11.4) ** 2 / 2.0) < 1
+            alb[inner & m] = np.clip(alb[inner & m] * 1.3 + 25, 0, 255)
+            alb[((X - 6.6) ** 2 / 0.8 + (Y - 8.0) ** 2 / 2.2 < 1) & m] = (250, 250, 250)
         rgb = light(alb, hgt, k=2.6, spec=spec, shin=shin, wrap=False)
     alpha = np.where(m, 255.0, 0)
     rgb, alpha = outline(rgb, alpha)
@@ -1056,9 +1092,17 @@ def hi_item(c):
 
 
 # --------------------------------------------------------------- entities ---
+GEO_DIR = os.environ.get("FIRECRAFT_BEDROCK_RP", "")   # Bedrock resource_pack (geometry ke liye)
+
+
 def hd_mob(c):
     s = ENT_S
     img = hd_masked(c, s, soft=2 * s, fur=0.18)
+    if GEO_DIR:
+        import mobs_hd
+        faced = mobs_hd.render(c, s, GEO_DIR, img)
+        if faced is not None:
+            return faced
     m = c.ref[..., 3] > 0
     if any(w in c.name.lower() for w in g.NO_FACE):
         return img
@@ -1123,6 +1167,8 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
             import shapes_hd
             fn = g.block_family(c, full)
             hd = LOW2HD.get(fn)
+            import details_hd
+            hd = details_hd.override(c, fn, hd)
             if has(c.base, "sniffer_egg", "turtle_egg"):
                 fn, hd = g.g_masked, shapes_hd.egg_shell
             elif fn is g.g_masked and shapes_hd.plant_special(c) is not None:
@@ -1221,13 +1267,18 @@ def process_tree(src_root, out_root, dirs, exts, flip=frozenset()):
                     img = compact(img, 128 if kind == "entity" else 256)
                     img.save(dst, optimize=True)
                 else:
-                    img.save(dst)
+                    img.save(dst, compression="tga_rle")      # Bedrock TGA: RLE se size kam
                 count += 1
     return count
 
 
 def main():
+    global GEO_DIR
     edition, src, out = sys.argv[1:4]
+    if edition == "bedrock":
+        GEO_DIR = src
+    elif len(sys.argv) > 4:
+        GEO_DIR = sys.argv[4]      # java: Bedrock resource_pack ka path (mobs ki geometry)
     if edition == "java":
         tex = os.path.join(src, "assets/minecraft/textures")
         n = process_tree(tex, os.path.join(out, "assets/minecraft/textures"), g.JAVA_DIRS, (".png",))

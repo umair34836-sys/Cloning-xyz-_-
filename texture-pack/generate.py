@@ -1046,7 +1046,7 @@ def block_family(c, full):
     b = c.base
     if b.startswith("destroy_stage"):
         return g_destroy
-    if has(b, "fire") and not has(b, "fire_coral", "fire_charge"):
+    if has(b, "fire") and not has(b, "fire_coral", "fire_charge", "campfire_log", "firefly"):
         return g_flame
     if has(b, "water", "lava") and not has(b, "cauldron"):
         return g_fluid
