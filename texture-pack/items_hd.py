@@ -532,8 +532,147 @@ def door(c):
     return v.done()
 
 
+def candle(c):
+    """Mom ka belan: cylinder shading, batti, behte qatre; 16 dye rang (Java red_candle / Bedrock candle_red)."""
+    v = Cv(c, 63)
+    col = dye_of(c.base, np.array((232, 224, 200), float))
+    body = v.rect(5.6, 4.6, 10.4, 14.6) | v.ell(8, 4.6, 2.4, 0.9) | v.ell(8, 14.6, 2.4, 0.9)
+    cyl = np.clip(1 - ((v.X - 7.4) / 2.6) ** 2, 0, 1) ** 0.5             # gol belan ki roshni
+    v.part(body, col, hmap=cyl, spec=0.35, shin=30, noise=0.04)
+    v.part(v.ell(8, 4.6, 2.2, 0.7), shade(col, 1.12), dome=0.4, spec=0.3)
+    for x, L in ((6.2, 3.0), (9.6, 4.4), (8.0, 2.0)):                    # behte qatre
+        v.part(v.seg(x, 4.8, x, 4.8 + L, 0.42) | v.circ(x, 4.8 + L, 0.55), shade(col, 1.05), dome=0.5, spec=0.4)
+    v.part(v.seg(8, 4.4, 8.3, 2.2, 0.28), (40, 34, 30), dome=0.3)        # batti
+    return v.done()
+
+
+def ender_pearl(c):
+    """Gehra teal gola, andar bhanwar (swirl) aur chamak."""
+    v = Cv(c, 64)
+    eye = has(c.base, "eye")
+    col = (40, 110, 70) if eye else (24, 92, 92)
+    ball = v.circ(8, 8, 5.8)
+    v.part(ball, col, dome=5, spec=0.8, shin=50)
+    rr = np.hypot(v.X - 8, v.Y - 8); th = np.arctan2(v.Y - 8, v.X - 8)
+    swirl = ball & (np.sin(th * 2 + rr * 1.3) > 0.55) & (rr < 4.8)
+    v.tint(swirl, 1.45)
+    if eye:
+        v.part(v.ell(8, 8, 1.2, 3.0), (20, 24, 18), dome=0.6)
+    else:
+        v.part(v.circ(8, 8, 1.6), (120, 230, 210), glow=True)
+    v.part(v.ell(6.2, 5.6, 1.4, 0.8, -0.6), (230, 250, 245), glow=True)
+    return v.done()
+
+
+def flower_pot(c):
+    """Terracotta gamla: kinara, mitti, pakki mitti ka rang."""
+    v = Cv(c, 65)
+    clay = (176, 92, 60)
+    v.part(v.poly([(4.2, 7.0), (11.8, 7.0), (10.8, 14.6), (5.2, 14.6)]), clay, dome=2.4, noise=0.1)
+    v.tint(v.rect(4, 12.4, 12, 13.0), 0.8)
+    v.part(v.rect(3.2, 4.8, 12.8, 7.2), shade(clay, 1.08), dome=1.0, noise=0.1)
+    v.part(v.ell(8, 5.2, 4.4, 0.9), (70, 46, 30), dome=0.5, noise=0.2)
+    return v.done()
+
+
+GLASS = np.array((196, 226, 238), float)
+
+
+def bottle_shape(v, kind):
+    """Teen tarah ki sheeshi: drink (gol), splash (chapti + grip), lingering (lambi gol)."""
+    if kind == "splash":
+        body = v.ell(8, 10.6, 5.2, 4.0); neck = v.rect(6.6, 3.8, 9.4, 7.2)
+    elif kind == "lingering":
+        body = v.ell(8, 10.0, 4.4, 4.8); neck = v.rect(6.8, 3.4, 9.2, 6.0)
+    else:
+        body = v.circ(8, 10.4, 4.6); neck = v.rect(6.8, 3.6, 9.2, 6.6)
+    return body, neck
+
+
+def potion(c):
+    """Java: potion/splash/lingering = khali sheeshi (andar transparent), potion_overlay = tint hone wala
+    maya. Bedrock: potion_bottle_<effect> = rangeen maya wali poori sheeshi."""
+    b = c.base
+    kind = "splash" if has(b, "splash") else ("lingering" if has(b, "lingering") else "drink")
+    v = Cv(c, 66)
+    body, neck = bottle_shape(v, kind)
+    if b == "potion_overlay":                                   # sirf maya (grey -> potion rang se tint)
+        liquid = body & (v.Y > 8.0)
+        v.part(liquid, (200, 200, 200), dome=2.2, spec=0.5, noise=0.05)
+        v.tint(liquid & v.ell(6.6, 10.4, 1.0, 1.8), 1.25)
+        return v.done(outline=False)
+    liquid_col = None
+    if b.startswith("potion_bottle") and not has(b, "empty"):
+        liquid_col = c.pal.accent if not c.pal.grey else np.array((200, 200, 200.0))
+    if b in ("experience_bottle",):
+        liquid_col = np.array((150, 230, 60.0))
+    if b in ("dragon_breath", "dragons_breath"):
+        liquid_col = np.array((236, 120, 200.0))
+    if b == "ominous_bottle":
+        liquid_col = np.array((40, 50, 60.0))
+    shell = (body & ~v.ell(8, body_center(kind), *inner_r(kind))) | neck
+    v.part(shell, GLASS, spec=0.8, shin=60, dome=0.6, noise=0.03)
+    if liquid_col is not None:
+        liquid = body & ~shell & (v.Y > 8.0)
+        v.part(liquid, liquid_col, dome=2.0, spec=0.6, noise=0.06,
+               glow=b in ("experience_bottle",))
+        if b == "experience_bottle":
+            for _ in range(6):
+                v.part(v.circ(v.r.uniform(5, 11), v.r.uniform(9, 13.5), 0.45), (250, 255, 200), glow=True)
+    v.part(v.rect(6.4, 3.0, 9.6, 4.0), shade(GLASS, 0.9), spec=0.6, dome=0.4)                   # lip
+    v.part(v.rect(6.9, 1.2, 9.1, 3.2), (150, 104, 60), wood=True, dome=0.5)                    # cork
+    if kind == "splash":
+        v.part(v.seg(4.2, 8.8, 11.8, 8.8, 0.35), shade(GLASS, 0.8), dome=0.3)
+    v.part(v.ell(5.8, 9.6, 0.7, 1.6, 0.3), (250, 252, 255), glow=True)                        # chamak
+    return v.done()
+
+
+def body_center(kind):
+    return {"splash": 10.6, "lingering": 10.0}.get(kind, 10.4)
+
+
+def inner_r(kind):
+    return {"splash": (4.4, 3.2), "lingering": (3.6, 4.0)}.get(kind, (3.8, 3.8))
+
+
+def arrow(c):
+    """Teer: lakdi ki dandi, steel ka phal, pankh. tipped_arrow_head = sirf phal (grey, tint hota hai)."""
+    b = c.base
+    v = Cv(c, 67)
+    A, B = v.local(2.6, 13.4, *D)
+    head = (A > 11.0) & (A < 14.6) & (np.abs(B) < 1.5 * np.clip((14.6 - A) / 2.6, 0, 1))
+    head &= ~((A < 11.8) & (np.abs(B) > 0.5))
+    if b == "tipped_arrow_head":
+        v.part(head, (200, 200, 200), metal=True, spec=0.6, dome=0.6)
+        return v.done(outline=False)
+    shaft = (A > 0.4) & (A < 11.2) & (np.abs(B) < 0.42)
+    v.part(shaft, (150, 110, 64), wood=True, hmap=np.sqrt(np.clip(1 - (B / 0.42) ** 2, 0, 1)))
+    fl = (A > 0.2) & (A < 3.6) & (np.abs(B) < 0.5 + (3.6 - A) * 0.45) & (np.abs(B) > 0.35)
+    v.part(fl, (236, 236, 232), dome=0.6, noise=0.1)
+    v.tint(fl & (((A * 2.5) % 1.0) < 0.3), 0.85)
+    if b != "tipped_arrow_base":
+        hc = GOLD if has(b, "spectral") else np.array((176, 180, 188.0))
+        v.part(head, hc, metal=True, spec=0.8, dome=0.7, glow=False)
+        if has(b, "spectral"):
+            v.tint(head, 1.15)
+    return v.done()
+
+
 def special(c):
     if c.H == 16 and c.W == 16:
+        b = c.base
+        if b in ("potion", "splash_potion", "lingering_potion", "potion_overlay", "glass_bottle", "experience_bottle",
+                 "dragon_breath", "dragons_breath", "ominous_bottle") or b.startswith("potion_bottle"):
+            return potion(c)
+        if b in ("arrow", "spectral_arrow", "tipped_arrow_base", "tipped_arrow_head") or \
+                (b.startswith("tipped_arrow") and not has(b, "base", "head")):
+            return arrow(c)
+        if has(b, "candle") and not has(b, "cake"):
+            return candle(c)
+        if b in ("ender_pearl", "ender_eye", "ender_eye_item"):
+            return ender_pearl(c)
+        if b in ("flower_pot", "flower_pot_item"):
+            return flower_pot(c)
         d = door(c)
         if d is not None:
             return d

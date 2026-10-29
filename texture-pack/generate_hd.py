@@ -1039,23 +1039,51 @@ def hi_shape(c, kind):
 
 
 def hi_inspired(c):
-    """Baqi items: shape ka idea (mask ko smooth karke HD), rang smooth, dome roshni."""
+    """Baqi items (v2): shape ka idea (mask, kone naram), rang ke hisse 4x4 idea se lekin
+    saaf kinaron ke saath, hisson ke beech patli lakeer, aur har hisse ka material
+    (metal = chamak, lakdi = grain, gem = sparkle, baqi matte) + dome roshni + rim light."""
     H, W = c.H * S, c.W * S
     r = c.rng(133)
     m0 = (c.ref[..., 3] > 0).astype(float)
     if not m0.any():
         return np.zeros((H, W, 4))
     up = m0.repeat(S, 0).repeat(S, 1)
-    m = blur(up, S // 2 + 1, wrap=False) > 0.5
-    low = g.g_masked(c, coarse=4, outline=False)
-    col = low[..., :3].repeat(S, 0).repeat(S, 1)
-    mk = up > 0
-    sm = blur(col * mk[..., None], S, wrap=False); wt = blur(mk.astype(float), S, wrap=False)[..., None]
-    col = np.where(wt > 0.02, sm / np.maximum(wt, 1e-6), col)
-    col = col * (0.92 + 0.14 * fbm(H, W, r, 2 * S, 3))[..., None]
+    m = blur(up, max(1, S // 2), wrap=False) > 0.5
+    low = g.g_masked(c, coarse=4, outline=False)[..., :3]
+    pal = c.pal.colors
+    idx_low = ((low[:, :, None, :] - pal[None, None]) ** 2).sum(-1).argmin(-1)
+    idx = idx_low.repeat(S, 0).repeat(S, 1)
+    col = pal[idx].astype(float)
+    # sirf bade rang-farq par saaf kinara + lakeer; mile-julte rang smooth blend (patchwork na lage)
+    pd = np.sqrt(((pal[:, None] - pal[None]) ** 2).sum(-1))
+    bnd = np.zeros((H, W), bool)
+    bnd[:, 1:] |= pd[idx[:, 1:], idx[:, :-1]] > 75; bnd[1:, :] |= pd[idx[1:, :], idx[:-1, :]] > 75
+    near = blur(bnd.astype(float), max(1, S // 2), wrap=False) > 0.02
+    smooth = blur(col * m[..., None], S, wrap=False) / np.maximum(blur(m.astype(float), S, wrap=False), 1e-3)[..., None]
+    col = np.where(near[..., None], blur(col, 1, wrap=False), smooth)
+    # material per region
+    sat = np.ptp(pal, 1) / np.maximum(pal.max(1), 1); lum = pal @ LUM
+    metal = (sat < 0.16) & (lum > 105)
+    woodish = (pal[:, 0] > pal[:, 1]) & (pal[:, 1] > pal[:, 2]) & (sat > 0.25) & (sat < 0.7) & (lum < 170)
+    gem = (sat > 0.55) & (lum > 110)
+    M, Wd, G = metal[idx], woodish[idx], gem[idx]
+    grain = fbm(H, W, r, 2 * S, 3, 1)
+    det = fbm(H, W, r, 2 * S, 3); fine = fbm(H, W, r, 1, 1)
+    tone = 0.9 + 0.12 * det + 0.06 * (fine - 0.5)
+    tone = np.where(Wd, 0.84 + 0.26 * grain, tone)
+    tone = np.where(M, 0.92 + 0.1 * fbm(H, W, r, 1, 2, W // 3), tone)
+    col = col * tone[..., None]
     d = dist_inside(m, 3 * S)
-    hgt = np.sqrt(np.clip(d / (2.2 * S), 0, 1))
-    rgb = light(col, hgt, k=2.6, spec=0.25, shin=20, wrap=False)
+    hgt = np.sqrt(np.clip(d / (2.2 * S), 0, 1)) + 0.08 * det
+    rgb_m = light(col, hgt, k=2.8, spec=0.75, shin=34, wrap=False, metal=True)
+    rgb_d = light(col, hgt, k=2.8, spec=0.18, shin=18, wrap=False)
+    rgb = np.where(M[..., None], rgb_m, rgb_d)
+    sparkle = G & (r.random((H, W)) > 0.985)
+    rgb[sparkle] = np.clip(rgb[sparkle] + 90, 0, 250)
+    rgb[bnd & m] *= 0.72
+    pp = np.pad(m, 1)
+    rim = m & ~pp[:-2, 1:-1] | m & ~pp[1:-1, :-2]                          # upar/baayein kinare par roshni
+    rgb[rim] = np.clip(rgb[rim] * 1.15 + 10, 0, 250)
     alpha = np.where(m, 255.0, 0)
     rgb, alpha = outline(rgb, alpha, width=max(1, S // 2))
     return out_rgba(rgb, alpha)
