@@ -38,3 +38,8 @@ Format:
 - Static analysis se EXE run kiye baghair: config.js/auth.js/server.js/tunnel.js + Electron main.cjs padh kar auth model samjha. App well-secured tha (DNS-rebind defense, Electron sandbox, scrypt). Main gap: installer unsigned + token-in-URL + gateway register.php verify.
 - `video.talkember.site` ko bhi network allowlist karna pada.
 - **gallery re-test (2026-10-24)**: HSTS+CSP added, /api/health version removed, from-url ab auth-first 401 (SSRF ordering fixed). Sab injection/path-traversal probes 401 (auth-first). Baaki IDOR + temp-link = authenticated-only, test account ke baghair verify nahi.
+
+## 2026-10-29 — WorldLens (FireCraft SMP console)
+- `worldlens_command` se koi bhi console command chalti hai; monitoring ke liye sirf read-only: `list`, `tps`, `mspt`, `whitelist list`, `banlist`, `plugins`, `data get entity <p> Pos`.
+- Activity history CoreProtect se: `co lookup t:1h a:session` / `a:chat`. Paging: `co page N` (lookup ke baad). `page:N` param lookup me kaam nahi karta. `a:kill` ke liye user ya radius chahiye.
+- Server console log ka direct tail tool nahi hai — CoreProtect hi history ka source hai.

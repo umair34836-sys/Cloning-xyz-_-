@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-10-29
+
+- **WorldLens monitoring:** worldlens connector ke through FireCraft SMP console par nazar rakho, har 1 ghante summary nikalo aur update do. Pehla update turant diya. Hourly scheduled task bana: `trig_01TTKU7gbAQRGGp2bLEjAXjL` (har ghante :03 UTC). Reports `reports/worldlens/` me save hoti hain.
+
 ## 2026-10-23
 
 - Install/collect these tools into the project:
