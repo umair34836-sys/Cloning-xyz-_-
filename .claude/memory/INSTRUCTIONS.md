@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-29
 
+- **17:04 UTC:** Shreyas exempt hatane ke baad dobara join par turant disconnect. **PENDING owner:** GrimAC update ya permanent grim.exempt ('haan permanent exempt').
 - **Owner (Discord 15:33 UTC):** staff update har 3 ghante (3h ka short report, saare channels + in-game). Naya trigger trig_01EnfGT9NHAwrwHGTM3Us9rB (7 */3 UTC). Hourly trigger (trig_01TTKU7gbAQRGGp2bLEjAXjL) ab sirf owner commands + manager report. Last handled owner msg: 1565388059619627080.
 - **Owner (Discord 11:07/11:09):** SHREYAS_UNKNOWN kick check + fix. Checked all (whitelist/AuthMe/IP/ban/hearts OK); kick post-login, reason sirf console log me. Owner ne latest.log diya → root cause: GrimAC 2.3.74 (bundled packetevents 2.13.1) MC 26.2 metadata type 105 error sirf Shreyas ke join par → client disconnect. Options diye: Grim update (best) / grim.exempt (owner 'haan exempt' ka wait) / vanilla client. Owner (chat): 'haan exempt' → grim.exempt true diya (12:14 UTC). DONE ✅ 16:3x UTC: Shreyas exempt ke saath join karke 2.5+ min tika → grim.exempt unset (verified false), in-game msg + chill-chat msg diya, watch cron 7ea88192 band. Permanent fix = GrimAC update (owner ko bataya). Last handled owner msg: 1565321764467114056.
 - **Owner (Discord 10:10):** "Op wale players ko owner na banaye" → fix proposed (firecraft.owner false on default/member/creator/developer). DONE ✅ 12:05 UTC (owner 'Haan'); owner group par firecraft.owner true bhi set kiya. Last handled owner msg: 1565306813895803011.
