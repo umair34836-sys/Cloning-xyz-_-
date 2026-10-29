@@ -46,3 +46,6 @@ Format:
 - Discord (WorldLens bot): DMs off; staff members "off_limits" (moderation nahi), lekin channel me <@id> mention chal jata hai. techshotgaming Discord id 1376918464379359346. Staff baatein #🛡️┃staff-chat (1563030676968837171) me.
 - `msg <player>` offline player ko nahi jata ("No player was found") — mail plugin nahi hai; player online aane par bhejo.
 - CoreProtect tricks: `r:#global` zaroori jab user na ho; time range `t:1.8d-1.65d` kaam karta hai; item pickup `a:+item`, inventory `a:inventory` (u: zaroori). Tunnel Drill jaisi custom items se tootay blocks log nahi hote — item pickup se trace karo.
+- Discord Administrator role wale har private channel dekh sakte hain — channel overrides se nahi rukta. ⚙️ Manager + MrzCopper804 roles ke paas Admin hai. Protected/staff/bot roles channel_permissions ka target nahi ban sakte.
+- Manager audit: `co lookup u:<p> a:command` (commands), `lp log recent`, `lp log grouphistory <g>`, `lp user <p> permission check <perm>`, `data get entity <p> playerGameType` (1 = creative).
+- LP trialstaff group: `*` true, lekin firecraft.owner & coreprotect.purge false (console ne set kiye).
