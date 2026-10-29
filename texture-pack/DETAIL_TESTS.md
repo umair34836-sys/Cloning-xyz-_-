@@ -26,3 +26,10 @@ koi file missing nahi. Bedrock (test 5): blocks 12.79 / 5.55, cut-out 22.18 / 11
 
 Ab bhi sab se neeche wale zyada tar woh hain jo asal me gehre ya smooth hote hain (kaala concrete,
 pani, obsidian, kaale mobs) — un par aur detail dalne se wo shor (noise) lagne lagte.
+
+## Final A-to-Z pass (2026-10-29)
+
+- Round-2 reviewers (blocks, cut-outs, items, entities) ki saari reports par fixes: `round2_hd.py`, `ents_hd.py`, `mobs_hd.py`.
+- Full rebuild: Java 2790 + Bedrock 3058 textures, 0 errors; size check 5848 files me sirf 3 aise (vanilla me pehle se 64px) jo scale nahi hue.
+- Night Vision subpack (`brightness.py`): 2143 block/mob textures + 80 fog + 15 lighting files; preview `showcase-nightvision.png`.
+- Final preview: `showcase-final-az.png`.

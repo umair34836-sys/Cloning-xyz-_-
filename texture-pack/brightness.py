@@ -4,8 +4,8 @@
 Usage: brightness.py <bedrock-build-dir> <vanilla-bedrock-rp> <out-subpacks-dir>
 
 Aaj ke Bedrock (RenderDragon) me resource pack shader/lightmap nahi badal sakta, is liye ye mode:
-  * blocks aur mobs ki textures ko gamma-lift deta hai (andhere hisse khul jate hain, roshan hisse
-    zyada nahi jalte) — andheri jagah par bhi sab saaf dikhta hai;
+  * blocks aur mobs ki textures ko roshan karta hai (andhere pixel ko bhi ek kam-az-kam roshni +
+    gamma-lift, rang wahi) — game ki kam roshni se multiply hone ke baad bhi sab saaf dikhta hai;
   * har biome ki fog halki/door kar deta hai (hawa, barish, paani, lava);
   * Vibrant Visuals wale players ke liye raat/ghaar ki ambient roshni aur chaand ki roshni badhata hai.
 Pack settings (gear icon) me "Night Vision: ON / OFF" slider se ek click me badla ja sakta hai.
@@ -14,7 +14,8 @@ import json, os, re, sys
 import numpy as np
 from PIL import Image
 
-GAMMA = 1.6           # 0.10 -> 0.24, 0.30 -> 0.47, 0.50 -> 0.65, 0.80 -> 0.87
+GAMMA = 1.8           # roshni = FLOOR + (1-FLOOR) * L^(1/GAMMA)
+FLOOR = 0.35          # andhere pixel bhi kam az kam itne roshan (stone 0.60 -> 0.84, deepslate 0.30 -> 0.68)
 LIFT_DIRS = ("textures/blocks", "textures/entity")
 AMBIENT = 0.6         # Vibrant Visuals ambient (vanilla overworld 0.02, nether 0.5)
 MOON = 2.0            # vanilla 0.4
@@ -26,8 +27,9 @@ def lift(path_in, path_out):
     rgba = np.asarray(im.convert("RGBA")).astype(np.float32)
     rgb = rgba[..., :3] / 255.0
     lum = rgb @ np.array([0.299, 0.587, 0.114], np.float32)
-    new = np.power(np.clip(lum, 1e-4, 1), 1 / GAMMA)
-    rgb = np.clip(rgb * (new / np.maximum(lum, 1e-4))[..., None], 0, 1)     # rang (hue) wahi, sirf roshni
+    new = FLOOR + (1 - FLOOR) * np.power(np.clip(lum, 1e-4, 1), 1 / GAMMA)
+    k = np.minimum(new / np.maximum(lum, 1e-4), 1.8)[..., None]
+    rgb = np.clip(rgb * k + (new[..., None] - lum[..., None] * k), 0, 1)     # baaqi roshni safed (grey) se — kaale rang baingani na hon
     rgba[..., :3] = rgb * 255
     out = Image.fromarray(np.round(rgba).astype(np.uint8), "RGBA")
     os.makedirs(os.path.dirname(path_out), exist_ok=True)
