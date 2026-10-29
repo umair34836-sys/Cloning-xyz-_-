@@ -61,3 +61,9 @@ Format:
 - **Detail score** = mean|L - blur(L)| × (1+log(colors)/6) — kam-detail textures dhoondhne ka achha automatic test; phir contact sheet aankh se dekho (bugs jaise naam-matching galti sirf aankh se pakde jate hain).
 - 4-neighbour erosion distance se dome par "+" jaisi patiyan banti hain — 4/8 neighbour baari baari + blur karo. Highlights ko 205 ke upar soft roll-off do.
 - Palette PNG se 4x mob skins Java me sirf ~8MB; Bedrock TGA ke liye `compression="tga_rle"`.
+- **Override ki tarteeb (HD blocks):** `round2_hd.override` → `blocks_hd2.override` → (cut-out ho to) `cutouts_hd.override`; entities me `ents_hd.override` sab se pehle. Naya fix hamesha sab se pehle wale module me daalo taake purana design use na dabaye.
+- Vanilla `leather_chestplate_overlay.png` bilkul khaali (0 opaque px) hai — HD me khaali aana sahi hai, bug nahi.
+- Armor stand ke ref ke neeche credits ka text ("JAPPA CHIHI SEARGE") bina UV wali patti me hai — apne design me wo patti saaf karo.
+- Banner/shield pattern files greyscale mask hain (game rang lagata hai): safed kapda + crisp alpha, sirf `gradient` me alpha narm.
+- `sheet_hd.py` ko texture root aur `block/x.png` jaisa relative path do — sirf `x.png` dene se `kind_of` galat kind deta hai aur purana 16x look aata hai.
+

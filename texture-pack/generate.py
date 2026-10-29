@@ -986,7 +986,7 @@ NO_FACE = ("banner", "bed", "chest", "boat", "shield", "sign", "decorated_pot", 
            "bell", "enchant", "end_portal", "experience", "fishing", "lead", "minecart", "projectile", "trident",
            "shulker", "end_crystal", "armorstand", "armor_stand", "_overlay", "outer", "armor", "eyes", "saddle",
            "collar", "emissive", "glow", "crack", "marking", "pattern", "spark", "wind_charge", "breeze_wind",
-           "heart", "hat", "harness", "leash", "ghast_shooting", "map", "painting")
+           "heart", "hat", "harness", "leash", "map", "painting")
 
 
 def e_mob(c):

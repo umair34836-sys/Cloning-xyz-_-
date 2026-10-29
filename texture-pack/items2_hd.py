@@ -3,7 +3,7 @@
 harness, lanterns, overlays, redstone parts, light items, signs, banner patterns, raw materials,
 mob drops, paude ke items aur crafted cheezein — jo pehle generic "blob" fallback se bante the.
 """
-import math
+import math, re
 import numpy as np
 
 import generate as g
@@ -501,6 +501,9 @@ def special(c):
     if c.H != 16 or c.W != 16:
         return None
     b = c.base
+    out = special2(c)
+    if out is not None:
+        return out
     if b.endswith("_harness") or b == "harness":
         return harness(c)
     if b.endswith("lantern") and not has(b, "jack"):
@@ -511,7 +514,7 @@ def special(c):
         return horse_overlay(c)
     if b in ("comparator", "repeater"):
         return redstone_item(c)
-    if b == "light" or b.startswith("light_"):
+    if b == "light" or re.fullmatch(r"light_\d\d", b):
         return light_item(c)
     if b.endswith("_sign") or b.endswith("_hanging_sign") or b in ("sign", "hanging_sign"):
         return sign_item(c)
@@ -524,4 +527,255 @@ def special(c):
         out = fn(c)
         if out is not None:
             return out
+    return None
+
+
+# ------------------------------------------------- round-2 QA additions -----
+def dust_pile(c):
+    """Dusts: chhota dher + bikhre daane + chamak (har material ka apna rang/glint)."""
+    b = c.base
+    v = Cv(c, 220)
+    col, glint, glow = {"gunpowder": ((80, 80, 84), (150, 150, 156), False),
+                        "glowstone_dust": ((240, 200, 90), (255, 250, 200), True),
+                        "redstone": ((190, 30, 30), (255, 120, 100), False),
+                        "sugar": ((244, 244, 246), (255, 255, 255), False),
+                        "bone_meal": ((236, 234, 226), (255, 255, 255), False)}.get(b, (200, 200, 200, ))[:3] \
+        if b in ("gunpowder", "glowstone_dust", "redstone", "sugar", "bone_meal") else ((200, 200, 200), (255, 255, 255), False)
+    pile = (np.abs(v.X - 8) < 6.0 * np.clip((v.Y - 6.2) / 7.4, 0, 1) ** 0.8) & (v.Y > 6.2) & (v.Y < 14.2) | v.ell(8, 13.6, 6.0, 1.2)
+    v.part(pile, col, dome=2.6, noise=0.25, spec=0.4 if b == "sugar" else 0.15, glow=glow)
+    for _ in range(int(14 if b == "sugar" else 10)):
+        x, y = v.r.uniform(3, 13), v.r.uniform(7.6, 13.6)
+        m = pile & v.circ(x, y, 0.4)
+        v.part(m, glint, flat=True, glow=glow or b in ("sugar", "redstone"))
+    for x, y in ((2.6, 13.4), (13.6, 12.8), (12.4, 14.4), (3.8, 11.6)):
+        v.part(v.circ(x, y, 0.55), col, dome=0.4, glow=glow)
+    if b == "bone_meal":
+        v.part(v.seg(9.6, 4.6, 13.2, 2.2, 0.55) | v.circ(9.4, 4.8, 0.8) | v.circ(13.4, 2.0, 0.8), (240, 236, 222), dome=0.5)
+    return v.done()
+
+
+def lump2(c):
+    """Har lump ki apni silhouette."""
+    b = c.base
+    v = Cv(c, 221)
+    if b == "charcoal":
+        disc = v.ell(8, 8.6, 5.8, 5.0)
+        v.part(disc, (60, 46, 36), dome=1.6, noise=0.15)
+        rr = np.hypot((v.X - 8) / 5.8, (v.Y - 8.6) / 5.0)
+        v.tint(disc & (np.abs(np.sin(rr * 14)) < 0.18), 0.65)
+        v.tint(disc & (rr > 0.85), 0.7)
+    elif b == "flint":
+        fl = v.poly([(8, 1.6), (12.6, 7.0), (11.4, 13.6), (5.4, 14.0), (3.6, 7.6)])
+        v.part(fl, (66, 68, 74), dome=1.4, spec=0.6, shin=40)
+        for k in range(5):
+            v.tint(fl & v.seg(8, 1.6 + k * 2.4, 3.6 + k * 1.6, 7.6 + k * 1.2, 0.25), 1.3)
+    elif b == "netherite_scrap":
+        sh = v.poly([(2.6, 11.0), (6.0, 3.0), (9.0, 6.0), (13.6, 2.6), (12.4, 9.6), (8.4, 13.6), (6.0, 9.6)])
+        v.part(sh, (88, 70, 66), metal=True, spec=0.6, dome=1.2, noise=0.15)
+        v.tint(sh & v.seg(6.0, 3.0, 8.4, 13.6, 0.3), 1.35)
+    elif b == "clay_ball":
+        ball = v.circ(8, 8.6, 5.6)
+        v.part(ball, (162, 168, 182), dome=4.5, noise=0.06)
+        v.tint(v.ell(9.4, 7.4, 1.8, 1.2, 0.5), 0.8)                          # angoothe ka nishaan
+        v.tint(v.ell(9.0, 7.0, 1.2, 0.7, 0.5), 0.9)
+    elif b == "resin_clump":
+        drip = v.circ(8, 6.6, 4.2) | v.poly([(5.2, 8), (10.8, 8), (8.6, 14.6), (7.4, 14.6)])
+        v.part(drip, (230, 120, 40), dome=3, spec=0.8, shin=50)
+    elif b == "rotten_flesh":
+        st = v.poly([(2.0, 7.6), (5.6, 4.4), (10.4, 5.2), (14.0, 3.6), (13.0, 9.6), (9.0, 11.6), (4.6, 12.6)])
+        v.part(st, (120, 110, 64), dome=1.6, noise=0.25)
+        for _ in range(4):
+            v.tint(st & v.circ(v.r.uniform(4, 12), v.r.uniform(6, 11), v.r.uniform(0.7, 1.2)), 0.65)
+        for x in np.arange(4.4, 12.4, 1.4):
+            v.part(v.seg(x, 7.8, x + 0.6, 9.2, 0.18), (50, 40, 30), flat=True)
+        v.part(v.seg(4, 8.5, 12.4, 8.5, 0.18), (50, 40, 30), flat=True)
+    elif b.startswith("raw_"):
+        col = np.array({"raw_copper": (150, 110, 90), "raw_gold": (150, 130, 100), "raw_iron": (150, 140, 132)}[b], float)
+        vein = np.array({"raw_copper": (220, 120, 70), "raw_gold": (250, 200, 60), "raw_iron": (226, 196, 170)}[b], float)
+        rock = v.poly([(3.0, 6.0), (7.0, 2.6), (12.6, 4.0), (14.0, 9.4), (10.4, 13.6), (4.4, 13.0)])
+        v.part(rock, col, dome=2.4, noise=0.2)
+        vv = h.ridged(h.fbm(v.H, v.W, v.r, 8, 3)) > 0.82
+        v.part(rock & vv, vein, metal=True, spec=0.8, dome=0.4)
+    else:
+        return None
+    return v.done()
+
+
+def gem2(c):
+    b = c.base
+    v = Cv(c, 222)
+    if b == "quartz":
+        hexp = v.poly([(8, 1.8), (12.4, 4.4), (12.4, 11.6), (8, 14.2), (3.6, 11.6), (3.6, 4.4)])
+        v.part(hexp, (236, 230, 222), dome=1.0, spec=0.7)
+        v.tint(hexp & (v.X < 8) & (v.Y > 4.4) & (v.Y < 11.6), 1.08)
+        v.tint(hexp & (v.X > 8), 0.86)
+        v.tint(hexp & (np.abs(v.X - 8) < 0.2), 0.8)
+    elif b == "amethyst_shard":
+        for x0, x1, top, col in ((4.0, 7.6, 3.4, (170, 110, 210)), (7.0, 11.0, 1.4, (190, 130, 230)), (10.0, 13.2, 5.0, (160, 100, 200))):
+            m = v.poly([(x0, 14), ((x0 + x1) / 2, top), (x1, 14)])
+            v.part(m, col, spec=0.8, shin=50, dome=0.8)
+            v.tint(m & (v.X < (x0 + x1) / 2), 1.15)
+    elif b == "echo_shard":
+        sl = v.poly([(3.0, 13.0), (6.0, 6.0), (5.4, 9.0), (10.0, 2.4), (13.0, 3.6), (9.0, 8.6), (11.0, 8.0), (6.4, 14.4)])
+        v.part(sl, (20, 70, 80), spec=0.8, dome=0.8)
+        v.tint(sl & v.seg(4, 12, 11, 3, 0.4), 1.6)
+    elif b == "prismarine_crystals":
+        for x, y in ((5.4, 6.0), (10.4, 5.2), (8.0, 10.0), (4.6, 11.6), (11.4, 11.0)):
+            v.part(v.circ(x, y, 2.0), (170, 230, 210), spec=0.8, dome=1.4, glow=False)
+            v.part(v.circ(x - 0.6, y - 0.6, 0.6), (240, 255, 250), glow=True)
+    else:
+        return None
+    return v.done()
+
+
+def organics2(c):
+    b = c.base
+    v = Cv(c, 223)
+    if b == "honeycomb":
+        blob = v.poly([(3, 4), (13, 3), (14, 10), (9, 14), (2.6, 11)])
+        v.part(blob, (240, 170, 40), dome=2, spec=0.5)
+        sz = 2.2
+        yy, xx = v.Y / sz, v.X / (sz * 0.866)
+        row = np.floor(yy); xo = xx + (row % 2) * 0.5
+        d = np.maximum(np.abs(xo - np.floor(xo) - 0.5) * 1.15, np.abs(yy - row - 0.5))
+        v.tint(blob & (d > 0.4), 0.7)
+    elif b == "nether_wart":
+        v.part(v.seg(8, 14.6, 8, 8, 0.6), (120, 30, 30), dome=0.5)
+        for x, y, rr in ((8, 6, 2.4), (5.2, 8.4, 1.6), (10.8, 8.0, 1.7), (6.6, 4.0, 1.2), (9.8, 4.4, 1.2)):
+            v.part(v.circ(x, y, rr), (170, 40, 40), dome=1.2, spec=0.3)
+    elif b == "seagrass":
+        for k, x in enumerate((4.6, 7.4, 10.0, 12.4)):
+            pts = [(x + 1.2 * math.sin(t * 3 + k), 15 - t * 12) for t in np.linspace(0, 1, 24)]
+            for (a, bb), (cc, d) in zip(pts[:-1], pts[1:]):
+                v.part(v.seg(a, bb, cc, d, 0.6 * (1 - 0.6 * (15 - bb) / 12)), (60, 150, 60), dome=0.4)
+    elif b == "pitcher_pod":
+        pod = v.ell(8, 8.6, 3.4, 5.4)
+        v.part(pod, (120, 150, 80), dome=2.6)
+        v.tint(pod & (np.abs(v.X - 8) < 0.25), 0.65)
+        v.part(v.seg(8, 3.2, 9.6, 1.4, 0.4), (90, 110, 60), dome=0.3)
+    elif b == "sulfur_spike":
+        sp = v.poly([(8, 1.2), (10.6, 9.0), (12.6, 14.6), (3.4, 14.6), (5.4, 9.0)])
+        v.part(sp, (230, 220, 90), spec=0.7, dome=1.0)
+        v.tint(sp & (v.X < 8), 1.12)
+    elif b == "dried_kelp":
+        roll = v.rect(3, 4, 13, 12)
+        v.part(roll, (54, 70, 36), dome=2.0, noise=0.12)
+        for x in np.arange(4, 13, 1.6):
+            v.tint(roll & (np.abs(v.X - x) < 0.25), 0.7)
+        v.part(v.rect(7.4, 3.6, 8.6, 12.4), (150, 130, 80), dome=0.4)
+    else:
+        return None
+    return v.done()
+
+
+def small2(c):
+    b = c.base
+    v = Cv(c, 224)
+    if b.endswith("_nugget"):
+        col = g.mat_color(b.replace("_nugget", "_x"), c.pal) if any(b.startswith(k) for k in ("iron", "gold", "copper")) else c.pal.main
+        for x, y, rr in ((7.0, 9.4, 3.0), (10.6, 7.6, 1.8)):
+            lump(v, x, y, rr, np.asarray(col, float), spec=0.9)
+    elif b.startswith("disc_fragment"):
+        wedge = v.poly([(3, 13), (8, 2.6), (13.4, 10.6)])
+        v.part(wedge, (40, 40, 46), dome=1.0, spec=0.5)
+        rr = np.hypot(v.X - 3, v.Y - 13)
+        v.tint(wedge & (np.abs(np.sin(rr * 4)) < 0.2), 1.3)
+        x0 = 8.4
+        for rr_, row in enumerate(DIG["5"]):
+            for cc, bit in enumerate(row):
+                if bit == "1":
+                    v.part(v.rect(x0 + cc * 0.9, 6.6 + rr_ * 0.9, x0 + (cc + 1) * 0.9, 6.6 + (rr_ + 1) * 0.9), (230, 200, 90), flat=True)
+    elif b == "mace":
+        v.part(v.seg(2.6, 13.6, 9.0, 7.2, 0.6), (110, 80, 50), wood=True, dome=0.5)
+        v.part(v.circ(10.4, 5.8, 3.2), (150, 152, 160), metal=True, spec=0.8, dome=2.4)
+        for k in range(8):
+            a = k * math.pi / 4
+            v.part(v.poly([(10.4 + 3.0 * math.cos(a - 0.3), 5.8 + 3.0 * math.sin(a - 0.3)),
+                           (10.4 + 4.8 * math.cos(a), 5.8 + 4.8 * math.sin(a)),
+                           (10.4 + 3.0 * math.cos(a + 0.3), 5.8 + 3.0 * math.sin(a + 0.3))]), (190, 192, 200), metal=True, spec=0.8, dome=0.4)
+    elif b == "flint_and_steel":
+        ring = (np.abs(np.hypot(v.X - 6, v.Y - 9) - 3.6) < 0.8) & ~((v.X > 6) & (np.abs(v.Y - 9) < 1.4))
+        v.part(ring, (170, 172, 180), metal=True, spec=0.8, dome=0.6)
+        v.part(v.poly([(9.6, 4.4), (13.6, 2.6), (14.0, 7.6), (11.0, 8.4)]), (66, 68, 74), spec=0.5, dome=0.8)
+        for k in range(3):
+            v.part(v.seg(10.4, 9.0, 12.4 + k, 11.4 - k * 0.6, 0.2), (255, 200, 80), glow=True)
+    elif b == "filled_map_markings":
+        for x, y in ((5, 5), (11, 6), (8, 11)):
+            v.part(v.seg(x - 1, y - 1, x + 1, y + 1, 0.35) | v.seg(x + 1, y - 1, x - 1, y + 1, 0.35), (230, 230, 230), flat=True)
+        return v.done(outline=False)
+    elif b in ("elytra_broken", "broken_elytra"):
+        for sgn in (-1, 1):
+            wing = v.poly([(8, 2.4), (8 + sgn * 6.6, 3.4), (8 + sgn * 5.4, 9.6), (8 + sgn * 6.2, 14.4), (8 + sgn * 1.0, 11.6)])
+            v.part(wing, (110, 110, 130), dome=1.4, noise=0.15)
+        for x, y, rr in ((11.4, 7.6, 1.4), (4.6, 10.6, 1.1), (12.2, 12.0, 0.9)):
+            v.cut(v.circ(x, y, rr))
+        v.cut(v.poly([(13.6, 9.4), (14.8, 11.6), (12.4, 11.0)]))
+    elif b == "lead":
+        for k, rr in enumerate((4.6, 3.6, 2.6)):
+            m = (np.abs(np.hypot(v.X - 8, v.Y - 7.6) - rr) < 0.55)
+            v.part(m, shade(np.array((190, 150, 100.0)), 1 - 0.08 * k), dome=0.5, noise=0.15)
+        v.part(v.seg(12.4, 8.6, 14.0, 14.4, 0.55), (190, 150, 100), dome=0.4)
+        v.part(v.circ(12.6, 8.4, 1.0), (150, 110, 70), dome=0.6)
+    elif b == "wheat":
+        for k in range(9):
+            a = -math.pi / 2 + (k - 4) * 0.12
+            x1, y1 = 8 + 7 * math.cos(a), 9.4 + 7 * math.sin(a)
+            v.part(v.seg(8, 9.4, x1, y1, 0.22) | v.seg(8, 9.4, 8 - (x1 - 8) * 0.6, 15.0, 0.22), (210, 180, 90), dome=0.2)
+            for t in range(4):
+                v.part(v.ell(x1 + (8 - x1) * t * 0.08, y1 + t * 0.9, 0.4, 0.6), (225, 185, 80), dome=0.4)
+        v.part(v.rect(6.4, 8.6, 9.6, 10.2), (130, 90, 50), dome=0.4)
+    else:
+        return None
+    return v.done()
+
+
+def trim_template(c):
+    """Har smithing trim template ka apna glyph (naam ke seed se), plate wahi."""
+    b = c.base
+    v = Cv(c, 225)
+    plate = v.rect(2.4, 1.8, 13.6, 14.2)
+    v.part(plate, (58, 64, 76), dome=1.8, spec=0.3)
+    v.tint(plate & ~v.rect(3.2, 2.6, 12.8, 13.4), 0.75)
+    up = has(b, "netherite_upgrade")
+    acc = np.array((214, 170, 70.0)) if up else c.pal.accent
+    rr = np.random.default_rng(g.seed_of(b))
+    kind = int(rr.integers(6))
+    m = np.zeros_like(v.X, bool)
+    if kind == 0:
+        m = (np.abs(np.hypot(v.X - 8, v.Y - 8) - 3.4) < 0.6) | v.circ(8, 8, 1.0)
+    elif kind == 1:
+        for k in range(3):
+            m |= v.seg(4.6, 5 + k * 3, 11.4, 5 + k * 3, 0.45)
+    elif kind == 2:
+        m = v.poly([(8, 3.6), (12, 11.6), (4, 11.6)]) & ~v.poly([(8, 6.4), (10.2, 10.4), (5.8, 10.4)])
+    elif kind == 3:
+        for k in range(4):
+            a = k * math.pi / 2 + math.pi / 4
+            m |= v.seg(8, 8, 8 + 4 * math.cos(a), 8 + 4 * math.sin(a), 0.5)
+    elif kind == 4:
+        m = v.poly([(8, 3.6), (12.4, 8), (8, 12.4), (3.6, 8)]) & ~v.circ(8, 8, 1.6)
+    else:
+        for k in range(2):
+            m |= (np.abs(np.hypot(v.X - 8, v.Y - 8) - (1.6 + k * 2.4)) < 0.45)
+        m |= v.seg(8, 3, 8, 13, 0.4)
+    # chhota alag nishaan (har template alag): kono par dots ka pattern
+    for k, (x, y) in enumerate(((4, 4), (12, 4), (4, 12), (12, 12))):
+        if (g.seed_of(b) >> k) & 1:
+            m |= v.circ(x, y, 0.6)
+    v.part(m, acc, metal=True, spec=0.7, dome=0.6)
+    return v.done()
+
+
+def special2(c):
+    if c.H != 16 or c.W != 16:
+        return None
+    b = c.base
+    if b in ("gunpowder", "glowstone_dust", "redstone", "sugar", "bone_meal"):
+        return dust_pile(c)
+    for fn in (lump2, gem2, organics2, small2):
+        out = fn(c)
+        if out is not None:
+            return out
+    if has(b, "smithing_template"):
+        return trim_template(c)
     return None

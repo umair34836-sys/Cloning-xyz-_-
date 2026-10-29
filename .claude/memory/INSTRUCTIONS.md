@@ -32,3 +32,8 @@ Format:
 - "haan skills tools me install kar do, aur sab ke shapes ek baar dekh lo aur fix kar do" → 3 skill repos `tools/` me submodule (blender-skills, cc-blender-skill, claudedesignskills). Saare 796 items + 575 cut-out blocks ki contact sheets dekh kar `texture-pack/shapes_hd.py` banaya (clock/compass/boats/buckets/minecarts/books/maps/sherds/templates/horse armor/harness/banner patterns + coral/dripleaf/lily pad/tall flowers/petals/cocoa/sugar cane/vines/eggs).
 - "food, bundles aur mobs bhi high quality me fix karo, tools (shovel, axe, hoe, pickaxe, sword) ka shape fix karo" → `items_hd.py` (tools handle-frame me, food, bundles), `mobs_hd.py` (Bedrock geometry se har face, 4x).
 - "jinme details nahi hai unhe test karo, detail add karo, phir test, phir aur detail, phir test, phir 2 aur testing, phir final dikhao" → `tools_detail_test.py` + `details_hd.py`; 5 test rounds + 3 detail passes, report `texture-pack/DETAIL_TESTS.md`.
+
+## 2026-10-29
+
+- "candles, ender pearl aur flower pot bhi fix karo, aur minecraft ke saare items/mobs/blocks A to Z test karke details add karo aur fix karo — wo hoga final" → candle/ender pearl/flower pot ke apne designs (`items_hd.py`), phir 2 round A-to-Z QA (har category ki poori contact sheet + reviewer agents). Fixes: `blocks_hd2.py`, `cutouts_hd.py`, `items2_hd.py`, `round2_hd.py` (round-2 blocks/cut-outs), `ents_hd.py` (pottery motifs, banner/shield kapda, chest/boat/armor stand lakdi, armor plates, horse markings), `mobs_hd.py` (scales, golem/guardian plates, ghast shooting/happy chehre, panda dhabbe, bee dhaariyan, mooshroom, squid/allay/strider aankhein, gehri khaal par aankh ka ring).
+

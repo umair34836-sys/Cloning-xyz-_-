@@ -30,3 +30,7 @@ Format:
 - **Ghalti:** Leather armor ka base `pal.main` (gehra grey ~54) rakha — dye multiply hone par item kaala dikhta. **Bachao:** tinted textures (leather, grass, leaves) ka base halka/neutral grey (~200) rakho.
 - **Ghalti:** Fallback "inspired" items (boats, buckets, sherds...) gol dhabbe ban gaye aur random sample me pakde nahi gaye. **Bachao:** har category ki POORI contact sheet dekho; aam families ke liye apna vector template banao.
 - **Ghalti:** Naam me keyword dhoondhne se galat family: `campfire_log`/`firefly_bush` ("fire") aag ban gaye, `music_disc_lava_chicken` ("chicken") drumstick ban gaya, Bedrock `egg_bat` (spawn egg) khane ka anda ban gaya, Bedrock `bundle_red` me rang nahi mila. **Bachao:** har keyword rule ke saath exclusions likho, aur Java + Bedrock dono naamon par contact sheet dekho.
+- **Ghalti:** Preview sheet me bina `block/` prefix ke naam diye to sab textures purane 16x jaise dikhe aur laga ke naye designs kaam nahi kar rahe. **Bachao:** preview script ko hamesha `textures/` root + `block/…`, `item/…`, `entity/…` path do.
+- **Ghalti:** `ghast_shooting` NO_FACE list me tha, is liye naya chehra lagta hi nahi tha. **Bachao:** chehra na aaye to pehle NO_FACE / face_style lists check karo.
+- **Ghalti:** jack_o_lantern ka rang `pal.main` se liya — ref ka chehra roshan peela hai to poora kaddu peela ho gaya. **Bachao:** jin textures me roshni/overlay rang hawi ho, unka base rang fixed do.
+

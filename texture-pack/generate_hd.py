@@ -933,6 +933,7 @@ def hi_armor(c, piece, overlay=False):
     dm = upmask(rows, "D") & allm
     if overlay:
         o = np.zeros((H, H, 4))
+        dm = np.array([[ch == "D" for ch in row] for row in rows]).repeat(S, 0).repeat(S, 1)   # patli trim blur me gum na ho
         trim = metal_shade(np.array((120, 84, 50.0)), dm, H, r, spec=0.1)
         o[dm, :3] = trim[dm]; o[dm, 3] = 255
         return o
@@ -1107,6 +1108,9 @@ def hi_item(c):
     sp = shapes_hd.item_special(c)
     if sp is not None:
         return sp
+    for k in ("helmet", "chestplate", "leggings", "boots"):
+        if b.endswith("_" + k + "_overlay"):          # leather ka rangne wala overlay (item_design ise inspired bana deta tha)
+            return hi_armor(c, k, overlay=True)
     fn = g.item_design(c)
     if fn is g.i_inspired:
         return hi_inspired(c)
@@ -1116,8 +1120,6 @@ def hi_item(c):
     for k in ("helmet", "chestplate", "leggings", "boots"):
         if b.endswith("_" + k):
             return hi_armor(c, k)
-        if b.endswith("_" + k + "_overlay"):
-            return hi_armor(c, k, overlay=True)
     for kind, test in (("egg", has(b, "spawn_egg")),
                        ("ingot", b.endswith("_ingot") or b in ("brick", "nether_brick", "netherbrick", "resin_brick")),
                        ("nugget", b.endswith("_nugget")),
@@ -1137,6 +1139,10 @@ GEO_DIR = os.environ.get("FIRECRAFT_BEDROCK_RP", "")   # Bedrock resource_pack (
 
 def hd_mob(c):
     s = ENT_S
+    import ents_hd
+    own = ents_hd.override(c, s)
+    if own is not None:
+        return own
     if has(c.name.lower(), "markings"):
         return hd_masked(c, s, soft=1, fur=0.0)          # dhabbe crisp rahein
     img = hd_masked(c, s, soft=2 * s, fur=0.18)
@@ -1204,14 +1210,18 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
         u = w // 16 if (kind == "block" and w > 16 and w % 16 == 0 and fh % 16 == 0) else 1
         small = fr[::u, ::u]
         c = Ctx(small, name, kind, t, nf)
+        r2 = False
         full = bool((small[..., 3] == 255).all())
         if kind == "block":
             import shapes_hd
             fn = g.block_family(c, full)
             hd = LOW2HD.get(fn)
-            import details_hd, blocks_hd2
+            import details_hd, blocks_hd2, round2_hd
             hd = details_hd.override(c, fn, hd)
-            special = blocks_hd2.override(c, fn, full)
+            special = round2_hd.override(c, full)
+            r2 = special is not None
+            if special is None:
+                special = blocks_hd2.override(c, fn, full)
             if special is None and (not full or c.base.startswith("sniffer_egg")):
                 import cutouts_hd
                 special = cutouts_hd.override(c, fn)
@@ -1222,6 +1232,7 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
             elif fn is g.g_masked and shapes_hd.plant_special(c) is not None:
                 fn, hd = g.g_plant, hd_plant      # vines / dripleaf jaise masked me chale gaye the
             img = hd(c) if hd else hd_finish(c, fn(c))
+            img = round2_hd.state_mark(img, c)
             if fn not in (g.g_leaves, g.g_glass, g.g_plant, g.g_masked, g.g_flame, g.g_capped_side, g.g_destroy) \
                     and not full and not getattr(hd, "own_alpha", False):
                 img[..., 3] = small[..., 3].repeat(S, 0).repeat(S, 1)
@@ -1230,7 +1241,7 @@ def make_hd(ref, name, kind, mcmeta=None, animated_hint=False):
             img = hi_item(c)
         else:
             img = hd_mob(c)
-        if kind == "block" and c.base.startswith("polished_") and full:
+        if kind == "block" and c.base.startswith("polished_") and full and not r2:
             import blocks_hd2
             img = blocks_hd2.polished_sheen(img)
         if kind == "block" and has(c.base, *EMISSIVE):

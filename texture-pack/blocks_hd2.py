@@ -436,8 +436,8 @@ def sea_lantern(c):
 
 def pumpkin_face(c):
     b = Blk(c, 20)
-    col = c.pal.main
     lit = has(c.base, "jack")
+    col = np.array((206, 112, 26.0)) if lit else c.pal.main      # jack ka ref face-glow se peela hota hai
     ribs = 0.9 + 0.14 * np.cos((b.X + 0.5) / 16 * 2 * math.pi * 3)
     b.paint(b.all(), col, ribs * (0.95 + 0.1 * b.noise(4, 2)), 0.5 + 0.2 * ribs)
     inside = (255, 200, 70) if lit else (60, 30, 12)

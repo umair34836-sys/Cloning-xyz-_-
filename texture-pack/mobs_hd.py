@@ -131,7 +131,7 @@ def faces_for(rel, W, H, rp_dir):
 
 
 MATERIAL = [
-    ("golem", ("iron_golem", "copper_golem")),
+    ("golem", ("iron_golem", "copper_golem", "guardian")),
     ("wet", ("frog", "axolotl", "tadpole", "dolphin", "squid")),
     ("glowskin", ("allay", "vex")),
     ("fur", ("cow", "mooshroom", "sheep", "wolf", "fox", "cat", "ocelot", "horse", "donkey", "mule", "llama",
@@ -175,28 +175,33 @@ def detail(mat, H, W, r, s):
         n = h.fbm(H, W, r, s * 4, 3)
         return 1.0 + 0.1 * n, 0.2 * n, 0.4
     if mat == "golem":
-        P = 4 * s
-        py, px = yy % P, xx % P
+        P = 8 * s
+        py, px = yy % P, (xx + (np.floor(yy / P) % 2) * P / 2) % P
         edge = np.minimum.reduce([py, px, P - py, P - px])
-        rivet = (np.hypot(py - s, px - s) < s * 0.45)
-        rust = h.nrm(h.fbm(H, W, r, s * 3, 3)) > 0.72
-        t = np.where(edge < s * 0.4, 0.8, 0.96 + 0.06 * h.fbm(H, W, r, 1, 2, s * 4))
-        t = np.where(rivet, 1.15, np.where(rust, 0.78, t))
-        return t, 0.4 * np.clip(edge / s, 0, 1) + 0.3 * rivet, 0.5
+        rivet = (np.hypot(py - s * 1.2, px - s * 1.2) < s * 0.5) | (np.hypot(py - s * 1.2, px - (P - s * 1.2)) < s * 0.5)
+        brush = h.fbm(H, W, r, 1, 2, s * 6)
+        rust = h.nrm(h.fbm(H, W, r, s * 3, 3)) > 0.8
+        dent = h.fbm(H, W, r, s * 2, 2)
+        t = np.where(edge < s * 0.35, 0.74, 0.9 + 0.12 * brush + 0.05 * (dent - 0.5))
+        t = np.where(rivet, 1.18, np.where(rust, 0.8, t))
+        return t, 0.3 + 0.4 * np.clip(edge / (1.5 * s), 0, 1) + 0.3 * rivet + 0.05 * dent, 0.7
     if mat == "feather":
         sz = 1.5 * s
         arc = np.abs(((xx / sz + (np.floor(yy / sz) % 2) * 0.5) % 1) - 0.5) + ((yy / sz) % 1) * 0.4
         return 0.92 + 0.14 * (1 - arc), 0.4 * (1 - arc), 0.05
     if mat == "scales":
-        # ek doosre par chadhe hue gol chhilke (har chhilka neeche se gol, upar wala uske upar)
-        sz = 1.4 * s
-        row = np.floor(yy / (sz * 0.6))
-        cx = xx / sz + (row % 2) * 0.5
-        fx = cx - np.floor(cx) - 0.5
-        fy = (yy / (sz * 0.6)) - row
-        d = np.hypot(fx, (fy - 0.0) * 0.8)
-        t = 0.92 + 0.12 * (1 - np.clip(d / 0.7, 0, 1)) - 0.05 * ((d > 0.5) & (d < 0.58))
-        return t, 0.5 * (1 - np.clip(d / 0.7, 0, 1)), 0.4
+        # ek doosre par chadhe gol chhilke: har chhilka neeche se gol (U), upar wali qataar uske upar
+        sz = 2.4 * s
+        row = np.floor(yy / (sz * 0.55))
+        u = xx / sz + (row % 2) * 0.5
+        fx = u - np.floor(u) - 0.5
+        fy = yy / (sz * 0.55) - row
+        lip = fy + 0.9 * fx * fx                      # U ki shakal
+        body = np.clip(1 - lip, 0, 1)
+        edge = (lip > 0.82) & (lip < 1.0)
+        sheen = np.exp(-((fx + 0.15) ** 2 + (fy - 0.35) ** 2) / 0.05)
+        t = 0.88 + 0.14 * body + 0.08 * sheen - 0.07 * edge
+        return t, 0.25 + 0.45 * body - 0.2 * edge, 0.45
     if mat == "bone":
         n = h.fbm(H, W, r, s * 4, 3)
         cr = h.ridged(h.fbm(H, W, r, s * 6, 3)) > 0.975
@@ -235,13 +240,14 @@ def render(c, s, rp_dir, base_img):
     mask = (ref[..., 3] > 0).repeat(s, 0).repeat(s, 1)
     mat = material_of(c.name)
     cloth = any(w in c.name.lower() for w in CLOTH)
+    crisp = any(w in c.name.lower() for w in ("profession", "/type/", "_type/"))
     tone_d, hgt_d, spec = detail(mat, H, W, r, s)
     out = base_img.copy()
     rgb = out[..., :3].copy()
     alb = rgb.copy(); hgt = np.full((H, W), 0.5)
     yy, xx = h.grid(H, W)
     refc = ref[..., :3].astype(float)
-    eye_faces = []
+    eye_faces, body_faces = [], []
     for f in faces:
         x0, y0 = int(round(f["x"])), int(round(f["y"]))
         fw, fh = int(round(f["w"])), int(round(f["h"]))
@@ -270,6 +276,8 @@ def render(c, s, rp_dir, base_img):
         ty = np.clip(fy - np.floor(fy), 0, 1)[:, None, None]; tx = np.clip(fx - np.floor(fx), 0, 1)[None, :, None]
         col = (grid[iy0][:, ix0] * (1 - tx) + grid[iy0][:, ix1] * tx) * (1 - ty) + \
               (grid[iy1][:, ix0] * (1 - tx) + grid[iy1][:, ix1] * tx) * ty
+        if crisp:                      # kapde ke overlay: kinare saaf (dhundle blob nahi)
+            col = refc[y0:y1, x0:x1].repeat(s, 0).repeat(s, 1)[:Y1 - Y0, :X1 - X0]
         # chehre ki roshni: upar roshan, neeche gehra, side par upar->neeche gradient, kinaron par AO
         ft = FACE_TONE.get(f["face"])
         if ft is None:
@@ -293,19 +301,53 @@ def render(c, s, rp_dir, base_img):
         a_patch[sel] = details_hd.entity_detail(np.clip(col * tone[..., None], 0, 255), col, tone_d[Y0:Y1, X0:X1])[sel]
         h_patch = hgt[Y0:Y1, X0:X1]
         h_patch[sel] = (0.5 + hgt_d[Y0:Y1, X0:X1] * 0.5)[sel]
-        if f["face"] == "north" and f["cube"] == 0 and ("head" in f["bone"] or not eye_faces and
-                                                       any(w in c.name.lower() for w in ("ghast", "slime", "magma", "guardian", "blaze"))):
-            if "head" in f["bone"]:
-                eye_faces.insert(0, (X0, Y0, X1, Y1))
-            else:
-                eye_faces.append((X0, Y0, X1, Y1))
+        if f["face"] == "north" and f["cube"] == 0:
+            pri = 0 if "head" in f["bone"] else 1 if f["bone"] in ("look_at", "body") else 9
+            if pri < 9:
+                eye_faces.append((pri, (X0, Y0, X1, Y1), f["bone"]))
+        if f["bone"] == "body" and f["cube"] == 0:
+            body_faces.append((f["face"], X0, Y0, X1, Y1))
+    species_albedo(c, alb, mask, body_faces, r, s)
     lit = h.light(alb, hgt, k=1.6, spec=spec, shin=24, wrap=False, dirt=0.15)
     rgb[mask] = lit[mask]
-    if not any(w in c.name.lower() for w in g.NO_FACE):
-        for X0, Y0, X1, Y1 in eye_faces[:1]:
+    if not any(w in c.name.lower() for w in g.NO_FACE) and not crisp:
+        eye_faces.sort(key=lambda e: e[0])
+        for _, (X0, Y0, X1, Y1), _b in eye_faces[:1]:
             draw_eyes(rgb, X0, Y0, X1, Y1, c)
     out[..., :3] = rgb
     return out
+
+
+def species_albedo(c, alb, mask, body_faces, r, s):
+    """Kuch species ke apne nishaan: bee ki dhaariyan, mooshroom ke saaf dhabbe, tabby ki lakeerein."""
+    n = c.name.lower()
+    H, W = mask.shape
+    yy, xx = h.grid(H, W)
+    if "bee" in n and "beehive" not in n:
+        for face, X0, Y0, X1, Y1 in body_faces:
+            fw, fh = X1 - X0, Y1 - Y0
+            if face in ("east", "west"):
+                t = (xx[Y0:Y1, X0:X1] - X0) / max(1, fw)
+            elif face in ("up", "down"):
+                t = (yy[Y0:Y1, X0:X1] - Y0) / max(1, fh)
+            else:
+                continue
+            band = (np.abs(t - 0.38) < 0.08) | (np.abs(t - 0.66) < 0.08)
+            patch = alb[Y0:Y1, X0:X1]
+            patch[band] = shade(np.array((52, 36, 26.0)), 0.9 + 0.1 * r.random())
+    if "mooshroom" in n or ("cow" in n and "red" in n and "mooshroom" in n):
+        blob = h.nrm(h.fbm(H, W, r, s * 5, 3)) > 0.62
+        red = np.array((168, 30, 28.0)) if "brown" not in n else np.array((120, 80, 50.0))
+        tone = 0.92 + 0.12 * h.fbm(H, W, r, s, 2)
+        alb[mask & ~blob] = h.tone_col(red, tone)[mask & ~blob]
+        alb[mask & blob] = h.tone_col(np.array((232, 226, 220.0)), tone)[mask & blob]
+    if "cat_tabby" in n or "cat/tabby" in n:
+        stripe = np.sin((xx / s) * 1.3 + 1.5 * h.fbm(H, W, r, s * 4, 2)) > 0.55
+        alb[mask & stripe] *= 0.6
+    if "squid" in n and "glow" not in n:
+        base = np.median(alb[mask], 0)
+        dev = np.abs(alb - base).sum(-1) > 90
+        alb[mask & dev] = mix(alb[mask & dev], base, 0.7)      # laal nishaana-numa dhabba hatao
 
 
 FACE_STYLE = [
@@ -362,8 +404,13 @@ def draw_eyes(rgb, X0, Y0, X1, Y1, c):
             ellipse(face, fw * ex - fw * r_ * 0.3, fh * ey - fw * r_ * 0.3, fw * r_ * 0.3, fw * r_ * 0.3, (255, 160, 150))
         return
     if style == "skull":
+        dark_skin = (skin @ h.LUM) < 90
         for ex in (0.3, 0.7):
+            if dark_skin:
+                ellipse(face, fw * ex, fh * 0.48, fw * 0.16, fh * 0.15, shade(skin, 2.4) + 30)
             ellipse(face, fw * ex, fh * 0.48, fw * 0.12, fh * 0.11, dark)
+            if dark_skin:
+                ellipse(face, fw * ex, fh * 0.5, fw * 0.04, fh * 0.04, (200, 60, 60) if "wither" in c.name.lower() else (220, 220, 230))
         ellipse(face, fw * 0.5, fh * 0.66, fw * 0.05, fh * 0.06, dark)
         face[int(fh * 0.8):int(fh * 0.84), int(fw * 0.28):int(fw * 0.72)] = shade(skin, 0.5)
         for k in range(5):
@@ -372,12 +419,29 @@ def draw_eyes(rgb, X0, Y0, X1, Y1, c):
         return
     if style == "ender":
         for ex in (0.28, 0.72):
-            ellipse(face, fw * ex, fh * 0.55, fw * 0.16, fh * 0.05, (230, 120, 255))
+            ellipse(face, fw * ex, fh * 0.55, fw * 0.13, fh * 0.045, (210, 90, 250))
+            ellipse(face, fw * ex, fh * 0.55, fw * 0.05, fh * 0.035, (250, 200, 255))
         return
     if style == "single":
         ellipse(face, fw * 0.5, fh * 0.5, fw * 0.22, fh * 0.22, (236, 230, 220))
         ellipse(face, fw * 0.5, fh * 0.5, fw * 0.12, fh * 0.12, (230, 150, 40))
         ellipse(face, fw * 0.5, fh * 0.5, fw * 0.05, fh * 0.12, dark)
+        return
+    if style == "ghast" and ("shooting" in c.name.lower() or "happy" in c.name.lower()):
+        happy = "happy" in c.name.lower()
+        for ex in (0.28, 0.72):
+            ellipse(face, fw * ex, fh * 0.42, fw * 0.1, fh * 0.11, dark)
+            ellipse(face, fw * ex, fh * 0.42, fw * 0.045, fh * 0.05, (90, 200, 255) if happy else (255, 60, 40))
+            ellipse(face, fw * ex - fw * 0.03, fh * 0.38, fw * 0.02, fh * 0.02, (250, 250, 250))
+        if happy:
+            yy, xx = h.grid(fh, fw)
+            m = (np.abs(np.hypot((xx - fw * 0.5) / (fw * 0.18), (yy - fh * 0.58) / (fh * 0.16)) - 1) < 0.16) & (yy > fh * 0.62)
+            face[m] = dark
+            for ex in (0.16, 0.84):
+                ellipse(face, fw * ex, fh * 0.6, fw * 0.06, fh * 0.04, (240, 150, 170))
+        else:
+            ellipse(face, fw * 0.5, fh * 0.74, fw * 0.12, fh * 0.1, (60, 10, 14))
+            ellipse(face, fw * 0.5, fh * 0.76, fw * 0.07, fh * 0.05, (200, 40, 30))
         return
     if style == "ghast":
         for ex in (0.28, 0.72):
@@ -393,15 +457,21 @@ def draw_eyes(rgb, X0, Y0, X1, Y1, c):
         return
     if style == "animal":
         for ex in (0.2, 0.8):
+            if (skin @ h.LUM) < 100:
+                ellipse(face, fw * ex, fh * 0.42, fw * 0.1, fh * 0.12, shade(skin, 2.0) + 40)
             ellipse(face, fw * ex, fh * 0.42, fw * 0.075, fh * 0.09, dark)
             ellipse(face, fw * ex - fw * 0.02, fh * 0.39, fw * 0.025, fh * 0.03, (250, 250, 250))
         if "panda" in c.name.lower():
             for ex in (0.2, 0.8):
                 m = np.zeros(face.shape[:2], bool)
                 yy, xx = h.grid(fh, fw)
-                m = (((xx - fw * ex) / (fw * 0.15)) ** 2 + ((yy - fh * 0.45) / (fh * 0.2)) ** 2 < 1)
+                u, v = xx - fw * ex, yy - fh * 0.46
+                ang = 0.5 if ex < 0.5 else -0.5                     # aansoo jaise jhuke dhabbe
+                ru = u * math.cos(ang) + v * math.sin(ang); rv = -u * math.sin(ang) + v * math.cos(ang)
+                m = (ru / (fw * 0.17)) ** 2 + (rv / (fh * 0.27)) ** 2 < 1
                 face[m] = (30, 30, 34)
-                ellipse(face, fw * ex, fh * 0.42, fw * 0.05, fh * 0.06, (240, 240, 240))
+                ellipse(face, fw * ex, fh * 0.42, fw * 0.065, fh * 0.075, (236, 236, 236))
+                ellipse(face, fw * ex, fh * 0.43, fw * 0.035, fh * 0.045, (16, 14, 18))
         return
     _human_eyes(rgb, X0, Y0, X1, Y1, c)
 

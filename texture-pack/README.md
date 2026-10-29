@@ -79,6 +79,19 @@ apni dome roshni ke saath):
 - **Detail passes:** `details_hd.py` (concrete, terracotta, panels, obsidian, dragon egg, aag, gehre rang) —
   dekho `DETAIL_TESTS.md`
 
+### Final A-to-Z pass — `round2_hd.py`, `ents_hd.py`, `blocks_hd2.py`, `cutouts_hd.py`, `items2_hd.py`
+
+- **Blocks:** dried ghast (chehra + hydration stages), smithing/cartography table, farmland (dheele + kyariyan),
+  basalt columns, reinforced deepslate, sculk/catalyst, grass/moss/nylium tops, ancient debris rings,
+  end portal frame, pumpkin/melon tops, stripped logs, coal ore, polished stone sheen, observer/crafter/
+  respawn anchor states
+- **Cut-outs:** stonecutter saw (animated daant), tall flower bottoms, pale moss, bell, anvil, cake, iron/copper
+  doors, fungus, amethyst, cactus, honey, enchanting table, sculk vein, cobweb, lanterns, copper torch,
+  fern/bush, spore blossom, resin clump, pointed dripstone
+- **Entities:** 23 pottery motifs (har sherd ka apna nishaan), gharay ki mitti, banner/shield kapda,
+  chest/boat/armor stand takhte, armor plates (rivets, seams), horse markings crisp, fish scales,
+  golem/guardian plates, ghast shooting/happy chehre, panda/bee/mooshroom/tabby nishaan
+
 ## Dobara banana
 
 ```bash
