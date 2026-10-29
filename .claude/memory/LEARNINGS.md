@@ -49,3 +49,6 @@ Format:
 - Discord Administrator role wale har private channel dekh sakte hain — channel overrides se nahi rukta. ⚙️ Manager + MrzCopper804 roles ke paas Admin hai. Protected/staff/bot roles channel_permissions ka target nahi ban sakte.
 - Manager audit: `co lookup u:<p> a:command` (commands), `lp log recent`, `lp log grouphistory <g>`, `lp user <p> permission check <perm>`, `data get entity <p> playerGameType` (1 = creative).
 - LP trialstaff group: `*` true, lekin firecraft.owner & coreprotect.purge false (console ne set kiye).
+- Bad Gateway (07:28–07:40 UTC 29 Oct) = manager ne server /stop (maintenance) + WorldLens 1.5→1.6 update. Connector restart ke baad khud wapis aata hai.
+- Hourly trigger is session me notification ke roop me aata hai (ReadNotifications); per-minute cron ke saath queue ho kar thoda late (~2 min) fire hota hai.
+- `lp log recent 2` = page 2; `lp group <g> listmembers`.
