@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-29
 
+- **Beacon check:** beacon kisne liya check karo, techshot ko Discord + in-game msg karo. Result: Itskillerxd1 ne x680 y70 z55 (aur x713 y69 z56) se beacon pick up kiye. Discord #staff-chat me techshot ko ping kar diya. In-game msg FAIL (techshot offline) → **pending: jab techshotgaming online aaye, in-game msg bhejna hai.**
 - **WorldLens monitoring:** worldlens connector ke through FireCraft SMP console par nazar rakho, har 1 ghante summary nikalo aur update do. Pehla update turant diya. Hourly scheduled task bana: `trig_01TTKU7gbAQRGGp2bLEjAXjL` (har ghante :03 UTC). Reports `reports/worldlens/` me save hoti hain.
 
 ## 2026-10-23

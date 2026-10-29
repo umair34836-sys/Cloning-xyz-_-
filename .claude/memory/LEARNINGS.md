@@ -43,3 +43,6 @@ Format:
 - `worldlens_command` se koi bhi console command chalti hai; monitoring ke liye sirf read-only: `list`, `tps`, `mspt`, `whitelist list`, `banlist`, `plugins`, `data get entity <p> Pos`.
 - Activity history CoreProtect se: `co lookup t:1h a:session` / `a:chat`. Paging: `co page N` (lookup ke baad). `page:N` param lookup me kaam nahi karta. `a:kill` ke liye user ya radius chahiye.
 - Server console log ka direct tail tool nahi hai — CoreProtect hi history ka source hai.
+- Discord (WorldLens bot): DMs off; staff members "off_limits" (moderation nahi), lekin channel me <@id> mention chal jata hai. techshotgaming Discord id 1376918464379359346. Staff baatein #🛡️┃staff-chat (1563030676968837171) me.
+- `msg <player>` offline player ko nahi jata ("No player was found") — mail plugin nahi hai; player online aane par bhejo.
+- CoreProtect tricks: `r:#global` zaroori jab user na ho; time range `t:1.8d-1.65d` kaam karta hai; item pickup `a:+item`, inventory `a:inventory` (u: zaroori). Tunnel Drill jaisi custom items se tootay blocks log nahi hote — item pickup se trace karo.
