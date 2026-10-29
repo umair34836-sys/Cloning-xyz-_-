@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-29
 
+- **Owner (Discord 09:21):** player bases (surface + underground) ki 4-side photos #media me, coords hide. Done: 12 photos (3 bases) → Discord bot image upload nahi kar sakta, owner ko Claude chat me diye. 09:53 attachment-only msg: text me poocha (pending). Last handled owner msg: 1565302592261587056.
 - **09:05 UTC hourly run done.** Owner (smp-chat 08:10): Itskillerxd1 ka 4h ban owner ne lagaya — unban nahi. Open issues: ranks restore, tab list, op=OWNER display, lag.
 - **Owner (Discord, 08:34 UTC):** har minute check mat karo; jab owner bot ko mention kare tab dekho. → 1-min cron 4f1d341e band kiya. Mentions ab hourly check me uthaye jate hain. Last handled owner msg: 1565282698782576641.
 - **08:10 UTC hourly run done:** digest + manager report + appreciation (owner rank) posted. Owner se decision pending: (1) manager ne saare LP ranks delete kiye — ok? (2) Itskillerxd1 unban. Appreciated so far: Geyser, ticket system, beacon check, owner rank setup.

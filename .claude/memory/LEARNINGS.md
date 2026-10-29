@@ -52,3 +52,8 @@ Format:
 - Bad Gateway (07:28–07:40 UTC 29 Oct) = manager ne server /stop (maintenance) + WorldLens 1.5→1.6 update. Connector restart ke baad khud wapis aata hai.
 - Hourly trigger is session me notification ke roop me aata hai (ReadNotifications); per-minute cron ke saath queue ho kar thoda late (~2 min) fire hota hai.
 - `lp log recent 2` = page 2; `lp group <g> listmembers`.
+- WorldLens shot sirf loaded chunks dikhata hai → door ke base ke liye `forceload add x1 z1 x2 z2` (≤256 chunks), shots ke baad `forceload remove ...` aur `forceload query` se verify.
+- Shot cooldown 10s. Underground camera ke liye `execute if block x y z minecraft:air` se khaali jagah dhoondo.
+- Bases dhoondhne ka tareeqa: `co lookup t:30d r:#global a:+block b:chest,barrel` → coordinates cluster karo.
+- Discord tools (WorldLens) image/attachment bhej ya padh nahi sakte — owner ki image messages text "" dikhti hain.
+- Base photos repo me commit nahi ki (reports/worldlens/bases/ gitignored) — privacy.
