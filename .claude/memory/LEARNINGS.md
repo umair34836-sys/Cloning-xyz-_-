@@ -57,3 +57,4 @@ Format:
 - Bases dhoondhne ka tareeqa: `co lookup t:30d r:#global a:+block b:chest,barrel` → coordinates cluster karo.
 - Discord tools (WorldLens) image/attachment bhej ya padh nahi sakte — owner ki image messages text "" dikhti hain.
 - Base photos repo me commit nahi ki (reports/worldlens/bases/ gitignored) — privacy.
+- Kick reason console log me hota hai; WorldLens command output me nahi aata. AuthMe checks: `authme accounts <name|ip>`, `authme lastlogin`, `authme getip`. LifeStealZ: `lifestealz hearts get <p>`. firecraft MCP: get_user(ign) se website account/application.
