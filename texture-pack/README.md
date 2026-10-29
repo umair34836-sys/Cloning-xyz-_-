@@ -92,6 +92,22 @@ apni dome roshni ke saath):
   chest/boat/armor stand takhte, armor plates (rivets, seams), horse markings crisp, fish scales,
   golem/guardian plates, ghast shooting/happy chehre, panda/bee/mooshroom/tabby nishaan
 
+## Built-in Night Vision (Bedrock) — `brightness.py`
+
+Bedrock pack ke andar hi brightness: alag mod, shader ya fullbright pack ki zaroorat nahi.
+
+- **ON/OFF ek click se:** Settings → Global Resources → FireCraft Remastered → ⚙️ (gear) → slider:
+  `Night Vision: ON` (default) ya `Night Vision: OFF`.
+- **Kya karta hai:** blocks aur mobs ki textures ko gamma-lift (andhere hisse khulte hain, rang wahi),
+  har biome ki fog halki/door (hawa, barish, paani, lava), Vibrant Visuals me raat/ghaar ki ambient aur
+  chaand ki roshni zyada.
+- **Servers par:** pack ko **Global Resources** me active karo — phir har server/Realm/Geyser server par
+  bhi chalta hai (server ka apna pack upar ho to wo textures badal sakta hai).
+- **Hadd:** naye Bedrock (RenderDragon) me resource pack lightmap/shader nahi badal sakta, is liye
+  bilkul light level 0 wali jagah asli Night Vision effect jitni roshan nahi hogi — lekin bina pack ke se
+  kaafi zyada saaf dikhegi. Asli "fullbright" sirf shader (patched client) ya server ke Night Vision
+  effect se milta hai.
+
 ## Dobara banana
 
 ```bash
@@ -99,9 +115,11 @@ git clone --depth 1 --branch 26.2-assets https://github.com/misode/mcmeta ref/ja
 git clone --depth 1 --filter=blob:none --sparse https://github.com/Mojang/bedrock-samples ref/bedrock && (cd ref/bedrock && git sparse-checkout set resource_pack)
 python3 generate.py java ref/java-assets build/java
 python3 generate.py bedrock ref/bedrock/resource_pack build/bedrock
+python3 brightness.py build/bedrock ref/bedrock/resource_pack build/bedrock_subpacks
 python3 package.py build dist
 # HD:
 python3 generate_hd.py java ref/java-assets build_hd/java ref/bedrock/resource_pack
 python3 generate_hd.py bedrock ref/bedrock/resource_pack build_hd/bedrock
+python3 brightness.py build_hd/bedrock ref/bedrock/resource_pack build_hd/bedrock_subpacks
 python3 package.py build_hd dist --hd
 ```

@@ -36,4 +36,5 @@ Format:
 ## 2026-10-29
 
 - "candles, ender pearl aur flower pot bhi fix karo, aur minecraft ke saare items/mobs/blocks A to Z test karke details add karo aur fix karo — wo hoga final" → candle/ender pearl/flower pot ke apne designs (`items_hd.py`), phir 2 round A-to-Z QA (har category ki poori contact sheet + reviewer agents). Fixes: `blocks_hd2.py`, `cutouts_hd.py`, `items2_hd.py`, `round2_hd.py` (round-2 blocks/cut-outs), `ents_hd.py` (pottery motifs, banner/shield kapda, chest/boat/armor stand lakdi, armor plates, horse markings), `mobs_hd.py` (scales, golem/guardian plates, ghast shooting/happy chehre, panda dhabbe, bee dhaariyan, mooshroom, squid/allay/strider aankhein, gehri khaal par aankh ka ring).
+- "texture pack me nightvision bhi lage, alag mod/brightness pack na lagana pare, khaas Bedrock ke liye taake servers par bhi chale, inbuilt brightness ho aur user ek click se on/off kar sake" → `texture-pack/brightness.py`: Bedrock pack me 2 subpacks (`Night Vision: ON` default, `OFF`) — gear icon ka slider. ON = blocks/mobs textures gamma-lift + saari fog halki + Vibrant Visuals lighting tez. User ko hadd bata di (RenderDragon me lightmap nahi badalta).
 

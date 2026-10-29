@@ -66,4 +66,6 @@ Format:
 - Armor stand ke ref ke neeche credits ka text ("JAPPA CHIHI SEARGE") bina UV wali patti me hai — apne design me wo patti saaf karo.
 - Banner/shield pattern files greyscale mask hain (game rang lagata hai): safed kapda + crisp alpha, sirf `gradient` me alpha narm.
 - `sheet_hd.py` ko texture root aur `block/x.png` jaisa relative path do — sirf `x.png` dene se `kind_of` galat kind deta hai aur purana 16x look aata hai.
+- **Bedrock fullbright 2025-26:** custom shaders/materials RenderDragon me band — shader wale fullbright packs sirf patched client (BetterRenderDragon) par. Resource pack se jo chalta hai: subpacks (gear icon slider, per-player), `fogs/*.json` (fog door), `lighting/*.json` (sirf Vibrant Visuals: ambient/moon illuminance), textures ki gamma-lift. Manifest v3 `settings` toggle sirf Molang (models/render controllers) tak — textures swap nahi karta.
+- Bedrock subpacks: default = aakhri (sab se oonche memory_tier wala) subpack, is liye "ON" ko list me aakhir me rakho. Pack update ke liye header version badhao (1.1.0).
 

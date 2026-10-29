@@ -4,6 +4,7 @@
 Usage: package.py <build-dir> <dist-dir> [--hd]
   <build-dir>/java    -> dist/FireCraft-Remastered[-HD]-Java-26.2.zip
   <build-dir>/bedrock -> dist/FireCraft-Remastered[-HD]-Bedrock.mcpack
+  <build-dir>/bedrock_subpacks (agar ho) -> Bedrock pack ke andar "Night Vision" ON/OFF subpacks
 """
 import json, os, sys, zipfile
 from PIL import Image
@@ -14,7 +15,7 @@ DESC = "Original textures for FireCraft SMP — blocks, items & mobs"
 # Bedrock ko har version me same UUID chahiye (update pehchanne ke liye)
 HEADER_UUID = "4f6c2b1e-8d3a-4c7e-9b52-1a7e3f0d9c61"
 MODULE_UUID = "b83e5d27-6f19-4a0c-8e4d-2c9b7a1f5e30"
-VERSION = [1, 0, 0]
+VERSION = [1, 1, 0]
 JAVA_FORMAT = (88, 101)   # 26.2 = resource pack format 88
 
 
@@ -52,12 +53,19 @@ def main():
 
     bedrock = os.path.join(dist, f"FireCraft-Remastered{tag}-Bedrock.mcpack")
     with zipfile.ZipFile(bedrock, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
-        zf.writestr("manifest.json", json.dumps({
+        man = {
             "format_version": 2,
             "header": {"name": NAME, "description": DESC, "uuid": HEADER_UUID,
                        "version": VERSION, "min_engine_version": [1, 21, 0]},
             "modules": [{"type": "resources", "uuid": MODULE_UUID, "version": VERSION, "description": DESC}],
-        }, indent=2))
+        }
+        subs = os.path.join(build, "bedrock_subpacks")       # brightness.py ka banaya Night Vision mode
+        if os.path.isdir(subs):
+            # aakhri subpack default hota hai -> Night Vision ON; gear icon ke slider se OFF
+            man["subpacks"] = [{"folder_name": "off", "name": "Night Vision: OFF", "memory_tier": 0},
+                               {"folder_name": "night_vision", "name": "Night Vision: ON", "memory_tier": 0}]
+            zipdir(zf, subs, "subpacks")
+        zf.writestr("manifest.json", json.dumps(man, indent=2))
         icon(256).save(os.path.join(dist, ".pack_icon.png"))
         zf.write(os.path.join(dist, ".pack_icon.png"), "pack_icon.png")
         zipdir(zf, os.path.join(build, "bedrock"))
