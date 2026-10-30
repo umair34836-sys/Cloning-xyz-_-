@@ -70,3 +70,4 @@ Format:
 - Same design multiple jagah: `clone` (WE selection/count se pehle exact bounding box nikaalo, `worldedit:/count !air`).
 - Sign readability: dark oak + glowing colored text = blurry. Birch/light sign + no glow + dark hex colors (`color:"#B00000"`) = saaf. Invisible light: `light[level=15]` block (ground lanterns ko `worldedit:/replace "lantern >grass_block" light[level=15]` se hidden lights banaya).
 - WE mask `>X` = block jo X ke upar hai. `##dirt` tag mask kaam nahi kiya (0) — exact block names use karo.
+- Mob farm (no spawner): mobs ko 22 block girao (zombie 20hp → 1hp, 1-hit + XP); 23+ = fall se mar jaate (sirf drops). Mob landing cell me water mat rakho (water fall damage cancel kar deta hai). Spawn ke liye player se >24 block door. Water source 7 blocks flow karta hai — arm length 8 (source + 7) hole tak.
