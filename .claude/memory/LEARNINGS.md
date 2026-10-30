@@ -62,3 +62,6 @@ Format:
 - 30 Oct: LP ranks kisi aur session ne (Console) dobara banaye: owner/manager/youtuber/builder/loyal/member/exposed/default. Bot ke naam se staff-chat me posts doosre sessions se bhi aa sakti hain (by_this_bot=true matlab sirf same bot, zaroori nahi ye session).
 - MC 26.2 item syntax works: `item replace entity <p> armor.head with minecraft:netherite_helmet[enchantments={protection:4,...},trim={pattern:"minecraft:silence",material:"minecraft:gold"},custom_name={text:"..",color:"gold",bold:true,italic:false},unbreakable={}]`. Equip se pehle `data get entity <p> equipment` se check karo slot khaali hai (replace purana item mita deta hai).
 - Beacon NBT: `setblock x y z minecraft:beacon{primary_effect:"minecraft:regeneration",secondary_effect:"minecraft:regeneration"}` + 4-level iron pyramid → Regen II.
+- WorldLens top PNG (tool-results me saved) ko Python PIL se per-block sample karke ASCII map banao (scale 4 → block = 4px, origin = x-r, z-r) — exact coords bina 100 probes ke.
+- `place feature minecraft:cherry X Y Z` / `flower_cherry` / `flower_meadow` = ek command me full tree/flowers. Pehle `execute if block X Y-1 Z grass_block` check.
+- `execute if ... run <cmd>` ka blank output = condition fail / run ka output nahi dikhta → result `data get`/`execute if block` se verify karo.
