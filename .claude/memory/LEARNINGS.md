@@ -55,7 +55,7 @@ Format:
 - WorldLens shot sirf loaded chunks dikhata hai → door ke base ke liye `forceload add x1 z1 x2 z2` (≤256 chunks), shots ke baad `forceload remove ...` aur `forceload query` se verify.
 - Shot cooldown 10s. Underground camera ke liye `execute if block x y z minecraft:air` se khaali jagah dhoondo.
 - Bases dhoondhne ka tareeqa: `co lookup t:30d r:#global a:+block b:chest,barrel` → coordinates cluster karo.
-- Discord tools (WorldLens) image/attachment bhej ya padh nahi sakte — owner ki image messages text "" dikhti hain.
+- Discord tools (WorldLens): incoming attachments padh nahi sakte (owner ki image messages text "" dikhti hain). **Correction (30 Oct):** `discord_send_message` ka `image` param saved WorldLens shot (file name, e.g. 20261030-070216_shot_...png) embed me post KAR sakta hai. Embed ke liye `embed_title`/`embed_description`/`embed_color` params (embed object nahi).
 - Base photos repo me commit nahi ki (reports/worldlens/bases/ gitignored) — privacy.
 - Kick reason console log me hota hai; WorldLens command output me nahi aata. AuthMe checks: `authme accounts <name|ip>`, `authme lastlogin`, `authme getip`. LifeStealZ: `lifestealz hearts get <p>`. firecraft MCP: get_user(ign) se website account/application.
 - "lost connection: Disconnected" = client ne connection toda (server kick hota to "kicked" + reason). GrimAC 2.3.74 ka shaded packetevents 2.13.1 MC 26.2 par "Unknown entity metadata type id: 105" deta hai → affected player desync/disconnect. Fix: Grim update; temp: grim.exempt.
