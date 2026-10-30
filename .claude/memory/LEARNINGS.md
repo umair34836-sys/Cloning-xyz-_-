@@ -68,3 +68,5 @@ Format:
 - WorldEdit console se: `worldedit:/world world` → `worldedit:/pos1 x,y,z` / `pos2` → `worldedit:/count <mask>`, `worldedit:/replace "<mask>" <pattern>`; khatam hone par `worldedit:/world` (override hatao). Mask `~water` = 6 sides (upar/neeche bhi) me adjacent.
 - WorldGuard region console se: WE selection (`worldedit:/world world`, `worldedit:/pos1/pos2`) phir `rg define -w world <name>` — kaam karta hai. Flags `rg flag -w world <name> <flag> <value>`. build deny ke saath use/interact ALLOW alag se do warna doors/buttons band.
 - Same design multiple jagah: `clone` (WE selection/count se pehle exact bounding box nikaalo, `worldedit:/count !air`).
+- Sign readability: dark oak + glowing colored text = blurry. Birch/light sign + no glow + dark hex colors (`color:"#B00000"`) = saaf. Invisible light: `light[level=15]` block (ground lanterns ko `worldedit:/replace "lantern >grass_block" light[level=15]` se hidden lights banaya).
+- WE mask `>X` = block jo X ke upar hai. `##dirt` tag mask kaam nahi kiya (0) — exact block names use karo.
