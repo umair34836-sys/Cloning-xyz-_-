@@ -56,3 +56,4 @@ Format:
 ## 2026-10-30 — Event mace par bina pooche enchants
 - **Ghalti:** owner ne "mace ka event" kaha; maine mace par density/wind_burst/unbreaking/mending laga diye. Owner chahta tha normal mace. Winner ne dono mace /team echest (virtual) me rakh diye → console se edit mushkil.
 - **Bachao:** reward items exactly wahi do jo owner bole; enchants/extra cheez sirf pooch kar.
+- 2026-10-30: Base tour msg me "Next base 5 min me" bola jabke list me sirf 3 bases the (ye last tha). Bachao: multi-step tour me har msg me "n/total" likho aur last step pe "tour complete" bolo, timer na lagao.
