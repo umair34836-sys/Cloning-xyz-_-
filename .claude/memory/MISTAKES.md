@@ -24,3 +24,7 @@ Format:
 - Ghalti: `firecraft.owner false` default group par lagaya → owner group default se inherit karta hai, to mrcopper804 (owner) bhi false ho gaya.
 - Fix: owner group par explicit `firecraft.owner true` set kiya.
 - Sabaq: LP me default group par koi deny lagane se pehle check karo kaun kaun us se inherit karta hai; change ke BAAD owner + normal + staff teeno users par `permission check` se verify karo (verify ne hi ye pakda).
+
+## 2026-10-30 — Console `msg` me "@" likhna
+- Ghalti: `msg MrCopper804 ... @everyone ...` → Minecraft ne `@e` ko entity selector samjha aur saare entities ke naam message me bhar diye (garbled whisper).
+- Sabaq: console `msg`/`say`/`tellraw` text me KABHI "@" mat likho (@e/@a/@p/@s/@r selectors ban jaate hain). "everyone-ping" jaisa likho.
