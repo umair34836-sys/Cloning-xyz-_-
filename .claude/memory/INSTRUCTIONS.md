@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-30
 
+- **Owner (chat):** in-game MrCopper804 ki baat suno aur wo karo. Setup: cron 345d2209 (*/2) — sirf MrCopper804 ke "claude ..." se shuru messages; reply `msg MrCopper804`; destructive kaam se pehle in-game confirm. Owner ko in-game bata diya.
 - **Owner (Discord 05:20 UTC):** website ke naye reviews auto-post #⭐┃reviews me. Done: 2 missing reviews post; hourly task step 2 me auto-post; state = reports/worldlens/reviews_last_posted.txt. Last handled owner msg: 1565596212504305697.
 
 ## 2026-10-29
