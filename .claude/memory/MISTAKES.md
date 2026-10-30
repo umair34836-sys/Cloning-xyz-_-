@@ -28,3 +28,7 @@ Format:
 ## 2026-10-30 — Console `msg` me "@" likhna
 - Ghalti: `msg MrCopper804 ... @everyone ...` → Minecraft ne `@e` ko entity selector samjha aur saare entities ke naam message me bhar diye (garbled whisper).
 - Sabaq: console `msg`/`say`/`tellraw` text me KABHI "@" mat likho (@e/@a/@p/@s/@r selectors ban jaate hain). "everyone-ping" jaisa likho.
+
+## 2026-10-30 — Lamba in-game msg
+- Ghalti: ~250+ char wala `msg` "Unhandled exception" de gaya (chat limit 256).
+- Sabaq: in-game `msg` 200 characters se chhota rakho; lambi detail #owner-private me do.
