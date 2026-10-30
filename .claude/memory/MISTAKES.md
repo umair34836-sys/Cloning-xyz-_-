@@ -32,3 +32,7 @@ Format:
 ## 2026-10-30 — Lamba in-game msg
 - Ghalti: ~250+ char wala `msg` "Unhandled exception" de gaya (chat limit 256).
 - Sabaq: in-game `msg` 200 characters se chhota rakho; lambi detail #owner-private me do.
+
+## 2026-10-30 — `fill ... outline` on a 1-block-high layer
+- **Ghalti:** prison ke liye `fill 589 70 47 611 70 69 polished_blackstone_bricks outline` aur `... 76 ... deepslate_brick_wall outline` chalaya → 1-high layer me outline = poora area fill (529 blocks). Owner andar khada tha (y70) → kuch second block me phansa; turant `fill ... air` se interior clear kiya.
+- **Bachao:** 1-block-high ring ke liye kabhi `outline/hollow` mat use karo — 4 alag side fills karo. Building se pehle player ki position check karo aur unke block (feet/head) ko kabhi fill range me na aane do; pehle unhe bahar tp/warn karo ya area exclude karo.
