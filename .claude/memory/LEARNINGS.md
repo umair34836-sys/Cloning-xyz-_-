@@ -65,3 +65,4 @@ Format:
 - WorldLens top PNG (tool-results me saved) ko Python PIL se per-block sample karke ASCII map banao (scale 4 → block = 4px, origin = x-r, z-r) — exact coords bina 100 probes ke.
 - `place feature minecraft:cherry X Y Z` / `flower_cherry` / `flower_meadow` = ek command me full tree/flowers. Pehle `execute if block X Y-1 Z grass_block` check.
 - `execute if ... run <cmd>` ka blank output = condition fail / run ka output nahi dikhta → result `data get`/`execute if block` se verify karo.
+- WorldEdit console se: `worldedit:/world world` → `worldedit:/pos1 x,y,z` / `pos2` → `worldedit:/count <mask>`, `worldedit:/replace "<mask>" <pattern>`; khatam hone par `worldedit:/world` (override hatao). Mask `~water` = 6 sides (upar/neeche bhi) me adjacent.
