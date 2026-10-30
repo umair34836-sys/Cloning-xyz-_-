@@ -36,3 +36,7 @@ Format:
 ## 2026-10-30 — `fill ... outline` on a 1-block-high layer
 - **Ghalti:** prison ke liye `fill 589 70 47 611 70 69 polished_blackstone_bricks outline` aur `... 76 ... deepslate_brick_wall outline` chalaya → 1-high layer me outline = poora area fill (529 blocks). Owner andar khada tha (y70) → kuch second block me phansa; turant `fill ... air` se interior clear kiya.
 - **Bachao:** 1-block-high ring ke liye kabhi `outline/hollow` mat use karo — 4 alag side fills karo. Building se pehle player ki position check karo aur unke block (feet/head) ko kabhi fill range me na aane do; pehle unhe bahar tp/warn karo ya area exclude karo.
+
+## 2026-10-30 — Scope se zyada replace kiya
+- **Ghalti:** owner ne "lamp pillars replace karo" kaha; maine road-end pillars ke saath plaza ke 4 corner lamp posts bhi replace kar diye — owner ne revert karwaya.
+- **Bachao:** ambiguous scope me sirf wahi badlo jo clearly kaha gaya (yahan: same type ke pillars). Extra items ke liye pehle in-game short sawal.
