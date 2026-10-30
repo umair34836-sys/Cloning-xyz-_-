@@ -79,3 +79,5 @@ Format:
 - Civilization fast: `place structure minecraft:village_desert x y z` (jigsaw village + villagers + golem, terrain adapt). Pehle WE `/count chest,planks,torch...` se area me player builds check karo (cobblestone+2 chest underground = natural dungeon).
 - Surface road on uneven terrain: WE mask `"sand,stone,... <air"` (block jiske upar air ho = surface) → `/replace` smooth_sandstone. Surface pe lamp: `execute positioned X 0 Z positioned over motion_blocking_no_leaves run fill ~ ~ ~ ~ ~2 ~ dark_oak_fence`.
 - ClickVillagers plugin: picked-up villagers player_head items ban jaate hain (custom_data clickvillagers:nbt) — ye bhi player ka saman hai.
+- Negative z/x ke block ka centre = coord + 0.5 (block -62 ka centre -61.5, NOT -62.5). Summon/tp me iska khayal rakho warna entity wall me.
+- Trading hall pods: villager 1x1x2 cell, workstation peeche wall me, front pe fence (villager nikal nahi sakta, player upar se trade kar sakta). `summon villager ... {VillagerData:{profession:"minecraft:librarian",level:1,type:"minecraft:desert"},PersistenceRequired:1b}`. Carpet floor ke UPAR (y+1) lagao, floor y pe nahi.
