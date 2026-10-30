@@ -40,3 +40,7 @@ Format:
 ## 2026-10-30 — Scope se zyada replace kiya
 - **Ghalti:** owner ne "lamp pillars replace karo" kaha; maine road-end pillars ke saath plaza ke 4 corner lamp posts bhi replace kar diye — owner ne revert karwaya.
 - **Bachao:** ambiguous scope me sirf wahi badlo jo clearly kaha gaya (yahan: same type ke pillars). Extra items ke liye pehle in-game short sawal.
+
+## 2026-10-30 — Owner ke "haan" ko apni taraf se specific approval samjha ke relay kiya
+- **Ghalti:** owner ne "manager k liee haan" kaha (general); maine child session ko likha "meri reading: castle approval" → child ne owner ke ghar par castle shuru kar diya. Owner ka asli matlab: "ghar change mat karna". Child ne revert kiya, maine verify kiya (ghar intact).
+- **Bachao:** owner ka general "haan" kabhi kisi destructive/specific kaam ki approval na banao. Relay me sirf owner ke exact words do, apni interpretation nahi; destructive cheez ke liye owner se specific confirm ("haan castle") maangne ko kaho.
