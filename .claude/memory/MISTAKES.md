@@ -48,3 +48,7 @@ Format:
 ## 2026-10-30 — Lambe build ke dauran naye owner orders miss
 - **Ghalti:** mob farm (~8 min) banate waqt owner ka "armour wapis pehnado fast" t:3m window se nikal gaya; agle check me t:6m se pakda, ~5 min late.
 - **Bachao:** lambe kaam ke beech har ~3 min `co lookup t:3m ... u:MrCopper804 a:chat` dekh lo; check me pichle handled time se ab tak ka window lo (t:3m fixed nahi).
+
+## 2026-10-30 — Mob farm: spawning floor pe paani
+- **Ghalti:** mob tower ke arms ka poora floor flowing water se dhaka banaya → mobs fluid wale block me spawn nahi hote → 0 mobs.
+- **Bachao:** spawning pads hamesha DRY rakho; water channels pads se 1 block neeche (ya pads 1 block upar) taaki paani pads par na faile, mobs khud channel me gir jaayein. Build ke baad turant `execute if entity @e[x..,dx..]` se mobs count verify.
