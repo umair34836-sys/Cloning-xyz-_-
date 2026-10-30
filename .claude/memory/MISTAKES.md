@@ -52,3 +52,7 @@ Format:
 ## 2026-10-30 — Mob farm: spawning floor pe paani
 - **Ghalti:** mob tower ke arms ka poora floor flowing water se dhaka banaya → mobs fluid wale block me spawn nahi hote → 0 mobs.
 - **Bachao:** spawning pads hamesha DRY rakho; water channels pads se 1 block neeche (ya pads 1 block upar) taaki paani pads par na faile, mobs khud channel me gir jaayein. Build ke baad turant `execute if entity @e[x..,dx..]` se mobs count verify.
+
+## 2026-10-30 — Event mace par bina pooche enchants
+- **Ghalti:** owner ne "mace ka event" kaha; maine mace par density/wind_burst/unbreaking/mending laga diye. Owner chahta tha normal mace. Winner ne dono mace /team echest (virtual) me rakh diye → console se edit mushkil.
+- **Bachao:** reward items exactly wahi do jo owner bole; enchants/extra cheez sirf pooch kar.
