@@ -44,3 +44,7 @@ Format:
 ## 2026-10-30 — Owner ke "haan" ko apni taraf se specific approval samjha ke relay kiya
 - **Ghalti:** owner ne "manager k liee haan" kaha (general); maine child session ko likha "meri reading: castle approval" → child ne owner ke ghar par castle shuru kar diya. Owner ka asli matlab: "ghar change mat karna". Child ne revert kiya, maine verify kiya (ghar intact).
 - **Bachao:** owner ka general "haan" kabhi kisi destructive/specific kaam ki approval na banao. Relay me sirf owner ke exact words do, apni interpretation nahi; destructive cheez ke liye owner se specific confirm ("haan castle") maangne ko kaho.
+
+## 2026-10-30 — Lambe build ke dauran naye owner orders miss
+- **Ghalti:** mob farm (~8 min) banate waqt owner ka "armour wapis pehnado fast" t:3m window se nikal gaya; agle check me t:6m se pakda, ~5 min late.
+- **Bachao:** lambe kaam ke beech har ~3 min `co lookup t:3m ... u:MrCopper804 a:chat` dekh lo; check me pichle handled time se ab tak ka window lo (t:3m fixed nahi).
