@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-30
 
+- **Owner (in-game 08:31 UTC):** Sunday tak sab ki screen par: spawn build event — best build = Builder rank + 40 extra slots (PV 1). → bossbar `build_event` + cron 5ee28839 (*/3, @a add, Mon 2 Nov ko remove). PENDING: spawn WG protected — build area kahan (owner se poocha).
 - **User (08:14 UTC):** "Achi check kerte jao every minute" → in-game owner watch ab har 1 minute: cron 4fb8e993 (* * * * *), purana 345d2209 (*/2) band. Session-only, 7 din me expire.
 - **08:05 UTC hourly run done:** no new owner Discord msg, no new review; manager report posted (Killer ko /power give wind — owner ko flag). PENDING: Rudra 8 hearts removal (owner "claude haan" ka wait), Shreyas, bots, Sunday event.
 - **Owner (in-game 07:15 UTC):** manager ki building me help + uske liye ALAG session. → session_01JK8Ts7NMHc36nUNv8QHm8r (manager build helper, sirf building, har 2 min techshot ke "claude ..." msgs). Ye (owner) session ab manager ke build requests khud nahi karega — wo naya session karega.
