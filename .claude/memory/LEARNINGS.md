@@ -59,3 +59,4 @@ Format:
 - Base photos repo me commit nahi ki (reports/worldlens/bases/ gitignored) — privacy.
 - Kick reason console log me hota hai; WorldLens command output me nahi aata. AuthMe checks: `authme accounts <name|ip>`, `authme lastlogin`, `authme getip`. LifeStealZ: `lifestealz hearts get <p>`. firecraft MCP: get_user(ign) se website account/application.
 - "lost connection: Disconnected" = client ne connection toda (server kick hota to "kicked" + reason). GrimAC 2.3.74 ka shaded packetevents 2.13.1 MC 26.2 par "Unknown entity metadata type id: 105" deta hai → affected player desync/disconnect. Fix: Grim update; temp: grim.exempt.
+- 30 Oct: LP ranks kisi aur session ne (Console) dobara banaye: owner/manager/youtuber/builder/loyal/member/exposed/default. Bot ke naam se staff-chat me posts doosre sessions se bhi aa sakti hain (by_this_bot=true matlab sirf same bot, zaroori nahi ye session).
