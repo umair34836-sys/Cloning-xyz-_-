@@ -66,3 +66,5 @@ Format:
 - `place feature minecraft:cherry X Y Z` / `flower_cherry` / `flower_meadow` = ek command me full tree/flowers. Pehle `execute if block X Y-1 Z grass_block` check.
 - `execute if ... run <cmd>` ka blank output = condition fail / run ka output nahi dikhta → result `data get`/`execute if block` se verify karo.
 - WorldEdit console se: `worldedit:/world world` → `worldedit:/pos1 x,y,z` / `pos2` → `worldedit:/count <mask>`, `worldedit:/replace "<mask>" <pattern>`; khatam hone par `worldedit:/world` (override hatao). Mask `~water` = 6 sides (upar/neeche bhi) me adjacent.
+- WorldGuard region console se: WE selection (`worldedit:/world world`, `worldedit:/pos1/pos2`) phir `rg define -w world <name>` — kaam karta hai. Flags `rg flag -w world <name> <flag> <value>`. build deny ke saath use/interact ALLOW alag se do warna doors/buttons band.
+- Same design multiple jagah: `clone` (WE selection/count se pehle exact bounding box nikaalo, `worldedit:/count !air`).
