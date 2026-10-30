@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-30
 
+- **Owner (in-game ~06:40 UTC):** "claude manager jo build bana raha hai usme uski help kro" → manager spawn par lily pond (x690-698 z64-72) + fountain/gold decor bana raha hai. Manager ko msg: "claude help ..." likh kar batao kya chahiye. **PENDING:** in-game watch me techshotgaming ke "claude help" messages bhi dekho (sirf build help, non-destructive, spawn ke protected logo/paths kharab na hon). Owner ko bata diya.
 - **Owner (chat):** in-game MrCopper804 ki baat suno aur wo karo. Setup: cron 345d2209 (*/2) — sirf MrCopper804 ke "claude ..." se shuru messages; reply `msg MrCopper804`; destructive kaam se pehle in-game confirm. Owner ko in-game bata diya.
 - **Owner (Discord 05:20 UTC):** website ke naye reviews auto-post #⭐┃reviews me. Done: 2 missing reviews post; hourly task step 2 me auto-post; state = reports/worldlens/reviews_last_posted.txt. Last handled owner msg: 1565596212504305697.
 
