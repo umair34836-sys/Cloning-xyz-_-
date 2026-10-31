@@ -76,3 +76,4 @@ Format:
 - Prefer high-star / popular repos where ambiguous. Install method: **git submodules** under `tools/`.
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
 - **31 Oct 05:04 UTC hourly run done:** no new owner Discord msg/review; report posted #owner-private. PENDING: spawn deepslate walls (owner 'server yahi wall' ka wait), Shreyas, Rudra 8 hearts, bots, Sunday event.
+- **Owner (in-game 05:11 UTC 31 Oct):** 'manager wale session ko bolo k manager ki baat sune' → manager session_01JK8Ts7NMHc36nUNv8QHm8r ko message bheja (re-activate + watch cron recreate). Ye owner session ab bhi manager ke orders follow nahi karta.
