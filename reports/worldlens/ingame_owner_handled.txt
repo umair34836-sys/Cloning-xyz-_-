@@ -88,3 +88,10 @@
 2026-10-31 ~04:55 UTC | MrCopper804 (PRIVATE /msg self): "server tp me to itskiller and make him happy with grand party" | DONE: tp owner → Itskillerxd1; encore party (title Itskiller, levelup sound, happy particles, 3 fireworks upar). Private mode confirmed working.
 2026-10-31 ~04:58 UTC | MrCopper804 (PRIVATE): "server players ko bolo apna build event start kare" | DONE: in-game title+subtitle+owner tellraw (society north 680 -40, 8 plots, Sunday, Builder rank + 40 slots) + raid horn; Discord #smp-chat embed. Owner msg.
 2026-10-31 ~04:57 UTC | DC smp-chat: .ItskillerXD67 "Spawn ke cods do" (build-event post pe) → bot reply: spawn 675 70 57, society 680 70 -40.
+[2026-10-31 ~04:58 UTC] PRIVATE order (msg MrCopper804 server ...): "society me jahan jahan damage howa hai wo fix kerdo and explosion free kerdo"
+  - WG region 'society' flags set DENY: tnt, creeper-explosion, other-explosion, ghast-fireball, wither-damage, enderdragon-block-damage, fire-spread
+  - Player check in area (execute if entity) -> none present, safe to fill
+  - WE replace air/cave_air -> dirt in 640,60,-80..720,68,0 = 31 blocks
+  - WE replace air/surface dirt -> grass_block at y69 same area = 39 blocks
+  - Recount 28 = fountain water (intentional). Verified with shot 20261031-045928_shot_world_680_110_10.png (clean)
+  - Owner informed in-game (whisper, no '@').
