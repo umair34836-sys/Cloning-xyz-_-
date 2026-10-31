@@ -126,3 +126,4 @@
   - Extinguished 37 leftover fire blocks in Itskiller area (WE replace fire air; fire spread already off). 0 fire left at x760-860.
   - Fire damage (CO #fire 1h ~1180 blocks) = forest trees/leaves/leaf_litter at x785-812, z-31..-14 (no buildings). Owner informed.
 [2026-10-31 05:30 UTC] Owner "server haan give only manager" -> relayed one-time approval to build-helper session_01JK8Ts7NMHc36nUNv8QHm8r: give maxed ADMIN tools/weapons to techshotgaming ONLY. Owner informed.
+[2026-10-31 05:30 UTC] Helper session confirmed give done to techshotgaming ONLY (owner-approved): 10 items ADMIN netherite sword/axe/pick/shovel/hoe + bow(+1 arrow)/crossbow/trident/mace, maxed enchants, unbreakable, Mending/Unbreaking, Curse of Vanishing. One-time approval.
