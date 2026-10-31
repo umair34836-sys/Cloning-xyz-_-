@@ -46,3 +46,9 @@ Area x529-568 z-81..-43 (existing trees kept).
 - Wishing well centre x550-554 z-66..-62 (stone brick rim, water, fence posts, dark oak roof, lantern).
 - +3 trees (fancy oak, cherry, birch); ground: leaf litter, moss carpet, ferns, firefly bushes, azalea, lily of the valley.
 - Benches + lamp posts at path corners; glowing "ENCHANTED GROVE" sign.
+
+# NE FLOWER GARDEN REDESIGN + MORE REDSTONE (owner order 31 Oct 06:43 UTC)
+Garden x576-613 z-80..-46. Keep existing: night lamps (4), music path z-60, magic flowers dispenser (600,-72), archery target (608,-56).
+- Clear random flowers; gravel walkways E-W z-66..-65 and N-S x594-595.
+- Patchwork beds (replace air only): NW tulips (red/orange/pink/white), NE blues/whites (cornflower, allium, azure bluet, lily of the valley), SW warm (dandelion, poppy, oxeye, blue orchid), SE mixed (pink tulip, cornflower, allium, oxeye).
+- NEW: Fountain Switch (dispenser+water bucket, lever, polished andesite basin x597-601 z-52..-48); Flower Vending Machine (dropper + button, 9 stacks flowers) at 585,-64; Garden Bell (button -> bell rings + 2 lamps) at 604,-64. Signs for each.

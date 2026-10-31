@@ -203,3 +203,10 @@
   - Kept chair/table design (oak fence + oak pressure plate + oak stairs seats). Built unit around table (585,-15): spruce plank deck x583-587 z-16..-14, 4 spruce fence posts y70-72, spruce slab roof y73, hanging lantern; cloned unit to (595,-15),(605,-15),(585,-6),(595,-6),(605,-6) = 6-table grid (old odd table 605,-11 removed; others replaced by identical sets).
   - Gravel paths x589-591 & x599-601 (z-24..1) + z-11..-10 (x572-611); BBQ corner (stone pad, lit campfire, smoker, barrel, sign) at 578,-20; 4 lamp posts at corners; flowers WE; glowing "PICNIC MEADOW" sign at 573,-12.
   - Owner not in build cells (checked). Shot 20261031-064028. Nobody inside blocks. Owner informed.
+[2026-10-31 06:43-06:47 UTC] CHAT order "server now is area ko redesign kerdo and details add kro alsoo kuch advance redstone builds add krdo" (owner 596,71.8,-60.8 on music path = NE flower garden)
+  - Plan appended to park_blueprint.md. Existing 4 redstone builds kept (fills used replace air).
+  - Cleared 899 random flowers (WE); gravel walkways E-W z-66..-65 + N-S x594-595; 16 patchwork beds (tulips red/orange/pink/white, cornflower, allium, azure bluet, lily of the valley, dandelion, poppy, oxeye, blue orchid, pink tulip, cornflower, allium).
+  - NEW Fountain Switch: polished andesite basin x597-601 z-52..-48, stone brick floor, dispenser[facing=east]+water_bucket at 597,70,-50, lever 596,70,-50, sign. TESTED: lever ON -> water at 598,70,-50, contained (no water outside). Left ON (fountain running).
+  - NEW Flower Vending: dropper[facing=south] 585,70,-64 with 9x64 flowers, button on top, sign. TESTED: 1 pink tulip dispensed (test items killed).
+  - NEW Garden Bell: chiseled block 604,70,-64 + bell on top + 2 redstone lamps sides + wall button south, sign. TESTED via powering block: lamps lit + bell powered.
+  - Shot 20261031-064713. Nobody inside blocks. Owner informed.
