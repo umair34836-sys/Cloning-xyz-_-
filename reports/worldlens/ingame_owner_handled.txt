@@ -273,3 +273,12 @@
     Note: chamber idea failed (water flowed into side cell, washed lever away) -> replaced by button in dry top cell.
   - Hidden: azalea/flowering azalea leaf bush y112-113 over torch/pistons/heads; button nook under leaves west of bush; pink petals + grass around. Shot 20261031-083510 (no hole visible).
   - Owner told how to open (in + out). XREAM offline -> tell him when online (owner wanted secret only for XREAM).
+[2026-10-31 08:42 UTC] CHAT "server is k entrence ko aisa automate kro k ab koi is k pass aye or armour uthare to ye jagha sare door ki trah kulay and jaise hi armour wapis pehne to ye lock ho jai skull sensers se ... research ker lena and please work fast" -> "Sir I am working on it" sent.
+  - Research (minecraft.wiki Calibrated Sculk Sensor): unequip = freq 4, equip = freq 5; input = amethyst side; active 10 ticks; range 16.
+  - DOWN hatch rebuilt (pure redstone, no command blocks): removed NOT-torch + button; lid memory = lid position.
+    CLOSE piston (normal) -13811,111,-2560 facing east <- calibrated_sculk_sensor[facing=east] -13811,110 tuned 5 via comparator[facing=west] -13812,110 + composter[level=5] -13813,110.
+    OPEN piston (normal) -13808,111,-2560 facing west <- calibrated_sculk_sensor[facing=west] -13808,110 tuned 4 via comparator[facing=east] -13807,110 + composter[level=4] -13806,110.
+    Lid: closed at -13809,111 (hole) / open at -13810,111 (under bush). Leaves added over open piston (-13808,112).
+  - Learned: comparator `facing` = toward its input; calibrated sensor `facing` = OPPOSITE of the amethyst input side (input faces away from facing). First try had it reversed.
+  - Tested with armor stand item replace: unequip -> lid to -13810 (OPEN), equip -> lid to -13809 (CLOSED). Owner then tested himself (unequip, jumped in).
+  - Limitation told to owner: re-equip deep in base (>16 blocks) doesn't close; offered auto-close timer. UP exit button unchanged.
