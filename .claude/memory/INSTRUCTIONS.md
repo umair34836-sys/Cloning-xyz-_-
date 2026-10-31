@@ -12,6 +12,7 @@ Format:
 - **Owner (in-game 08:31 UTC):** Sunday tak sab ki screen par: spawn build event — best build = Builder rank + 40 extra slots (PV 1). → bossbar `build_event` + cron 5ee28839 → worker restart (30 Oct 23:57 UTC) ke baad recreate: bb720465 (*/3, @a add, Mon 2 Nov ko remove). PENDING: spawn WG protected — build area kahan (owner se poocha).
 - **User (08:14 UTC):** "Achi check kerte jao every minute" → in-game owner watch ab har 1 minute: cron 4fb8e993 (* * * * *), purana 345d2209 (*/2) band. Session-only, 7 din me expire.
 - **Owner (Discord 09:52 UTC):** in-game watch aaj ke liye band ("owner kal ayega") → cron 4fb8e993 deleted 10:05. PENDING: owner kal aaye/bole to every-minute in-game watch dobara CronCreate karo (same prompt). Bossbar cron 5ee28839 chalu.
+- **31 Oct 00:04 UTC hourly run done:** bilkul shant.
 - **23:04 UTC hourly run done:** bilkul shant.
 - **22:04 UTC hourly run done:** bilkul shant.
 - **21:04 UTC hourly run done:** shant; WorldLens/MCP connection flaky (timeouts/Bad Gateway) since ~20:15.
