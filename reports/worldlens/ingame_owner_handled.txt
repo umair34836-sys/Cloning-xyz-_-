@@ -185,3 +185,4 @@
   - Asked owner to step aside; area x581-611 z-37..-29 clear. 12 stalls (4x3 each, spruce fence posts, coloured wool canopy y73, 2 barrels counter facing path, spruce slab back): North row (face E-W/society path) x581/586/591/596/601/606 z-37..-35; South row (face SE spur) z-31..-29. Glowing name signs in front.
   - Assignment (12 active whitelisted players): 1 Itskillerxd1, 2 .ItskillerXD67, 3 RudraJUSTGOD, 4 KILLER_SPY, 5 Suko_inf, 6 XREAMxPRO, 7 deepak9098, 8 123_leo_0000, 9 StrikeHunter, 10 slayushen, 11 NotRedBisht, 12 Mr_shadow_6232.
   - Announced: in-game tellraw to all + #smp-chat embed (no pings). Shot 20261031-062700. Owner informed.
+[2026-10-31 06:28 UTC] CHAT "claude meri inv clear kerdo without armour" -> CLEAR = confirm-required; asked owner in-game ("server haan"). PENDING. Plan: item replace inventory/hotbar slots with air, keep armor + offhand.
