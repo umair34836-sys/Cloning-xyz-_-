@@ -39,3 +39,10 @@ Area x529-568, z-38..1 (pond x537-555 z-26..-11).
 3. Island x544-547 z-24..-21 with azalea tree. 4. Stepping stones south half.
 5. 4 stone lanterns (tōrō) around pond. 6. Bamboo grove west (x530-534 z-37..-28).
 7. Dark-oak pavilion x541-547 z-7..-1 with benches + hanging lantern. 8. Gravel path bridge→N-S path; flowers + azalea bushes sprinkled.
+
+# NW QUADRANT REDESIGN — ENCHANTED GROVE (owner order 31 Oct 06:36 UTC)
+Area x529-568 z-81..-43 (existing trees kept).
+- Loop path (WE mix dirt_path/moss/cobble/gravel, 3 wide): S1 x544-546 z-55..-43 (from E-W path), S2 x544-559 z-58..-56, S3 x557-559 z-72..-56, S4 x538-559 z-72..-70, S5 x538-540 z-72..-56, link S6 x559-568 z-61..-59 to N-S path.
+- Wishing well centre x550-554 z-66..-62 (stone brick rim, water, fence posts, dark oak roof, lantern).
+- +3 trees (fancy oak, cherry, birch); ground: leaf litter, moss carpet, ferns, firefly bushes, azalea, lily of the valley.
+- Benches + lamp posts at path corners; glowing "ENCHANTED GROVE" sign.
