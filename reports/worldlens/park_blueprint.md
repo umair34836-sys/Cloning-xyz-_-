@@ -23,3 +23,8 @@ Land: x528–615 (x528–612 for z≥-24), z-82..2, ground grass y69 (walk y70).
 8. Lamp posts (stone-brick-wall post + lantern) every 12 blocks along main paths.
 9. "FIRECRAFT PARK" sign at east gate.
 Safety: player check before each fill; no owner house (x640-652 z23-36) nearby.
+
+# POOL + PLAYGROUND (owner order 31 Oct 06:12 UTC) — between park, society, spawn
+Area x617–637, z-38..2 (21×41), flatten to grass y69 (walk 70). Gates: P2 south border opened at x626-627 (pool), P1 east border opened at x616 z-14..-13 (playground).
+- POOL (north, z-37..-17): smooth-quartz deck; basin x621-633 z-35..-19, prismarine-brick walls/floor, sea lanterns in floor; deep end z-35..-28 (4 deep), shallow z-27..-19 (2 deep); ladders; diving board (quartz posts + slab) at north; 4 loungers (birch stairs) + 2 umbrellas.
+- PLAYGROUND (south, z-15..0): sandbox (sand + slab rim), slide tower (planks, ladder, stairs slide), swing set (fence frame + chains + slab seats), seesaw (fence pivot + slabs), benches, lamps, sign.

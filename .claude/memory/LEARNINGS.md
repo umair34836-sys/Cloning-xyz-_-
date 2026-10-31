@@ -88,3 +88,4 @@ Format:
 - (31 Oct) MC 26.x: `doFireTick` gamerule removed → use `gamerule minecraft:fire_spread_radius_around_player <n>` (NOTE: 0 did NOT stop spread — use 1 = only within 1 block of a player; default 128).
 - (31 Oct) WE console keeps undo history: `worldedit:/undo N` (with `worldedit:/world world` set) reverts the last N console edits. `^block` pattern keeps states (walls/stairs). `~mask` = adjacent-to mask works; `[min][max]` count syntax does NOT parse.
 - (31 Oct) Redstone via commands: repeater[facing=west] takes input from WEST, outputs EAST. A redstone_block next to a solid block does NOT power that block (test by replacing the block itself). Dispenser bone meal only works if target grass has AIR above (put dispenser at ground level facing sideways). Target block arrow power lasts ~1s — check immediately after summoning arrow.
+- (31 Oct) MC 26.x: `chain` block = `minecraft:iron_chain`.
