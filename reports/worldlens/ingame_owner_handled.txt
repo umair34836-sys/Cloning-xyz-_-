@@ -263,3 +263,4 @@
   - Room area merged into base (z-2556..-2537), same style; 4 beds (red/blue/green/yellow) east wall. Lava/water around sealed (13). Air pockets outside not sealed (their tunnel kept).
   - Players checked before every placement; nobody stuck. Shot 20261031-074347. Owner + XREAM msg sent.
 [2026-10-31 08:24 UTC] CHAT "server are you lisning me ?" + "server clear my inv witout my armour" -> replied working; CLEAR = confirm-required, asked "server haan". PENDING.
+[2026-10-31 08:25 UTC] CHAT "server haan" -> cleared MrCopper804 inv by item (dandelion 2, wheat_seeds 1, stone_bricks 1, rotten_flesh 2, farmland 1, grass_block 1). Inventory [] verified, armour untouched. Owner msg done.
