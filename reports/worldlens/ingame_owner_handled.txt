@@ -227,3 +227,6 @@
   - Portal verified: execute if block 585 78 -73 nether_portal -> passed.
   - PROTECTION: WG region sword_portal (world) x578-592 y60-110 z-82..-64, priority 10, flags DENY: build, block-break, block-place, tnt, creeper-explosion, other-explosion, fire-spread, lighter, ghast-fireball, enderman-grief. Other redstone builds (x605+) outside region.
   - Shot: plugins/WorldLens/shots/20261031-065859_shot_world_600_82_-73.png. Owner msg sent.
+[2026-10-31 07:01 UTC] CHAT "server haan clear and yes for mobs" -> confirms both pending items.
+  - Inv clear (without armour): cleared by item type: bone_meal 575, grass_block 1, lily_pad 1, oak_pressure_plate 1, stone_button 2, poppy 8, pink_tulip 2, stone_bricks 1, blue_orchid 2, bone 1, white_tulip 1, tropical_fish 2. Inventory [] verified; OWNER netherite helmet/chest/legs/boots untouched (equipment verified).
+  - Mobs (manager request via helper session, owner yes): rg flag globle_spawn mob-spawning deny; new region `park` (x528-637 y-64..319 z-82..2, priority 0) mob-spawning deny. mobfarm (x515-538 z107-128) no overlap. Helper session informed. Owner msg sent.
