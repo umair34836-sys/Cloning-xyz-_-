@@ -85,3 +85,9 @@ Format:
 - **31 Oct 06:08 UTC staff digest posted** (appreciation given: manager port-20028 announcements + Bedrock join help).
 - **31 Oct 07:17 UTC hourly run done:** report embed #owner-private (owner ne in-game report maangi thi). Manager ne khud ko Strength II + Resistance IV infinite effects diye + spectator — owner ko report kiya, decision PENDING. Cave: owner ne pehle remove phir "mat delete kro" bola → rakha. Park centre fountain upgrade done. Pending same: Shreyas, Rudra hearts, bots, Sunday event.
 - **31 Oct ~07:25 UTC (owner, Claude chat):** skin image diya — "jab game me bolo mere character ko yaha build kerdo to is skin se 3D character full details ke saath bana dena". Prepared: owner_statue/ (skin, generator, preview, BUILD.md) + RULES #14. DONE 07:29 UTC — 2 statues spawn logo ke left+right (owner_statue_w/e).
+- **31 Oct 07:54 UTC — OWNER: "STOPS EVERYTHING NOW ALL WORKS STOP KRO PAUSE KRO"** → PAUSED:
+  - Session crons deleted: 09c1383e (in-game owner watch, every 1 min), 5037ce6d (owner Discord relay, every 2 min), bb720465 (build-event bossbar upkeep, every 3 min). Prompts same as before (see ingame_owner_handled.txt / transcript); resume ke liye CronCreate dobara.
+  - Triggers DISABLED (not deleted): trig_01TTKU7gbAQRGGp2bLEjAXjL (hourly report), trig_01EnfGT9NHAwrwHGTM3Us9rB (3-hourly staff digest). Resume = update_trigger enabled=true.
+  - Untouched (other projects, not FireCraft): client-portal check, CNG/petrol SMS, InfoLine fallback.
+  - NOT DONE (paused): owner in-game ~07:48 "server oper jo inki entrence hai or outrence isko hidden kerdo ... hard redstone system ... secret sirf in base k players ko bata do" (Killers base lifts hidden entrance). Owner ne pucha "har ek minute dekh ker respond kro, kia howa tumhe?" — watch late pakad raha tha.
+  - Bossbar build_event abhi screen par hai (remove nahi kiya).
