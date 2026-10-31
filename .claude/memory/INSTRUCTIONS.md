@@ -9,6 +9,7 @@ Format:
 
 ## 2026-10-31
 
+- **FireCraft MC Discord server plan** diya (roles: Owner/Manager(sirf Techshot)/Admin/Moderator/Helper/YouTuber/Booster/Linked/Member/Bots; categories INFORMATION, COMMUNITY, IN-GAME, SUPPORT, CREATORS, STAFF, VOICE; Community ON, verification Medium, AutoMod ON, notifications only @mentions, welcome screen). Faisla: **user khud categories + roles + voice + server settings banayega**, phir Claude FCMC se text channels + permissions banayega. Status: user ke categories banane ka intezar.
 - Session ka naam **"fcmc owner"** rakho, phir FCMC connector se saari details lekar summary do (sirf read-only, kuch change nahi).
 
 ## 2026-10-30
