@@ -83,3 +83,4 @@
 2026-10-31 ~04:54 UTC | MrCopper804: "server mujhe spectator me daal ker .itskliller per nazar rakhne ko kerdo" | PENDING: gamemode = confirm-list → in-game confirm maanga, "server haan" ka wait (phir gamemode spectator MrCopper804 + spectate .ItskillerXD67 MrCopper804).
 2026-10-31 ~04:55 UTC | MrCopper804: "server haan" (confirm) | DONE: gamemode spectator MrCopper804 + spectate .ItskillerXD67 MrCopper804. Owner ko msg (wapas: "server survival").
 2026-10-31 ~04:58 UTC | MrCopper804: "server me jab bhi server likh ker tumhe kuch type kro to wo kisi or ko na dekhay aisa kerdo" | DONE: private mode — owner ko bataya `/msg MrCopper804 server <kaam>` (self-whisper, CoreProtect a:command me log). Watch cron 9430ae0d → 09c1383e (chat + command dono check). Owner test pending.
+2026-10-31 ~04:59 UTC | MrCopper804: "server survival" | DONE: gamemode survival MrCopper804 (pehle se offered return word).
