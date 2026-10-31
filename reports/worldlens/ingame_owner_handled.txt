@@ -145,3 +145,4 @@
   - DARK swap: deepslate_bricks/cracked (1418) -> 82% polished_blackstone_bricks + 18% cracked_polished_blackstone_bricks; deepslate_brick_wall (484) -> ^polished_blackstone_brick_wall; tile stairs (14) -> ^polished_blackstone_brick_stairs; deepslate_tiles band + polished_deepslate accents kept. No solidity change; post-check nobody inside blocks. Shots 20261031-054254 / 054408. Owner informed.
 [2026-10-31 05:40 UTC] Helper session: gave techshotgaming ADMIN Riptide Trident + ADMIN Silk Pickaxe (owner-approved).
 [2026-10-31 05:44 UTC] Helper session (standing rule, no confirm): gave techshotgaming 1 ADMIN Spear (netherite_spear, maxed, unbreakable, vanishing).
+[2026-10-31 05:45 UTC] CHAT order "server mujhe spawn per tp kerdo" -> tp MrCopper804 675.5 70 57.5 (spawn). Owner informed.
