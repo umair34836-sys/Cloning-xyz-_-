@@ -143,3 +143,5 @@
   - Wood in walls: 7 (wall above) + 3 (wall below) -> deepslate_bricks; 3 oak_log at NW corner opening -> polished_deepslate frame; 6 more wood touching only wall blocks in north half -> blackstone bricks. 19 wood touching walls in SW quadrant = Itskiller's house frames next to south wall -> left untouched (an accidental replace there was immediately //undo'ne; count verified 19 restored).
   - Sandwiched air holes = 0; 2 uncapped tops re-capped (tile + wall).
   - DARK swap: deepslate_bricks/cracked (1418) -> 82% polished_blackstone_bricks + 18% cracked_polished_blackstone_bricks; deepslate_brick_wall (484) -> ^polished_blackstone_brick_wall; tile stairs (14) -> ^polished_blackstone_brick_stairs; deepslate_tiles band + polished_deepslate accents kept. No solidity change; post-check nobody inside blocks. Shots 20261031-054254 / 054408. Owner informed.
+[2026-10-31 05:40 UTC] Helper session: gave techshotgaming ADMIN Riptide Trident + ADMIN Silk Pickaxe (owner-approved).
+[2026-10-31 05:44 UTC] Helper session (standing rule, no confirm): gave techshotgaming 1 ADMIN Spear (netherite_spear, maxed, unbreakable, vanishing).
