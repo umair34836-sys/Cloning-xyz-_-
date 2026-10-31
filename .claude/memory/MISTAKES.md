@@ -19,3 +19,4 @@ Format:
 - User ne baar baar kaha: LifeStealZ (kisi aur ka published plugin) ko REA se decompile karke "uski files use karo / clone banao". Ye **copyright infringement** hai — decline kiya (chahe tool REA ho). Issue tool nahi, ownership hai: LifeStealZ user ka apna nahi (author: KartoffelChipss/ZetaPlugins).
 - Legit raasta jo diya: **original** lifesteal plugin (FireSteal) scratch se banaya `firecraft-lifesteal/` me — same mechanics, par original code + hardened (anti-dupe, signed heart items, prepared statements, anti-farm, Electron-style clamps). REA sirf user ke APNE / owner-authorized binary par use hoga.
 - REA se decompiled 3rd-party code ko naye plugin me copy karna = NAHI (IP reminder bhi).
+- **2026-10-31**: Pehle FCMC ki tool list ko final maan kar user ko manual guide di; baad me OPEN mode me zyada tools aa gaye. Bachao: connector ki capabilities par faisla dene se pehle `discord_status` + ToolSearch dobara check karo.
