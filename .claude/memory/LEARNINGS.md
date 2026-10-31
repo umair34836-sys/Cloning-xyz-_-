@@ -89,3 +89,4 @@ Format:
 - (31 Oct) WE console keeps undo history: `worldedit:/undo N` (with `worldedit:/world world` set) reverts the last N console edits. `^block` pattern keeps states (walls/stairs). `~mask` = adjacent-to mask works; `[min][max]` count syntax does NOT parse.
 - (31 Oct) Redstone via commands: repeater[facing=west] takes input from WEST, outputs EAST. A redstone_block next to a solid block does NOT power that block (test by replacing the block itself). Dispenser bone meal only works if target grass has AIR above (put dispenser at ground level facing sideways). Target block arrow power lasts ~1s — check immediately after summoning arrow.
 - (31 Oct) MC 26.x: `chain` block = `minecraft:iron_chain`.
+- (31 Oct) `item replace entity X hotbar.*` wildcard NOT supported here → to clear inventory but keep armour, read `data get entity X Inventory` and `clear X <item>` per item type (armour is in equipment, untouched).

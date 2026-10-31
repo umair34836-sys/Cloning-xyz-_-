@@ -186,3 +186,4 @@
   - Assignment (12 active whitelisted players): 1 Itskillerxd1, 2 .ItskillerXD67, 3 RudraJUSTGOD, 4 KILLER_SPY, 5 Suko_inf, 6 XREAMxPRO, 7 deepak9098, 8 123_leo_0000, 9 StrikeHunter, 10 slayushen, 11 NotRedBisht, 12 Mr_shadow_6232.
   - Announced: in-game tellraw to all + #smp-chat embed (no pings). Shot 20261031-062700. Owner informed.
 [2026-10-31 06:28 UTC] CHAT "claude meri inv clear kerdo without armour" -> CLEAR = confirm-required; asked owner in-game ("server haan"). PENDING. Plan: item replace inventory/hotbar slots with air, keep armor + offhand.
+[2026-10-31 06:30 UTC] Owner "server haan" (confirm) -> cleared MrCopper804 inventory by item type (item replace hotbar.*/inventory.* wildcards NOT supported): cobblestone 556, cobbled_deepslate 2, torch, ender_chest, dirt 3, dandelion, wheat_seeds 4, grass_block. Inventory [] verified; OWNER netherite armour (equipment) untouched. Owner informed.
