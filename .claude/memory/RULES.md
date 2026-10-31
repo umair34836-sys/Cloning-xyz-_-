@@ -30,3 +30,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 
 - (Owner 31 Oct) TPA: private SMP me TPA nahi hota. Koi TPA maange/suggest kare to politely: "Private SMP me koi TPA nahi hota, aage se TPA ke baare me mat bolna." TPA plugin/command add mat karna.
 12. (Owner 31 Oct 05:39 UTC) Manager techshotgaming ko ITEM GIVE ke liye owner se confirm NAHI poochna ("mujhse maat pochna next time"). Sirf manager khud ko; log + report karo. Doosron ko give, aur ban/op/perms/gamemode/kill/clear/stop/rollback/whitelist ab bhi confirm.
+13. (Owner 31 Oct 05:54 UTC) "worldlens images lete raho, jo cheez ghalat/kharab ho unko time se fix karo" → har hourly run me key areas (spawn 675,57 / society 680,-40 / prison 600,58 / museum 570,-40 / Itskiller fort 1150,-570) ke WorldLens shots lo; grief/damage/fire/holes dikhe to fix (non-destructive, player check), owner ko report.

@@ -156,3 +156,7 @@
   - P2 (museum -> society): centre z-41..-40, borders z-42/-39, x616-641 graded 66->70 (bridged over pond x626-637 with dirt), meets society west road arm at x642.
   - Pre-checks: build-block counts on routes (0 except the prison tower avoided + 3 matching tiles), players clear. WE lanterns 12% on borders + 45% pink petals on centre.
   - Owner informed. (Owner chat "manager kal ... society me tp ... chest ..." was to manager -> not my order.)
+[2026-10-31 05:55-05:57 UTC] CHAT orders: (1) "server spawn prison and society hhi jitna surface area musyem wala land ka bhi kroo y level bhi same" (2) "server worldlense images le te raho jo jizz ghalat ya kharab ho unko fix time se ker deya kro"
+  - (1) Checked box x528-615 z-82..2 y40-150: only my own P1 tiles/lanterns (60), no player builds; only owner (flying). WE: cleared y70-160 (657475 + 15834 incl. hills/trees/lava fall), filled y40-68 air/water/lava/plants -> dirt (19349 + 365), top y69 grass (7225 + 174). Museum land = 88x85 like society (x528-612 for z-24..2 so P1 stays as east edge; x528-615 for z-82..-25). Same ground Y as spawn/prison/society (grass 69, walk 70).
+  - Re-levelled P1 (x613-616 z-24..33) + P2 (x616-641 z-42..-39) flat at walk 70 (grass y69, tile borders y69-70), lanterns + petals re-added. Top shot 20261031-055656 OK, lava gone. Nobody inside blocks.
+  - (2) Saved as RULES #13: hourly WorldLens shots of key areas + timely fixes + report. Owner informed.
