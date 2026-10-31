@@ -78,3 +78,4 @@ Format:
 - **31 Oct 05:04 UTC hourly run done:** no new owner Discord msg/review; report posted #owner-private. PENDING: spawn deepslate walls (owner 'server yahi wall' ka wait), Shreyas, Rudra 8 hearts, bots, Sunday event.
 - **Owner (in-game 05:11 UTC 31 Oct):** 'manager wale session ko bolo k manager ki baat sune' → manager session_01JK8Ts7NMHc36nUNv8QHm8r ko message bheja (re-activate + watch cron recreate). Ye owner session ab bhi manager ke orders follow nahi karta.
 - **31 Oct 05:14 UTC:** Manager build-helper session_01JK8Ts7NMHc36nUNv8QHm8r active again (cron 1f3bd0dc). First job: manager's worn MANAGER armour trim diamond→redstone (cosmetic only). Its branch claude/manager-build-helper push blocked by its permissions (local commit only).
+- **31 Oct 05:22 UTC:** Owner confirmed → fire spread OFF (fire_spread_radius_around_player 0; was 128).
