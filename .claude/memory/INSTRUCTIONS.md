@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-10-31
+
+- Session ka naam **"fcmc owner"** rakho, phir FCMC connector se saari details lekar summary do (sirf read-only, kuch change nahi).
+
 ## 2026-10-30
 
 - **POSTPONED (2026-10-30, user ne kaha):** FireCraft economy plugin idea abhi hold par hai. Jab tak user dobara na kahe, is par kaam na karo.
