@@ -287,3 +287,4 @@
     CLOSE piston -13811,111 facing east <- calibrated sensor[facing=east] -13811,110 + comparator[facing=west] -13812,110 + composter[level=5] -13813,110.
     OPEN piston -13808,111 facing west <- calibrated sensor[facing=west] -13808,110 + comparator[facing=east] -13807,110 + composter[level=4] -13806,110. Leaves over -13808,112.
   - Tested (armor stand): unequip -> BOTH lids open; equip -> BOTH closed. Test stand removed (tp void). Owner informed.
+[2026-10-31 09:09 UTC] CHAT "server stop in game watcher for some time and open discord owner private channel watcher ok" -> in-game watch cron fb2cbb4b deleted; new Discord #owner-private watch cron 04538a65 (every min, owner id 1556195237083353191 only). Confirm posted in #owner-private (owner went offline in-game before msg).
