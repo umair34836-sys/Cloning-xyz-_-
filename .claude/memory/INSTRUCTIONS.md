@@ -91,3 +91,6 @@ Format:
   - Untouched (other projects, not FireCraft): client-portal check, CNG/petrol SMS, InfoLine fallback.
   - NOT DONE (paused): owner in-game ~07:48 "server oper jo inki entrence hai or outrence isko hidden kerdo ... hard redstone system ... secret sirf in base k players ko bata do" (Killers base lifts hidden entrance). Owner ne pucha "har ek minute dekh ker respond kro, kia howa tumhe?" — watch late pakad raha tha.
   - Bossbar build_event abhi screen par hai (remove nahi kiya).
+- **31 Oct ~07:55 UTC RESUMED** (crons 6c890202/84637953/a1499f90 + triggers on). **~08:07 UTC PAUSED AGAIN** on owner order "claude pause everything imediatly" — crons deleted, both FireCraft triggers disabled. Owner in-game 08:0x: "NHI NHI THEEK HOGYA HAI ABHI".
+- **Owner rule (31 Oct):** "in game owner k work ko priority do, baqi work baad me" — in-game owner ke orders sabse pehle; reports/digest/relay baad me. Bade build se pehle owner ko in-game "shuru kar raha hoon" batao.
+- PENDING (paused): Killers base lift entrance hidden + hard redstone secret door, secret sirf base players ko.
