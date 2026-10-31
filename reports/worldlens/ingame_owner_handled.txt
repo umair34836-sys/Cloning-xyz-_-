@@ -104,3 +104,9 @@
   - techshotgaming had no armour on; his own MANAGER netherite set (helmet/chest/legs/boots, unbreakable) was in his ender chest slots 0-3.
   - item replace armor.* from enderchest.0-3, then enderchest.0-3 -> air (moved, no duplication, no new items). Verified equipment. Owner informed.
   - Diamond vanishing-curse set still in his ender chest slots 9-12 (untouched).
+[2026-10-31 05:11 UTC] CHAT order "server itskiller k in walls per me karha ho or inko upgrade kerdoo pora ... ache marks liye hai ... gift ... usko bool bhi dena"
+  - Owner at ~1137-1193, 64-66, -536..-549 (Itskiller village, overworld). Wall system = all deepslate_bricks in box 1090,50,-640 -> 1240,90,-470 (850 blocks; bigger box same count).
+  - Player safety: owner was ON the wall -> asked him to step down; re-checked (brick at ~-1/-2/-3 under any player) = none, then ran WE ops. Post-check: no player inside blocks.
+  - WE: "air >deepslate_bricks" -> deepslate_tiles (387); "air >deepslate_tiles" -> deepslate_brick_wall (385); "air >deepslate_brick_wall" -> 12% lantern (46 lanterns); deepslate_bricks -> 85% + 15% cracked (850). World override removed.
+  - Shots: 20261031-051124 / 20261031-051136. Owner informed; Itskillerxd1 got tellraw + title "Owner Gift!" + sound.
+  - Note: earlier "spawn deepslate walls" order (05:02) was probably these same walls (owner was here) -> treat as covered unless owner says otherwise.
