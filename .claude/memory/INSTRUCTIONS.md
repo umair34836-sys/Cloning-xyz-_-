@@ -10,6 +10,7 @@ Format:
 ## 2026-10-31
 
 - **FireCraft MC Discord server plan** diya (roles: Owner/Manager(sirf Techshot)/Admin/Moderator/Helper/YouTuber/Booster/Linked/Member/Bots; categories INFORMATION, COMMUNITY, IN-GAME, SUPPORT, CREATORS, STAFF, VOICE; Community ON, verification Medium, AutoMod ON, notifications only @mentions, welcome screen). Faisla: **user khud categories + roles + voice + server settings banayega**, phir Claude FCMC se text channels + permissions banayega. Update: user ne kaha "sab kuch FCMC se banao" → FCMC OPEN mode me tha; Claude ne 9 roles, 22 text channels, permissions, verification Medium, system/rules channel, Owner role (Mrcopper804) + Bots role (bot) set kar diye. Baqi manual: 5 categories, voice channels, emoji names, Community/AutoMod/notifications/welcome screen, Manager→Techshot (abhi server me nahi).
+- **Retry (WorldLens 1.9.0, OPEN):** user ne poora Discord plan dobara banane ko kaha. Rules: #general ko COMMUNITY me move+rename (dusra na banao), DiscordSRV console channel KABHI na banao, @everyone ping nahi, verification Medium, rules channel = #rules, end me sab ids + exact errors list karo. Done 2026-10-31.
 - User ne FireCraft MC logo (fire + grass block, 512x512) Discord server icon lagane ko kaha → FCMC me server icon ka tool NAHI hai; user ko manual tareeqa bataya.
 - Session ka naam **"fcmc owner"** rakho, phir FCMC connector se saari details lekar summary do (sirf read-only, kuch change nahi).
 
