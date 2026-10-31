@@ -134,3 +134,4 @@
   - Player checks before each build; post-check nobody inside blocks.
   - FIRE: fire kept spreading with fire_spread_radius_around_player=0 (0 apparently = no limit). Set to 1 at 05:32, extinguished 32 more fire blocks; 0 new fire placements in next 3 min. 150 lava/magma/netherrack/campfire in area (possible ignition source).
   - Owner + Itskiller informed.
+[2026-10-31 05:38 UTC] Helper session: manager asks 2 more items (ADMIN Riptide trident + ADMIN Silk Touch netherite pickaxe). Asked owner in-game ("server haan give"/"server nahi"); helper told to wait. PENDING.
