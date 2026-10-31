@@ -239,3 +239,11 @@
   - Fix during build: pool water leaked via connector 562,75 into tunnel -> plugged, drained. Ellipsoid pos2 only grows radius -> //undo 2, redid geode layers with pos1 reset.
   - Regions: cave_display x551-583 y60-110 z-104..-98 prio 10 (build/break/place/tnt/creeper/other-expl/fire/lava-fire/lava-flow deny); park redefined to z-104..2 (mob-spawning deny).
   - Shots 20261031-071130 (front view). Nobody stuck. Owner informed.
+[2026-10-31 07:08 UTC] CHAT "server ye cava wala build pasand nhi aya remove kerdo isko" then 07:12 "server acha hai cave mat kro delete isko" -> latest order = KEEP cave. No removal done.
+[2026-10-31 07:09 UTC] CHAT "claude park ka jo center hai isme bhi high level details add kerdoo" (park centre plaza x561-579 z-49..-31; owner flying y78, plaza empty)
+  - Fountain rebuilt: pool x567-573 z-43..-37 water y66-69, prismarine brick floor y65 + 4 sea lanterns (corners); centre base 3x3 polished andesite y66-70; tier1 5x5 bowl y71 (upside-down stone brick stairs facing inward, 3x3 water, chiseled centre); pillar 570 y71-73 (polished diorite y72); tier2 3x3 bowl y74 + water source 570,75,-40 cascade. Rim x566-574 z-44..-36 y70 stone_brick_wall -> polished_andesite, chiseled corners + 4 lanterns. Water verified: 45 inside pool, 0 outside.
+  - Floor rings (WE ellipsoid y-radius 0, replace bricks only): r9 polished andesite ring, r8 brick mix, r7 smooth stone ring, r<=6 bricks + mossy + chiseled.
+  - 4 entry arches (replace air only): stone brick wall posts y70-73 + stone brick beam y74 + flowering azalea leaves y75 + azalea drapes + hanging lantern (N z-49, S z-31, W x561, E x579).
+  - Corner planters 3x3 mossy stone bricks (replace air) + grass + flowering azalea, lanterns on outer corners (NE centre had existing lamp -> kept).
+  - Shot 20261031-071636. Owner msg sent.
+[2026-10-31 07:14 UTC] CHAT "server kia ker rahay ho give me reports" -> in-game short summary + hourly report embed #owner-private.
