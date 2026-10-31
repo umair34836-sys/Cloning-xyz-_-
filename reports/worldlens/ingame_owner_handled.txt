@@ -119,3 +119,4 @@
   - Only normal blocks (deepslate bricks/tiles/polished, spruce, lantern). Owner + Itskiller informed.
   - ALERT found: #fire spreading (CO 296 pages/1h): trees at x810 z-24, and Itskiller village x1155 z-553 (Itskiller extinguishing). Asked owner: "server haan" to set gamerule doFireTick false. PENDING.
 [2026-10-31 05:22 UTC] Owner "server haan" (confirm for fire-spread question) -> gamerule fire_spread_radius_around_player 128 -> 0 (doFireTick no longer exists in MC 26.x). Owner informed; revert = set back to 128.
+[2026-10-31 05:26 UTC] CHAT "server pora walls banane me or kitna time lagega please fast the work" -> replied: done (gatehouse x1185 z-581 + 7 towers + upgrade); asked owner to stand at any gap and say "server yahan wall".
