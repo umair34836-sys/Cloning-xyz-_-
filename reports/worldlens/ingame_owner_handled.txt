@@ -95,3 +95,7 @@
   - WE replace air/surface dirt -> grass_block at y69 same area = 39 blocks
   - Recount 28 = fountain water (intentional). Verified with shot 20261031-045928_shot_world_680_110_10.png (clean)
   - Owner informed in-game (whisper, no '@').
+[2026-10-31 05:01 UTC] PRIVATE order (/msg MrCopper804 server itskiller ne mujhe jo cords wishpher kiye hai mujhe us per tp kerdo)
+  - Itskillerxd1 whispered "/msg MrCopper804 cords 1150 317" (co lookup a:command). Ran: execute in overworld run spreadplayers 1150 317 0 1 false MrCopper804 -> safe surface tp. Owner informed.
+[2026-10-31 05:02 UTC] CHAT order "server spawn k jin deepslate wale walls per me karha ho inko ache se a line kerdo and decorate kerdo ta k beatiful lage"
+  - Ambiguous which wall (owner was tp'd away right after). Asked owner in-game to stand on the wall at spawn and say "server yahi wall" so his position pins it. PENDING.
