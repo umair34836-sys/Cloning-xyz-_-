@@ -218,3 +218,12 @@
   - BUBBLE LIFT: up tube 606,-60 (soul sand, light blue glass), down 610,-60 (magma, red glass), water y70-85, smooth stone deck y85 + glass pane rail + lantern, spruce doors at bottom; bubble_column drag=false/true verified. Sign.
   - Shot 20261031-065411 posted #owner-private. Nobody inside blocks. Owner informed.
 [2026-10-31 06:55 UTC] Helper session asks owner confirm: manager wants mob-spawning deny in park + spawn (WG flag). Asked owner in-game ("server haan mobs"/"server nahi"); helper told to wait. PENDING.
+
+[2026-10-31 06:59 UTC] OWNER: "server jo sword portal hai usme max details and realistic bana do also isko protect bhi kerdo ta k koi kharab na ker sa k"
+  - Player check: area empty.
+  - Detail: iron_block outer edges x584/586 z-76/-70 y70-85; polished_deepslate_wall bevel x584/586 z-75/-71; grip wrap red/black wool y88-92; pommel gold_block x584-586 y95 + amethyst_block 585,96,-73 + end_rod 585,97,-73.
+  - Crossguard: crying_obsidian gems x584/586 z-73 y86-87; gold upturned tips 585,88,-80 / 585,88,-66; iron_chain y84-85 + hanging soul_lantern y83 at z-79 / z-67.
+  - Rubble base (WE x580-590 z-81..-65): y69 mix cobble/cracked blackstone bricks/blackstone/sculk/gravel/tuff (148); y70 scatter cobble walls/blackstone slabs/floor buttons (101).
+  - Portal verified: execute if block 585 78 -73 nether_portal -> passed.
+  - PROTECTION: WG region sword_portal (world) x578-592 y60-110 z-82..-64, priority 10, flags DENY: build, block-break, block-place, tnt, creeper-explosion, other-explosion, fire-spread, lighter, ghast-fireball, enderman-grief. Other redstone builds (x605+) outside region.
+  - Shot: plugins/WorldLens/shots/20261031-065859_shot_world_600_82_-73.png. Owner msg sent.
