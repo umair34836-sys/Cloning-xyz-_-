@@ -199,3 +199,7 @@
   - +3 trees (fancy_oak 533,-64; cherry 548,-78; birch 563,-53). Ground WE: leaf_litter, moss_carpet, fern, firefly_bush, azalea, flowering azalea, lily of the valley, blue orchid (1201 cells).
   - 4 lamp posts (541/556, -55/-69), 2 spruce benches by well, glowing "ENCHANTED GROVE" sign at entrance 543,-44.
   - Shot 20261031-063748. Nobody inside blocks. Owner informed.
+[2026-10-31 06:38-06:40 UTC] CHAT order "server now ab is area ko ache se redesign kerdo and ye jo already chairs banay hai inko issi design me banana" (owner 596.5,70,-9.9 = park SE picnic)
+  - Kept chair/table design (oak fence + oak pressure plate + oak stairs seats). Built unit around table (585,-15): spruce plank deck x583-587 z-16..-14, 4 spruce fence posts y70-72, spruce slab roof y73, hanging lantern; cloned unit to (595,-15),(605,-15),(585,-6),(595,-6),(605,-6) = 6-table grid (old odd table 605,-11 removed; others replaced by identical sets).
+  - Gravel paths x589-591 & x599-601 (z-24..1) + z-11..-10 (x572-611); BBQ corner (stone pad, lit campfire, smoker, barrel, sign) at 578,-20; 4 lamp posts at corners; flowers WE; glowing "PICNIC MEADOW" sign at 573,-12.
+  - Owner not in build cells (checked). Shot 20261031-064028. Nobody inside blocks. Owner informed.
