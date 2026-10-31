@@ -264,3 +264,12 @@
   - Players checked before every placement; nobody stuck. Shot 20261031-074347. Owner + XREAM msg sent.
 [2026-10-31 08:24 UTC] CHAT "server are you lisning me ?" + "server clear my inv witout my armour" -> replied working; CLEAR = confirm-required, asked "server haan". PENDING.
 [2026-10-31 08:25 UTC] CHAT "server haan" -> cleared MrCopper804 inv by item (dandelion 2, wheat_seeds 1, stone_bricks 1, rotten_flesh 2, farmland 1, grass_block 1). Inventory [] verified, armour untouched. Owner msg done.
+[2026-10-31 08:27 UTC] CHAT "server worldlens k trough mere ass paass k area me dekhoo jo left bana howa hai usko fix ker k uski uper wali jagha ko hidden kerdo ta k players ko pata na lage ... mujhe btao k isko phir survival me auttomatically find ya open kaise ka" -> "Sir I am working on it" sent.
+  - Found: players had broken both grass lids + dug a pit around the shaft tops (glass exposed); XREAM placed water at bottom of down shaft (y-22..-20). Old item frames removed (no command blocks used; test cmd block removed).
+  - Fixed: pit refilled (dirt, grass top y111), shaft glass rings restored, up column water y95..109 (bubble), down shaft air to y111.
+  - PURE REDSTONE hidden hatches (sticky pistons, NOT gates):
+    DOWN (z-2560): S grass -13813,111 + oak_button on top (-13813,112) ; redstone_wall_torch[facing=east] -13812,111 on S ; sticky_piston[facing=east] -13811,111 ; lid grass at -13809,111 (closed = extended). Button -> S powered -> torch off -> piston retracts -> lid pulled to -13810 -> hole open ~1.5s. Verified with lever test (opened).
+    UP (z-2563): stone B -13810,110 ; redstone_wall_torch[facing=west] -13811,110 on B (powers piston above) ; sticky_piston[facing=east] -13811,111 ; lid grass -13809,111 ; oak_button[face=wall,facing=east] at -13809,110 inside column top dry cell (water only to y109). Verified with arrow press: lid opened to -13810, closed again after.
+    Note: chamber idea failed (water flowed into side cell, washed lever away) -> replaced by button in dry top cell.
+  - Hidden: azalea/flowering azalea leaf bush y112-113 over torch/pistons/heads; button nook under leaves west of bush; pink petals + grass around. Shot 20261031-083510 (no hole visible).
+  - Owner told how to open (in + out). XREAM offline -> tell him when online (owner wanted secret only for XREAM).

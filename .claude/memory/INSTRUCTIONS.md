@@ -93,4 +93,4 @@ Format:
   - Bossbar build_event abhi screen par hai (remove nahi kiya).
 - **31 Oct ~07:55 UTC RESUMED** (crons 6c890202/84637953/a1499f90 + triggers on). **~08:07 UTC PAUSED AGAIN** on owner order "claude pause everything imediatly" — crons deleted, both FireCraft triggers disabled. Owner in-game 08:0x: "NHI NHI THEEK HOGYA HAI ABHI".
 - **Owner rule (31 Oct):** "in game owner k work ko priority do, baqi work baad me" — in-game owner ke orders sabse pehle; reports/digest/relay baad me. Bade build se pehle owner ko in-game "shuru kar raha hoon" batao.
-- PENDING (paused): Killers base lift entrance hidden + hard redstone secret door, secret sirf base players ko.
+- DONE 08:35 UTC: Killers base lift top hidden with pure redstone hatches (see ingame_owner_handled). PENDING: tell XREAMxPRO the secret when online.
