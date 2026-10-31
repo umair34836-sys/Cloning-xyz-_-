@@ -52,3 +52,11 @@ Garden x576-613 z-80..-46. Keep existing: night lamps (4), music path z-60, magi
 - Clear random flowers; gravel walkways E-W z-66..-65 and N-S x594-595.
 - Patchwork beds (replace air only): NW tulips (red/orange/pink/white), NE blues/whites (cornflower, allium, azure bluet, lily of the valley), SW warm (dandelion, poppy, oxeye, blue orchid), SE mixed (pink tulip, cornflower, allium, oxeye).
 - NEW: Fountain Switch (dispenser+water bucket, lever, polished andesite basin x597-601 z-52..-48); Flower Vending Machine (dropper + button, 9 stacks flowers) at 585,-64; Garden Bell (button -> bell rings + 2 lamps) at 604,-64. Signs for each.
+
+# NE GARDEN v3 — REDSTONE ZONE + SWORD PORTAL (owner order 31 Oct 06:48 UTC)
+"yaha se flowers wala design hata do, ultra advance redstone builds, ek sword portal (google idea)". Keep existing redstone builds.
+- Remove all flower beds (WE).
+- GIANT SWORD PORTAL at x585, blade along z-76..-70 (1 thick): obsidian frame x585 z-75..-71 y70..85, nether_portal[axis=z] interior z-74..-72 y71..84, iron block edges z-76/-70, crossguard y86-87 z-80..-66 (polished blackstone bricks + gold tips), grip y88-93 (stripped dark oak), pommel y94-95; rubble base.
+- CHASE-LIGHT RING x605-609 z-80..-76: 16-cell loop alternating repeaters/redstone lamps (corners lamps), button to inject pulses.
+- COPPER BULB SWITCH centre 608,70,-70: button on top, 4 waxed copper bulbs around (toggle on each press).
+- BUBBLE ELEVATOR: up tube centre 606,-60 (soul sand), down tube 610,-60 (magma), glass rings y70-84, water y70-85, deck y85, doors at bottom.
