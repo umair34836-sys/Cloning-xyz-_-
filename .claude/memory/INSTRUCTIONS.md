@@ -82,3 +82,4 @@ Format:
 - **31 Oct 05:32 UTC:** fire_spread_radius_around_player now 1 (0 didn't work). Revert = 128.
 - **31 Oct 05:54 UTC owner:** museum land same size/Y as spawn/society → done (see handled.txt). Standing: periodic WorldLens shots + fix (RULES #13) — hourly run me karna.
 - **31 Oct 06:04 UTC hourly run done:** report posted; key-area shots OK; manager self-gave 64 totems (allowed by standing rule, reported). PENDING same: Shreyas, Rudra hearts, bots, Sunday event.
+- **31 Oct 06:08 UTC staff digest posted** (appreciation given: manager port-20028 announcements + Bedrock join help).
