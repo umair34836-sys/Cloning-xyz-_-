@@ -31,3 +31,11 @@ Area x617–637, z-38..2 (21×41), flatten to grass y69 (walk 70). Gates: P2 sou
 
 # MARKET (owner order 31 Oct 06:24 UTC)
 12 stalls in park between E-W path and SE spur, x581-611 z-37..-29. Owners: 1 Itskillerxd1, 2 .ItskillerXD67, 3 RudraJUSTGOD, 4 KILLER_SPY, 5 Suko_inf, 6 XREAMxPRO, 7 deepak9098, 8 123_leo_0000, 9 StrikeHunter, 10 slayushen, 11 NotRedBisht, 12 Mr_shadow_6232.
+
+# SW QUADRANT REDESIGN — JAPANESE GARDEN (owner order 31 Oct 06:31 UTC)
+Area x529-568, z-38..1 (pond x537-555 z-26..-11).
+1. Organic pond: round corners (grass), bays east (x556-559 z-23..-20) + west (x533-536 z-15..-12); shore = mossy cobble/stone/gravel mix.
+2. Red arched mangrove bridge z-19..-16 x536-556 (rise to y71 middle), crimson fence rails, 4 lanterns; old oak bridge removed.
+3. Island x544-547 z-24..-21 with azalea tree. 4. Stepping stones south half.
+5. 4 stone lanterns (tōrō) around pond. 6. Bamboo grove west (x530-534 z-37..-28).
+7. Dark-oak pavilion x541-547 z-7..-1 with benches + hanging lantern. 8. Gravel path bridge→N-S path; flowers + azalea bushes sprinkled.
