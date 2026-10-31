@@ -165,14 +165,14 @@ def rotate(vox, facing):
     return out
 
 
-def cuboids(vox):
+def cuboids(vox, exact=False):
     """painter's algorithm: most common block first, boxes may cover voxels painted later."""
     from collections import Counter
     order = [b for b, _ in Counter(vox.values()).most_common()]
     rank = {b: i for i, b in enumerate(order)}
     cmds = []
     for b in order:
-        allowed = {p for p, bb in vox.items() if rank[bb] >= rank[b]}
+        allowed = {p for p, bb in vox.items() if (bb == b if exact else rank[bb] >= rank[b])}
         need = sorted(p for p, bb in vox.items() if bb == b)
         done = set()
         for p in need:
@@ -186,6 +186,7 @@ def cuboids(vox):
                 for y in range(y0, y1 + 1):
                     for z in range(z0, z1 + 1):
                         if vox[(x, y, z)] == b: done.add((x, y, z))
+                        if exact: allowed.discard((x, y, z))
             cmds.append((b, x0, y0, z0, x1, y1, z1))
     return cmds
 
@@ -222,12 +223,13 @@ def preview(vox, path):
 
 if __name__ == "__main__":
     skin, ox, oy, oz, facing = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
-    out = sys.argv[6] if len(sys.argv) > 6 else "statue_cmds.txt"
+    args = [a for a in sys.argv if a != "--exact"]
+    out = args[6] if len(args) > 6 else "statue_cmds.txt"
     img = Image.open(skin).convert("RGBA")
     model = build_model(img)
     preview(model, out.rsplit(".", 1)[0] + "_preview.png")
     world = rotate(model, facing)
-    cmds = cuboids(world)
+    cmds = cuboids(world, exact="--exact" in sys.argv)
     with open(out, "w") as f:
         for b, x0, y0, z0, x1, y1, z1 in cmds:
             f.write(f"fill {ox+x0} {oy+y0} {oz+z0} {ox+x1} {oy+y1} {oz+z1} minecraft:{b}\n")

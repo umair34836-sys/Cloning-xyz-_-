@@ -247,3 +247,10 @@
   - Corner planters 3x3 mossy stone bricks (replace air) + grass + flowering azalea, lanterns on outer corners (NE centre had existing lamp -> kept).
   - Shot 20261031-071636. Owner msg sent.
 [2026-10-31 07:14 UTC] CHAT "server kia ker rahay ho give me reports" -> in-game short summary + hourly report embed #owner-private.
+[2026-10-31 07:23 UTC] CHAT "server spawn logo k left and right dono sides per owner ka charector build kerdo" (RULES #14 statue)
+  - Logo region spawnlogo x642-706 y70-96 z99-102 (faces north to spawn). Statues facing north: WEST centre 630,71,102 (bbox x623-638 y71-103 z98-107), EAST centre 718 (clone +88 x: x711-726).
+  - Area checks: west first spot clipped 34 leaves of cherry tree 638,88 -> shifted to cx630/cz102 (1 block only); east clear; no players; owner house far.
+  - Plinths y69-70 polished_deepslate x621-640 / x709-728 z96-109, top ring polished_blackstone_bricks, gold_block corners, 4 lanterns front corners; birch signs 630,71,97 & 718,71,97 "MrCopper804 / OWNER / FireCraft SMP / Season 2".
+  - West built with 201 exact non-overlapping fills (skin_statue.py --exact; painter order unsafe with parallel calls), verified 1988 blocks; east = vanilla clone 621 69 96 640 104 109 -> 709 69 96 (10080).
+  - WG regions owner_statue_w (621-640,60-110,96-109) + owner_statue_e (709-728,...) prio 10: build/break/place/tnt/creeper/other-expl/fire/lighter deny.
+  - Shots 20261031-072903 (spawn view), 072936 (close-up). Owner msg sent.

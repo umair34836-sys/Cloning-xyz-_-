@@ -97,3 +97,4 @@ Format:
 - WE masks: `"X >air"` = X blocks with air below (ceiling); `"air <X"` = air directly below X (stalactite spot); `"air >X"` = air on top of X (floor). `#solid` mask works. `#existing` is NOT a valid pattern. (31 Oct)
 - Vanilla setblock/fill from console fails "position is not loaded" when no player nearby -> `forceload add x1 z1 x2 z2`, remove after. WE edits load chunks themselves. (31 Oct)
 - Water in a carved display leaks through any connector to lower chambers - keep liquid chambers sealed. Glass-front displays: darken back walls behind voids so the cave reads. (31 Oct)
+- Skin statue: `skin_statue.py --exact` = non-overlapping fills (order-independent, safe for parallel tool calls; 201 cmds). Painter mode (113 cmds) needs strict sequential order. Second copy: vanilla `clone` (max 32768 blocks). (31 Oct)
