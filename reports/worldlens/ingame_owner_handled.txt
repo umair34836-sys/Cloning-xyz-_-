@@ -100,3 +100,7 @@
 [2026-10-31 05:02 UTC] CHAT order "server spawn k jin deepslate wale walls per me karha ho inko ache se a line kerdo and decorate kerdo ta k beatiful lage"
   - Ambiguous which wall (owner was tp'd away right after). Asked owner in-game to stand on the wall at spawn and say "server yahi wall" so his position pins it. PENDING.
 [2026-10-31 05:04 UTC] CHAT order "server .itskiller ko spawn k cords dedo" -> whispered .ItskillerXD67 spawn 675 70 57 + society 680 -40. Owner informed; reminded about "server yahi wall" for pending wall order.
+[2026-10-31 05:08 UTC] CHAT order "server techshot gaming ko uska armour pehna do"
+  - techshotgaming had no armour on; his own MANAGER netherite set (helmet/chest/legs/boots, unbreakable) was in his ender chest slots 0-3.
+  - item replace armor.* from enderchest.0-3, then enderchest.0-3 -> air (moved, no duplication, no new items). Verified equipment. Owner informed.
+  - Diamond vanishing-curse set still in his ender chest slots 9-12 (untouched).
