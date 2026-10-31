@@ -127,3 +127,10 @@
   - Fire damage (CO #fire 1h ~1180 blocks) = forest trees/leaves/leaf_litter at x785-812, z-31..-14 (no buildings). Owner informed.
 [2026-10-31 05:30 UTC] Owner "server haan give only manager" -> relayed one-time approval to build-helper session_01JK8Ts7NMHc36nUNv8QHm8r: give maxed ADMIN tools/weapons to techshotgaming ONLY. Owner informed.
 [2026-10-31 05:30 UTC] Helper session confirmed give done to techshotgaming ONLY (owner-approved): 10 items ADMIN netherite sword/axe/pick/shovel/hoe + bow(+1 arrow)/crossbow/trident/mace, maxed enchants, unbreakable, Mending/Unbreaking, Curse of Vanishing. One-time approval.
+[2026-10-31 05:31-05:38 UTC] PRIVATE order (/msg MrCopper804 server jahan me karha ho is gate and in sare walls ko redesign kerdoo and village ki traf bhi ek gate bana do redstone wala jo auto system ho)
+  - Owner stood at 1111.8,78,-557.3 = top of Itskiller's white-wool arch gate on west wall (opening x1111 z-559..-557, floor y71).
+  - WEST GATE redesign: white wool (33) -> deepslate; 2 towers x1110-1112 z-562..-560 & z-556..-554 to y81 (polished_deepslate front corners, tile bands y76/y80, brick_wall crenels + lanterns); passage x1110-1112 3 wide, polished_deepslate floor y71, tile-stair arch y74, tiles y75, bricks y76, crenel y77 + lantern, hanging lanterns, 3 spruce_fence_gates (x1111 y72).
+  - VILLAGE AUTO GATE: south wall where village road (x1158-1160) met the double wall z-540/-539. Passage x1158-1159 z-541..-537, floor polished_deepslate y63, IRON double door at z-539 (y64-65), polished_blackstone pressure plates both sides (z-540 inside, z-538 outside), tile stairs outside z-537. Towers x1155-1157 & x1160-1162 (z-541..-538) to y71 + lintel/crenels/lanterns. TESTED with a NoAI chicken on each plate -> both doors open=true; chicken + drops removed.
+  - Player checks before each build; post-check nobody inside blocks.
+  - FIRE: fire kept spreading with fire_spread_radius_around_player=0 (0 apparently = no limit). Set to 1 at 05:32, extinguished 32 more fire blocks; 0 new fire placements in next 3 min. 150 lava/magma/netherrack/campfire in area (possible ignition source).
+  - Owner + Itskiller informed.

@@ -79,3 +79,4 @@ Format:
 - **Owner (in-game 05:11 UTC 31 Oct):** 'manager wale session ko bolo k manager ki baat sune' → manager session_01JK8Ts7NMHc36nUNv8QHm8r ko message bheja (re-activate + watch cron recreate). Ye owner session ab bhi manager ke orders follow nahi karta.
 - **31 Oct 05:14 UTC:** Manager build-helper session_01JK8Ts7NMHc36nUNv8QHm8r active again (cron 1f3bd0dc). First job: manager's worn MANAGER armour trim diamond→redstone (cosmetic only). Its branch claude/manager-build-helper push blocked by its permissions (local commit only).
 - **31 Oct 05:22 UTC:** Owner confirmed → fire spread OFF (fire_spread_radius_around_player 0; was 128).
+- **31 Oct 05:32 UTC:** fire_spread_radius_around_player now 1 (0 didn't work). Revert = 128.
