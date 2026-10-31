@@ -98,3 +98,6 @@ Format:
 - Vanilla setblock/fill from console fails "position is not loaded" when no player nearby -> `forceload add x1 z1 x2 z2`, remove after. WE edits load chunks themselves. (31 Oct)
 - Water in a carved display leaks through any connector to lower chambers - keep liquid chambers sealed. Glass-front displays: darken back walls behind voids so the cave reads. (31 Oct)
 - Skin statue: `skin_statue.py --exact` = non-overlapping fills (order-independent, safe for parallel tool calls; 201 cmds). Painter mode (113 cmds) needs strict sequential order. Second copy: vanilla `clone` (max 32768 blocks). (31 Oct)
+- Player base work: pehle CoreProtect `a:+block b:<types> u:<players>` se unke blocks/chest locations, `data get block <chest> Items` se contents. Unke blocks hatane ho to pehle exact //count per type, phir same list replace->air, phir named chest me exact items wapis (Items NBT). Players wahi ho to sirf remove (safe), place tab jab wo jagah khali ho. (31 Oct)
+- Bubble elevator: soul sand + `fill` water column (sources) -> bubble_column verify with `execute if block ... bubble_column`. Down = drop shaft into 1 water source (no fall damage). Oak door holds water at entrance. Shaft ko glass ring se line karo (caves me leak na ho). (31 Oct)
+- Yaw: 0 = south (+z), 180 = north (-z). "South hall" naming galat tha — z kam = north. (31 Oct)
