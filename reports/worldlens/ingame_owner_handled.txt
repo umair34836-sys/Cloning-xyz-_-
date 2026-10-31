@@ -86,3 +86,4 @@
 2026-10-31 ~04:59 UTC | MrCopper804: "server survival" | DONE: gamemode survival MrCopper804 (pehle se offered return word).
 2026-10-31 ~04:53 UTC | Itskillerxd1 join → GRAND PARTY done: title+subtitle (4 players), owner tellraw, challenge sound @a, totem particles, glowing 60s, 6 fireworks ~20 blocks upar, msg Itskiller + owner. Cron 4fbca5db deleted.
 2026-10-31 ~04:55 UTC | MrCopper804 (PRIVATE /msg self): "server tp me to itskiller and make him happy with grand party" | DONE: tp owner → Itskillerxd1; encore party (title Itskiller, levelup sound, happy particles, 3 fireworks upar). Private mode confirmed working.
+2026-10-31 ~04:58 UTC | MrCopper804 (PRIVATE): "server players ko bolo apna build event start kare" | DONE: in-game title+subtitle+owner tellraw (society north 680 -40, 8 plots, Sunday, Builder rank + 40 slots) + raid horn; Discord #smp-chat embed. Owner msg.
