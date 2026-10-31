@@ -50,3 +50,4 @@ Format:
 - `🤖 Bots` role (bot ke paas) ab hard guard 3 me aata hai — edit refuse hota hai. @everyone role `discord_role_edit` se edit ho sakta hai (id = server id).
 - FireCraft IGNs: Owner = MrCopper804 (website role player, Discord Mrcopper804), Manager/Techshot = techshotgaming (website role staff, abhisheksaini26aug email). Server offline-mode UUIDs (v3) + AuthMe; LuckPerms me sirf `default` group. 44 plugins incl. Maintenance, Geyser/Floodgate, DiscordSRV, GrimAC, GriefPrevention.
 - online-mode check bina server.properties ke: player UUID ko `md5("OfflinePlayer:"+name)` v3 UUID se compare karo — match = cracked/offline mode. online-mode console command se nahi badalta (server.properties + restart chahiye).
+- Multiverse 5.8.2: `mv delete X` → `mv confirm <code>` (30s). Default world (`world`) delete nahi hoti, koi error bhi nahi aata — `mv list` se verify karo. Spawn: `mv config first-spawn-location/join-destination <world>`.
