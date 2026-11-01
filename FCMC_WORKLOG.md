@@ -174,3 +174,23 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Har-minute wala owner chat watcher (session cron) band kiya; 2026-11-02 08:00 PKT (03:00 UTC) ke liye scheduled task banaya jo watcher dobara on karega.
 - **Kaise:** CronDelete 1ce7de73; send_later trig_011pkGDMcsfThg671iFMVA9h.
 - **Result:** Watcher off. Kal 8 AM Pakistan time par auto on hoga (agar session tab tak available ho).
+
+### 2026-11-01 ~03:50 UTC — [MANAGER] Manager session start + "server" prefix tellraw
+- Kisne kaha: owner (session prompt) — techshotgaming ke "server ..." messages har minute handle karo.
+- Kya kiya: `/loop 1m` cron (har minute `worldlens_status` + `co lookup u:techshotgaming a:chat t:3m`). Manager "Claude"/"Jarvis" se message likh raha tha → owner (session chat) ki haan par tellraw: "Mujh se kaam karwana ho to message "server" se shuru karo".
+- Note: connector naam mid-session badle — `mcp__FCMC__*` = HUB server, `mcp__worldlens__*` = FireCraft SMP.
+
+### 2026-11-01 ~03:55 UTC — [MANAGER] Nickname "Jarvis"
+- Kisne kaha: techshotgaming — "Server I'll Call you Jarvis from now on"
+- Kya kiya: sirf tellraw jawab "Theek hai, mujhe Jarvis bula sakte ho! Koi kaam ho to "server ..." likh kar batao." (trigger ab bhi sirf "server").
+- Note: baad me "Jarvis create a npc named Survival ..." (server prefix nahi) ignore hua.
+
+### 2026-11-01 ~04:35 UTC — [MANAGER] Kis block par khada hoon
+- Kisne kaha: techshotgaming — "Server which block am i standing on"
+- Kaise: `data get entity techshotgaming Pos` → 37.7, 151.8, -21.2; `execute in minecraft:overworld if block 37 151 -22 minecraft:air` (passed), `... 37 150 -22 minecraft:chiseled_deepslate` (passed); worldlens_top 37,-22 r4.
+- Result: tellraw "Aap Chiseled Deepslate par khade ho (37, 150, -22, HUB)."
+
+### 2026-11-01 ~04:55 UTC — [MANAGER] NPC skins (Minigames → Technoblade, PvP → SenpaiSpider)
+- Kisne kaha: techshotgaming — "Server set Minigames npc skin to Technoblade ,PvP to SenpaiSpider"
+- Kaise: `znpcs list` / `npc list` → "Npc List:" khaali; `npc skin Minigames static Technoblade` + lowercase → "Incorrect usage" (ID nahi mili). Plugin = ZNPCsPlus v2.1.0.
+- Result: FAILED — tellraw se manager se exact NPC ID maangi. Wajah ab samajh aayi: HUB lobby NPCs ZNPCsPlus nahi, `minecraft:mannequin` entities (tag `lobby_npc`) hain.
