@@ -71,3 +71,7 @@ Format:
 - Multiverse 5: `mv info <world> --page N` (sirf `N` nahi chalta); property names: `gamemode`, `allow-advancement-grant` (advancement-grant nahi). MC 26.x gamerule `minecraft:show_advancement_messages`.
 - NPC click vanilla se: `minecraft:interaction` entity (response:1b) + `execute as @e[type=interaction,tag=X] if data entity @s interaction on target run ...` aur `... attack on attacker`, phir `data remove entity @s interaction/attack`. Backup: proximity `execute in <dim> positioned <npc> run tag @a[distance=..1.3] add ...`. Cross-world tp: `execute as @a[tag] in minecraft:<world_key> run minecraft:tp @s x y z yaw pitch` (MV world key = minecraft:<name>).
 - Har naye locked world me `minecraft.command.trigger true world=<w>` dena, warna Lobby Selector menu nahi chalega.
+- `fill ... outline` on a 1-block-thick layer fills the WHOLE layer (every block is on the outer face) — rim ke liye `fill` phir interior `air`.
+- WorldGuard `rg define` console se coordinates nahi leta ("Please select an area first") — region ke liye owner in-game WE selection kare.
+- Nether portal visual bina teleport: `block_display` with block_state nether_portal[axis=x] scaled (5,7,0.2) — creative players ko instant portal travel ka risk nahi.
+- RTP: `execute as @a[tag] in minecraft:<world> run spreadplayers 0 0 1 1500 false @s` + fallback `if dimension <old>` tp.
