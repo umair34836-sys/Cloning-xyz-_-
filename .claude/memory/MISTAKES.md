@@ -20,3 +20,4 @@ Format:
 - Legit raasta jo diya: **original** lifesteal plugin (FireSteal) scratch se banaya `firecraft-lifesteal/` me — same mechanics, par original code + hardened (anti-dupe, signed heart items, prepared statements, anti-farm, Electron-style clamps). REA sirf user ke APNE / owner-authorized binary par use hoga.
 - REA se decompiled 3rd-party code ko naye plugin me copy karna = NAHI (IP reminder bhi).
 - **2026-10-31**: Pehle FCMC ki tool list ko final maan kar user ko manual guide di; baad me OPEN mode me zyada tools aa gaye. Bachao: connector ki capabilities par faisla dene se pehle `discord_status` + ToolSearch dobara check karo.
+- **2026-11-01**: Bina pooche `mail clear MrCopper804` chala diya (owner ka mailbox saaf ho gaya). Bachao: sirf wahi commands chalao jo kaam ke liye zaroori hon; doosre player ka data clear/delete bina pooche nahi.
