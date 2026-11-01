@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-11-01
+
+- **HUB centre + paths REDESIGN (2026-11-01, owner: "center and paths ... redesign kerdoo with better look"):** (1) 6 spokes ab 5-wide r11-52: edges polished_blackstone_bricks (lateral ±1.75/±2.25), beech stone_bricks (±0.6/±1.25), centre line shroomlight (offset 0); water/air skip. (2) Gol plaza (r3-10.5, center 5x5 + beacon untouched): r3-3.5 & r4.5 polished_blackstone_bricks, r4 gilded_blackstone ring, r5-6.5 polished_andesite, r7-7.5 stone_bricks, r8-8.5 chiseled_stone_bricks, r9 shroomlight glow ring, r9.5 stone_bricks, r10-10.5 polished_blackstone_bricks border. (3) Ring path: r52 pbb | r53 stone | r54 shroomlight | r55 stone | r56 pbb (glass ke neeche). Spoke-ring junctions khule (3x3 stone + shroomlight centre r51.5-53). Lamp posts/NPCs/azaleas untouched. Owner ko tellraw report.
+
 ## 2026-10-31
 
 - **FireCraft MC Discord server plan** diya (roles: Owner/Manager(sirf Techshot)/Admin/Moderator/Helper/YouTuber/Booster/Linked/Member/Bots; categories INFORMATION, COMMUNITY, IN-GAME, SUPPORT, CREATORS, STAFF, VOICE; Community ON, verification Medium, AutoMod ON, notifications only @mentions, welcome screen). Faisla: **user khud categories + roles + voice + server settings banayega**, phir Claude FCMC se text channels + permissions banayega. Update: user ne kaha "sab kuch FCMC se banao" → FCMC OPEN mode me tha; Claude ne 9 roles, 22 text channels, permissions, verification Medium, system/rules channel, Owner role (Mrcopper804) + Bots role (bot) set kar diye. Baqi manual: 5 categories, voice channels, emoji names, Community/AutoMod/notifications/welcome screen, Manager→Techshot (abhi server me nahi).
