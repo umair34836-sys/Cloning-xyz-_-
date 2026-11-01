@@ -17,3 +17,5 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Reverse-engineering / APK analysis sirf **educational ya owner-authorized** maqsad ke liye.
 - NAHI karna: game outcome "prediction"/win-hacks, kisi aur ke live backend par chalne wala clone, doosre users ka data nikalna, ya fairness/RNG todna. Chahe "fraud niyat nahi" kaha jaye — mechanism cheating/abuse ho to decline.
 - Online games server-authoritative hote hain → client decrypt se winner predict karna technically bhi namumkin; aisi request ko educational explanation me convert karo.
+
+- (2026-11-01, owner) Har build ke baad analyze karo: WorldLens top + angled shot lo, floating blocks (slab/fence ke neeche support), gaps, bachi grass/dirt, doosre area me spill check karke fix karo.
