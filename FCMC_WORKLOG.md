@@ -103,3 +103,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kisne kaha: MrCopper804 — "server 1 adventure kerdo 2 advancement off kerdo 3 discord link baad me kringay"
 - Kaise: `mv modify HUB set gamemode adventure` (verify: Game Mode ADVENTURE; owner/manager `*` se bypass); `execute in minecraft:overworld run gamerule minecraft:show_advancement_messages false`; `mv modify HUB set allow-advancement-grant false` (verify: Grant Advancements false).
 - Pending: Discord link hologram me — owner baad me batayega. Baqi list (TAB verify, maintenance, logo tree overlap) owner ne abhi nahi kaha.
+
+### 2026-11-01 ~05:45–05:55 UTC — [OWNER] Lifesteal worlds
+- Kisne kaha: MrCopper804 — "server ye kaam complete kerne k baad lifesteal k lie lobby world also lifesteal ka normal and nether and end world bhi ready kerdo"
+- Kya kiya / kaise:
+  - `mv create lifesteal_lobby normal --generator VoidGen` (void); `mv create lifesteal normal`, `mv create lifesteal_nether nether`, `mv create lifesteal_the_end the_end` (random seeds; MV-NetherPortals 5.1 naming `X_nether`/`X_the_end` se auto-link; `mvnp` commands console me nahi mile).
+  - Multiverse-Inventories: `mvinv create-group lifesteal` + `add-worlds lifesteal lifesteal,lifesteal_nether,lifesteal_the_end` + `add-shares lifesteal all` (hearts/max_hit_points bhi share). `mvinv add-worlds lobby HUB,lifesteal_lobby`. No conflicts. (Purane groups default/lobby me deleted worlds `world*`/`lobby` ke naam abhi bhi config me.)
+  - lifesteal_lobby: 11x11 platform y64 (polished_blackstone_bricks, centre gilded) at 0,0; `mv setspawn lifesteal_lobby:0.5,65,0.5,0,0`; WG __global__ flags HUB jaise (build/pvp/mob-spawning/fall-damage/item-drop/use/chest-access/fire-spread/enderpearl deny, invincible allow, weather-lock clear, time-lock 6000, feed 20/5); gamemode adventure; allow-advancement-grant false; show_advancement_messages false; LP `* false` + 36 exact nodes false `world=lifesteal_lobby`.
+- Pending owner decisions: difficulty (abhi EASY), world border + Chunky pregen, Lifesteal heart plugin (installed NAHI), lobby build design, HUB LIFESTEAL NPC → lobby connect.

@@ -9,6 +9,7 @@ Format:
 
 ## 2026-11-01
 
+- **Lifesteal worlds (2026-11-01, owner):** lifesteal_lobby (VoidGen, protected like HUB, adventure, commands locked) + lifesteal / lifesteal_nether / lifesteal_the_end (mvinv group `lifesteal` all shares; HUB+lifesteal_lobby in mvinv group `lobby`). Har naye lobby world ke liye: WG flags + adventure + advancements off + LP `*` false & 36 exact nodes false world=<lobby>. Pending: difficulty, border/pregen, lifesteal plugin, lobby build, NPC link.
 - **FireCraft logo (2026-11-01, user):** logo image ko HUB me "right places" par build karo, apne andaze se kahin bhi mat lagao → user se poocha: spawn ke saamne sky, 48x48. Bana: plane z=-48, x -23..24, y158-205 (black_terracotta outline). Aage aur lobbies me logo lagana ho to pehle jagah confirm karo.
 - **HUB extras 1-4 (2026-11-01, owner):** welcome hologram (text_display tag hub_welcome), join title/welcome + first-join broadcast, Lobby Selector (carrot_on_a_stick compass model → chat menu → /trigger fc_lobby → NPC tp), sidebar `fc_side` + TAB header/footer. Command blocks y=120 rows z=3 (x3-15) & z=6 (x3-27), chunks [0,0],[1,0] forceloaded permanently. Details FCMC_WORKLOG.md.
 - **Shared work-log (2026-11-01, owner in-game):** "jo bhi kaam kerte ho uski file banao ... fcmc manager session ke sath share kro, wo bhi likhe" → `FCMC_WORKLOG.md` banayi (format + purane kaam ki summary), manager session (session_01JK8TsBgGuzocQqsgSfCLYh) ko send_message se bataya.
