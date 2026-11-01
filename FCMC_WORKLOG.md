@@ -85,3 +85,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Limits: worldlens_command max 1000 chars/command; plugin config files (DeluxeMenus GUI, Skript) FCMC se nahi likh sakte.
 - Result: done; owner online aaya, mail + tellraw report.
 - Fix (05:30): owner join ke waqt chain block x=10 missing tha → `fc_new` atka; `tag MrCopper804 remove fc_new` → welcome chala, ab `fc_seen`. Galti se `execute as MrCopper804 run say check` bhi chal gaya (chat me "check").
+
+### 2026-11-01 ~05:15–05:25 UTC — [OWNER] FireCraft MC logo pixel-art (HUB sky)
+- Kisne kaha: owner (Claude chat me image di) — "isko lobby hubs per as a logo build kernaa hai right places per ok apne andaze se kahi per bhi maat laga dena" → poocha: jagah = **spawn ke saamne sky me**, size = **48x48**.
+- Kya kiya: logo image → 48x48 pixel art (18 blocks: fire = nether_wart/redstone/terracotta/orange/honeycomb/yellow/gold, grass = lime/green wool+concrete, dirt = brown, MC = quartz/light_gray_wool, outline = black_terracotta), background transparent. Vertical plane **z=-48, x -23..24, y 158..205**, spawn se north me saamne dikhta hai (Survival area ke upar).
+- Kaise: "storage printer" — 1518 pixels packed ints (`x*4096+(55-y)*64+id`) 11 `data modify storage fc:logo q append` commands; command-block chain y=118 z=9 x0..32 (repeating at 0,118,9) + marker `fc_cur` har tick ek block lagata hai. Bug: `scoreboard players add -23` invalid → pehli koshish 23 block east me; rok ke `fill 0 185 -48 47 205 -48 air`, `remove 23` fix, data reload.
+- Cleanup (build ke baad): printer command blocks + marker hatao, forceload chunks [-2..2,-3] + [2,0] hatao (welcome/selector wale [0,0],[1,0] RAKHO).
