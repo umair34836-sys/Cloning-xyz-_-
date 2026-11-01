@@ -27,3 +27,6 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - HUB + lobbies me players: no build, no destroy, no PvP (WorldGuard).
 - Area → lobby NPC mapping: Area1 Survival (survival_npc), Area2 Ancient City → LIFESTEAL, Area3 End → PARKOUR, Area4 Water World → MINIGAMES, Area5 Nether Valley → EVENT, Area6 → PVP PRACTICE (pvp_npc).
 - Kaam aaram se, step by step.
+
+## Shared work-log (owner rule, 2026-11-01)
+- Har kaam ke baad `FCMC_WORKLOG.md` (repo root, branch `claude/amazing-pascal-sbsbez`) me entry likho: kab (UTC), kisne kaha (original msg), kya kiya, kaise (commands/tools), result. Tag [OWNER] (fcmc owner session) / [MANAGER] (fcmc manager session). Newest neeche. Push se pehle `git pull --rebase`.
