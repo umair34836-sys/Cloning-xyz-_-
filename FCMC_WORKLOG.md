@@ -125,3 +125,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kisne kaha: MrCopper804 — "server now lobby ko and hub ko dono ko chunky se saved kerlo"
 - Kaise: `chunky world HUB` / `center 0 0` / `radius 150` / `start`; `chunky world lifesteal_lobby` / `center 0 0` / `radius 100` / `start`; `chunky progress` → no tasks running (complete); `save-all` → Saved the game.
 - Note: owner ne khud `/deop MrCopper804` chalaya (05:59 approx) — kuch nahi kiya, owner ka apna command.
+
+### 2026-11-01 ~06:15 UTC — [OWNER] Lifesteal lobby island — research + plan
+- Kisne kaha: MrCopper804 — "server now lobby k lie bhi hub ki trah island bana do jahan per afk area CREATES AREA pvp area kits area bill boards and ek lobby me jo jo jizzay hoti hai sub add kerdo by research not apne andaze per okay"
+- Research (sources): netherite.gg/wiki/lifesteal/spawn-and-afk (spawn hub + warps: AFK, Shop, Crates, Enchanter, Leaderboards, Outpost/KOTH, PvP, Warzone; AFK area for idle players + playtime rewards); jartexnetwork Lifesteal guide (/warp afk = water pool at spawn, lootbox every 30 min); builtbybit "Lifesteal Spawn 300x300" (AFK zone, x10 crates, NPC zones, KOTH zones, leaderboard zones); chunkfactory lifesteal spawns 400x400 (12-16 NPC places, 6 crate places, 3-4 markets, RTP portal place, 10x10 mine, KOTH, pond, ruins, leaderboard, spawnpoint); lifestealsmp.com (sword/mace/crystal PvP arenas, /duel, credit shop for crate keys).
+- Plan (owner ko tellraw): lifesteal_lobby sky island ~120x120 — centre spawn plaza + HEART monument; N crates (6), NE leaderboards, E kits, SE AFK zone (pool), S RTP portal → lifesteal world, SW PvP arena, W shop/market stalls, NW info billboards.
