@@ -163,3 +163,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   3. Decisions: difficulty, world border + pregen, Discord invite link, 4 lobbies, PvP arena flags, AFK rewards, PAPI expansions (console download with permission), maintenance off.
   4. Done list.
 - Owner ko tellraw confirm. Kuch bhi andaze se change nahi kiya.
+
+### 2026-11-01 ~07:30 UTC — [OWNER] Lifesteal lobby barrier + outer land
+- Kisne kaha: MrCopper804 — "server lobby me barriors laga do and hub ki trah barrior k baad walay blocks laga do"
+- Kaise: forceload -100..100 (196 chunks) in lifesteal_lobby, gamerule max_block_modifications 300000 → 39 fills `replace air` (scratchpad ls_expand.txt): grass y64 + dirt y60-63 radius ~100 (octagon of rects A7), stone y54-59 r96, stone y47-53 r88, andesite y40-46 r78, stone y34-39 r65, cobble y28-33 r50. Barrier square ±60 y65-319 (4 fills, 30855/30345 blocks each, no obstruction). Gamerule 32768 restore, forceload remove all. Top view verified.
+- Note: zones ±46 tak hain, barrier ±60 → sab andar. Void catcher (y<50) unchanged.
