@@ -84,3 +84,4 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Forceload: chunks [0,0] aur [1,0] permanently forceloaded (command blocks ke liye) — hatao mat.
 - Limits: worldlens_command max 1000 chars/command; plugin config files (DeluxeMenus GUI, Skript) FCMC se nahi likh sakte.
 - Result: done; owner online aaya, mail + tellraw report.
+- Fix (05:30): owner join ke waqt chain block x=10 missing tha → `fc_new` atka; `tag MrCopper804 remove fc_new` → welcome chala, ab `fc_seen`. Galti se `execute as MrCopper804 run say check` bhi chal gaya (chat me "check").
