@@ -154,3 +154,12 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Check: `plugins` → 46 (restart ke baad **LifeStealZ** naya installed); `maintenance status` → ON; lifesteal world difficulty EASY.
 - Owner ko tellraw: DONE list (Discord, HUB sab, lifesteal worlds, NPC link, lifesteal lobby island + RTP + void catcher) aur BAQI (owner tests, PvP region via in-game WorldEdit, difficulty/border/pregen, crates/kits/shop/leaderboards config, 4 lobbies, Discord link, maintenance off).
 - Plugins: maujood → LifeStealZ (lifesteal worlds tak limit karna), slimecrates (crates), Essentials (kits, /tpr), DonutShop + AuctionHouse, FancyHolograms + PlaceholderAPI (leaderboards), ZNPCsPlus, DeluxeMenus, CombatLog, GrimAC, hPlaytime, PlayerPoints, PlayerWarps. Chahiye → AFK rewards (e.g. AxAFKZone), VotingPlugin, PAPI expansions Statistic + Player; optional Clans, Duels, BetterRTP.
+
+### 2026-11-01 ~06:50 UTC — [OWNER] A-to-Z TODO DM (panel/hosting/in-game/decisions)
+- Kisne kaha: MrCopper804 (in-game) — "jo jo jizzay chaye or joo joo kam tum nhi ker sakte or panel se kerne hai ya hosting se kerne hai us k liee owner ko dm me prompt sand kerdoo ... A to Z her ek jizz bata denaa koi bhi jizz chorna mat ... apne andaze se kuch mat kerna"
+- Kaise: `discord_find_member mrcopper` → id 1556195237083353191 (Mrcopper804, 👑 Owner); `discord_dm` 4 embeds:
+  1. Panel/Hosting: AFK rewards plugin (e.g. AxAFKZone), VotingPlugin + NuVotifier, optional Clans/Duels/BetterRTP; NuVotifier port; backups; config: LifeStealZ (sirf lifesteal worlds), slimecrates 6 crates, Essentials kits (Starter/Warrior/Archer/Tank), DonutShop/AuctionHouse, TAB header/footer.
+  2. In-game: PvP region (//wand -37 64 19 → -19 80 37, rg define ls_pvp_arena, pvp allow, invincible deny), ZNPCsPlus market NPCs (x-38 z -9/-3/3/9), slimecrates at pedestals (z-40 x -10..10 step 4), FancyHolograms leaderboards (z-35 x21/28/35), tests (RTP portal, LIFESTEAL NPC, BACK TO HUB, selector, TAB, welcome).
+  3. Decisions: difficulty, world border + pregen, Discord invite link, 4 lobbies, PvP arena flags, AFK rewards, PAPI expansions (console download with permission), maintenance off.
+  4. Done list.
+- Owner ko tellraw confirm. Kuch bhi andaze se change nahi kiya.
