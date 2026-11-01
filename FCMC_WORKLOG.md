@@ -73,3 +73,14 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kisne kaha: MrCopper804 — "server ab i think soo hub kaa kaam complete hai yeah ? check kro if me kuch miss ker raha ho to bata dena ok"
 - Kaise check kiya: `mv config join-destination` / `first-spawn-location` = w:HUB; `rg info -w HUB __global__` (build/pvp/use/chest/item-drop/mob-spawning/fall-damage deny, invincible, time/weather lock, feed); 6 `lobby_npc` mannequins; 14 text_display labels (6 area + 8 journey); `maintenance status` = ON.
 - Result: owner ko tellraw — ready list + suggestions: (1) spawn welcome hologram (naam/Discord/rules), (2) join welcome title/message, (3) hub hotbar compass lobby selector, (4) scoreboard/TAB header-footer, (5) NPC click actions jab lobby bane, (6) maintenance launch par off. Owner ke jawab ka intezar.
+
+### 2026-11-01 ~05:10–05:25 UTC — [OWNER] HUB extras 1-4 (hologram, welcome, selector, scoreboard)
+- Kisne kaha: MrCopper804 — "server 1 se le ker 4 tak sub kerdo one by one"
+- Kaise / kya:
+  1. **Welcome hologram**: 2 `text_display` (tag `hub_welcome`) at (0.5,155.7,-6.5) title "✦ FIRECRAFT MC ✦" scale 2.6 + (0.5,153.7,-6.5) info (Welcome, paths → lobby, 6 lobbies, rules, www.firecraft.fun) scale 1.1, billboard center.
+  2. **Join welcome**: vanilla command blocks (command blocks ON hai) underground y=120, chain z=3 x3..15 (repeating at 3,120,3). Objectives `fc_leave` (leave_game), `fc_wait`. Join/first-join ke 100 ticks baad title + subtitle + levelup sound + chat welcome; first join par `@a` broadcast; tags `fc_new`/`fc_seen`.
+  3. **Lobby Selector**: chain z=6 x3..27 (repeating at 3,120,6). HUB me survival/adventure players ko hotbar.4 me carrot_on_a_stick (item_model compass, custom_data fc_sel). Right-click (`fc_sel` used stat) → chat menu, clickable `/trigger fc_lobby set 1..6` → NPC ke samne tp + "Coming Soon". LP: `lp group default permission set minecraft.command.trigger true world=HUB`.
+  4. **Scoreboard**: vanilla objective `fc_side` sidebar (numberformat blank, fake entries #l1..#l9). **TAB**: `tab group _DEFAULT_|default header/footer ...` (console output nahi deta → owner se verify).
+- Forceload: chunks [0,0] aur [1,0] permanently forceloaded (command blocks ke liye) — hatao mat.
+- Limits: worldlens_command max 1000 chars/command; plugin config files (DeluxeMenus GUI, Skript) FCMC se nahi likh sakte.
+- Result: done; owner online aaya, mail + tellraw report.

@@ -9,6 +9,7 @@ Format:
 
 ## 2026-11-01
 
+- **HUB extras 1-4 (2026-11-01, owner):** welcome hologram (text_display tag hub_welcome), join title/welcome + first-join broadcast, Lobby Selector (carrot_on_a_stick compass model → chat menu → /trigger fc_lobby → NPC tp), sidebar `fc_side` + TAB header/footer. Command blocks y=120 rows z=3 (x3-15) & z=6 (x3-27), chunks [0,0],[1,0] forceloaded permanently. Details FCMC_WORKLOG.md.
 - **Shared work-log (2026-11-01, owner in-game):** "jo bhi kaam kerte ho uski file banao ... fcmc manager session ke sath share kro, wo bhi likhe" → `FCMC_WORKLOG.md` banayi (format + purane kaam ki summary), manager session (session_01JK8TsBgGuzocQqsgSfCLYh) ko send_message se bataya.
 - **HUB centre + paths REDESIGN (2026-11-01, owner: "center and paths ... redesign kerdoo with better look"):** (1) 6 spokes ab 5-wide r11-52: edges polished_blackstone_bricks (lateral ±1.75/±2.25), beech stone_bricks (±0.6/±1.25), centre line shroomlight (offset 0); water/air skip. (2) Gol plaza (r3-10.5, center 5x5 + beacon untouched): r3-3.5 & r4.5 polished_blackstone_bricks, r4 gilded_blackstone ring, r5-6.5 polished_andesite, r7-7.5 stone_bricks, r8-8.5 chiseled_stone_bricks, r9 shroomlight glow ring, r9.5 stone_bricks, r10-10.5 polished_blackstone_bricks border. (3) Ring path: r52 pbb | r53 stone | r54 shroomlight | r55 stone | r56 pbb (glass ke neeche). Spoke-ring junctions khule (3x3 stone + shroomlight centre r51.5-53). Lamp posts/NPCs/azaleas untouched. Owner ko tellraw report.
 
