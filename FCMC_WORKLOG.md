@@ -120,3 +120,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Command chain y=120 z=12 x3..20 (repeating at 3,120,12): proximity (≤1.3 blocks) ya interaction/attack → tag fc_go_ls / fc_go_hub → `execute in <dim> run minecraft:tp` (lobby 0.5 65 0.5 / HUB 0.5 151 0.5 180) + msg + sound. Commands console me pehle validate kiye.
   - Lobby Selector: LIFESTEAL line "● OPEN"; trigger 2 → tag fc_go_ls (blocks 16/17 z=6 replaced). LP `minecraft.command.trigger true world=lifesteal_lobby`.
 - Note: WG `build deny` interaction click ko cancel kar sakta hai — proximity method pakka kaam karta hai. Owner se in-game test pending.
+
+### 2026-11-01 ~06:10 UTC — [OWNER] Chunky pre-gen HUB + lifesteal_lobby
+- Kisne kaha: MrCopper804 — "server now lobby ko and hub ko dono ko chunky se saved kerlo"
+- Kaise: `chunky world HUB` / `center 0 0` / `radius 150` / `start`; `chunky world lifesteal_lobby` / `center 0 0` / `radius 100` / `start`; `chunky progress` → no tasks running (complete); `save-all` → Saved the game.
+- Note: owner ne khud `/deop MrCopper804` chalaya (05:59 approx) — kuch nahi kiya, owner ka apna command.
