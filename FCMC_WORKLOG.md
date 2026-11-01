@@ -98,3 +98,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kaise check kiya: `mv info HUB --page 1..4`, `lp group default permission info` + `permission check essentials.tpr`, hologram count (2), `gamerule minecraft:show_advancement_messages`, owner gamemode.
 - **Bug fix:** default group me exact nodes (essentials.tpr/home/sethome/tpa/spawn/warp/kit/pay/msg/mail..., clickaccept.*, playerpoints.*) global TRUE the → LP exact node wildcard `* false world=hub` ko override karta hai → RTP waghera HUB me chal rahe the. 36 nodes `lp group default permission set <node> false world=hub` (global true rehne diye, future lobbies me chalenge). authme.player.* aur minecraft.command.trigger untouched.
 - Baqi kami owner ko batayi (faisla pending): HUB gamemode SURVIVAL (adventure?), advancement messages ON, hologram me Discord link nahi, TAB header/footer verify nahi, maintenance ON, logo pe tree overlap.
+
+### 2026-11-01 ~05:40 UTC — [OWNER] HUB adventure + advancements off
+- Kisne kaha: MrCopper804 — "server 1 adventure kerdo 2 advancement off kerdo 3 discord link baad me kringay"
+- Kaise: `mv modify HUB set gamemode adventure` (verify: Game Mode ADVENTURE; owner/manager `*` se bypass); `execute in minecraft:overworld run gamerule minecraft:show_advancement_messages false`; `mv modify HUB set allow-advancement-grant false` (verify: Grant Advancements false).
+- Pending: Discord link hologram me — owner baad me batayega. Baqi list (TAB verify, maintenance, logo tree overlap) owner ne abhi nahi kaha.
