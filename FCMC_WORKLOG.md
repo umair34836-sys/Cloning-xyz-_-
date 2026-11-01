@@ -68,3 +68,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 ---
 
 ## Naye entries (dono sessions yahan neeche add karein)
+
+### 2026-11-01 ~05:15 UTC — [OWNER] HUB completion check
+- Kisne kaha: MrCopper804 — "server ab i think soo hub kaa kaam complete hai yeah ? check kro if me kuch miss ker raha ho to bata dena ok"
+- Kaise check kiya: `mv config join-destination` / `first-spawn-location` = w:HUB; `rg info -w HUB __global__` (build/pvp/use/chest/item-drop/mob-spawning/fall-damage deny, invincible, time/weather lock, feed); 6 `lobby_npc` mannequins; 14 text_display labels (6 area + 8 journey); `maintenance status` = ON.
+- Result: owner ko tellraw — ready list + suggestions: (1) spawn welcome hologram (naam/Discord/rules), (2) join welcome title/message, (3) hub hotbar compass lobby selector, (4) scoreboard/TAB header-footer, (5) NPC click actions jab lobby bane, (6) maintenance launch par off. Owner ke jawab ka intezar.
