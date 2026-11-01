@@ -288,3 +288,4 @@
     OPEN piston -13808,111 facing west <- calibrated sensor[facing=west] -13808,110 + comparator[facing=east] -13807,110 + composter[level=4] -13806,110. Leaves over -13808,112.
   - Tested (armor stand): unequip -> BOTH lids open; equip -> BOTH closed. Test stand removed (tp void). Owner informed.
 [2026-10-31 09:09 UTC] CHAT "server stop in game watcher for some time and open discord owner private channel watcher ok" -> in-game watch cron fb2cbb4b deleted; new Discord #owner-private watch cron 04538a65 (every min, owner id 1556195237083353191 only). Confirm posted in #owner-private (owner went offline in-game before msg).
+[2026-11-01 06:34 UTC] CHAT "server mujhe .ubrother k castle per tp kro" -> working msg; tp MrCopper804 5506.5 74 -44.5 (castle courtyard, from 30 Oct log); not stuck verified; done msg.
