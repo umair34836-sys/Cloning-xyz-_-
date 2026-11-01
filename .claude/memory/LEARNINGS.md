@@ -55,3 +55,4 @@ Format:
 - In-game chat padhne ka tareeqa: CoreProtect `co lookup u:<player> a:chat t:<time>` (console). Techshot Gaming ka Discord id 1376918464379359346 (#general me 11:32 par dikha — server join kar chuka).
 - MC 26.x gamerules renamed: fill limit = `gamerule minecraft:max_block_modifications` (default 32768; temporarily 300000 for big fills, phir wapas). Vanilla worldborder invisible nahi hota → barrier blocks wall use karo. TAB 6.2.1 console commands (`tab group <g> tabprefix/tagprefix`) koi output nahi dete.
 - forceload ek command me max 256 chunks — bade area ko 2 hisson me karo.
+- Diagonal builds console se: markers summon karo, `rotate @s facing <centre>`, phir doubling `execute as @e[tag] at @s run summon marker ^ ^ ^-N` (log2 commands), aur `execute at @e[tag] run fill ^K ^1 ^ ^K ^7 ^` se rotated columns. Essentials `kill` override karta hai → `minecraft:kill`.
