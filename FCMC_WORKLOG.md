@@ -148,3 +148,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - NW INFO x-38..-18 z-38..-18: 3 boards z=-35 (RULES, HOW LIFESTEAL WORKS, SERVER INFO: www.firecraft.fun / join.firecraft.fun).
   - 8 trees (fancy_oak/oak) between zones; WG leaf-decay deny added. mob-spawning temp allow for armor stands → deny. Forceload removed; gamerule restored.
 - Placeholders: crates/kits/leaderboards/shops (plugins needed), PvP arena (WG region needs in-game WorldEdit selection), AFK rewards.
+
+### 2026-11-01 ~06:40 UTC — [OWNER] Status update + plugin check
+- Kisne kaha: MrCopper804 — "server updates dedo kia chal raha hai kitna kam howa kitna baqi hai also plugins bhi check kerlo or btao or kia or konse plugins chaye honge ?"
+- Check: `plugins` → 46 (restart ke baad **LifeStealZ** naya installed); `maintenance status` → ON; lifesteal world difficulty EASY.
+- Owner ko tellraw: DONE list (Discord, HUB sab, lifesteal worlds, NPC link, lifesteal lobby island + RTP + void catcher) aur BAQI (owner tests, PvP region via in-game WorldEdit, difficulty/border/pregen, crates/kits/shop/leaderboards config, 4 lobbies, Discord link, maintenance off).
+- Plugins: maujood → LifeStealZ (lifesteal worlds tak limit karna), slimecrates (crates), Essentials (kits, /tpr), DonutShop + AuctionHouse, FancyHolograms + PlaceholderAPI (leaderboards), ZNPCsPlus, DeluxeMenus, CombatLog, GrimAC, hPlaytime, PlayerPoints, PlayerWarps. Chahiye → AFK rewards (e.g. AxAFKZone), VotingPlugin, PAPI expansions Statistic + Player; optional Clans, Duels, BetterRTP.
