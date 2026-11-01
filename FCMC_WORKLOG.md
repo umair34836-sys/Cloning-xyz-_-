@@ -111,3 +111,12 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Multiverse-Inventories: `mvinv create-group lifesteal` + `add-worlds lifesteal lifesteal,lifesteal_nether,lifesteal_the_end` + `add-shares lifesteal all` (hearts/max_hit_points bhi share). `mvinv add-worlds lobby HUB,lifesteal_lobby`. No conflicts. (Purane groups default/lobby me deleted worlds `world*`/`lobby` ke naam abhi bhi config me.)
   - lifesteal_lobby: 11x11 platform y64 (polished_blackstone_bricks, centre gilded) at 0,0; `mv setspawn lifesteal_lobby:0.5,65,0.5,0,0`; WG __global__ flags HUB jaise (build/pvp/mob-spawning/fall-damage/item-drop/use/chest-access/fire-spread/enderpearl deny, invincible allow, weather-lock clear, time-lock 6000, feed 20/5); gamemode adventure; allow-advancement-grant false; show_advancement_messages false; LP `* false` + 36 exact nodes false `world=lifesteal_lobby`.
 - Pending owner decisions: difficulty (abhi EASY), world border + Chunky pregen, Lifesteal heart plugin (installed NAHI), lobby build design, HUB LIFESTEAL NPC → lobby connect.
+
+### 2026-11-01 ~06:00 UTC — [OWNER] HUB ↔ Lifesteal lobby via NPC
+- Kisne kaha: MrCopper804 — "server subse pehle ek kaam kro hub and lobby ko lifesteal walay npc k trough connect kro"
+- Kya kiya / kaise:
+  - HUB `❤ LIFESTEAL` mannequin (tag npc_lifesteal, 17.5 151 -9.5): description → "▶ Click karo / paas aao = JOIN"; `minecraft:interaction` entity (tags ls_click, npc_click, 1.0x2.1) usi jagah.
+  - lifesteal_lobby: mannequin `⬅ BACK TO HUB` (tags lobby_npc, npc_hub_return, skin Technoblade) at 0.5 65 3.5 facing north + interaction (hub_click). (WG mob-spawning temp allow → summon → deny.)
+  - Command chain y=120 z=12 x3..20 (repeating at 3,120,12): proximity (≤1.3 blocks) ya interaction/attack → tag fc_go_ls / fc_go_hub → `execute in <dim> run minecraft:tp` (lobby 0.5 65 0.5 / HUB 0.5 151 0.5 180) + msg + sound. Commands console me pehle validate kiye.
+  - Lobby Selector: LIFESTEAL line "● OPEN"; trigger 2 → tag fc_go_ls (blocks 16/17 z=6 replaced). LP `minecraft.command.trigger true world=lifesteal_lobby`.
+- Note: WG `build deny` interaction click ko cancel kar sakta hai — proximity method pakka kaam karta hai. Owner se in-game test pending.
