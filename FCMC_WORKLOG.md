@@ -168,3 +168,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kisne kaha: MrCopper804 — "server lobby me barriors laga do and hub ki trah barrior k baad walay blocks laga do"
 - Kaise: forceload -100..100 (196 chunks) in lifesteal_lobby, gamerule max_block_modifications 300000 → 39 fills `replace air` (scratchpad ls_expand.txt): grass y64 + dirt y60-63 radius ~100 (octagon of rects A7), stone y54-59 r96, stone y47-53 r88, andesite y40-46 r78, stone y34-39 r65, cobble y28-33 r50. Barrier square ±60 y65-319 (4 fills, 30855/30345 blocks each, no obstruction). Gamerule 32768 restore, forceload remove all. Top view verified.
 - Note: zones ±46 tak hain, barrier ±60 → sab andar. Void catcher (y<50) unchanged.
+
+### 2026-11-01 13:16 UTC — [OWNER] Chat watcher off, kal subah 8 baje on
+- **Kisne kaha:** Owner (session chat): "acha watcher off kerdo tommowrow 8 am on ker dena ok"
+- **Kya kiya:** Har-minute wala owner chat watcher (session cron) band kiya; 2026-11-02 08:00 PKT (03:00 UTC) ke liye scheduled task banaya jo watcher dobara on karega.
+- **Kaise:** CronDelete 1ce7de73; send_later trig_011pkGDMcsfThg671iFMVA9h.
+- **Result:** Watcher off. Kal 8 AM Pakistan time par auto on hoga (agar session tab tak available ho).

@@ -62,3 +62,4 @@ Format:
   - **UI/UX Pro Max** ("Uiuxpromax") → `nextlevelbuilder/ui-ux-pro-max-skill` (user ne URL diya, installed)
 - Prefer high-star / popular repos where ambiguous. Install method: **git submodules** under `tools/`.
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
+- 2026-11-01: Owner ne kaha watcher off karo, kal 8 AM (PKT) on karna — cron delete + send_later trig_011pkGDMcsfThg671iFMVA9h.
