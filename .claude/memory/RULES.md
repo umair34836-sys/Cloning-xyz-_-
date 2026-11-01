@@ -19,3 +19,11 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Online games server-authoritative hote hain → client decrypt se winner predict karna technically bhi namumkin; aisi request ko educational explanation me convert karo.
 
 - (2026-11-01, owner) Har build ke baad analyze karo: WorldLens top + angled shot lo, floating blocks (slab/fence ke neeche support), gaps, bachi grass/dirt, doosre area me spill check karke fix karo.
+
+## FireCraft MC server PLAN (owner, 2026-11-01) — HAMESHA follow karo
+- Player join → HUB (sky island). HUB se 6 lobbies ka rasta: SURVIVAL, LIFESTEAL, PARKOUR, PVP PRACTICE, MINIGAMES, EVENT.
+- Abhi koi lobby bani nahi → sab NPCs "Coming Soon". Jab koi lobby banegi: us NPC ka naam/action update karke lobby se connect karna (FancyNpcs action), owner ke kehne par.
+- HUB (aur future lobbies) me normal players ke liye SAARI commands band (RTP bhi) — jab tak owner specific command allow na kare. Owner/manager (`*`) unaffected.
+- HUB + lobbies me players: no build, no destroy, no PvP (WorldGuard).
+- Area → lobby NPC mapping: Area1 Survival (survival_npc), Area2 Ancient City → LIFESTEAL, Area3 End → PARKOUR, Area4 Water World → MINIGAMES, Area5 Nether Valley → EVENT, Area6 → PVP PRACTICE (pvp_npc).
+- Kaam aaram se, step by step.
