@@ -607,3 +607,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Diagnose: console `mvtp` pehle hi instant verify tha, isliye shak hai ke ya to NPC click fire nahi ho raha ya delay purani Skript proximity countdown se hai. Temporary debug message action add kiya.
 - **Kaise:** `npc action add message lifesteal ANY_CLICK 0 0 <gray>[Claude debug] NPC click mila - tp ho raha hai</gray>` (action index 1 — fix ke baad hatana hai).
 - **Result:** Manager se click karke batane ko kaha (debug message aaya ya nahi + kaunsa countdown dikhta hai).
+
+### 2026-11-02 09:40 UTC (14:40 PKT) — Panel handover v14:30 padha
+- Panel ne fix kiya: HUB Server Selector compass → **BLAZE_POWDER** (compass = WorldEdit navigation wand → OP right-click `/jumpto` = "random tp"; mera D0 report). selector.yml LIFESTEAL → `minecraft:tag <player> add fc_restore` (mera last-location system). Essentials `spawn-on-join: false`, `newbies.spawnpoint: none` (join → sirf mera command block HUB). DonutShop `Sell/config.yml worth-lore.enabled: false` ("$" lore band; "menus only" option exist nahi karta). TAB moderator → MODERATOR (blue), sort owner, manager, moderator, default. Vanilla sidebar cleared.
+- Owner decisions: HUB LIFESTEAL mannequin NPC (overworld 17.5 151 -9.5) rakho; mera carrot selector chain y120 z6 OFF hi rahe.
+- Reply file C items [x] mark. Mera next in-game kaam: ajLB leaderboard holograms (owner online chahiye `/hologram create`).
