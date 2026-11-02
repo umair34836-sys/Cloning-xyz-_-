@@ -720,3 +720,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Maana ke diagonal roads ke red border gaps wale hain; dono lobbies me gaps bharne ka offer diya ("Server haan border fix karo" par karunga).
 - **Kaise:** tellraw techshotgaming.
 - **Result:** Koi server change nahi; manager ke confirm ka intezaar.
+
+### 2026-11-02 10:14 UTC — [MANAGER] Red road borders continuous (survival + lifesteal lobby)
+- **Kisne kaha:** techshotgaming (Manager): "Server haan border fix karo"
+- **Kya kiya:** Roads (`polished_blackstone_bricks`) ke saath jo grass blocks orthogonally touch kar rahe the, unhe `red_nether_bricks` kiya — survival sky-lobby (y200) me 382, lifesteal_lobby (y64) me 442.
+- **Kaise:** Temp layers ke saath "dilate + mask" trick (sky me, baad me saaf): (1) road layer ko `clone ... filtered minecraft:polished_blackstone_bricks` se upar copy; (2) usko ±x/±z offset ke saath 4 baar `clone masked` → dilated layer; (3) dilated me bricks→red_nether_bricks, phir original road layer `masked` wapas; (4) grass-mask: full bedrock layer + `clone filtered grass_block` + grass→air → non-grass=bedrock; isko `masked` dilated par → sirf grass cells red bache; (5) `clone ... filtered minecraft:red_nether_bricks` wapas ground layer par. Note: `clone masked` me barrier copy nahi hua — bedrock use kiya. Forceload add/remove dono worlds me; temp layers (survival y300/302/304, lifesteal y164/166/168) air kiye.
+- **Result:** Survival close-up top view me red bricks 68→128 (continuous edges). Manager ko tellraw kiya.
