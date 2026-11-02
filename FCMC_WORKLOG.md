@@ -310,3 +310,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Bytecode:** CrateInteractListener RIGHT/LEFT_CLICK_BLOCK → getCrateAtLocation(clickedBlock) → setCancelled(true) → crate location par physical block chahiye; chest GUI nahi khulega.
 - **Console:** `setblock -6|-2|2|6|10 67 -40 minecraft:chest[facing=south]` (owner us waqt 6.4 65 -31.4 par tha, safe).
 - **Vote redo (sent):** owner tp -9.5 67 -39.5 → `/slimecrates remove` (below-block check vote pakdega) + `/slimecrates set vote` → done ke baad chest (-10,67,-40).
+
+### 2026-11-02 05:15 UTC — [OWNER] Crates complete (vote fix via sudo)
+- Owner ne vote remove+set kiya, phir bhi VOTE hologram y68 (baaqi y69). Maine owner ko exact -9.5 67.0 -39.5 tp karke `sudo MrCopper804 slimecrates remove` + `sudo MrCopper804 slimecrates set vote` — hologram phir bhi y68 → vote crate ka hologram offset alag hai (location y67 hi). Owner ko -9.5 65 -36.5 shift karke `setblock -10 67 -40 chest[facing=south]`.
+- Ab 6 pedestals par 6 chests = 6 crates. Interact listener event cancel karta hai (chest GUI nahi). Owner ko right-click test karne ko kaha.
+- `slimecrates rewards vote` → diamond 50% / iron 50% (default); console se list hoti hai, `removereward <crate> <id>`.
+- **Next (owner decision):** har crate ke rewards — owner se poocha khud batayenge ya main research list banaun.
