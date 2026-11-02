@@ -205,3 +205,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** Owner in-game: "server check kroo kal jab se me offline gya tha server me kia chizay new howi hai ?"
 - **Kya kiya:** CoreProtect sessions/chat/commands (t:19h), firecraft get_overview + pending applications check kiye.
 - **Result:** Owner logout ~2026-11-01 07:30 UTC ke baad koi aur player join nahi hua, koi chat/command nahi; TPS 20. Panel: 0 open tickets, 0 reports, 2 pending applications (RudraJUSTGOD 26 Oct, XREAMxPRO 24 Oct, dono purani). tellraw se owner ko bataya.
+
+### 2026-11-02 03:00 UTC — [OWNER] Sirf FCMC connector ka data
+- **Kisne kaha:** Owner in-game: "server serf fcmc connector ka data batao worldlens wala nhi"
+- **Kya kiya:** Sirf FCMC connector se dobara check: CoreProtect (game) + FCMC Discord channels.
+- **Result:** Game: owner ke jaane ke baad koi player/chat/command nahi, TPS 20. Discord (FireCraft MC, 3 members): naya member bhupendra67 (2026-11-01 07:54 UTC, #welcome); tickets/suggestions/reports/game-chat/staff-logs khali. Pichla panel (firecraft) data FireCraft SMP website ka tha — owner ko bataya ke wo ignore karein.

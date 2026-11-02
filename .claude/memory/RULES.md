@@ -30,3 +30,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 
 ## Shared work-log (owner rule, 2026-11-01)
 - Har kaam ke baad `FCMC_WORKLOG.md` (repo root, branch `claude/amazing-pascal-sbsbez`) me entry likho: kab (UTC), kisne kaha (original msg), kya kiya, kaise (commands/tools), result. Tag [OWNER] (fcmc owner session) / [MANAGER] (fcmc manager session). Newest neeche. Push se pehle `git pull --rebase`.
+- Owner jab 'server ka data' maange to sirf FCMC connector (mcp__FCMC__*) ka data do; firecraft panel = FireCraft SMP website, FCMC nahi.
