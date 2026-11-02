@@ -73,3 +73,4 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 07:50 UTC | OWNER | owner order (society hearts) | .Mr_shadow_6232 online aaya -> 5 hearts kate (Bedrock naam online hone par chal jata hai) | lifestealz hearts remove | done
 2026-11-02 07:55 UTC | OWNER | owner (in-game) | Society plot8 complete + decorate: upar ke kamre me darwaza, 42 glass panes, spruce hip roof, lanterns, gamle; dirt -> birch | fill/setblock, WE move | done
 2026-11-02 07:55 UTC | OWNER | owner (in-game) | Society me PvP OFF | rg flag -w world society pvp deny | done
+2026-11-02 07:59 UTC | OWNER | owner (in-game) | Plot8 owner ke kehne par bahar se REVERT (roof/khidkiyan/darwaza hataye, XREAM ka dirt design CoreProtect se wapis); sirf andar carpet + lanterns | fill/setblock | done
