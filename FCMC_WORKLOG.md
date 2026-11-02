@@ -571,3 +571,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Lifesteal ZNPC click action me 100 ticks (5s) delay + 5s cooldown; click par chat message action add.
 - **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 5 100 mvtp %player_name% lifesteal_lobby`; `npc action add message lifesteal ANY_CLICK 5 0 <green>Lifesteal lobby me 5 seconds me teleport ho rahe ho...</green>`.
 - **Result:** Action list confirm. Agar lamba wait purani firecraft-hub.sk countdown se hai to wo console se edit nahi ho sakta — manager ke skript-disable confirm ka intezaar.
+
+### 2026-11-02 09:04 UTC — [MANAGER] firecraft-hub.sk me kya hai? (question)
+- **Kisne kaha:** techshotgaming (Manager): "Server us dkript me kya kya hai?" (+ typo fix "Skript*")
+- **Kya kiya:** Jawab diya ke console se script content padh nahi sakte (`sk list` sirf naam deta hai: firecraft-hub.sk, firecraft-lifesteal.sk).
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Owner/panel se file kholni padegi; poori script disable risky bataya.
