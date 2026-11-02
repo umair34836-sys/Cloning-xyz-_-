@@ -529,3 +529,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** pvp_practice ko purani mannequin jagah par shift, rotation, Dream skin, aur 2 hologram lines.
 - **Kaise:** `npc setlocation pvp_practice -13.8 151 -8.4`, `npc setrotation pvp_practice -58.1 0`, `npc skin pvp_practice static Dream`, `npc holo add pvp_practice <bold><#A855F7>✦ PVP PRACTICE ✦</#A855F7></bold>`, `npc holo add pvp_practice <gray><italic>Coming Soon</italic></gray>`.
 - **Result:** Move/rotate/holo success; skin "Fetching skin Dream..." (async). Koi click action nahi (PvP abhi Coming Soon). Manager ko tellraw kiya.
+
+### 2026-11-02 08:53 UTC — [MANAGER] Baaki NPCs ZNPCsPlus me + proximity teleport hatao (step 1: manager se create)
+- **Kisne kaha:** techshotgaming (Manager): "Server Ab baaki npcs ko bhi znpcs ki help se bana do and pass jate hi teleport wala system hata do"
+- **Kya kiya:** `execute as techshotgaming at @s run npc create npc_survival player` bhi try kiya — "Incorrect usage" (console/proxied sender se create nahi hota). Manager se 5 NPC create karwane ko kaha (survival, lifesteal, parkour, minigames, event).
+- **Kaise:** tellraw techshotgaming with exact /znpcs create commands.
+- **Result:** Pending — create hote hi setlocation/setrotation/skin/holo/click action set karunga, phir purane mannequins (minecraft:kill tag=lobby_npc) aur proximity teleport (HUB 0 100 -17 command block) hataunga. Teleport abhi nahi hataya taa ke join raasta beech me na toote. Lifesteal ka "paas aao" Skript (firecraft-hub.sk) me hai — console se nahi hata sakta.
