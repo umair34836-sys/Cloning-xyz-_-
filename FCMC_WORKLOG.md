@@ -478,3 +478,6 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Reply file update: C (URGENT compass fix request), D0 evidence, D1 fixed. Owner ko tellraw + file.
 - Owner ka "manager baat sunoo ..." message manager session ke liye tha (economy high value — rule pehle se hai).
 - Naya world `survival` (minecraft:survival, spawn 144 70 560) dikh raha hai — maine nahi banaya.
+
+### 2026-11-02 09:00 UTC — [OWNER] Watcher off
+- Owner (session): "watcher off kerdo" → CronDelete a2e626b4. (Moderator follow-up send_later trig_019rKtYJF8NT98SKVnJe4sNB @ 11:44 UTC abhi bhi scheduled.)
