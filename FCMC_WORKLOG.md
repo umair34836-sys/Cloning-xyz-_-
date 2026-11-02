@@ -624,3 +624,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Honest jawab: console se script content nahi padh sakte, pakki list nahi. Sirf typical hub-skript features ka andaza diya (join items/menu, void→spawn tp, double jump/launch pads, NPC proximity tp, hub messages) — clearly "andaza" bola.
 - **Kaise:** tellraw techshotgaming.
 - **Result:** Owner ko panel se file dekhni hogi; skript disable nahi kiya.
+
+### 2026-11-02 09:19 UTC — [MANAGER] Hub skript band karke nayi skript banao (NOT done)
+- **Kisne kaha:** techshotgaming (Manager): "Server ye wali script band karke vo saari features ke liye dusri skript bana dena"
+- **Kya kiya:** Nahi kiya. FCMC connector sirf console commands chalata hai — nayi .sk file likh nahi sakta, aur firecraft-hub.sk ka content padh bhi nahi sakta, to replacement banana possible nahi. Bina replacement disable karne se unknown hub features toot jaate.
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Manager ko kaha owner (MrCopper804) panel se sirf lifesteal proximity-tp wala part hataye, ya file content share kare. Skript enabled hai.
