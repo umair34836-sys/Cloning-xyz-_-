@@ -559,3 +559,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Lifesteal ZNPC ka click action vanilla tp se Multiverse safe-tp par badla.
 - **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 2 0 mvtp {player} lifesteal_lobby` (pehle: `execute as {player} in minecraft:lifesteal_lobby run tp @s 0.5 65 0.5 0 0`). lifesteal_lobby spawn = 0.5 65 0.5. Essentials warps me "lobby" bhi hai (location verify nahi ki).
 - **Result:** "Edited action with index 0". Click test manager karenge; agar /warp lobby chahiye to badal denge.
+
+### 2026-11-02 09:01 UTC — [MANAGER] Lifesteal NPC click fix + proximity Skript
+- **Kisne kaha:** techshotgaming (Manager): "Server ye lifesteal npc work nahi kar raha and is par se paas jaakar tp hone wali skript bhi hatao"
+- **Kya kiya:** Wajah: ZNPCsPlus v2 console actions me `{player}` replace nahi hota — PlaceholderAPI `%player_name%` chahiye. Lifesteal aur Survival dono actions fix kiye. `mvtp techshotgaming lifesteal_lobby` se command khud verify ki (manager lifesteal_lobby pahunch gaye).
+- **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 2 0 mvtp %player_name% lifesteal_lobby`; `npc action edit survival 0 consolecommand ANY_CLICK 2 0 execute as %player_name% in minecraft:survival run spreadplayers 144 560 0 1 false @s`; `papi parse techshotgaming %player_name%` → techshotgaming.
+- **Result:** Actions fixed (click test manager karenge). Proximity tp Skript `firecraft-hub.sk` ke andar hai — sirf wo part console se nahi hatta; poori script disable karne se hub ki baaki features bhi band ho sakti hain, isliye manager se explicit confirm maanga.
