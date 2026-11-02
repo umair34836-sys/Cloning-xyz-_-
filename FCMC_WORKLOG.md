@@ -595,3 +595,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Pehle test: `execute in minecraft:overworld run summon minecraft:mannequin 0.5 151 0.5 {Tags:["probe_mq"],...}` → "Summoned" lekin `@e[type=minecraft:mannequin,tag=probe_mq]` me nahi mila (wahi purana masla — naye mannequin turant remove).
 - **Kaise:** FCMC console test; ZNPCs delete NAHI kiye.
 - **Result:** Not done — ZNPCs hatane se lobby khali ho jati. Manager ko tellraw kiya; owner ko check karna hoga ki kaunsa plugin/Skript naye mannequins hata raha hai.
+
+### 2026-11-02 09:12 UTC — [MANAGER] Lifesteal NPC instant tp
+- **Kisne kaha:** techshotgaming (Manager): "Server Lifesteal npc takes forever to tp you to spawn ,Fix it snd set it to instantly"
+- **Kya kiya:** Lifesteal ZNPC action delay 100 → 0 ticks, cooldown 1s; "5 seconds" message action hataya.
+- **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 1 0 mvtp %player_name% lifesteal_lobby`; `npc action delete lifesteal 1`.
+- **Result:** Action list me sirf instant mvtp. Agar phir bhi wait hai to wo firecraft-hub.sk proximity countdown hai (console se edit nahi). Manager ko tellraw kiya.
