@@ -449,3 +449,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** HUB KITS area me missing WARRIOR KIT armor stand (40.5 65 -1.5) dobara summon kiya — iron helmet/chestplate/leggings/boots + iron sword.
 - **Kaise:** Baaki `ls_kit` stands (starter -5.5, archer 2.5, tank 6.5) aur WARRIOR KIT text_display (40.5 68.4 -1.5) dekh kar same NBT se `execute as techshotgaming at @s run summon minecraft:armor_stand 40.5 65 -1.5 {Tags:["ls_kit"],Rotation:[90f,0f],Invulnerable:1b,NoGravity:1b,NoBasePlate:1b,ShowArms:1b,DisabledSlots:4144959,equipment:{...iron...}}`.
 - **Result:** "Summoned new Armor Stand". Manager ko tellraw se bataya.
+
+### 2026-11-02 08:30 UTC — [OWNER] Watcher on + selector auto-tp issue
+- Owner (session): "Watcher on kerdo every 30 seconds wala" → CronCreate a2e626b4 every minute (30s possible nahi).
+- Owner in-game: "check me jab bhi server selector per right click ker raha ho ye mujhe khod se tp ker raha hai soo fix it first"
+- Check: mera chain y120 z6 (Lobby Selector carrot_on_a_stick, hotbar.4) sirf `/trigger fc_lobby` clicks par tp karta hai; panel ka Skript "Server Selector" compass bhi slot 5 → conflict. Mera repeating `3 120 6` `auto:0b` (band, delete nahi). Owner se test result maanga (menu khulta hai ya seedha tp). Shak: DeluxeMenus `selector` me right-click hold → GUI slot click (panel side).
+- New handover upload (7617f782) = pehle wali file jaisi, koi naya badlav nahi.
+- Online: techshotgaming (Techshot ka IGN ho sakta hai).
