@@ -75,3 +75,4 @@ Format:
 - WorldGuard `rg define` console se coordinates nahi leta ("Please select an area first") — region ke liye owner in-game WE selection kare.
 - Nether portal visual bina teleport: `block_display` with block_state nether_portal[axis=x] scaled (5,7,0.2) — creative players ko instant portal travel ka risk nahi.
 - RTP: `execute as @a[tag] in minecraft:<world> run spreadplayers 0 0 1 1500 false @s` + fallback `if dimension <old>` tp.
+- Cron/ScheduleWakeup ka minimum interval 1 minute hai; seconds-level watcher possible nahi.

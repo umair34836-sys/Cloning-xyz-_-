@@ -194,3 +194,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kisne kaha: techshotgaming — "Server set Minigames npc skin to Technoblade ,PvP to SenpaiSpider"
 - Kaise: `znpcs list` / `npc list` → "Npc List:" khaali; `npc skin Minigames static Technoblade` + lowercase → "Incorrect usage" (ID nahi mili). Plugin = ZNPCsPlus v2.1.0.
 - Result: FAILED — tellraw se manager se exact NPC ID maangi. Wajah ab samajh aayi: HUB lobby NPCs ZNPCsPlus nahi, `minecraft:mannequin` entities (tag `lobby_npc`) hain.
+
+### 2026-11-02 02:50 UTC — [OWNER] Chat watcher dobara on
+- **Kisne kaha:** Owner (session chat): "Start watcher for every 30 seconds"
+- **Kya kiya:** Watcher har 1 minute par on kiya (30 sec ka option nahi hai, scheduler ka sabse chhota interval 1 minute hai). Kal wala 8 AM scheduled task delete kiya taake watcher do baar na chale. Owner ke in-game sawal "server are you here for me ?" ka jawab tellraw se diya.
+- **Kaise:** CronCreate 2ea04e9d (`* * * * *`); delete_trigger trig_011pkGDMcsfThg671iFMVA9h.
+- **Result:** Watcher on (session-only, 7 din me khud expire).
