@@ -35,3 +35,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - 2026-11-02: Owner: saare panel/plugin/file wale kaam FCMC_PANEL_SETUP.md me likhte raho (owner doosre AI se karwayega). 1 coin = 1 PKR (PlayerPoints).
 - Economy rule (owner): balance/shards/coins value bahut high; hearts sabse mehnge (heart shop: 1=500 coins).
 - 2026-11-02 Owner RULE: HUB ko lifesteal aur har naye mode se har lihaaz se alag rakho (playtime, coins, balance, inventory, stats — everything). Naya mode = naya mvinv group; global plugins (PlayerPoints/DonutShop/hPlaytime/LifeStealZ) ke liye alag server ya per-mode plugin.
+- 2026-11-02 OWNER RULE: FCMC server ke HAR session me sirf FCMC connector (mcp__FCMC__*) — WorldLens connector (mcp__worldlens__*) kabhi nahi (wo FireCraft SMP hai). CLAUDE.md me bhi likha.

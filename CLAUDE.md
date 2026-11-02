@@ -18,6 +18,12 @@ Workflow har kaam ke baad:
 2. Commit karo clear message ke saath.
 3. Push karo designated branch par.
 
+## FCMC server rule (owner, 2 Nov 2026 — IMPORTANT)
+
+FireCraft MC (FCMC) server ke **har session** me sirf **FCMC connector** (`mcp__FCMC__*`: worldlens_command / worldlens_status / worldlens_shot / worldlens_top / discord_*) use hoga.
+**`mcp__worldlens__*` (WorldLens connector) FCMC kaam ke liye kabhi use mat karo** — wo doosra server (FireCraft SMP) hai.
+Owner ke alfaaz: "fcmc server k her ek session me rule dalo k waha serf fcmc use hoga worldlens nhi".
+
 ## Branch
 
 Development branch: `ccr-7349d8d1-89knkk`. Bina explicit permission ke doosri branch par push na karo. PR sirf tab banao jab user kahe.

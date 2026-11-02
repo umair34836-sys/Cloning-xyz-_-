@@ -456,3 +456,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Check: mera chain y120 z6 (Lobby Selector carrot_on_a_stick, hotbar.4) sirf `/trigger fc_lobby` clicks par tp karta hai; panel ka Skript "Server Selector" compass bhi slot 5 → conflict. Mera repeating `3 120 6` `auto:0b` (band, delete nahi). Owner se test result maanga (menu khulta hai ya seedha tp). Shak: DeluxeMenus `selector` me right-click hold → GUI slot click (panel side).
 - New handover upload (7617f782) = pehle wali file jaisi, koi naya badlav nahi.
 - Online: techshotgaming (Techshot ka IGN ho sakta hai).
+
+### 2026-11-02 08:40 UTC — [OWNER] Rule: FCMC sessions = sirf FCMC connector
+- **Owner (session):** "fcmc server k her ek session me rule dalo k waha serf fcmc use hoga worldlens nhi"
+- CLAUDE.md me "FCMC server rule" section; .claude/memory/RULES.md; FCMC_MOD_SESSION_PROMPT.md (future moderator sessions); `send_message` → fcmc manager session (session_01JK8TsBgGuzocQqsgSfCLYh).
+- list_sessions: FCMC sessions = fcmc owner (ye), fcmc manager. "FireCraft — Mod (Marzarn/Notkartik) helper" aur "Manager (techshotgaming) build helper" FireCraft SMP (doosra server) ke hain — unhe nahi chheda.
