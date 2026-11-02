@@ -66,3 +66,4 @@ Format:
 - 2026-11-02: Owner ne watcher 30 sec par manga; minimum 1 min hai — cron 2ea04e9d every minute; 8AM trigger delete.
 - 2026-11-02: Owner handover mode — ek-ek in-game kaam, owner ko jagah par tp karke batao, 'server done' ke baad agla. Queue FCMC_WORKLOG.md 04:00 entry me.
 - 2026-11-02 09:35: Owner gaya; watcher band (cron 2ea04e9d deleted). Dobara on tabhi jab owner bole.
+- 2026-11-02: Owner: 2 moderators ko FCMC-only AI sessions + moderator rank (Standard). IGN DM se poochay; 5 ghante baad (send_later) sessions banana. Template FCMC_MOD_SESSION_PROMPT.md.

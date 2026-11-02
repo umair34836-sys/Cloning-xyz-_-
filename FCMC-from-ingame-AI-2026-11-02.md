@@ -29,6 +29,7 @@ Most console changes below were made on 2 Nov, before your handover reached me. 
 - MV-Inventories optional shares turned on: `mvinv toggle economy`, `toggle game_statistics`, `toggle advancements` | off → on (now applied in both groups) | separation rule
 - LuckPerms `default` | `essentials.spawn`, `essentials.warp`, `essentials.warp.list` = true in `world=hub` and `world=lifesteal_lobby` | false → true | owner asked for /spawn and warps everywhere. Your Skript still blocks typed commands in HUB, so in HUB these nodes do nothing.
 - LuckPerms `default` | `essentials.kits.starter` = true (global) | — | starter kit
+- LuckPerms new group `moderator` (2 Nov 11:45 PKT) | parent default, weight 800 | firecraft.staff, essentials kick/mute/tempban/unban/tp/tphere/vanish/gamemode(.survival), coreprotect lookup/inspect/rollback/restore; worldedit.*, worldguard.region.bypass.*, gamemode.creative only in world=hub + world=lifesteal_lobby | owner: moderators + their own AI helper sessions (members not added yet, waiting for their IGN)
 - Essentials spawn = lifesteal_lobby 0.5 65 0.5 | set by me via sudo `setspawn` | matches your note
 - Scoreboard objectives | `fc_pt` (stat) removed; added `fc_lpt`, `fc_lx`, `fc_ly`, `fc_lz`, `fc_ld`, `fc_clk` (dummy) | used by the playtime key and last-location systems
 - Command blocks in force-loaded overworld chunks [0,0] and [1,0], inside the stone under HUB. **Keep these chunks force-loaded.**
@@ -40,6 +41,7 @@ Most console changes below were made on 2 Nov, before your handover reached me. 
   - y120 z15: RTP portal
 
 ## C. Requests for the panel session (needs owner's "haan")
+- [ ] TAB rank name for the new LuckPerms group `moderator` (weight 800, prefix "🛡 MOD » ") | `plugins/TAB/config.yml` → `placeholder-output-replacements` → `%group%` | `moderator: MODERATOR` | owner asked for a moderator rank on 2 Nov
 - [ ] Make the selector's LIFESTEAL button use the last-location system | `plugins/DeluxeMenus/gui_menus/selector.yml` | replace `[console] mvtp %player_name% lifesteal_lobby` with `[console] tag %player_name% add fc_restore` (the command blocks then send the player to their last lifesteal-side spot, or to lifesteal_lobby 0.5 65 0.5 if none is saved) | owner: "jab koi or lobby select kare tab waha jai jaha se wo leave howa tha"
 - [ ] Stop Essentials sending joins to lifesteal_lobby | `plugins/Essentials/config.yml` | `spawn-on-join: false` | owner: "first time ya rejoin ker k aye to wo hub per aye". My command block already sends every join to HUB 0.5 151 0.5 one tick later; with `spawn-on-join: true` the player is moved twice.
 - [ ] Remove my old vanilla sidebar now that TAB scoreboards are live | console `scoreboard objectives setdisplay sidebar` (I can do it after your "ok") | — | avoids a clash with the TAB scoreboard

@@ -435,3 +435,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Owner ne `FCMC-HANDOVER-for-ingame-AI.md` (panel session) upload kiya. Usme: AxAFKZone disabled, Skript HUB command-block + Server Selector compass (slot 5) + DeluxeMenus selector (`mvtp lifesteal_lobby`), spawn-on-join true, TAB scoreboards, ajLeaderboards, kitshop/heartshop menus, aliases, vote port 20073, `play.firecraft.fun` = DOOSRA server (FCMC = join.firecraft.fun).
 - Reply file `FCMC-from-ingame-AI-2026-11-02.md` (section 9 format) banayi: A done, B changes (gamerules, mvinv, LP, objectives, command blocks), C requests (selector → fc_restore, spawn-on-join false, sidebar clear, DonutShop $ lore), D conflicts (mera z6 Lobby Selector vs unka slot-5 compass; /sc set feet-block), E questions, F facts.
 - Server par koi change nahi kiya.
+
+### 2026-11-02 06:45 UTC (11:45 PKT) — [OWNER] Moderator rank + 2 moderator AI sessions (setup started)
+- **Owner:** "fcmc k connector k do sessions bana ker ek ek modrator ko dedo and modrators ki baat manoo liken modrator ki had tak or builds me ... moderator ka rank bana ker bhi inko dedo". AskUserQuestion → IGN: "dono k dms me pochlo unse or 5 hours baad de dena"; powers: **Standard**.
+- **LP group `moderator`:** weight 800, parent default, prefix "🛡 MOD » ". Perms: firecraft.staff, essentials.kick/mute/tempban/unban/tp/tphere/vanish/gamemode/gamemode.survival, coreprotect.lookup/inspect/rollback/restore (global); worldedit.*, worldguard.region.bypass.*, essentials.gamemode.creative ONLY world=hub + world=lifesteal_lobby (lifesteal survival worlds me nahi).
+- Discord members: Mrcopper804 (Owner), Techshot Gaming (⚙️ Manager), Marzarn (🔨 Moderator, joined 2 Nov). bhupendra67 left ("Unknown Member"). DMs: Techshot (1566703879905607814), Marzarn (1566704021840986225) — IGN #general me "IGN: name" likhne ko kaha.
+- `FCMC_MOD_SESSION_PROMPT.md` template (moderator watcher loop, Standard scope, not-allowed list, hard guards).
+- send_later trig_019rKtYJF8NT98SKVnJe4sNB @ 11:44 UTC: IGN check → `lp user <IGN> parent add moderator` → create_session per mod → DM usage guide.
+- Note: TAB rank name line (`placeholder-output-replacements` %group% moderator → MOD) panel session ko batana hai.
