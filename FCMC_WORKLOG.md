@@ -487,3 +487,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Multiverse-Inventories me naya group `survival` banaya, world `survival` add kiya, shares = all.
 - **Kaise:** `mvinv create-group survival` → `mvinv add-worlds survival survival` → `mvinv add-shares survival all` (create-group me shares direct dene par "no valid shares" error aaya, isliye alag steps).
 - **Result:** `mvinv info survival` → In Groups: survival; inventory/armor/ender_chest/xp/health/advancements sab lobby (hub) aur lifesteal groups se alag. Manager ko tellraw kiya.
+
+### 2026-11-02 08:39 UTC — [MANAGER] PvP Practice NPC wapas lagaya
+- **Kisne kaha:** techshotgaming (Manager): "Server lifesteal wala npc wapas laao" → foran correction: "lifesteal wala nahi PvP Practice wala"
+- **Kya kiya:** HUB lobby me missing ✦ PVP PRACTICE ✦ mannequin dobara summon kiya (lifesteal NPC pehle se maujood tha).
+- **Kaise:** Pehle record kiye data se: `execute in minecraft:overworld run summon minecraft:mannequin -13.8 151 -8.4 {Tags:["npc_pvp","lobby_npc"],Rotation:[-58.1f,0f],Invulnerable:1b,immovable:1b,CustomNameVisible:1b,CustomName:{text:"✦ PVP PRACTICE ✦",bold:1b,color:"#A855F7"},description:{text:"Coming Soon",italic:1b,color:"gray"},profile:{name:"Dream"}}`.
+- **Result:** "Summoned new ✦ PVP PRACTICE ✦". Manager ko tellraw kiya.
