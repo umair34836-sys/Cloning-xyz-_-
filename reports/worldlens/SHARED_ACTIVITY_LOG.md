@@ -61,3 +61,7 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 07:13 UTC | OWNER | owner (in-game) | Society builders + owner/manager/mods/.UBRotheRR7537 chhod kar 25 Java players ke 5 hearts kate; list Discord staff-chat + media | lifestealz hearts remove <p> 5 | done (ItzHunterXD 5 hearts = skip, owner se poocha; 4 Bedrock '.' players online aane par)
 2026-11-02 07:11 UTC | OWNER | owner (in-game) | Manager ko public server bhejna — manager offline, proxy nahi; /transfer ke liye address owner se manga | msg | waiting owner
 2026-11-02 07:15 UTC | OWNER | owner (in-game) | Flamefrxg (plot6 par sirf sign) ko 24h; 3 Nov 07:20 UTC re-check, build nahi to -5 hearts | msg + send_later | running
+2026-11-02 07:17 UTC | OWNER | owner | MISTAKE: console `execute as @a run tp @s ~ ~ ~` ne 4 online players spawn par bhej diye; CoreProtect positions se wapis tp, sorry msgs | tp | fixed (rule: position sirf `data get entity <p> Pos`)
+2026-11-02 07:21 UTC | OWNER | self-correction | Plot6 builder = Suko_inf (not Flamefrxg sign) -> Suko_inf ke 5 hearts wapis; Discord correction | lifestealz hearts add Suko_inf 5 | done
+2026-11-02 07:22 UTC | OWNER | owner (in-game) | Society builds decorate: plot6 (40) + plot2 (34) khaali ghaas par phool/ghaas; plot8/plot4 me jagah nahi | WE gmask >grass_block, //replace air y70 | done
+2026-11-02 07:25 UTC | OWNER | owner (in-game) | Owner ko Flamefrxg base (bed 179 80 160) tp + Flamefrxg ke saman ki report (trading hall, shards PvP kills se, no cheats) | tp, data get, co lookup | done
