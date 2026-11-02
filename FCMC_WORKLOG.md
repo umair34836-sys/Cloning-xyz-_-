@@ -390,3 +390,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "npc wala kam done and inv wala kaam tum kro if console se possible nhi hai to file me likho"
 - **Kiya (console):** `mvinv remove-worlds lobby lifesteal_lobby` → `mvinv add-worlds lifesteal lifesteal_lobby` → `mvinv info`: lifesteal_lobby = group lifesteal; HUB = group lobby. `mvinv check-group-conflicts` → no conflicts.
 - Effect: lobby crates/shop/kits/heart shop/enchant items + hearts (max_hit_points share) lifesteal worlds ke saath shared; HUB alag. lifesteal group applicable shares me last_location nahi (NPC tp flows safe).
+
+### 2026-11-02 08:05 UTC — [OWNER] Next pending: RTP portal test
+- **Owner:** "ok now ab next pending work per challo"
+- Lobby "Coming Soon" labels check: sirf TOP PLAYTIME/KILLS/HEARTS (21.5/28.5/35.5 66.1 -34.3) — ajLeaderboards (panel) pending.
+- RTP portal: label "WILDERNESS / RTP" 0.5 74.5 37.5; trigger (overworld 3 120 15) `positioned -2 66 37.7 tag @a[dx=4,dy=6,dz=0] add fc_go_rtp`. Owner tp 0.5 65 33.5 (yaw 0, south) → walk-in test, result maanga.
