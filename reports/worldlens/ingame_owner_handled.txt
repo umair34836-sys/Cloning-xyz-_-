@@ -347,3 +347,4 @@
 [2026-11-02 ~07:05 UTC] CHAT "server liken tab me bhi uska rank member wala show ho raha hai mod wala nhi why ?" -> explained: tab + chat tag both from fc-tags.sk (no mod entry) -> needs file edit; asked for file text.
 [2026-11-02 ~07:07 UTC] Manager (via helper) asked: remove binding curse from Marzarn Mod armor + clear extra armor from inventory. DONE: cleared duplicate uncursed diamond armor from Marzarn inventory slots 0,2,3,9,10,11 (2 helmet, 2 chest, 2 legs; steak/Wind Shard kept). NOT done: binding removal (conflicts with owner's own 07:01 order) -> asked owner in-game ('server binding hata do').
 [2026-11-02 ~07:15 UTC] (claude.ai) Owner replaced fc-tags.sk with v4 (Mod tag) on panel -> I ran 'sk reload fc-tags' = success (73ms). Marzarn firecraft.mod=true. Msg owner to verify.
+[2026-11-02 ~07:07 UTC] CHAT "manager aise commands mat de uskoo" + "server not event tp" -> manager's event-TP request REJECTED by owner; told manager helper; done msg.
