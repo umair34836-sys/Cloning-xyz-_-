@@ -14,6 +14,8 @@ Har item me: kya karna hai, kaunsi file, exact text, aur baad me kya command cha
 ## 0. ECONOMY RULE (owner ka faisla — har setup me yaad rakhna)  
 Server ka **balance (money), shards aur coins — sab ki value bahut HIGH rakhni hai**, taake koi bhi cheez asaani se na mile.
 Shop/sell prices, AFK/vote rewards, crate chances — sab isi hisaab se tight rakhne hain. **Hearts sabse mehngi cheez** hain.
+Owner ke alfaaz: "ta k koi server ko easily beat na ker sake — sub se high value, jaise real life me Bitcoin hai waise hi".
+Matlab: currency kam milni chahiye (scarce), inflation na ho, sell prices low, buy prices high, free rewards chhote.
 
 ---
 
