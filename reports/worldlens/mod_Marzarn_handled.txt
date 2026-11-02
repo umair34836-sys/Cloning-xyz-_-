@@ -1,0 +1,4 @@
+# Marzarn mod-helper log (server: WorldLens 30362939, world 'world')
+2026-11-02 guide_sent: 4-line usage guide whispered to Marzarn (online). Do not resend.
+2026-11-02 first poll: no "claude ..." orders in last 2m (chat: khana / skin msgs; commands: /tp to players). Nothing to handle.
+NOTE: recurring 1-min poll (CronCreate) was denied by permission classifier; polling not active until owner allows.
