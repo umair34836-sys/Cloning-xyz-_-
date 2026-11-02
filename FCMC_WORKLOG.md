@@ -589,3 +589,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Purana chorus (12 plant + 4 flower) hataya, usi jagah (20 151 8, end_stone par) naya 11-block (151-161) multi-branch chorus banaya: trunk 151-155, top par E/W/N/S arms, E arm 158 par aur 2 sub-branches, W arm 157 par sideways, N arm 159 par sideways (sabse uncha flower 20 161 6); total 5 age=5 flowers.
 - **Kaise:** `execute in minecraft:overworld run fill 17 151 5 23 162 11 minecraft:air replace minecraft:chorus_flower` / `... replace minecraft:chorus_plant`, phir bottom-up `setblock`/`fill` chorus_plant[...] — rule follow kiya: jis block ke side me plant ho uske upar ya neeche air.
 - **Result:** Saare 5 flowers + base verify (Test passed). Manager ko tellraw kiya.
+
+### 2026-11-02 09:10 UTC — [MANAGER] ZNPCs hatao, mannequins wapas (NOT done)
+- **Kisne kaha:** techshotgaming (Manager): "Server ek kaam karo Znpcs hatakar wapas manequins laga do pehle jaise"
+- **Kya kiya:** Pehle test: `execute in minecraft:overworld run summon minecraft:mannequin 0.5 151 0.5 {Tags:["probe_mq"],...}` → "Summoned" lekin `@e[type=minecraft:mannequin,tag=probe_mq]` me nahi mila (wahi purana masla — naye mannequin turant remove).
+- **Kaise:** FCMC console test; ZNPCs delete NAHI kiye.
+- **Result:** Not done — ZNPCs hatane se lobby khali ho jati. Manager ko tellraw kiya; owner ko check karna hoga ki kaunsa plugin/Skript naye mannequins hata raha hai.
