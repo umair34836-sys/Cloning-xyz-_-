@@ -499,3 +499,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Trigger word change nahi kiya (rules sirf owner badal sakta hai). Naam "Jarvis" accept, lekin requests "Server ..." se hi.
 - **Kaise:** tellraw techshotgaming se jawab.
 - **Result:** Manager ko bataya; trigger "server" hi rahega.
+
+### 2026-11-02 08:43 UTC — [MANAGER] PvP Practice NPC nahi dikh raha (FAILED — naye mannequin turant remove)
+- **Kisne kaha:** techshotgaming (Manager): "Server Mujhe PvP Practice wala npc nahi dikh raha"
+- **Kya kiya:** Check kiya — pichli entry wala summon kiya hua ✦ PVP PRACTICE ✦ maujood nahi tha. 4 baar dobara summon kiya (full NBT, PersistenceRequired, NoGravity; plain probe mannequin -13.8 151 -8.4 aur -10 151 -5 par) — har baar "Summoned" aaya lekin agle command me `@e[type=minecraft:mannequin]` me entity nahi mili.
+- **Kaise:** `execute in minecraft:overworld run summon minecraft:mannequin ...` + `execute as @e[type=minecraft:mannequin,...] run data get entity @s`.
+- **Result:** FAILED. Koi plugin/Skript (shayad firecraft-hub.sk) naye mannequin spawn hote hi hata raha hai; console se script dekh/edit nahi ho sakti. Baaki 5 lobby NPC (survival, parkour, lifesteal, minigames, event) theek. Pichli entry ka "PvP NPC wapas laga diya" bhi isi wajah se tika nahi. Manager ko tellraw kiya; owner ko firecraft-hub.sk check karna hoga.
