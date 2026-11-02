@@ -21,3 +21,8 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 ## FCMC connector rule (2026-11-02, owner MrCopper804 via fcmc owner session)
 - FireCraft MC (FCMC/HUB) ke saare kaam me SIRF FCMC connector use karo: `mcp__FCMC__worldlens_command/status/shot/top` aur `mcp__FCMC__discord_*`.
 - `mcp__worldlens__*` (WorldLens connector) FCMC ke liye kabhi use NAHI — wo doosra server (FireCraft SMP) hai.
+
+## FCMC manager active hours (owner, 2 Nov 2026)
+- Claude manager ke liye sirf **subah 7 baje se shaam 5 baje (Pakistan time, PKT)** ON rahega = 02:00–11:59 UTC.
+- Is waqt ke bahar FCMC manager chat check nahi hota. Cron: `* 2-11 * * *` (UTC).
+- Manager (techshotgaming95yt) ko Discord DM se bata diya gaya hai.
