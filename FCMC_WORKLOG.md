@@ -517,3 +517,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** ZNPCsPlus se PvP Practice NPC banane ki koshish ki — `npc create pvp_practice player` console se aur `execute in minecraft:overworld positioned -13.8 151 -8.4 ... run npc create ...` dono "Incorrect usage" (create ko player sender/location chahiye). `npc list` me sirf 4 lifesteal_lobby villagers hain.
 - **Kaise:** FCMC console commands.
 - **Result:** Console se create nahi hua. Manager ko tellraw: PvP jagah khade hokar `/npc create pvp_practice player` chalayen, uske baad skin/naam/location console se set kar dunga.
+
+### 2026-11-02 08:49 UTC — [MANAGER] /znpcs command try
+- **Kisne kaha:** techshotgaming (Manager): "Server Znpcs ka command /npc nahi /znpcs hota hai"
+- **Kya kiya:** `znpcs help` (same ZNPCsPlus v2.1.0 help — /npc ka alias) aur `znpcs create pvp_practice player` try kiya.
+- **Kaise:** FCMC console.
+- **Result:** Wahi "Incorrect usage: /znpcs create <id> [<type>]" — console se create nahi hota. Manager ko tellraw: PvP jagah khade hokar khud `/znpcs create pvp_practice player` chalayen.
