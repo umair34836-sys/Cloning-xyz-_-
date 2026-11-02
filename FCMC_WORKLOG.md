@@ -240,3 +240,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** Owner in-game: "ye command kisi ko na dekhay k kaise sub pichay ho raha hai bus serf front wala dekhay"
 - **Kya kiya:** `gamerule minecraft:command_block_output false` — overworld(HUB), the_nether, the_end, lifesteal_lobby, lifesteal, lifesteal_nether, lifesteal_the_end. `gamerule minecraft:log_admin_commands false` — overworld, lifesteal_lobby, lifesteal.
 - **Result:** Command block / admin command feedback chat me broadcast nahi hoga; tellraw (front) messages waise hi. Owner ko in-game check karne ko kaha.
+
+### 2026-11-02 03:40 UTC — [OWNER] AFK zone wand + create
+- **Kisne kaha:** Owner in-game: "mujhe wo wand dedo also jitne bhi pending kaam hai sub one by one tum kerdo ..." phir "first and second pisiontion select kerli now ab agay tumhara kaam hai"
+- **Kya kiya:** `sudo MrCopper804 axafkzone wand` (execute as ... run axafkzone se "Invalid command" aaya tha), owner ne lifesteal_lobby AFK pool ke 2 corner select kiye, phir `sudo MrCopper804 axafkzone create afk` (selection player ke naam par hoti hai, isliye sudo).
+- **Result:** Zone "afk" create command chal gayi; console me confirm message nahi aata (owner ki chat me jata hai) — owner ko pool me test karne ko kaha. Rewards default (example-zone: 60s, roll 3, iron 50% / diamond 25%); customize: plugins/AxAFKZone/zones/afk.yml + /axafkzone reload.
+- Baqi pending kaam (crates, leaderboards, market NPCs, /warp afk) background fork ko diye.
