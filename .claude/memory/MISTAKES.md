@@ -26,3 +26,8 @@ Format:
 - **2026-11-01**: Command-block chain ko player online hote hue tukdon me lagaya (beech ka block x=10 1000-char error se miss) → owner ka welcome state atak gaya (fc_new tag reh gaya). Bachao: chain poori lagao aur test karo PEHLE, ya repeating block sabse aakhir me lagao (pehle chain blocks, phir repeating).
 - **2026-11-01**: Logo printer me `scoreboard players add #x fc_l -23` (negative add invalid) → logo 23 block east me banna shuru ho gaya; rok ke fill air + data reload kiya. Bachao: command-block me daalne se pehle har command console me ek baar run karke validate karo.
 - **2026-11-01**: Command lock `* false world=HUB` ko kaafi samjha, verify nahi kiya → default group ke explicit essentials nodes (tpr/home/tpa...) HUB me chal rahe the. Bachao: permission change ke baad `lp ... permission check <node>` se asli nodes verify karo.
+
+## 2026-11-02 — `op list` ne "list" player ko OP bana diya
+- Kya hua: OP players dekhne ke liye console me `op list` chalaya. Vanilla me ops list command nahi hai; `op <name>` ne "list" naam ko OP de diya.
+- Fix: foran `deop list`.
+- Bachao: `op`/`deop`/`ban`/`whitelist add` jaisi commands kabhi "list/check" ke liye mat chalao. Ops dekhne ke liye panel me ops.json dekho ya owner se poocho.

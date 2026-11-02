@@ -224,3 +224,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Research:** AxAFKZone docs (docs.artillex-studios.com/axafkzone.html, SpigotMC 119868) + in-game `/axafkzone` help: reload, wand, create <zone>, delete <zone>, redefine <zone>, tp <zone>. Built-in wand selection; rewards (command/item, chance, interval, bossbar/actionbar) config me.
 - **Owner ko bataya (tellraw):** /axafkzone wand → lifesteal_lobby AFK pool (x21-35 z21-35) corners ~22 63 22 aur ~34 69 34 select → /axafkzone create afk → rewards config (plugins/AxAFKZone) → /axafkzone reload. Selection in-game wand se hi; offer: /warp afk pool par.
 - Kuch change nahi kiya.
+
+### 2026-11-02 03:20 UTC — [OWNER] Chat me command output ka sawal
+- **Kisne kaha:** Owner in-game: "jab me server me enter hota ho ya lobby/hub me aata jata ho to kuch commands run ho k mere chat me atte hai kia ye her ek user ko ayingay ?"
+- **Check:** `gamerule minecraft:command_block_output` = true (overworld/HUB + lifesteal_lobby).
+- **Jawab (tellraw):** Command block output sirf OP players ko dikhta hai; normal users ko nahi. Offer: gamerule OFF kar dun (owner ke jawab ka intezar).
+- **Ghalti:** Ops dekhne ke liye `op list` chalaya — ye command nahi hai, isne "list" naam ke player ko OP bana diya. Foran `deop list` se wapas liya. (MISTAKES.md me likha.)
