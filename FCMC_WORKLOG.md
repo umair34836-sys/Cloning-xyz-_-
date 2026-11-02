@@ -523,3 +523,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** `znpcs help` (same ZNPCsPlus v2.1.0 help — /npc ka alias) aur `znpcs create pvp_practice player` try kiya.
 - **Kaise:** FCMC console.
 - **Result:** Wahi "Incorrect usage: /znpcs create <id> [<type>]" — console se create nahi hota. Manager ko tellraw: PvP jagah khade hokar khud `/znpcs create pvp_practice player` chalayen.
+
+### 2026-11-02 08:51 UTC — [MANAGER] ZNPCsPlus pvp_practice NPC setup
+- **Kisne kaha:** techshotgaming (Manager) — pichli request follow-up: unhone khud `/znpcs create pvp_practice player` chalaya (HUB -18 151 -10).
+- **Kya kiya:** pvp_practice ko purani mannequin jagah par shift, rotation, Dream skin, aur 2 hologram lines.
+- **Kaise:** `npc setlocation pvp_practice -13.8 151 -8.4`, `npc setrotation pvp_practice -58.1 0`, `npc skin pvp_practice static Dream`, `npc holo add pvp_practice <bold><#A855F7>✦ PVP PRACTICE ✦</#A855F7></bold>`, `npc holo add pvp_practice <gray><italic>Coming Soon</italic></gray>`.
+- **Result:** Move/rotate/holo success; skin "Fetching skin Dream..." (async). Koi click action nahi (PvP abhi Coming Soon). Manager ko tellraw kiya.
