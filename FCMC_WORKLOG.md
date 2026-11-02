@@ -303,3 +303,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 ### 2026-11-02 04:55 UTC — [OWNER] Crate fix Step A done, Step B diya
 - **Owner:** `/slimecrates remove` ×6 + "server done". **Verify:** crate row area (x-15..15, z-45..-33) me 0 armor_stand → saare galat crates/holograms hat gaye.
 - **Step B (sent):** pedestal tops (x,66,-40) solid, (x,67/68,-40) air verified (x -10, 2, 10). Owner tp -9.5 67 -39.5; list: `/slimecrates set vote`, phir `/tp -5.5|-1.5|2.5|6.5|10.5 67 -39.5` + set common|rare|epic|legendary|heart. Done ke baad console: har (x,67,-40) par crate block setblock.
+
+### 2026-11-02 05:05 UTC — [OWNER] Crate fix Step B done + chests
+- **Owner:** `/slimecrates set` ×6 on pedestals + "server done".
+- **Verify:** holograms at (x+0.5, 69, -39.5) for common/rare/epic/legendary/heart (crate block y67 = pedestal ke upar); VOTE hologram y68 → vote crate (-10,66,-40) = pedestal block itself (owner shayad thoda neeche tha).
+- **Bytecode:** CrateInteractListener RIGHT/LEFT_CLICK_BLOCK → getCrateAtLocation(clickedBlock) → setCancelled(true) → crate location par physical block chahiye; chest GUI nahi khulega.
+- **Console:** `setblock -6|-2|2|6|10 67 -40 minecraft:chest[facing=south]` (owner us waqt 6.4 65 -31.4 par tha, safe).
+- **Vote redo (sent):** owner tp -9.5 67 -39.5 → `/slimecrates remove` (below-block check vote pakdega) + `/slimecrates set vote` → done ke baad chest (-10,67,-40).
