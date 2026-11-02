@@ -1,0 +1,111 @@
+# FireCraft rank tags v4 (2 Nov 2026). Owner > Manager > Mod > Exposed > YouTuber > Builder > Loyal > Member
+# Owner's rank plan: only these ranks; none but Owner/Manager/Mod has extra permissions - the rank is just a colourful tag.
+# Chat: gradient tag. Tab list: the gradient moves (phase) every 10 ticks; the Member tag is static and only sent when it changes.
+# v4: added Mod rank (owner 2 Nov: "modrators k liee modrator rank bana ker doo inka apna", light orange + bold).
+
+function fctTier(p: player) :: text:
+    if {_p} has permission "firecraft.owner":
+        return "owner"
+    # Manager and Owner hold "*", so these checks stay above the tag-only ranks
+    if {_p} has permission "group.manager":
+        return "manager"
+    # Mod also holds "*" (with tag perms of other ranks turned off), so it stays above the tag-only ranks too
+    if {_p} has permission "firecraft.mod":
+        return "mod"
+    if {_p} has permission "firecraft.exposed":
+        return "exposed"
+    if {_p} has permission "firecraft.youtuber":
+        return "youtuber"
+    if {_p} has permission "firecraft.builder":
+        return "builder"
+    if {_p} has permission "firecraft.loyal":
+        return "loyal"
+    return "member"
+
+function fctTag(t: text, ph: number) :: text:
+    if {_t} is "owner":
+        return "<gradient:#ff2a00:#ffd000:#ff2a00:%{_ph}%><bold>[OWNER]</bold></gradient>"
+    if {_t} is "manager":
+        return "<gradient:#9b30ff:#ff6ad5:#9b30ff:%{_ph}%><bold>[MANAGER]</bold></gradient>"
+    if {_t} is "mod":
+        return "<gradient:#ff8c00:#ffc56b:#ff8c00:%{_ph}%><bold>[🛡 MOD]</bold></gradient>"
+    if {_t} is "exposed":
+        return "<gradient:#8b0000:#ff3b3b:#8b0000:%{_ph}%><bold>[EXPOSED]</bold></gradient>"
+    if {_t} is "youtuber":
+        return "<gradient:#ff0000:#ffffff:#ff0000:%{_ph}%><bold>[▶ YouTuber]</bold></gradient>"
+    if {_t} is "builder":
+        return "<gradient:#ff9f00:#fff35a:#ff9f00:%{_ph}%><bold>[⚒ Builder]</bold></gradient>"
+    if {_t} is "loyal":
+        return "<gradient:#00c853:#b9ff7a:#00c853:%{_ph}%><bold>[✦ Loyal]</bold></gradient>"
+    return "<gradient:#9e9e9e:#e8e8e8>[Member]</gradient>"
+
+# Each rank's own chat text colour (owner, 30 Oct: "chats bhi colored ho alag alag rank ka specific chat color")
+function fctChat(t: text) :: text:
+    if {_t} is "owner":
+        return "<#ffd27a>"
+    if {_t} is "manager":
+        return "<#e3b5ff>"
+    if {_t} is "mod":
+        return "<#ffd6a3>"
+    if {_t} is "exposed":
+        return "<#ff8f8f>"
+    if {_t} is "youtuber":
+        return "<#ffc2c2>"
+    if {_t} is "builder":
+        return "<#fff1a8>"
+    if {_t} is "loyal":
+        return "<#bfffb3>"
+    return "<white>"
+
+function fctName(t: text, p: player, ph: number) :: text:
+    if {_t} is "owner":
+        return "<gradient:#ffd000:#ff5a00:#ffd000:%{_ph}%>%name of {_p}%</gradient>"
+    return "<white>%name of {_p}%"
+
+on chat:
+    set {_t} to fctTier(player)
+    if {_t} is "owner":
+        set chat format to "%fctTag({_t}, 0)% %fctName({_t}, player, 0)%<gray>: %fctChat({_t})%[message]"
+    else:
+        set chat format to "%fctTag({_t}, 0)% <reset>[player]<gray>: %fctChat({_t})%[message]"
+
+on join:
+    delete {fctags::tab::%uuid of player%}
+
+on quit:
+    delete {fctags::tab::%uuid of player%}
+
+# Animated tab list: moving gradient for every rank except Member
+every 10 ticks:
+    add 0.25 to {fctags::ph}
+    if {fctags::ph} > 1:
+        set {fctags::ph} to -1
+    loop all players:
+        set {_t} to fctTier(loop-player)
+        if {_t} is "member":
+            set {_old} to {fctags::tab::%uuid of loop-player%}
+            if {_old} is not set:
+                set {_old} to "none"
+            if {_old} is not "member":
+                set {fctags::tab::%uuid of loop-player%} to "member"
+                set tab list name of loop-player to "%fctTag({_t}, 0)% <white>%name of loop-player%"
+        else:
+            set {fctags::tab::%uuid of loop-player%} to {_t}
+            set tab list name of loop-player to "%fctTag({_t}, {fctags::ph})% %fctName({_t}, loop-player, {fctags::ph})%"
+
+on join:
+    player has permission "firecraft.owner"
+    wait 3 seconds
+    broadcast "<gradient:#ff2a00:#ffd000:#ff2a00><bold>✦ Server ke OWNER %name of player% aa gaye! ✦</bold></gradient>"
+
+on join:
+    wait 3 seconds
+    player is online
+    fctTier(player) is "manager"
+    broadcast "<gradient:#9b30ff:#ff6ad5:#9b30ff><bold>✦ Server ke MANAGER %name of player% aa gaye! ✦</bold></gradient>"
+
+on join:
+    wait 3 seconds
+    player is online
+    fctTier(player) is "youtuber"
+    broadcast "<#ff0000>▶ <white>YouTuber <gradient:#ffffff:#ff8080>%name of player%</gradient> <gray>server pe aa gaye!"
