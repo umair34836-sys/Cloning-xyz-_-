@@ -666,3 +666,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** ZNPC `survival` delete. Manager ka `survival_portal` (HUB -2,151,-17 → 2,155,-17, w:survival) ke upar 2 text_display: "SURVIVAL" (#FF7A1A orange, bold, scale 3 — purane survival NPC ka rang) + "Enter the portal to go to Survival" (white, scale 1.2).
 - **Kaise:** `mvp info survival_portal`; `npc delete survival`; `execute in minecraft:overworld run summon minecraft:text_display 0.5 157.5 -16.5 {Tags:["portal_label","survival_portal_label"],...}` + 0.5 156.6 -16.5.
 - **Result:** NPC deleted, dono labels maujood (Pos verify). Manager ko tellraw kiya.
+
+### 2026-11-02 09:47 UTC — [MANAGER] Owner ko Discord par tag karke server bulaya
+- **Kisne kaha:** techshotgaming (Manager): "Server Owner ko discord par tag karke public server me bulao"
+- **Kya kiya:** Owner Mrcopper804 (id 1556195237083353191) ko Discord #🛡️┃staff-chat me user-ping karke Minecraft server join karne ko kaha. Koi @everyone/role ping nahi.
+- **Kaise:** `discord_find_member Mrcopper` → id; `discord_send_message` channel 1566039466676719750, text "<@1556195237083353191> Manager techshotgaming aapko public Minecraft server (join.firecraft.fun) par bula rahe hain — please join karein. (sent by Claude)".
+- **Result:** Sent message 1566750686094565491. Manager ko tellraw kiya.
