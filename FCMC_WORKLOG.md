@@ -342,3 +342,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Vote key DM** (msg 1566660050548695122): Votifier port (panel allocation + config port + public.key on vote sites), VoteSites.yml `EverySiteReward: Commands: 'slimecrates key %player% vote 1'` (VotingPlugin GitHub default VoteSites.yml verified), `/av reload`.
 - **Kits research:** Lifesteal.net wiki — Starter = stone sword, iron pickaxe, compass, 24 steak, guide book, 1h cooldown. Essentials createkit = player inventory copy (player-only) → owner se inventory khali karwa ke (ender chest) main items fill + `sudo MrCopper804 createkit starter 3600` + clear.
 - Owner se poocha: Warrior/Archer/Tank free (24h) ya rank/shop.
+
+### 2026-11-02 06:25 UTC — [OWNER] Starter kit done; paid kits plan
+- **Owner:** "done and also serf starter kit 24 hours baad free me milai or usme 5 do normal cooked khana ho and basic weapon and tools ... baqi her ek kit special bnao money k lihaaz se ... price coins hongi" + "jo coins log buy kringay hamare website se".
+- **Kiya:** owner inventory khali verify (container/armor/offhand empty) → `minecraft:item replace` hotbar.0-4: stone_sword, stone_pickaxe, stone_axe, stone_shovel, cooked_beef 5 → `sudo MrCopper804 createkit starter 86400` → `kit` list me "Starter" → items `minecraft:clear` se wapas. `lp group default permission set essentials.kits.starter true` (global; lobby/hub me essentials.kit false rehta hai).
+- **Paid kits:** coins = PlayerPoints (website). Sale ke liye DeluxeMenus menu (has-points requirement → `points take` → `kit <name> <player>`) — file panel side. Owner se poocha 1 coin ki website price, phir research se Warrior/Archer/Tank items + price list.
