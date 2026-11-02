@@ -618,3 +618,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Confirm hua ke slow tp ka message ("Lifesteal lobby me ja rahe ho...") ZNPC ka nahi (mera debug/old messages alag text) — ye firecraft-hub.sk ka proximity countdown hai jo purani lifesteal NPC jagah par chalta hai.
 - **Kaise:** Message text compare; ZNPC action list (instant mvtp + debug message).
 - **Result:** Manager ko 2 options diye: owner file se part hataye, ya poori firecraft-hub.sk disable (explicit "Server haan skript band karo" chahiye). Debug message action abhi bhi index 1 par hai.
+
+### 2026-11-02 09:17 UTC — [MANAGER] firecraft-hub.sk band karne se kya band hoga? (question)
+- **Kisne kaha:** techshotgaming (Manager): "Server pehle mujhe ye batao ki hub ke dusre konse Features band ho sakte hain"
+- **Kya kiya:** Honest jawab: console se script content nahi padh sakte, pakki list nahi. Sirf typical hub-skript features ka andaza diya (join items/menu, void→spawn tp, double jump/launch pads, NPC proximity tp, hub messages) — clearly "andaza" bola.
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Owner ko panel se file dekhni hogi; skript disable nahi kiya.
