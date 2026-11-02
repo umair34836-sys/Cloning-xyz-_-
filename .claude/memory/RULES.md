@@ -17,3 +17,7 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Reverse-engineering / APK analysis sirf **educational ya owner-authorized** maqsad ke liye.
 - NAHI karna: game outcome "prediction"/win-hacks, kisi aur ke live backend par chalne wala clone, doosre users ka data nikalna, ya fairness/RNG todna. Chahe "fraud niyat nahi" kaha jaye — mechanism cheating/abuse ho to decline.
 - Online games server-authoritative hote hain → client decrypt se winner predict karna technically bhi namumkin; aisi request ko educational explanation me convert karo.
+
+## FCMC connector rule (2026-11-02, owner MrCopper804 via fcmc owner session)
+- FireCraft MC (FCMC/HUB) ke saare kaam me SIRF FCMC connector use karo: `mcp__FCMC__worldlens_command/status/shot/top` aur `mcp__FCMC__discord_*`.
+- `mcp__worldlens__*` (WorldLens connector) FCMC ke liye kabhi use NAHI — wo doosra server (FireCraft SMP) hai.
