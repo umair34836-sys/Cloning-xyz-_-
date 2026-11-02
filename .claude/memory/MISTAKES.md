@@ -35,3 +35,7 @@ Format:
 ## 2026-11-02 — `/sc` alias GriefPrevention ka nikla
 - Kya hua: SlimeCrates ke liye console me `sc create ...` chalaya; `/sc` = GriefPrevention subdivideclaims alias. Sirf usage aaya, nuksan nahi. Owner ko pehle `/sc set` bataya, phir correction bheja.
 - Bachao: plugin alias use karne se pehle `bukkit:help <alias>` se owner plugin check karo; SlimeCrates ke liye `/slimecrates`.
+
+## 2026-11-02 — `clear <player> <item> 0` Essentials ne pakda
+- Kya hua: item count dekhne ke liye `clear MrCopper804 minecraft:iron_ingot 0` chalaya; Essentials ka /clear (clearinventory) chala, output khali. Items bache rahe (minecraft:clear se 4 iron/2 diamond mile) lekin risk tha.
+- Bachao: hamesha `minecraft:clear <player> <item> 0` (vanilla count-only) use karo. Essentials override wali commands (clear, kill, tp, give...) ke liye `minecraft:` prefix.

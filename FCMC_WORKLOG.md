@@ -273,3 +273,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   6. Kits — items inventory me + `/createkit starter|warrior|archer|tank <delay>` (owner decide items/delay)
 - Panel-side (DM me bheja): afk.yml shard reward, TAB scoreboard Shards line.
 - Har kaam ke baad owner "server done" likhega → agla kaam + tp.
+
+### 2026-11-02 04:10 UTC — [OWNER] Handover: Kaam 1 done, Kaam 2 (crates) diya
+- **Owner:** "done menay wo ker diya liken tab bhi mujhe kia recive ho raha hai khod check kro" (`/shard setafk` chala diya).
+- **Check:** `minecraft:clear MrCopper804 <item> 0` (count only) → 4 iron_ingot, 2 diamond (AxAFKZone default rewards, afk.yml abhi edit nahi); `shard see` → 1 Shard (meri test ke baad 0 tha → shayad DonutShop AFK system). Owner ko bataya; poocha DonutShop khud shard deta hai to afk.yml rewards khali karein (double se bachne ko).
+- **Queue change:** `/setwarp afk` hata diya (owner ne nahi maanga; DonutShop setafk hi AFK teleport hai). Ab 5 kaam.
+- **Kaam 2/5 (sent):** owner tp lifesteal_lobby -9.5 65 -37.5 (facing north); `/slimecrates set vote|common|rare|epic|legendary|heart` pedestal tops (x -10/-6/-2/2/6/10, y66, z-40) — verified blocks non-air at y66, air above.
+- Ghalti: pehle `clear MrCopper804 iron_ingot 0` chalaya — `clear` Essentials ka clearinventory hai; output khali aaya. Baad me minecraft:clear count se items maujood mile (4/2). MISTAKES.md me.
