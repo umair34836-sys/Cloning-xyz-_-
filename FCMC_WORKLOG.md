@@ -293,3 +293,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Check:** slimecrates armor_stand holograms at (x+0.5, 67, -37.5) x=-10..10 (owner ki khadi jagah). Bytecode `handleSet`: `Player.getLocation().getBlock()` → crate = feet block (x,65,-38). `handleRemove`: feet, feet-1, eye block check.
 - "Ghayeb holograms" = maine 6 "Coming Soon" ls_label hataye the.
 - **Owner ko bataya** (meri ghalti maani). Fix plan (NPC kaam ke baad): owner purani jagah (x+0.5 65 -37.5) par `/slimecrates remove` ×6 → pedestal ke upar khade ho kar (x+0.5 67 -39.5) `/slimecrates set <crate>` ×6 → main console se wahan crate block (chest/ender chest) setblock.
+
+### 2026-11-02 04:45 UTC — [OWNER] Kaam 3 NPCs done (console setup) + Crate fix Step A
+- **Owner:** `/npc create ls_shop player`, `/npc create ls_auction player`, "server done".
+- **Console:** `npc setlocation ls_shop -39.5 65 -8.5`, `ls_auction -39.5 65 -2.5` (air/floor verified), `npc setrotation <id> -90 0`; `npc action add playercommand <id> ANY_CLICK 1 0 shop|auctionhouse`. Stall labels (text_display ls_label at -36.4 66.6 -8.5 / -2.5) "Coming Soon" → "Click the NPC" (green). ENCHANTER/HEART SHOP labels unchanged (decision pending).
+- **Open risk:** lifesteal_lobby me default group `* false` — agar /shop ya /auctionhouse ka permission node hai to normal player ko deny hoga; non-op test chahiye. Skin owner decide karega.
+- **Crate fix Step A (sent):** owner tp -9.5 65 -37.5 (yaw 180); `/slimecrates remove` x -9.5/-5.5/-1.5/2.5/6.5/10.5 @ z-37.5 → "server done". Step B: pedestal ke upar khade ho kar set + console crate block.
