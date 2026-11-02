@@ -535,3 +535,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** `execute as techshotgaming at @s run npc create npc_survival player` bhi try kiya — "Incorrect usage" (console/proxied sender se create nahi hota). Manager se 5 NPC create karwane ko kaha (survival, lifesteal, parkour, minigames, event).
 - **Kaise:** tellraw techshotgaming with exact /znpcs create commands.
 - **Result:** Pending — create hote hi setlocation/setrotation/skin/holo/click action set karunga, phir purane mannequins (minecraft:kill tag=lobby_npc) aur proximity teleport (HUB 0 100 -17 command block) hataunga. Teleport abhi nahi hataya taa ke join raasta beech me na toote. Lifesteal ka "paas aao" Skript (firecraft-hub.sk) me hai — console se nahi hata sakta.
+
+### 2026-11-02 08:55 UTC — [MANAGER] ZNPCs migration step 2: survival NPC + proximity tp hataya
+- **Kisne kaha:** techshotgaming (Manager) — "Server Ab baaki npcs ko bhi znpcs ki help se bana do and pass jate hi teleport wala system hata do" ka follow-up (unhone `/znpcs create survival player` chalaya).
+- **Kya kiya:** ZNPC `survival` configure; purana ⚔ SURVIVAL ⚔ mannequin kill; HUB 0 100 -17 wala proximity command block hataya.
+- **Kaise:** `npc setlocation survival 0.5 151 -17.3`, `npc setrotation survival 0 0`, `npc skin survival static Technoblade`, holo "⚔ SURVIVAL ⚔" (#FF7A1A bold) + "▶ Click karo = JOIN"; `npc action add consolecommand survival ANY_CLICK 2 0 execute as {player} in minecraft:survival run spreadplayers 144 560 0 1 false @s` (click type ANY_CLICK hona chahiye — BOTH/ANY/default/RIGHT "Incorrect usage"). `minecraft:kill @e[type=minecraft:mannequin,tag=npc_survival]`, `execute in minecraft:overworld run setblock 0 100 -17 minecraft:air`.
+- **Result:** Action list confirm; click test manager karenge. Baaki 4 (lifesteal, parkour, minigames, event) ke liye manager ke /znpcs create ka intezaar. Lifesteal proximity Skript me hai.
