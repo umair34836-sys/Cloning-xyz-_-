@@ -367,3 +367,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "changes baad me kringay ab next pending works per challo"
 - **Kits area** (lifesteal_lobby east): armor stands 40.5 65 z -5.5/-1.5/2.5/6.5; labels (ls_label 40.5 68.4) "Coming Soon" → STARTER "FREE • har 24h • /kit starter", WARRIOR "200 Coins", ARCHER "100 Coins", TANK "350 Coins".
 - Owner tp 37.5 65 0.5 (yaw -90) → `/npc create ls_kits player` → done ke baad NPC 40.5 65 0.5 (air/floor verified) yaw 90, holo "KITS SHOP", action playercommand `kitshop` (DeluxeMenus menu panel ke baad).
+
+### 2026-11-02 07:15 UTC — [OWNER] Kits NPC done + baqi decisions poochay
+- Owner ne `/npc create ls_kits player` chalaya. Console: `npc setlocation ls_kits 40.5 65 0.5`, `setrotation 90 0` (west face), holo "&e&lKITS SHOP" + "&7Click to buy kits", action `playercommand ls_kits ANY_CLICK 1 0 kitshop` (DeluxeMenus kitshop.yml panel se pending).
+- Owner se poocha: (1) HEART SHOP NPC → `/shard shop`? (2) ENCHANTER stall → enchanting table setup ya hata dein? (3) ajLeaderboards panel install (setup file) (4) market NPC skins.
