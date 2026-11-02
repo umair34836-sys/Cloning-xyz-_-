@@ -642,3 +642,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** `mvp list` → 0 portals (plugin installed). Jawab: haan; portal frame + WorldEdit wand selection + `/mvp create <name> w:lifesteal_lobby` / `w:survival` in-game player se, baad me console se config.
 - **Kaise:** tellraw techshotgaming.
 - **Result:** Manager ke portal create karne ka intezaar.
+
+### 2026-11-02 09:32 UTC — [MANAGER] Lifesteal portal label + NPC delete
+- **Kisne kaha:** techshotgaming (Manager): "Server it's working now ,Add a flying text over the portal saying lifesteal Enter tge portal to go to lifesteal and delete the npc"
+- **Kya kiya:** Manager ne Multiverse portal `lifesteal_portal` banaya (HUB 15,151,-11 → 15,155,-7, dest w:lifesteal_lobby). Uske upar text_display label lagaya; ZNPC `lifesteal` delete kiya.
+- **Kaise:** `mvp list` / `mvp info lifesteal_portal`; `execute in minecraft:overworld run summon minecraft:text_display 15.5 157 -8.5 {Tags:["portal_label","lifesteal_portal_label"],billboard:"center",text:{text:"❤ LIFESTEAL ❤",color:"#FF2A2A",bold:1b,extra:[{text:"\nEnter the portal to go to Lifesteal",color:"gray"}]}}`; `npc delete lifesteal`.
+- **Result:** Label maujood (Pos verify), NPC deleted. Manager ko tellraw kiya.
