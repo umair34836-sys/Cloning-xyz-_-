@@ -612,3 +612,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Panel ne fix kiya: HUB Server Selector compass → **BLAZE_POWDER** (compass = WorldEdit navigation wand → OP right-click `/jumpto` = "random tp"; mera D0 report). selector.yml LIFESTEAL → `minecraft:tag <player> add fc_restore` (mera last-location system). Essentials `spawn-on-join: false`, `newbies.spawnpoint: none` (join → sirf mera command block HUB). DonutShop `Sell/config.yml worth-lore.enabled: false` ("$" lore band; "menus only" option exist nahi karta). TAB moderator → MODERATOR (blue), sort owner, manager, moderator, default. Vanilla sidebar cleared.
 - Owner decisions: HUB LIFESTEAL mannequin NPC (overworld 17.5 151 -9.5) rakho; mera carrot selector chain y120 z6 OFF hi rahe.
 - Reply file C items [x] mark. Mera next in-game kaam: ajLB leaderboard holograms (owner online chahiye `/hologram create`).
+
+### 2026-11-02 09:15 UTC — [MANAGER] Lifesteal slow tp = Skript countdown (confirmed)
+- **Kisne kaha:** techshotgaming (Manager): "Server Lifesteal lobby me ja rahe ho... is the message"
+- **Kya kiya:** Confirm hua ke slow tp ka message ("Lifesteal lobby me ja rahe ho...") ZNPC ka nahi (mera debug/old messages alag text) — ye firecraft-hub.sk ka proximity countdown hai jo purani lifesteal NPC jagah par chalta hai.
+- **Kaise:** Message text compare; ZNPC action list (instant mvtp + debug message).
+- **Result:** Manager ko 2 options diye: owner file se part hataye, ya poori firecraft-hub.sk disable (explicit "Server haan skript band karo" chahiye). Debug message action abhi bhi index 1 par hai.
