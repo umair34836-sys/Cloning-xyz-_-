@@ -407,3 +407,15 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Ek ek karke (har tp ke baad check) owner tp + `sudo MrCopper804 setwarp`: shop (-34.5 65 0.5 y90), kits (36.5 65 0.5 y-90), afk (28.5 64 28.5, AFK zone ke andar), leaderboards (28.5 65 -30.5 y180), rtp (0.5 65 33.5 y0), pvp (-27.5 65 27.5, arena andar). `warp` → afk, crates, hub, kits, leaderboards, lobby, pvp, rtp, shop. `/spawn` = lifesteal lobby.
 - LP default: essentials.spawn, essentials.warp, essentials.warp.list = true in world=lifesteal_lobby aur world=hub (baaki commands lock same).
 - /hub /lobby alias → commands.yml (panel) — FCMC_PANEL_SETUP.md 7b.
+
+### 2026-11-02 08:55 UTC — [OWNER] Join → HUB + LIFESTEAL select = last location
+- **Owner:** "jab bhi koi first time ya rejoin ker k aye to wo hub per aye phir waha se jab koi or lobby select kare tab waha jai jaha se wo leave howa tha"
+- Existing join chain (y120 z3) sirf welcome title deta tha (fc_leave/fc_wait), HUB tp nahi.
+- **New chain overworld y120 z10 x3..29** (stone row, forceload [0,0]/[1,0]); objectives fc_lx/fc_ly/fc_lz (Pos*100), fc_ld (1 lifesteal, 2 nether, 3 end, 4 lifesteal_lobby), fc_clk; marker `fc_tpm` home 2.5 119 10.5 (overworld).
+  - x3 rep: `scoreboard players add #clk fc_clk 1`
+  - x4: `execute as @a[scores={fc_wait=1}] in overworld run minecraft:tp @s 0.5 151 0.5 180 0` (har join/rejoin → HUB)
+  - x5-x14: har 20 ticks, `@a[nbt={OnGround:1b}]` jo overworld/the_nether/the_end me nahi → tag fc_sv → fc_ld per dimension + Pos*100 store → clk reset.
+  - x15-x29: `fc_restore` players: no save → lobby 0.5 65 0.5; warna ek player/tick (`fc_rnow`): marker Pos = scores*0.01 → `execute in <dim> positioned as <marker> run minecraft:tp @s ~ ~ ~` → marker home → tags cleanup.
+  - z12 x9 (LIFESTEAL NPC/selector) `tp lobby` → `tag @a[tag=fc_go_ls] add fc_restore`.
+- Console validation: save (903/6500/-384) + restore tp (9.03 65 -3.84) + marker home OK; auto-save live (fc_lx 902).
+- Owner ko test steps: /warp hub → LIFESTEAL NPC → wapas lobby x9 z-4; rejoin → HUB.
