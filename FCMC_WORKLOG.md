@@ -493,3 +493,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** HUB lobby me missing ✦ PVP PRACTICE ✦ mannequin dobara summon kiya (lifesteal NPC pehle se maujood tha).
 - **Kaise:** Pehle record kiye data se: `execute in minecraft:overworld run summon minecraft:mannequin -13.8 151 -8.4 {Tags:["npc_pvp","lobby_npc"],Rotation:[-58.1f,0f],Invulnerable:1b,immovable:1b,CustomNameVisible:1b,CustomName:{text:"✦ PVP PRACTICE ✦",bold:1b,color:"#A855F7"},description:{text:"Coming Soon",italic:1b,color:"gray"},profile:{name:"Dream"}}`.
 - **Result:** "Summoned new ✦ PVP PRACTICE ✦". Manager ko tellraw kiya.
+
+### 2026-11-02 08:41 UTC — [MANAGER] "Jarvis" trigger request (rule change — decline)
+- **Kisne kaha:** techshotgaming (Manager): "Server Ab se mai tumne Jarvis hi Bulaunga and tum Jarvis naam se sunoge bhi"
+- **Kya kiya:** Trigger word change nahi kiya (rules sirf owner badal sakta hai). Naam "Jarvis" accept, lekin requests "Server ..." se hi.
+- **Kaise:** tellraw techshotgaming se jawab.
+- **Result:** Manager ko bataya; trigger "server" hi rahega.
