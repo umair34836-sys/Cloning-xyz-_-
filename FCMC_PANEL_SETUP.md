@@ -19,6 +19,20 @@ Matlab: currency kam milni chahiye (scarce), inflation na ho, sell prices low, b
 
 ---
 
+
+## 0b. SEPARATION RULE — HUB alag, har mode alag (owner ka faisla)
+Owner: "hub se her ek jizz ko alag kro, lifesteal ko alag and baqi incoming ko bhi hub se separate rakhna — playtime, coins, balance, everything".
+**Console se ho chuka `[x]`:**
+- Multiverse-Inventories groups: `lobby` = HUB, `lifesteal` = lifesteal_lobby + lifesteal + nether + end. Har naya mode = naya group.
+- Group-wise alag: inventory, armor, ender chest, XP, health/hearts (max_hit_points), potion effects, **economy (Vault balance)**, **vanilla statistics**, **advancements** (`mvinv toggle economy|game_statistics|advancements`).
+- Hourly Common key playtime ab sirf lifesteal side ka time ginta hai (`fc_lpt`), HUB ka nahi.
+**Console se nahi ho sakta (plugins global hain) `[ ]`:**
+- **Coins (PlayerPoints)**, **Shards (DonutShop)**, **hPlaytime**, **LifeStealZ hearts data**, SlimeCrates virtual keys, AuctionHouse — ye plugins poore server par ek hi data rakhte hain. Abhi sirf lifesteal inhe use karta hai, isliye masla nahi.
+- **Naye modes ke liye:** har mode ko alag currency chahiye to (a) BungeeCord/Velocity network par har mode alag backend server (sabse saaf tareeqa), ya (b) har mode ke liye alag per-world currency plugin. Mode banate waqt ye decide karna.
+- LifeStealZ ko sirf lifesteal worlds tak limit karo (`plugins/LifeStealZ/config.yml` world setting — config paste karo, exact line bataunga).
+
+---
+
 ## 1. AFK zone: har 1 minute = 1 Shard  `[ ]`
 **File:** `plugins/AxAFKZone/zones/afk.yml` (zone "afk" lifesteal_lobby AFK pool par ban chuka hai)
 

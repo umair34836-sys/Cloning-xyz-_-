@@ -419,3 +419,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - z12 x9 (LIFESTEAL NPC/selector) `tp lobby` → `tag @a[tag=fc_go_ls] add fc_restore`.
 - Console validation: save (903/6500/-384) + restore tp (9.03 65 -3.84) + marker home OK; auto-save live (fc_lx 902).
 - Owner ko test steps: /warp hub → LIFESTEAL NPC → wapas lobby x9 z-4; rejoin → HUB.
+
+### 2026-11-02 09:25 UTC — [OWNER] Rule: HUB har lihaaz se alag
+- **Owner:** "hub se her ek jizz ko alag kro lifesteal ko alag and baqi incoming ko bhi hub se separate rakhna her lihaaz se playtime k lihaaz se bhi coins ballance everything"
+- **Kiya:** `scoreboard objectives add fc_lpt dummy` + z10 x30 chain: lifesteal-side dims me har tick +1; hourly key chain (z9 x3-5) fc_pt → fc_lpt (message "1 ghanta lifesteal playtime"); `scoreboard objectives remove fc_pt` (stat, HUB bhi ginta tha).
+- `mvinv toggle economy`, `toggle game_statistics`, `toggle advancements` → ab dono groups (lobby=HUB, lifesteal) me applicable (verified `mvinv info`).
+- Global plugins (PlayerPoints coins, DonutShop shards, hPlaytime, LifeStealZ, SlimeCrates virtual keys, AuctionHouse) console se alag nahi ho sakte → FCMC_PANEL_SETUP.md 0b (future modes: alag backend servers ya per-mode plugins). RULES.md me rule.
