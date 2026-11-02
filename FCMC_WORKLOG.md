@@ -425,3 +425,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kiya:** `scoreboard objectives add fc_lpt dummy` + z10 x30 chain: lifesteal-side dims me har tick +1; hourly key chain (z9 x3-5) fc_pt → fc_lpt (message "1 ghanta lifesteal playtime"); `scoreboard objectives remove fc_pt` (stat, HUB bhi ginta tha).
 - `mvinv toggle economy`, `toggle game_statistics`, `toggle advancements` → ab dono groups (lobby=HUB, lifesteal) me applicable (verified `mvinv info`).
 - Global plugins (PlayerPoints coins, DonutShop shards, hPlaytime, LifeStealZ, SlimeCrates virtual keys, AuctionHouse) console se alag nahi ho sakte → FCMC_PANEL_SETUP.md 0b (future modes: alag backend servers ya per-mode plugins). RULES.md me rule.
+
+### 2026-11-02 09:35 UTC — [OWNER] File DM + watcher stop
+- **Owner:** "now i am going from in game and handover me that file in my dm okay now by and stop watcher see you soon"
+- FCMC_PANEL_SETUP.md stale lines update (NPCs/enchanter/join system done) → Discord DM 7 parts (msgs 1566681829006909533 … 1566681978806472775).
+- Watcher cron 2ea04e9d delete (stopped). Owner ko tellraw bye.
