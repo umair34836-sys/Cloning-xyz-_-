@@ -750,3 +750,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** SW room (survival interior x107-125 z579-597 floor y201, items y202; lifesteal x-37..-19 z19..37 y66) ko utility room banaya: enchanting table (109,202,595) + 18 bookshelves (west + south wall corner, 2 high); south wall row: crafting table, furnace, blast furnace, smoker, smithing table, anvil, grindstone, stonecutter, loom, cartography, fletching; north wall: brewing stand, water cauldron, 3 ender chests; center red/black carpet rug; 5 hanging lanterns (y205); 4 crimson flower pots. Survival room ko lifesteal_lobby me clone kiya.
 - **Kaise:** `execute in minecraft:survival run setblock/fill ...`; `clone from minecraft:survival 107 202 579 125 205 597 to minecraft:lifesteal_lobby -37 66 19` (1444, forceload add/remove). WorldGuard: survival `survival_utility` (106,201,578→126,206,598, priority 1, parent survival_lobby, interact/use/chest-access allow); lifesteal_lobby `ls_utility` (-38,65,18→-18,70,38, priority 1, use/chest-access/interact allow — __global__ me use/chest-access/build DENY tha).
 - **Result:** Survival + lifesteal (enchanting table verify) dono ready. Manager ko tellraw kiya.
+
+### 2026-11-02 11:47 UTC (16:47 PKT) — [OWNER] Moderator sessions (5h follow-up)
+- #general: Marzarn ne IGN "Marzarn" bataya (saath me ek code bhi likha — repo me nahi rakha; owner ko delete karwane ka bola). Techshot: koi reply nahi.
+- `lp user Marzarn ...` → "could not be found" (kabhi join nahi kiya). Offline UUID a2549974-18e7-381f-b87f-ebe55914765f → `lp user <uuid> parent add moderator` → primary moderator, prefix "🛡 MOD » ". Bedrock `.Marzarn` ho to alag UUID.
+- create_session → **session_01JK8TsAyYCgHr8UkEQo6Mqy "FCMC Mod Assistant — Marzarn"** (tags fcmc, fcmc-mod-assistant, mod-marzarn; no repo; prompt = FCMC_MOD_SESSION_PROMPT.md + extra context).
+- DMs: Marzarn usage guide, Techshot reminder (IGN techshotgaming confirm?), owner summary (Techshot rank moderator ya manager? sawal).
+- Techshot ka session/rank confirm hone tak pending.

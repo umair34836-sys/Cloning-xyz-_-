@@ -47,3 +47,4 @@ Format:
 ## 2026-11-02 — Owner ko jaldi jaldi tp karne se disconnect
 - Kya hua: setwarp ke liye ek hi batch me 6 alag jagah `minecraft:tp` + sudo kiya → owner do baar logout/login (shayad "moved too quickly"/client lag), 4 setwarp "Player not found".
 - Bachao: player ko tp karne ke baad har step ke beech status/Pos check karo; ek message me 1-2 tp se zyada nahi.
+- Kisi ke public messages me 'code'/password jaisi cheez ho to repo/log me kabhi copy mat karo (commit block hua tha).
