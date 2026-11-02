@@ -362,3 +362,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Pehle archer 86400 delay se bana, `delkit archer` karke delay 0 (paid = purchase limit; cooldown me coins kat ke kit fail ho sakta tha).
 - Players ko essentials.kits.warrior/archer/tank NAHI diya. `kit` list: Starter Warrior Archer Tank (+ purane Firework Color Notch Dtools Tools).
 - FCMC_PANEL_SETUP.md section 6 update (prices 100/200/350 + DeluxeMenus menu).
+
+### 2026-11-02 07:05 UTC — [OWNER] Next pending: Kits area NPC
+- **Owner:** "changes baad me kringay ab next pending works per challo"
+- **Kits area** (lifesteal_lobby east): armor stands 40.5 65 z -5.5/-1.5/2.5/6.5; labels (ls_label 40.5 68.4) "Coming Soon" → STARTER "FREE • har 24h • /kit starter", WARRIOR "200 Coins", ARCHER "100 Coins", TANK "350 Coins".
+- Owner tp 37.5 65 0.5 (yaw -90) → `/npc create ls_kits player` → done ke baad NPC 40.5 65 0.5 (air/floor verified) yaw 90, holo "KITS SHOP", action playercommand `kitshop` (DeluxeMenus menu panel ke baad).
