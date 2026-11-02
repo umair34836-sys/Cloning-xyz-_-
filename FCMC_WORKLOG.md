@@ -230,3 +230,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Check:** `gamerule minecraft:command_block_output` = true (overworld/HUB + lifesteal_lobby).
 - **Jawab (tellraw):** Command block output sirf OP players ko dikhta hai; normal users ko nahi. Offer: gamerule OFF kar dun (owner ke jawab ka intezar).
 - **Ghalti:** Ops dekhne ke liye `op list` chalaya — ye command nahi hai, isne "list" naam ke player ko OP bana diya. Foran `deop list` se wapas liya. (MISTAKES.md me likha.)
+
+### 2026-11-02 03:25 UTC — [OWNER] "Khud plugins dekho, us hisaab se setup karo"
+- **Kisne kaha:** Owner in-game: "server tum khod plugins dekho or check kroo us hisaab se setup kro naa apne andaze se maat kro kuch"
+- **Kya kiya:** AxAFKZone ka source (github.com/Artillex-Studios/AxAFKZone) padha: `create` sirf Player chala sakta hai aur selection WandListeners (PlayerInteractEvent, wand se left/right block click) se banti hai — console se zone nahi ban sakta. Zone file `zones/<name>.yml` (messages, bossbar, permission, reward-time-seconds, roll-amount, rewards, zone.location1/2).
+- **Owner ko (tellraw):** wand de doon, owner 2 corner click kare, baqi create/rewards/warp main karunga; aur poocha ke kya "setup" se matlab saare pending kaam (crates, NPCs, holograms, kits) hai. Jawab ka intezar.
