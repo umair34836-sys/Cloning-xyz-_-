@@ -280,3 +280,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Queue change:** `/setwarp afk` hata diya (owner ne nahi maanga; DonutShop setafk hi AFK teleport hai). Ab 5 kaam.
 - **Kaam 2/5 (sent):** owner tp lifesteal_lobby -9.5 65 -37.5 (facing north); `/slimecrates set vote|common|rare|epic|legendary|heart` pedestal tops (x -10/-6/-2/2/6/10, y66, z-40) — verified blocks non-air at y66, air above.
 - Ghalti: pehle `clear MrCopper804 iron_ingot 0` chalaya — `clear` Essentials ka clearinventory hai; output khali aaya. Baad me minecraft:clear count se items maujood mile (4/2). MISTAKES.md me.
+
+### 2026-11-02 04:25 UTC — [OWNER] Handover: Kaam 2 (crates) done, Kaam 3 (NPCs) diya
+- **Owner:** `/slimecrates set vote|common|rare|epic|legendary|heart` (6 commands) + "server done and check one time khod bhi".
+- **Verify:** har pedestal (x -10..10, y67.5, z-39.5) par 2 armor_stand holograms (e.g. "VOTE CRATE" aqua bold + "Right-click to open") — x-10 aur x10 dono check. Purane 6 "Coming Soon" `ls_label` text_displays crate row se `minecraft:kill` (crates live hone ke baad galat text tha).
+- **Holograms (leaderboards) postpone:** top kills/hearts ke liye ajLeaderboards (panel) chahiye, playtime abhi blank — isliye NPCs pehle.
+- **Kaam 3/5 (sent):** owner tp -36.5 65 -8.5 (west market, facing east; pehle -37.5 diya tha, x-38 y65 block solid tha → 1 block east shift). Commands: `/npc create ls_shop player`, `/npc create ls_auction player` (syntax `npc help`: create <id> [<type>]). Baad me console: setlocation stalls (-39.5 65 -8.5 / -2.5), setrotation, naam/skin/action (/shop, /auctionhouse).
+- ZNPCsPlus v2.1.0-SNAPSHOT; FancyHolograms 2.12.0 (`hologram create <name>` player-only, `edit <name> moveTo x y z` console).
