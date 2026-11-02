@@ -583,3 +583,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** HUB end-themed area me manager ke saamne wala chorus (20 151 8, sirf 3 block 151-153 bacha tha) ko ~8 block uncha kiya: stalk 151-155, top par 4 branches (E/W/N/S) + age=5 chorus flowers (max 20 158 9).
 - **Kaise:** Manager ki Pos/Rotation + worldlens_shot se dhoondha, `execute in minecraft:overworld if block` se verify. `setblock ... minecraft:chorus_plant[...]` / `chorus_flower[age=5]` bottom-up. Pehli koshish (stalk ke beech se side branch, upar bhi plant) physics se toot gayi — chorus rule: jis block ke side me plant ho uske upar ya neeche air chahiye; isliye branches stalk ke top block se nikaali.
 - **Result:** Saare blocks verify (Test passed). Manager ko tellraw kiya.
+
+### 2026-11-02 09:09 UTC — [MANAGER] Chorus plant replace — naya behtar
+- **Kisne kaha:** techshotgaming (Manager): "Server is chorus plant ko delete karke ek new wala laga do jo isse better ho"
+- **Kya kiya:** Purana chorus (12 plant + 4 flower) hataya, usi jagah (20 151 8, end_stone par) naya 11-block (151-161) multi-branch chorus banaya: trunk 151-155, top par E/W/N/S arms, E arm 158 par aur 2 sub-branches, W arm 157 par sideways, N arm 159 par sideways (sabse uncha flower 20 161 6); total 5 age=5 flowers.
+- **Kaise:** `execute in minecraft:overworld run fill 17 151 5 23 162 11 minecraft:air replace minecraft:chorus_flower` / `... replace minecraft:chorus_plant`, phir bottom-up `setblock`/`fill` chorus_plant[...] — rule follow kiya: jis block ke side me plant ho uske upar ya neeche air.
+- **Result:** Saare 5 flowers + base verify (Test passed). Manager ko tellraw kiya.
