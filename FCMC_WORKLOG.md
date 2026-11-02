@@ -702,3 +702,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** WorldGuard region `survival_lobby` (world survival, 88,196,504 → 200,319,616) banaya; default protection (non-members build/break nahi kar sakte) + flags DENY: mob-spawning, pvp, mob-damage, fall-damage, creeper-explosion, tnt, other-explosion, fire-spread, lava-flow, water-flow, leaf-decay.
 - **Kaise:** Console WorldEdit selection: `//world survival`, `//pos1 88,196,504`, `//pos2 200,319,616` → `rg define -w survival survival_lobby` → `rg flag -w survival survival_lobby <flag> deny` x11; `build deny` set karke hata diya (WG warning: members/pistons sab block karta, default protection kaafi hai); `//world` override reset.
 - **Result:** Region + flags active. Manager ko tellraw kiya.
+
+### 2026-11-02 10:07 UTC — [MANAGER] "Diagonal roads me noob?" (chat reply)
+- **Kisne kaha:** techshotgaming (Manager): "Server you are kinda noob at building diagonal roads right?"
+- **Kya kiya:** Sirf jawab — console se diagonal roads step-wise bante hain; road fix ke liye start/end coords maange.
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Koi server change nahi.
