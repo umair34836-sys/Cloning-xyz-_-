@@ -696,3 +696,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Poori survival sky-lobby box (x88-200, z504-616, y196-256) ke saare non-player entities kill (16). Lobby ki 2 horizontal layers me jahan air tha wahan invisible light[level=15] blocks.
 - **Kaise:** `execute in minecraft:survival run minecraft:kill @e[type=!minecraft:player,x=88,y=196,z=504,dx=112,dy=60,dz=112]` (plain `kill` Essentials ka hai → "Player not found"); `fill 89 203 505 199 203 615 minecraft:light[level=15] replace minecraft:air` (12133) + y210 layer (12078).
 - **Result:** 16 killed, lights placed. Upper floors (y>210) ya band chhote rooms me agar fir spawn ho to aur layer lagani padegi.
+
+### 2026-11-02 10:03 UTC — [MANAGER] Survival lobby WorldGuard protection
+- **Kisne kaha:** techshotgaming (Manager): "Server now protect this lobby from breaking blocks , Spawning mobs and everything"
+- **Kya kiya:** WorldGuard region `survival_lobby` (world survival, 88,196,504 → 200,319,616) banaya; default protection (non-members build/break nahi kar sakte) + flags DENY: mob-spawning, pvp, mob-damage, fall-damage, creeper-explosion, tnt, other-explosion, fire-spread, lava-flow, water-flow, leaf-decay.
+- **Kaise:** Console WorldEdit selection: `//world survival`, `//pos1 88,196,504`, `//pos2 200,319,616` → `rg define -w survival survival_lobby` → `rg flag -w survival survival_lobby <flag> deny` x11; `build deny` set karke hata diya (WG warning: members/pistons sab block karta, default protection kaafi hai); `//world` override reset.
+- **Result:** Region + flags active. Manager ko tellraw kiya.
