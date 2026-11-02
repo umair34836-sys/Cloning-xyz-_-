@@ -230,4 +230,5 @@ Crate keys website se: `slimecrates key <player> <rare|epic|legendary|heart> <am
 - [x] Market NPCs: villager type (shop=weapon smith, auction=cartographer, kits=armorer) — skin ki zaroorat nahi
 - [ ] ENCHANTER stall: enchanting table + bookshelves (Claude banayega)
 - [ ] Baqi 4 lobbies (SURVIVAL, PARKOUR, PVP PRACTICE, MINIGAMES, EVENT — abhi "Coming Soon")
+- [x] Lobby inventory group: lifesteal_lobby → 'lifesteal' group (console se ho gaya)
 - [ ] PvP arena (`ls_pvp_arena`) in-game test

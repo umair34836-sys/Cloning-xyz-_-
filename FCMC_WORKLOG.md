@@ -385,3 +385,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - WG lobby __global__: use DENY, chest-access DENY → table blocked. Fix: `sudo MrCopper804 /pos1 -38,65,3`, `/pos2` same, `sudo ... rg define ls_enchanter`, `rg flag -w lifesteal_lobby ls_enchanter use allow` (sirf table block).
 - SlimeCrates CrateInteractListener @EventHandler(priority=HIGH), ignoreCancelled default false → WG use-deny ke bawajood crates normal players ke liye chalenge.
 - Pending: owner "server inv ok" (lifesteal_lobby → lifesteal mvinv group).
+
+### 2026-11-02 07:55 UTC — [OWNER] Inventory group fix (lobby → lifesteal)
+- **Owner:** "npc wala kam done and inv wala kaam tum kro if console se possible nhi hai to file me likho"
+- **Kiya (console):** `mvinv remove-worlds lobby lifesteal_lobby` → `mvinv add-worlds lifesteal lifesteal_lobby` → `mvinv info`: lifesteal_lobby = group lifesteal; HUB = group lobby. `mvinv check-group-conflicts` → no conflicts.
+- Effect: lobby crates/shop/kits/heart shop/enchant items + hearts (max_hit_points share) lifesteal worlds ke saath shared; HUB alag. lifesteal group applicable shares me last_location nahi (NPC tp flows safe).
