@@ -395,3 +395,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "ok now ab next pending work per challo"
 - Lobby "Coming Soon" labels check: sirf TOP PLAYTIME/KILLS/HEARTS (21.5/28.5/35.5 66.1 -34.3) — ajLeaderboards (panel) pending.
 - RTP portal: label "WILDERNESS / RTP" 0.5 74.5 37.5; trigger (overworld 3 120 15) `positioned -2 66 37.7 tag @a[dx=4,dy=6,dz=0] add fc_go_rtp`. Owner tp 0.5 65 33.5 (yaw 0, south) → walk-in test, result maanga.
+
+### 2026-11-02 08:20 UTC — [OWNER] RTP test OK + /spawn & warps
+- **Owner:** "world me to agya liken ab me hub ya lobby me kaise jaonga ... normal commads rakho jaise k /spawn /hub ... /warps bhi rakhoo her jagha k apne apne" → RTP portal kaam karta hai.
+- default group: essentials.spawn + essentials.warp global true (lobby/hub me false — lock).
+- Done (owner tp + sudo): `setspawn` at lifesteal_lobby 0.5 65 0.5; `setwarp lobby` (same), `setwarp hub` (HUB 0.5 151 0.5 yaw180), `setwarp crates` (lobby 0.5 65 -34.5 yaw180). `warp` → crates, hub, lobby.
+- Problem: shop/kits/afk/rtp setwarp "Player not found" — owner rapid tps ke beech logout/login (co session: 2 baar logout/login ~08:18). Leaderboards bhi list me nahi. Owner ko sorry + baqi warps aahista karne ka bataya.
+- Pending: warps shop (-34.5 65 0.5 y90), kits (36.5 65 0.5 y-90), afk (28.5 64 28.5), pvp (-27.5 65 27.5), leaderboards (28.5 65 -30.5 y180), rtp (0.5 65 33.5 y0); /hub alias (commands.yml → panel); lobby/hub me warp/spawn allow karna.

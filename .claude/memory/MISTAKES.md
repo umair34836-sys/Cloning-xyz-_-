@@ -43,3 +43,7 @@ Format:
 ## 2026-11-02 — SlimeCrates `set` = player ke PAIRON wala block
 - Kya hua: owner ko "pedestal block dekh ke /slimecrates set" bola (fork + maine). Bytecode (handleSet): `player.getLocation().getBlock()` → crate location = player ke feet block. 6 crates + holograms z-38 (owner ki khadi jagah) par bane, pedestal (z-40) par nahi.
 - Bachao: plugin command ka location logic bytecode/source se pehle verify karo (getLocation vs getTargetBlock). SlimeCrates: crate lagane ke liye player usi jagah KHADA ho jahan crate block chahiye; `remove` feet/below/eye block check karta hai.
+
+## 2026-11-02 — Owner ko jaldi jaldi tp karne se disconnect
+- Kya hua: setwarp ke liye ek hi batch me 6 alag jagah `minecraft:tp` + sudo kiya → owner do baar logout/login (shayad "moved too quickly"/client lag), 4 setwarp "Player not found".
+- Bachao: player ko tp karne ke baad har step ke beech status/Pos check karo; ek message me 1-2 tp se zyada nahi.
