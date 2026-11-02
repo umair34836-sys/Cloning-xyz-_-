@@ -472,3 +472,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Multiverse se naya world `survival` (NORMAL, random seed, key minecraft:survival, spawn 144 70 560) banaya. HUB ke ⚔ SURVIVAL ⚔ mannequin (tag npc_survival, 0.5 151 -17.3) ko proximity-join se connect kiya; NPC description "Coming Soon" → "▶ Paas aao = JOIN".
 - **Kaise:** `mv create survival NORMAL`. HUB (minecraft:overworld) me 0 100 -17 par repeating command block (auto): `execute as @a[x=0.5,y=151,z=-17.3,distance=..1.6,gamemode=!spectator] in minecraft:survival run spreadplayers 144 560 0 1 false @s` (spreadplayers surface par safe land karta hai — probe armor stand se test kiya, 143.5 71 561.5 survival world me aaya; probe hata diya, forceload remove).
 - **Result:** World ban gaya, command block chal raha hai (LastExecution update). Right-click join nahi (lifesteal wala Skript firecraft-hub.sk me hai, console se edit nahi ho sakta) — sirf paas aane par. Multiverse-Inventories grouping check nahi ki. Manager ko tellraw kiya.
+
+### 2026-11-02 08:50 UTC — [OWNER] Compass random-tp: evidence → panel
+- Owner test: "compass se test kia abhi bhi tp ho raha ho". Owner HUB positions (har right-click baad): 7.5 21 -231.5, -63.5 5 -315.5, -26.5 151 64.5, -15.5 87 -46.5 — random .5 spots, HUB overworld. SelectedItemSlot 4 = Skript compass. Tags: sirf fc_seen. Mera RTP chain (z15: tellraw + spreadplayers in lifesteal) aur z6 (band) ruled out.
+- Reply file update: C (URGENT compass fix request), D0 evidence, D1 fixed. Owner ko tellraw + file.
+- Owner ka "manager baat sunoo ..." message manager session ke liye tha (economy high value — rule pehle se hai).
+- Naya world `survival` (minecraft:survival, spawn 144 70 560) dikh raha hai — maine nahi banaya.

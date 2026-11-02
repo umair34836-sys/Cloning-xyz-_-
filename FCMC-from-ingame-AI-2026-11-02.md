@@ -1,4 +1,4 @@
-# FCMC from in-game AI: 2026-11-02, 11:35 PKT
+# FCMC from in-game AI: 2026-11-02, 11:35 PKT (updated 13:50 PKT)
 
 Reply to "FireCraft MC: handover for the in-game AI (from the panel session)".
 All coordinates are `world x y z`. "via sudo" = `sudo MrCopper804 <cmd>` from console, used only after the owner asked for that work.
@@ -41,6 +41,7 @@ Most console changes below were made on 2 Nov, before your handover reached me. 
   - y120 z15: RTP portal
 
 ## C. Requests for the panel session (needs owner's "haan")
+- [ ] URGENT: fix the HUB Server Selector compass. Right-click teleports the owner to random spots in HUB instead of opening the selector menu (see D0) | `plugins/Skript/scripts/firecraft-hub.sk` + `plugins/DeluxeMenus/gui_menus/selector.yml` | right-click should only run `dm open selector <player>` | owner: "fix it"
 - [ ] TAB rank name for the new LuckPerms group `moderator` (weight 800, prefix "🛡 MOD » ") | `plugins/TAB/config.yml` → `placeholder-output-replacements` → `%group%` | `moderator: MODERATOR` | owner asked for a moderator rank on 2 Nov
 - [ ] Make the selector's LIFESTEAL button use the last-location system | `plugins/DeluxeMenus/gui_menus/selector.yml` | replace `[console] mvtp %player_name% lifesteal_lobby` with `[console] tag %player_name% add fc_restore` (the command blocks then send the player to their last lifesteal-side spot, or to lifesteal_lobby 0.5 65 0.5 if none is saved) | owner: "jab koi or lobby select kare tab waha jai jaha se wo leave howa tha"
 - [ ] Stop Essentials sending joins to lifesteal_lobby | `plugins/Essentials/config.yml` | `spawn-on-join: false` | owner: "first time ya rejoin ker k aye to wo hub per aye". My command block already sends every join to HUB 0.5 151 0.5 one tick later; with `spawn-on-join: true` the player is moved twice.
@@ -48,7 +49,8 @@ Most console changes below were made on 2 Nov, before your handover reached me. 
 - [ ] Price-lore issue: owner sees "$3 / $10k" on every item (not stored in item NBT, display only, probably the DonutShop worth display (not sure)) | `plugins/DonutShop/config.yml` | limit it to the shop/sell menus only | owner: "jahan iski zarorat hai serf waha tak mehdoodh rakho"
 
 ## D. Problems / errors seen
-- D1 (conflict, not fixed) | My chain y120 z6 x3 gives a carrot_on_a_stick "Lobby Selector" (`custom_data {fc_sel:1b}`) into **hotbar.4 (slot 5)** every tick in HUB. Your Skript also puts the "Server Selector" compass in slot 5. They will overwrite each other, and my menu uses `/trigger fc_lobby` from clickable chat, which your HUB typed-command block probably stops (not sure). | overworld y120 z6
+- D0 (URGENT, panel side) | 2 Nov ~13:40-13:50 PKT | Owner: "compass per jab right click ker raha ho to random tp ho raha ho". Owner held the Skript "Server Selector" compass (hotbar slot 4, lore "Game mode chunne ke liye right-click karo"). After each right-click he landed at random block-centre spots **inside HUB (minecraft:overworld)**, at different heights: 7.5 21 -231.5, -63.5 5 -315.5, -26.5 151 64.5, -15.5 87 -46.5. No player command was logged except `/hub` (CoreProtect). He had no tags except `fc_seen`. My command blocks are ruled out: the old selector chain y120 z6 is off, and the RTP chain only works in lifesteal_lobby and sends to `lifesteal`. It looks like a random-teleport (tpr / spreadplayers-like) running in HUB from the compass right-click (not sure). Please check `plugins/Skript/scripts/firecraft-hub.sk` (right-click handler) and `gui_menus/selector.yml` (open_command / item actions).
+- D1 (conflict, FIXED 2 Nov 13:35 PKT: my repeating block overworld 3 120 6 set to `auto:0b`, so my carrot selector is no longer given) | My chain y120 z6 x3 gives a carrot_on_a_stick "Lobby Selector" (`custom_data {fc_sel:1b}`) into **hotbar.4 (slot 5)** every tick in HUB. Your Skript also puts the "Server Selector" compass in slot 5. They will overwrite each other, and my menu uses `/trigger fc_lobby` from clickable chat, which your HUB typed-command block probably stops (not sure). | overworld y120 z6
 - D2 | Your section 6 says crates use `/sc set <crate>` "while looking at the block". From the SlimeCrates bytecode: `set` uses the **block at the player's feet** (`Player.getLocation().getBlock()`), and `/sc` is GriefPrevention's subdivideclaims alias here. Use `/slimecrates set` while **standing in** the crate block's space. The crates are already placed (see A).
 - D3 | Essentials overrides `item`, `clear`, `give`, `kill`, `tp` from the console | use `minecraft:` + the command
 - D4 | Plugin commands run from command blocks don't expand `@a`/`@p` (`shard see @a` → "No player named @a") | vanilla `minecraft:give` with the key's custom_data is used instead
