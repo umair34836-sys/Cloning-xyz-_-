@@ -672,3 +672,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Owner Mrcopper804 (id 1556195237083353191) ko Discord #🛡️┃staff-chat me user-ping karke Minecraft server join karne ko kaha. Koi @everyone/role ping nahi.
 - **Kaise:** `discord_find_member Mrcopper` → id; `discord_send_message` channel 1566039466676719750, text "<@1556195237083353191> Manager techshotgaming aapko public Minecraft server (join.firecraft.fun) par bula rahe hain — please join karein. (sent by Claude)".
 - **Result:** Sent message 1566750686094565491. Manager ko tellraw kiya.
+
+### 2026-11-02 09:48 UTC — [MANAGER] Owner ko follow-up: public server, private nahi
+- **Kisne kaha:** techshotgaming (Manager): "Server yu bhi boldo ki Public server me aana private server me nahi"
+- **Kya kiya:** #🛡️┃staff-chat me owner ko follow-up ping.
+- **Kaise:** `discord_send_message` 1566039466676719750: "<@1556195237083353191> Techshot ne kaha: public server me aana, private server me nahi. (sent by Claude)".
+- **Result:** Sent; manager ko tellraw kiya.
