@@ -577,3 +577,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Jawab diya ke console se script content padh nahi sakte (`sk list` sirf naam deta hai: firecraft-hub.sk, firecraft-lifesteal.sk).
 - **Kaise:** tellraw techshotgaming.
 - **Result:** Owner/panel se file kholni padegi; poori script disable risky bataya.
+
+### 2026-11-02 09:08 UTC — [MANAGER] Chorus plant dobara bada kiya
+- **Kisne kaha:** techshotgaming (Manager): "Server ye chorus plant ko dobara bada kardo"
+- **Kya kiya:** HUB end-themed area me manager ke saamne wala chorus (20 151 8, sirf 3 block 151-153 bacha tha) ko ~8 block uncha kiya: stalk 151-155, top par 4 branches (E/W/N/S) + age=5 chorus flowers (max 20 158 9).
+- **Kaise:** Manager ki Pos/Rotation + worldlens_shot se dhoondha, `execute in minecraft:overworld if block` se verify. `setblock ... minecraft:chorus_plant[...]` / `chorus_flower[age=5]` bottom-up. Pehli koshish (stalk ke beech se side branch, upar bhi plant) physics se toot gayi — chorus rule: jis block ke side me plant ho uske upar ya neeche air chahiye; isliye branches stalk ke top block se nikaali.
+- **Result:** Saare blocks verify (Test passed). Manager ko tellraw kiya.
