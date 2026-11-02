@@ -32,3 +32,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Har kaam ke baad `FCMC_WORKLOG.md` (repo root, branch `claude/amazing-pascal-sbsbez`) me entry likho: kab (UTC), kisne kaha (original msg), kya kiya, kaise (commands/tools), result. Tag [OWNER] (fcmc owner session) / [MANAGER] (fcmc manager session). Newest neeche. Push se pehle `git pull --rebase`.
 - Owner jab 'server ka data' maange to sirf FCMC connector (mcp__FCMC__*) ka data do; firecraft panel = FireCraft SMP website, FCMC nahi.
 - 2026-11-02: Owner: background commands kisi ko chat me na dikhein — command_block_output + log_admin_commands OFF rakho.
+- 2026-11-02: Owner: saare panel/plugin/file wale kaam FCMC_PANEL_SETUP.md me likhte raho (owner doosre AI se karwayega). 1 coin = 1 PKR (PlayerPoints).

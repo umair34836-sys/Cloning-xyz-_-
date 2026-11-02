@@ -347,3 +347,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "done and also serf starter kit 24 hours baad free me milai or usme 5 do normal cooked khana ho and basic weapon and tools ... baqi her ek kit special bnao money k lihaaz se ... price coins hongi" + "jo coins log buy kringay hamare website se".
 - **Kiya:** owner inventory khali verify (container/armor/offhand empty) → `minecraft:item replace` hotbar.0-4: stone_sword, stone_pickaxe, stone_axe, stone_shovel, cooked_beef 5 → `sudo MrCopper804 createkit starter 86400` → `kit` list me "Starter" → items `minecraft:clear` se wapas. `lp group default permission set essentials.kits.starter true` (global; lobby/hub me essentials.kit false rehta hai).
 - **Paid kits:** coins = PlayerPoints (website). Sale ke liye DeluxeMenus menu (has-points requirement → `points take` → `kit <name> <player>`) — file panel side. Owner se poocha 1 coin ki website price, phir research se Warrior/Archer/Tank items + price list.
+
+### 2026-11-02 06:40 UTC — [OWNER] 1 coin = 1 PKR + panel setup file
+- **Owner:** "1 coins = 1pkr alsoo jo jo or plugins etc chaye subki ek saath ek file me likhte rahoo baad me ,me wo file apne dosre ai ko de ker usse wo wala setup apne pc se ker donga"
+- **Kiya:** `FCMC_PANEL_SETUP.md` banaya — saare console-se-na-hone-wale kaam ek jagah: AFK shard (afk.yml), TAB Shards, vote key (Votifier + VoteSites.yml), $ display (DonutShop config pending), ajLeaderboards, paid kits (proposal Warrior 150 / Archer 150 / Tank 300 coins + DeluxeMenus kitshop.yml), website → `points give`, owner decisions. Kit price research me pakka standard nahi mila → proposal, owner approve kare.
+- **Rule:** aage har naya panel/file kaam isi file me add karna.
