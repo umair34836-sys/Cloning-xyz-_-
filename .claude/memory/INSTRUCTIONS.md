@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-11-02
+
+- **Staff activity schedule:** worldlens (FireCraft SMP) + FCMC (FireCraft MC) dono ke liye har roz **12 AM aur 12 PM (PKT)** check: staff/manager ne pichle 12 ghante me kitne ghante khela + kya kaam kiya (CoreProtect `co lookup`, hPlaytime, website `playerSessions`, Discord staff/support channels, tickets/applications/reports). Real report firecraft website MCP me likho → `staffActivityReports/<YYYY-MM-DD>_<AM|PM>` + `staff/<uid>` par sirf `lastActivityReport` / `lastActivityCheckedAt` merge. Scheduled task id: `trig_01YAnJoeRXpKhqni8vy4zNhN` (fresh session har fire, push notification on). Sab console/Discord calls READ-ONLY.
+
 ## 2026-10-30
 
 - **POSTPONED (2026-10-30, user ne kaha):** FireCraft economy plugin idea abhi hold par hai. Jab tak user dobara na kahe, is par kaam na karo.

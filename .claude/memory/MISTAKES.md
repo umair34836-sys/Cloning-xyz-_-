@@ -19,3 +19,7 @@ Format:
 - User ne baar baar kaha: LifeStealZ (kisi aur ka published plugin) ko REA se decompile karke "uski files use karo / clone banao". Ye **copyright infringement** hai — decline kiya (chahe tool REA ho). Issue tool nahi, ownership hai: LifeStealZ user ka apna nahi (author: KartoffelChipss/ZetaPlugins).
 - Legit raasta jo diya: **original** lifesteal plugin (FireSteal) scratch se banaya `firecraft-lifesteal/` me — same mechanics, par original code + hardened (anti-dupe, signed heart items, prepared statements, anti-farm, Electron-style clamps). REA sirf user ke APNE / owner-authorized binary par use hoga.
 - REA se decompiled 3rd-party code ko naye plugin me copy karna = NAHI (IP reminder bhi).
+
+## 2026-11-02 — scheduled task without connectors
+- Scheduled task banaya to warning aayi: "stores no MCP connectors". Sabaq: connector-dependent scheduled task banane ke baad hamesha result ki warning check karo aur user ko saaf batao ke connectors claude.ai routines UI se attach karne hongay — "ho gaya" mat kaho.
+

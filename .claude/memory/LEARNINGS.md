@@ -39,3 +39,10 @@ Format:
 - `video.talkember.site` ko bhi network allowlist karna pada.
 - **gallery re-test (2026-10-24)**: HSTS+CSP added, /api/health version removed, from-url ab auth-first 401 (SSRF ordering fixed). Sab injection/path-traversal probes 401 (auth-first). Baaki IDOR + temp-link = authenticated-only, test account ke baghair verify nahi.
 - **FCMC manager session (2026-11-01)**: Connector naam badal sakte hain mid-session. `mcp__FCMC__*` = FCMC server (worlds HUB/HUB_nether/HUB_the_end); `mcp__worldlens__*` = FireCraft SMP (world/world_nether). Har bar `worldlens_status` me worlds dekh kar confirm karo. Manager techshotgaming kabhi "Claude"/"Jarvis" se shuru karta hai — rule sirf "server" prefix; unclear ho to owner se poocho.
+
+## 2026-11-02 — staff activity data sources
+- Dono servers (SMP via `mcp__worldlens__worldlens_command`, FCMC via `mcp__FCMC__worldlens_command`) par **CoreProtect, hPlaytime, LuckPerms, Essentials(FCMC)** hain. `co lookup u:<name> t:12h` read-only kaam karta hai.
+- FCMC LuckPerms: `lp group manager listmembers` → techshotgaming. Website `staff` collection: techshotgaming (manager), Marzarn (moderator); Jitbasakop21 fired.
+- Website collection `playerSessions` = {ign, uuid, minutesPlayed, timestamp ISO}. `where` ke saath `orderBy` dena "Invalid orderBy clause" deta hai → filter karke khud sort karo. `playtimeLogs` khali hai.
+- `create_trigger` ka `connectors` parameter is org me available nahi; is session se bana scheduled task **connectors ke baghair** store hota hai → fired session me mcp__worldlens/FCMC/firecraft tools nahi honge jab tak user claude.ai routines UI me connectors attach na kare.
+
