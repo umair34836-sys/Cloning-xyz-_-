@@ -505,3 +505,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Check kiya — pichli entry wala summon kiya hua ✦ PVP PRACTICE ✦ maujood nahi tha. 4 baar dobara summon kiya (full NBT, PersistenceRequired, NoGravity; plain probe mannequin -13.8 151 -8.4 aur -10 151 -5 par) — har baar "Summoned" aaya lekin agle command me `@e[type=minecraft:mannequin]` me entity nahi mili.
 - **Kaise:** `execute in minecraft:overworld run summon minecraft:mannequin ...` + `execute as @e[type=minecraft:mannequin,...] run data get entity @s`.
 - **Result:** FAILED. Koi plugin/Skript (shayad firecraft-hub.sk) naye mannequin spawn hote hi hata raha hai; console se script dekh/edit nahi ho sakti. Baaki 5 lobby NPC (survival, parkour, lifesteal, minigames, event) theek. Pichli entry ka "PvP NPC wapas laga diya" bhi isi wajah se tika nahi. Manager ko tellraw kiya; owner ko firecraft-hub.sk check karna hoga.
+
+### 2026-11-02 08:45 UTC — [MANAGER] "Jarvis" trigger dobara request (owner approval pending)
+- **Kisne kaha:** techshotgaming (Manager): "Server Jarvis Meri taraf se ek nickname hai ,Owner jo bole us word se respond karlena ,But mai jab jarvis bolu to bhi respond karna"
+- **Kya kiya:** Trigger change nahi kiya; owner approval ke bina "Jarvis" trigger add nahi hoga.
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Manager ko bataya ke owner (MrCopper804) approve kare to add hoga; tab tak "Server ...".
