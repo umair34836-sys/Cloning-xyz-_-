@@ -481,3 +481,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 
 ### 2026-11-02 09:00 UTC — [OWNER] Watcher off
 - Owner (session): "watcher off kerdo" → CronDelete a2e626b4. (Moderator follow-up send_later trig_019rKtYJF8NT98SKVnJe4sNB @ 11:44 UTC abhi bhi scheduled.)
+
+### 2026-11-02 08:36 UTC — [MANAGER] Survival world ki inventory alag
+- **Kisne kaha:** techshotgaming (Manager): "Server Survival world me Inventory alag honi chahiye"
+- **Kya kiya:** Multiverse-Inventories me naya group `survival` banaya, world `survival` add kiya, shares = all.
+- **Kaise:** `mvinv create-group survival` → `mvinv add-worlds survival survival` → `mvinv add-shares survival all` (create-group me shares direct dene par "no valid shares" error aaya, isliye alag steps).
+- **Result:** `mvinv info survival` → In Groups: survival; inventory/armor/ender_chest/xp/health/advancements sab lobby (hub) aur lifesteal groups se alag. Manager ko tellraw kiya.
