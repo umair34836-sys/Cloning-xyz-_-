@@ -299,3 +299,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Console:** `npc setlocation ls_shop -39.5 65 -8.5`, `ls_auction -39.5 65 -2.5` (air/floor verified), `npc setrotation <id> -90 0`; `npc action add playercommand <id> ANY_CLICK 1 0 shop|auctionhouse`. Stall labels (text_display ls_label at -36.4 66.6 -8.5 / -2.5) "Coming Soon" → "Click the NPC" (green). ENCHANTER/HEART SHOP labels unchanged (decision pending).
 - **Open risk:** lifesteal_lobby me default group `* false` — agar /shop ya /auctionhouse ka permission node hai to normal player ko deny hoga; non-op test chahiye. Skin owner decide karega.
 - **Crate fix Step A (sent):** owner tp -9.5 65 -37.5 (yaw 180); `/slimecrates remove` x -9.5/-5.5/-1.5/2.5/6.5/10.5 @ z-37.5 → "server done". Step B: pedestal ke upar khade ho kar set + console crate block.
+
+### 2026-11-02 04:55 UTC — [OWNER] Crate fix Step A done, Step B diya
+- **Owner:** `/slimecrates remove` ×6 + "server done". **Verify:** crate row area (x-15..15, z-45..-33) me 0 armor_stand → saare galat crates/holograms hat gaye.
+- **Step B (sent):** pedestal tops (x,66,-40) solid, (x,67/68,-40) air verified (x -10, 2, 10). Owner tp -9.5 67 -39.5; list: `/slimecrates set vote`, phir `/tp -5.5|-1.5|2.5|6.5|10.5 67 -39.5` + set common|rare|epic|legendary|heart. Done ke baad console: har (x,67,-40) par crate block setblock.
