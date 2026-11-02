@@ -757,3 +757,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - create_session → **session_01JK8TsAyYCgHr8UkEQo6Mqy "FCMC Mod Assistant — Marzarn"** (tags fcmc, fcmc-mod-assistant, mod-marzarn; no repo; prompt = FCMC_MOD_SESSION_PROMPT.md + extra context).
 - DMs: Marzarn usage guide, Techshot reminder (IGN techshotgaming confirm?), owner summary (Techshot rank moderator ya manager? sawal).
 - Techshot ka session/rank confirm hone tak pending.
+
+### 2026-11-02 16:37 UTC — [MANAGER] Manager ko Discord DM: Claude timing
+- **Kisne kaha:** Owner (Claude session chat)
+- **Kya kiya:** Manager (Techshot Gaming) ko Discord DM bheja ke Claude roz subah 7 baje public server par ON aur shaam 5 baje OFF hoga; "server ..." se kaam likhne ka tareeqa bhi bataya.
+- **Kaise:** FCMC connector `discord_find_member` → `discord_dm` (id 1376918464379359346).
+- **Result:** DM sent (message 1566853840567926827).
