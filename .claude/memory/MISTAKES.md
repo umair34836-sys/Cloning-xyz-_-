@@ -31,3 +31,7 @@ Format:
 - Kya hua: OP players dekhne ke liye console me `op list` chalaya. Vanilla me ops list command nahi hai; `op <name>` ne "list" naam ko OP de diya.
 - Fix: foran `deop list`.
 - Bachao: `op`/`deop`/`ban`/`whitelist add` jaisi commands kabhi "list/check" ke liye mat chalao. Ops dekhne ke liye panel me ops.json dekho ya owner se poocho.
+
+## 2026-11-02 — `/sc` alias GriefPrevention ka nikla
+- Kya hua: SlimeCrates ke liye console me `sc create ...` chalaya; `/sc` = GriefPrevention subdivideclaims alias. Sirf usage aaya, nuksan nahi. Owner ko pehle `/sc set` bataya, phir correction bheja.
+- Bachao: plugin alias use karne se pehle `bukkit:help <alias>` se owner plugin check karo; SlimeCrates ke liye `/slimecrates`.
