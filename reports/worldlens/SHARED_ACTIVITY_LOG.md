@@ -46,3 +46,4 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 06:49 UTC | MANAGER | manager | Manager ko spawn par TP | tp techshotgaming 675.5 71 57.5 | done
 2026-11-02 06:50 UTC | OWNER | owner (in-game) | PENDING: mods ko all commands (bypass/LuckPerms/op/stop ke bina) — owner confirm 'server haan mod perms' ka intezaar | plan msg | waiting owner
 2026-11-02 06:52 UTC | OWNER | owner (in-game 'server haan mod') | Mod rank ko sab commands; band: bypass (regex), LuckPerms, op/deop, stop, firecraft.owner | lp group mod permission set * true + negations | done
+2026-11-02 06:54 UTC | OWNER | owner (in-game) | Mods par Manager tag dikh raha tha (* -> group.manager). group.owner/manager/youtuber/builder/loyal/exposed false kiye; ab sirf Mod | lp group mod permission set group.X false | done
