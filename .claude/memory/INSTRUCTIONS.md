@@ -64,3 +64,4 @@ Format:
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
 - 2026-11-01: Owner ne kaha watcher off karo, kal 8 AM (PKT) on karna — cron delete + send_later trig_011pkGDMcsfThg671iFMVA9h.
 - 2026-11-02: Owner ne watcher 30 sec par manga; minimum 1 min hai — cron 2ea04e9d every minute; 8AM trigger delete.
+- 2026-11-02: Owner handover mode — ek-ek in-game kaam, owner ko jagah par tp karke batao, 'server done' ke baad agla. Queue FCMC_WORKLOG.md 04:00 entry me.

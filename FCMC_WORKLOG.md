@@ -261,3 +261,15 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kiya:** Discord DM (msg 1566650813416476763) me exact paste text: afk.yml → reward-time-seconds 60, roll-amount 1, reward 100% `shard give %player% 1`; TAB config.yml → enabled true + Shards line dono scoreboards me; phir /axafkzone reload, /tab reload. tellraw se bataya.
 - **Next:** owner "server shard done" bole to vanilla `fc_side` sidebar hatana (`scoreboard objectives setdisplay sidebar`) + test.
 - Note: `/shard setafk` (DonutShop AFK teleport location) = shayad wahi "AFK zone ke paas wali command" jo owner ko bataya gaya tha — owner ko abhi nahi bataya, confirm karna baqi.
+
+### 2026-11-02 04:00 UTC — [OWNER] Handover mode: ek-ek kaam, tp karke
+- **Kisne kaha:** Owner in-game: "mujhe one by one ek ek kaam handover kro also jahan jis jagha per kaam ho waha tp ker k bolo yaha ye kaam ker k done likho than dosra kam donga"
+- **Queue (owner in-game kaam):**
+  1. `/shard setafk` — AFK pool centre lifesteal_lobby 28.5 64 28.5 (zone ke andar, water y63-64) — **SENT 04:00, owner tp kiya**
+  2. `/setwarp afk` — pool north edge 28.5 65 21.5
+  3. Crates — pedestals z-40 y66, x -10/-6/-2/2/6/10 → `/slimecrates set vote|common|rare|epic|legendary|heart` (block ko dekh ke)
+  4. Holograms — `/hologram create ls_top_playtime|ls_top_hearts|ls_top_kills` (NE z-35 x21/28/35), phir main move + lines
+  5. NPCs (ZNPCsPlus) — ls_shop, ls_auction, ls_enchanter, ls_heartshop (W stalls -39.5 65, z -8.5/-2.5/3.5/9.5) — exact create syntax verify karke dena
+  6. Kits — items inventory me + `/createkit starter|warrior|archer|tank <delay>` (owner decide items/delay)
+- Panel-side (DM me bheja): afk.yml shard reward, TAB scoreboard Shards line.
+- Har kaam ke baad owner "server done" likhega → agla kaam + tp.
