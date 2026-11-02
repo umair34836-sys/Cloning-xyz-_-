@@ -738,3 +738,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Survival sky-lobby box ka biome Plains kiya (neeche wala snowy biome lobby tak tha, isliye snowfall); survival world weather abhi sun.
 - **Kaise:** `gamerule minecraft:max_block_modifications 2000000` → `execute in minecraft:survival run fillbiome 88 196 504 200 319 616 minecraft:plains` (26071 biome entries) → gamerule wapas 32768; Essentials `weather survival sun` (survival world ka weather cycle chalta rahega; lobby ke liye WG weather-lock clear pehle se).
 - **Result:** Done; biome change dikhne ke liye chunk reload (rejoin / portal se aana-jaana). Manager ko tellraw kiya.
+
+### 2026-11-02 10:19 UTC — [MANAGER] SW room 2 block ooncha (dono lobbies)
+- **Kisne kaha:** techshotgaming (Manager): "Server is room ki height 2 block upar kardo dono lobbies me" (manager survival lobby 124 202 580 par, SW building ke andar)
+- **Kya kiya:** SW building (survival x104-128 z576-600 / lifesteal_lobby x-40..-16 z16..40) ki roof (1 layer) + crimson fence ring 2 block upar shift; khaali hue 2 layers me top wall row copy → walls 2 block oonchi.
+- **Kaise:** Ceiling probe (survival y204 roof, y205 fence; lifesteal y68/69); upar khaali verify (`if blocks ... all` → air). Survival: `clone 104 204 576 128 205 600 104 206 576`, phir `clone 104 203 576 128 203 600` → y204 aur y205. Lifesteal (forceload add/remove): `clone -40 68 16 -16 69 40 -40 70 16`, phir y67 row → y68, y69.
+- **Result:** Survival shot me room ooncha dikh raha; lifesteal y70 par roof verify. Manager ko tellraw kiya.
