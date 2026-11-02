@@ -660,3 +660,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ka naya `lifesteal_portal` (HUB 14,151,-11 → 17,155,-8, w:lifesteal_lobby) ke upar 2 text_display: "LIFESTEAL" (red, bold, scale 3) aur "Enter the portal to go to Lifesteal" (white, scale 1.2), billboard center.
 - **Kaise:** `mvp info lifesteal_portal`; `execute in minecraft:overworld run summon minecraft:text_display 16 157.5 -9.5 {Tags:["portal_label","lifesteal_portal_label"],billboard:"center",transformation:{...scale:[3f,3f,3f]},text:{text:"LIFESTEAL",color:"red",bold:1b}}` + dusra 16 156.6 -9.5 scale 1.2.
 - **Result:** Dono entities maujood (16.5 157.5 -9.5 aur 16.5 156.6 -9.5). Manager ko tellraw kiya.
+
+### 2026-11-02 09:44 UTC — [MANAGER] Survival NPC delete + survival portal label
+- **Kisne kaha:** techshotgaming (Manager): "Server ab Survival wala npc bhi hata do and is portal par likh do Survival ,Enter tge portal to Go to syrvival"
+- **Kya kiya:** ZNPC `survival` delete. Manager ka `survival_portal` (HUB -2,151,-17 → 2,155,-17, w:survival) ke upar 2 text_display: "SURVIVAL" (#FF7A1A orange, bold, scale 3 — purane survival NPC ka rang) + "Enter the portal to go to Survival" (white, scale 1.2).
+- **Kaise:** `mvp info survival_portal`; `npc delete survival`; `execute in minecraft:overworld run summon minecraft:text_display 0.5 157.5 -16.5 {Tags:["portal_label","survival_portal_label"],...}` + 0.5 156.6 -16.5.
+- **Result:** NPC deleted, dono labels maujood (Pos verify). Manager ko tellraw kiya.
