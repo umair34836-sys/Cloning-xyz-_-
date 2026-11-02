@@ -466,3 +466,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Owner: "abhi bhi waise hi compass per jab right click ker raha ho to random tp ho raha ho fix it"
 - Check: owner inventory slot 4 = panel ka compass "Server Selector" (lore "Game mode chunne ke liye right-click karo") — mera carrot selector nahi. Owner overworld (HUB) 7.5 21 -231.5 (island ke neeche). HUB spawn 0.5 151 0.5 (mv info). co lookup commands: sirf /hub. Mera z6 chain band; z10/z12 isse match nahi karte.
 - Compass = panel side (Skript firecraft-hub.sk + DeluxeMenus selector.yml) → mera access nahi. Owner se controlled test maanga (/hub → right-click once → 'server test done').
+
+### 2026-11-02 08:34 UTC — [MANAGER] Naya 'survival' world + Survival NPC connect
+- **Kisne kaha:** techshotgaming (Manager): "Server Create a separate world using Multiverse Pluggin ,and Connect it to survival npc"
+- **Kya kiya:** Multiverse se naya world `survival` (NORMAL, random seed, key minecraft:survival, spawn 144 70 560) banaya. HUB ke ⚔ SURVIVAL ⚔ mannequin (tag npc_survival, 0.5 151 -17.3) ko proximity-join se connect kiya; NPC description "Coming Soon" → "▶ Paas aao = JOIN".
+- **Kaise:** `mv create survival NORMAL`. HUB (minecraft:overworld) me 0 100 -17 par repeating command block (auto): `execute as @a[x=0.5,y=151,z=-17.3,distance=..1.6,gamemode=!spectator] in minecraft:survival run spreadplayers 144 560 0 1 false @s` (spreadplayers surface par safe land karta hai — probe armor stand se test kiya, 143.5 71 561.5 survival world me aaya; probe hata diya, forceload remove).
+- **Result:** World ban gaya, command block chal raha hai (LastExecution update). Right-click join nahi (lifesteal wala Skript firecraft-hub.sk me hai, console se edit nahi ho sakta) — sirf paas aane par. Multiverse-Inventories grouping check nahi ki. Manager ko tellraw kiya.
