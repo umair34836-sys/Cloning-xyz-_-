@@ -69,3 +69,6 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 07:38 UTC | OWNER | owner (in-game) | Flamefrxg secret base ke liye secret lift: soul-sand bubble lift up + drop shaft down, surface trapdoors (coords SECRET, handled file me) | WE replace + fill/setblock, no redstone | done
 2026-11-02 07:45 UTC | OWNER | owner (in-game) | Flamefrxg secret base ki west side par villager hall (15 cells); purane trading hall ke 3 + base ke 10 = 13 villagers shift | WE + fill/setblock, tp villagers, data remove Brain memories | done
 2026-11-02 07:50 UTC | OWNER | owner (in-game) | Society plot4 (Itskillerxd1) same structure me sundar: dark oak hip roof, chimney, 8 khidkiyan, lanterns, gamle (andar ka chest/darwaza same) | fill/setblock | done
+2026-11-02 07:48 UTC | OWNER | owner (in-game) | Golden apple cooldown off: Skript fc-gapple-nocd.sk banayi (owner panel me paste karega) | file | waiting owner
+2026-11-02 07:50 UTC | OWNER | owner order (society hearts) | .Mr_shadow_6232 online aaya -> 5 hearts kate (Bedrock naam online hone par chal jata hai) | lifestealz hearts remove | done
+2026-11-02 07:55 UTC | OWNER | owner (in-game) | Society plot8 complete + decorate: upar ke kamre me darwaza, 42 glass panes, spruce hip roof, lanterns, gamle; dirt -> birch | fill/setblock, WE move | done

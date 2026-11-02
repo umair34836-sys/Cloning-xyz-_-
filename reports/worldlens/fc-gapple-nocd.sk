@@ -1,0 +1,11 @@
+# FireCraft: golden apple cooldown off (owner order 2 Nov 2026: "goolden apple ka cool down remove kerdo")
+# Kisi bhi plugin (jaise PvPManager combat item-cooldown) ka golden apple / enchanted golden apple cooldown
+# khaane ke 1 tick baad 0 kar deta hai.
+# Install: panel -> plugins/Skript/scripts/fc-gapple-nocd.sk me paste karo, phir console: sk reload fc-gapple-nocd
+
+on consume:
+    if event-item is golden apple or enchanted golden apple:
+        wait 1 tick
+        player is online
+        set item cooldown of golden apple for player to 0 ticks
+        set item cooldown of enchanted golden apple for player to 0 ticks
