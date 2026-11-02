@@ -648,3 +648,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ne Multiverse portal `lifesteal_portal` banaya (HUB 15,151,-11 → 15,155,-7, dest w:lifesteal_lobby). Uske upar text_display label lagaya; ZNPC `lifesteal` delete kiya.
 - **Kaise:** `mvp list` / `mvp info lifesteal_portal`; `execute in minecraft:overworld run summon minecraft:text_display 15.5 157 -8.5 {Tags:["portal_label","lifesteal_portal_label"],billboard:"center",text:{text:"❤ LIFESTEAL ❤",color:"#FF2A2A",bold:1b,extra:[{text:"\nEnter the portal to go to Lifesteal",color:"gray"}]}}`; `npc delete lifesteal`.
 - **Result:** Label maujood (Pos verify), NPC deleted. Manager ko tellraw kiya.
+
+### 2026-11-02 09:34 UTC — [MANAGER] Portal label + lifesteal_portal delete
+- **Kisne kaha:** techshotgaming (Manager): "Server Abhi text hatao ,And portal bhi delete karo ,Mai new portal bana raha hu"
+- **Kya kiya:** Portal ka text_display label hataya, Multiverse portal `lifesteal_portal` remove kiya (frame blocks nahi chhede).
+- **Kaise:** `minecraft:kill @e[type=minecraft:text_display,tag=lifesteal_portal_label]`; `mvp remove lifesteal_portal`.
+- **Result:** "Killed Text Display", "Portal lifesteal_portal was removed successfully!". Manager naya portal bana rahe hain.
