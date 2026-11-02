@@ -547,3 +547,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Teeno ZNPC purani mannequin jagah + skin + holo par set; lifesteal par click action; purane 3 mannequin (lifesteal, parkour, minigames) kill.
 - **Kaise:** parkour → setlocation 17.5 151 10.5, rot 120.5, skin GeorgeNotFound, holo "➶ PARKOUR" #55FF55 + Coming Soon. minigames → 0.5 151 14.5, rot 180, Skeppy, "✪ MINIGAMES" #00C2FF + Coming Soon. lifesteal → 17.5 151 -9.5, rot 59.5, Sapnap, "❤ LIFESTEAL" #FF2A2A + "▶ Click karo = JOIN", `npc action add consolecommand lifesteal ANY_CLICK 2 0 execute as {player} in minecraft:lifesteal_lobby run tp @s 0.5 65 0.5 0 0` (lifesteal_lobby spawn). `minecraft:kill @e[type=minecraft:mannequin,tag=lobby_npc,tag=!npc_event]` → 3 killed.
 - **Result:** Done. Event pending (manager create). Lifesteal proximity Skript (firecraft-hub.sk) agar mannequin par depend nahi karta to ab bhi chal sakta hai — console se check/edit nahi ho sakta.
+
+### 2026-11-02 08:57 UTC — [MANAGER] ZNPCs migration step 4: event (complete)
+- **Kisne kaha:** techshotgaming (Manager) — ZNPCs migration request ka follow-up (unhone `/znpcs create event player` chalaya).
+- **Kya kiya:** ZNPC `event` set; purana ★ EVENT mannequin kill. Ab koi lobby_npc mannequin nahi bacha.
+- **Kaise:** `npc setlocation event -17.5 151 10.5`, `npc setrotation event -119 0`, `npc skin event static Notch`, holo "★ EVENT" #FFD21A bold + "Coming Soon"; `minecraft:kill @e[type=minecraft:mannequin,tag=npc_event]`.
+- **Result:** Saare 6 HUB lobby NPC (survival, lifesteal, parkour, minigames, event, pvp_practice) ZNPCsPlus par. Click actions sirf survival + lifesteal par. Manager ko test karne ko kaha.
