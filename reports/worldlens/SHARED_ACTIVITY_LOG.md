@@ -1,0 +1,37 @@
+# FireCraft SMP — Shared Activity Log (sab sessions ke liye)
+
+Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared rakho ta k her ek session ko pata ho k kia kaam howa hai kab howa hai or kaise howa hai kisne kiya hai".
+
+**Location:** repo `umair34836-sys/Cloning-xyz-_-`, branch `claude/wonderful-gauss-mujftu`, file `reports/worldlens/SHARED_ACTIVITY_LOG.md`.
+
+## Sessions
+| Session | Kiska helper | ID |
+|---|---|---|
+| OWNER (main) | MrCopper804 (owner) — is file ka maintainer | session_01JK8Ts8Ab95UeDAUgd1A3ad |
+| MANAGER helper | techshotgaming (manager) | session_01JK8Ts7NMHc36nUNv8QHm8r |
+| MOD-MARZARN helper | Marzarn (Mod) | session_01JK8Ts9yGZHrjYDFhhbQaMX |
+| MOD-NOTKARTIK helper | Notkartik (Mod) | session_01JK8TsBbzwNtSTSvJbPXNk7 |
+
+## Rules (har session)
+1. **Kaam se PEHLE padho:** `git fetch origin claude/wonderful-gauss-mujftu && git show origin/claude/wonderful-gauss-mujftu:reports/worldlens/SHARED_ACTIVITY_LOG.md | tail -40` — taake pata ho kisne kya kiya (double kaam / ek doosre ka build todna na ho).
+2. **Kaam ke BAAD likho** — ek line, neeche wale format me.
+   - Agar tum is branch par push kar sakte ho: append + commit + push.
+   - Agar push block ho (child sessions): wahi line `send_message` se **@parent (OWNER session)** ko bhejo, prefix `SHARED_LOG:` — OWNER session use yahan append karke push karega.
+3. Sirf chhoti summary. Secrets/IP/backup-IP/email kabhi nahi.
+
+## Format
+`YYYY-MM-DD HH:MM UTC | SESSION | requested by | KYA kiya | KAISE (commands/coords) | status`
+
+## Log
+2026-11-01 13:35 UTC | OWNER | owner | Server file-permission problem (11:46–~13:30) fix ke baad check: data safe, CoreProtect history wapis | worldlens checks (playtime/hearts/LP/whitelist/castle) | done
+2026-11-01 13:38 UTC | OWNER | owner | maintenance off | `maintenance off` | done
+2026-11-01 13:42 UTC | OWNER | owner | Discord #smp-announcements @everyone: server fixed, data safe, join karke check karo | Discord embed | done
+2026-11-01 13:54 UTC | OWNER | owner (in-game "server haan") | Bhanje (.UBRotheRR7537) ke liye god kit | chest 5512,81,-62 slots 12-24, maxed netherite + bow/shield/2 totem/16 gapple | done
+2026-11-01 13:57 UTC | OWNER | owner | God kit par gold silence trim + naam "UBRotheRR God ..." + lore Owner | item replace same chest | done
+2026-11-01 14:02 UTC | OWNER | owner | Mr shadow ko Discord DM: Bedrock join steps, play.firecraft.fun port 20028 (correction) | discord_dm | done
+2026-11-02 03:00 UTC | OWNER | owner | In-game owner watcher ON (har minute, "server ..." orders) | CronCreate | running
+2026-11-02 06:35 UTC | OWNER | manager→owner haan | LuckPerms group `mod` banaya: displayname Mod, prefix &6&l[Mod], weight 500, perms minecraft.command.teleport/tp | lp creategroup/setprefix/permission set | done (tempban/mute/warn: koi plugin nahi; spectator-only gamemode possible nahi)
+2026-11-02 06:38 UTC | OWNER | manager→owner haan | Marzarn + Notkartik ko Mod rank | lp user <ign> parent add mod | done
+2026-11-02 06:38 UTC | OWNER | owner | 2 mod helper sessions banaye (Marzarn, Notkartik) — worldlens only, mod ki had tak + builds | create_session | running
+2026-11-02 06:40 UTC | OWNER | manager | PENDING: mods ko food + maxed diamond armor — owner ka haan baqi | — | waiting owner
+2026-11-02 06:45 UTC | OWNER | owner | Ye shared log file banayi, sab sessions ko bataya | Write + push | done
