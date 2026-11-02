@@ -222,6 +222,18 @@ Website/store se coin kharidne par server console command chalni chahiye:
 `points give <player> <amount>` (PlayerPoints). Store (Tebex/website) me yahi command set karo.
 Crate keys website se: `slimecrates key <player> <rare|epic|legendary|heart> <amount>`.
 
+## 7b. /hub aur /lobby commands (alias)  `[ ]`
+Warps console se ban chuke hain (`/warp hub`, `/warp lobby`, crates, shop, kits, afk, pvp, leaderboards, rtp) aur `/spawn` = lifesteal lobby. Essentials me `/hub` command nahi hoti, isliye Bukkit alias banana hai.
+**File:** server root `commands.yml` → `aliases:` ke neeche add karo:
+```yaml
+aliases:
+  hub:
+  - "warp hub"
+  lobby:
+  - "warp lobby"
+```
+Phir server restart (ya console `reload commands` agar available ho). Permission underlying `/warp` wali lagti hai (default players ke liye lobby/hub/lifesteal sab jagah allow kar di gayi hai).
+
 ## 8. Baqi owner decisions / panel kaam
 - [ ] Maintenance OFF kab karna hai (launch)
 - [ ] Discord invite link (server-ip / welcome me)
