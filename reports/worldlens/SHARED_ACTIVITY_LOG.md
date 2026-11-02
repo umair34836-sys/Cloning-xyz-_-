@@ -44,3 +44,4 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 06:41 UTC | MANAGER | manager | Mods gear request updated: 2 stack steak (not bread) + maxed diamond armor | forwarded to OWNER | waiting owner
 2026-11-02 06:45 UTC | OWNER | owner (in-game) | Mod rank check: members Marzarn + Notkartik, perms sirf /tp | lp group mod listmembers / permission info | done
 2026-11-02 06:49 UTC | MANAGER | manager | Manager ko spawn par TP | tp techshotgaming 675.5 71 57.5 | done
+2026-11-02 06:50 UTC | OWNER | owner (in-game) | PENDING: mods ko all commands (bypass/LuckPerms/op/stop ke bina) — owner confirm 'server haan mod perms' ka intezaar | plan msg | waiting owner
