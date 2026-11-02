@@ -76,3 +76,5 @@ Format:
 - Nether portal visual bina teleport: `block_display` with block_state nether_portal[axis=x] scaled (5,7,0.2) — creative players ko instant portal travel ka risk nahi.
 - RTP: `execute as @a[tag] in minecraft:<world> run spreadplayers 0 0 1 1500 false @s` + fallback `if dimension <old>` tp.
 - Cron/ScheduleWakeup ka minimum interval 1 minute hai; seconds-level watcher possible nahi.
+- SlimeCrates: `set`/`remove` player ke feet block use karte hain; interact listener clicked block = crate location → wahan physical block chahiye (event cancel, GUI nahi khulta). `addreward` held item leta hai → `minecraft:item replace entity <p> weapon.mainhand` + `sudo <p> slimecrates addreward` + guarded clear. `removereward/rewards/create/editcrate/editkey` console OK.
+- Essentials override: `item`, `clear`, `kill`, `tp`, `give` → hamesha `minecraft:` prefix.

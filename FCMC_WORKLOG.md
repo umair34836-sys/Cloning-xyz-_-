@@ -316,3 +316,16 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Ab 6 pedestals par 6 chests = 6 crates. Interact listener event cancel karta hai (chest GUI nahi). Owner ko right-click test karne ko kaha.
 - `slimecrates rewards vote` → diamond 50% / iron 50% (default); console se list hoti hai, `removereward <crate> <id>`.
 - **Next (owner decision):** har crate ke rewards — owner se poocha khud batayenge ya main research list banaun.
+
+### 2026-11-02 05:45 UTC — [OWNER] Crates original design par + rewards (research)
+- **Kisne kaha:** Owner: "research k according kaam kro or khod daal k set ker dena also ye chests ki jagha chest ko redesign kro jaise pehle ache se designed tha ... design kharab mat kro"
+- **Design fix:** original build (scratchpad ls/zones.txt): y66 = crate blocks (vote ender_chest, common barrel[up], rare blue_shulker, epic purple_shulker, legendary yellow_shulker, heart red_shulker) on chiseled_polished_blackstone y65 + walls/lanterns. Mere chests (y67) `fill ... air replace chest` se hataye. Vote ender chest 0.875 tall → vote pehle se y66 tha. Baaki 5: owner tp (x+0.5,67,-39.5) → `sudo slimecrates remove` → crate block air → owner tp (x+0.5,66,-39.5) → `sudo slimecrates set <c>` → owner tp bahar → block restore. Sab holograms ab (x+0.5, 68, -39.5).
+- **Rewards:** research Torrent wiki (vote/rare/legendary/heart crates) + HeartSMP (tiered crates). Console `slimecrates removereward <c> diamond|iron` (defaults hata). Har reward: `execute unless items entity MrCopper804 weapon.mainhand * run minecraft:item replace ... with <item>` → `sudo MrCopper804 slimecrates addreward <c> <chance>` → `execute if items ... <item> run minecraft:item replace ... air` (owner ka koi item touch nahi). Heart items: `lifestealz giveItem MrCopper804 defaultheart|revive N silent` → hotbar.3 → mainhand.
+  - VOTE: gapple2 25, iron16 25, diamond3 15, xp16 20, pearl8 15
+  - COMMON: iron32, diamond5, gapple4, xp32, pearl16 (20 each)
+  - RARE: dia sword S3U3 15, dia chest P3U3 15, diamond16 20, totem 15, xp64 20, gapple8 15
+  - EPIC: dia block8 20, netherite ingot 15, god apple 15, dia sword S5U3FA2 15, dia chest P4U3 15, totem 20
+  - LEGENDARY: neth block 10, dia block32 20, god apple3 15, neth sword S5U3L3M 15, neth chest P4U3M 15, elytra 10, totem 15
+  - HEART: heart1 55, heart2 25, heart3 12, revive beacon 8
+- Gotchas: `item` = Essentials (use `minecraft:item`); totem stack 1 (x2 fail → hand empty → addreward kuch add nahi kiya).
+- **Pending (owner decision):** keys kaise milein (VotingPlugin vote reward, AFK, shop); key rewards crates me nahi (physical key hand me lana mushkil).
