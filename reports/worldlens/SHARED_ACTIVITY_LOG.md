@@ -79,3 +79,4 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 12:25 UTC | MANAGER | techshotgaming | Manager ko spawn par TP (self) | tp techshotgaming 675 70 57 | done
 2026-11-02 12:26 UTC | OWNER | manager helper query | Manager ne RudraJUSTGOD/XREAMxPRO ko spawn TP maanga -> OWNER session ne MANA kiya (owner 07:06 rule: "server not event tp", manager aise commands na de); owner offline, unke permission ke bina nahi | send_message | denied
 2026-11-02 12:29 UTC | MANAGER | techshotgaming | Public chat me spawn coords (675 70 57) | console say | done
+2026-11-02 12:30 UTC | OWNER | manager helper query | Manager ne galti se Flamefrxg ka birch_sign (657,70,-44) toda; helper ne co rollback maanga -> OWNER session: rollback NO (owner offline, rule); manual setblock se sign wapis lagane ki ijazat | send_message | manual fix allowed
