@@ -235,3 +235,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** Owner in-game: "server tum khod plugins dekho or check kroo us hisaab se setup kro naa apne andaze se maat kro kuch"
 - **Kya kiya:** AxAFKZone ka source (github.com/Artillex-Studios/AxAFKZone) padha: `create` sirf Player chala sakta hai aur selection WandListeners (PlayerInteractEvent, wand se left/right block click) se banti hai — console se zone nahi ban sakta. Zone file `zones/<name>.yml` (messages, bossbar, permission, reward-time-seconds, roll-amount, rewards, zone.location1/2).
 - **Owner ko (tellraw):** wand de doon, owner 2 corner click kare, baqi create/rewards/warp main karunga; aur poocha ke kya "setup" se matlab saare pending kaam (crates, NPCs, holograms, kits) hai. Jawab ka intezar.
+
+### 2026-11-02 03:30 UTC — [OWNER] Background commands chat me na dikhein
+- **Kisne kaha:** Owner in-game: "ye command kisi ko na dekhay k kaise sub pichay ho raha hai bus serf front wala dekhay"
+- **Kya kiya:** `gamerule minecraft:command_block_output false` — overworld(HUB), the_nether, the_end, lifesteal_lobby, lifesteal, lifesteal_nether, lifesteal_the_end. `gamerule minecraft:log_admin_commands false` — overworld, lifesteal_lobby, lifesteal.
+- **Result:** Command block / admin command feedback chat me broadcast nahi hoga; tellraw (front) messages waise hi. Owner ko in-game check karne ko kaha.
