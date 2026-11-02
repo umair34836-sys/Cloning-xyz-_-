@@ -678,3 +678,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** #🛡️┃staff-chat me owner ko follow-up ping.
 - **Kaise:** `discord_send_message` 1566039466676719750: "<@1556195237083353191> Techshot ne kaha: public server me aana, private server me nahi. (sent by Claude)".
 - **Result:** Sent; manager ko tellraw kiya.
+
+### 2026-11-02 09:50 UTC — [MANAGER] Survival lobby (lifesteal jaisi) — clarification + owner confirm pending
+- **Kisne kaha:** techshotgaming (Manager): "Server Ab Survival me bhi Lifesteal jaisi hi lobby banado bas uska naam \"survival\" rakhna \"survival_lobby\" nahi"
+- **Kya kiya:** Abhi koi change nahi. Plan: `mv clone lifesteal_lobby survival` — lekin `survival` world pehle se hai (2 Nov ko manager request par banaya), use delete karna padega = world delete → owner confirm zaroori. Manager se poocha: asli survival gameplay ke liye alag world chahiye ya nahi.
+- **Kaise:** `mv info lifesteal_lobby` (ADVENTURE, spawn 0.5 65 0.5); tellraw techshotgaming.
+- **Result:** Pending — manager ka jawab + owner (MrCopper804) ki in-game "haan" ka intezaar.
