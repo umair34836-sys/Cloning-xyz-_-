@@ -33,3 +33,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Owner jab 'server ka data' maange to sirf FCMC connector (mcp__FCMC__*) ka data do; firecraft panel = FireCraft SMP website, FCMC nahi.
 - 2026-11-02: Owner: background commands kisi ko chat me na dikhein — command_block_output + log_admin_commands OFF rakho.
 - 2026-11-02: Owner: saare panel/plugin/file wale kaam FCMC_PANEL_SETUP.md me likhte raho (owner doosre AI se karwayega). 1 coin = 1 PKR (PlayerPoints).
+- Economy rule (owner): balance/shards/coins value bahut high; hearts sabse mehnge (heart shop: 1=500 coins).

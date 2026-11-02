@@ -371,3 +371,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 ### 2026-11-02 07:15 UTC — [OWNER] Kits NPC done + baqi decisions poochay
 - Owner ne `/npc create ls_kits player` chalaya. Console: `npc setlocation ls_kits 40.5 65 0.5`, `setrotation 90 0` (west face), holo "&e&lKITS SHOP" + "&7Click to buy kits", action `playercommand ls_kits ANY_CLICK 1 0 kitshop` (DeluxeMenus kitshop.yml panel se pending).
 - Owner se poocha: (1) HEART SHOP NPC → `/shard shop`? (2) ENCHANTER stall → enchanting table setup ya hata dein? (3) ajLeaderboards panel install (setup file) (4) market NPC skins.
+
+### 2026-11-02 07:30 UTC — [OWNER] 1-4 decisions (Claude decide) + heart shop + economy rule
+- **Owner:** "1 se le ker 4 tak tum decide kerlo also heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high rehni chaye or file me ye bhi likho k hamare server ka balance shards coins subki value bhot high rahegii ta k koi..."
+- **Kiya:** NPCs `npc type <id> villager` + `npc property set <id> villager_profession WEAPON_SMITH|CARTOGRAPHER|ARMORER` (ls_shop|ls_auction|ls_kits) — enum ZNPCsPlus source se.
+- FCMC_PANEL_SETUP.md: section 0 ECONOMY RULE (balance/shards/coins value high, hearts sabse mehnge), 6b HEART SHOP (1 heart 500 coins, 3 hearts 1400; DeluxeMenus heartshop.yml, `lifestealz giveItem %player_name% defaultheart N`), section 8 update (NPC skins = villagers; enchanter = table+bookshelves).
+- Owner tp -36.5 65 9.5 (HEART SHOP stall, air verified) → `/npc create ls_heartshop player`.
+- **Issue mila:** mvinv `lifesteal_lobby` group = "lobby" (HUB ke saath) → lobby me crates/shop/kits/hearts se mile items lifesteal world me nahi jayenge, lifesteal keys lobby crates par nahi. Fix proposal: lifesteal_lobby ko "lifesteal" group me — owner confirm maanga ("server inv ok").

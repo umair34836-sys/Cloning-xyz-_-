@@ -11,6 +11,12 @@ Har item me: kya karna hai, kaunsi file, exact text, aur baad me kya command cha
 
 ---
 
+## 0. ECONOMY RULE (owner ka faisla — har setup me yaad rakhna)  
+Server ka **balance (money), shards aur coins — sab ki value bahut HIGH rakhni hai**, taake koi bhi cheez asaani se na mile.
+Shop/sell prices, AFK/vote rewards, crate chances — sab isi hisaab se tight rakhne hain. **Hearts sabse mehngi cheez** hain.
+
+---
+
 ## 1. AFK zone: har 1 minute = 1 Shard  `[ ]`
 **File:** `plugins/AxAFKZone/zones/afk.yml` (zone "afk" lifesteal_lobby AFK pool par ban chuka hai)
 
@@ -151,6 +157,64 @@ items:
 Phir in-game: `/dm reload`. (Kits area NPC ka click action Claude `kitshop` menu par set kar dega.)
 > Note: DeluxeMenus syntax aur PlayerPoints `points take` ek baar test karna — kits ban jane ke baad.
 
+
+## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
+Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
+| Item | Price |
+|---|---|
+| 1 Heart | 500 coins |
+| 3 Hearts | 1400 coins |
+
+**File:** `plugins/DeluxeMenus/gui_menus/heartshop.yml` + `config.yml` me `heartshop: { file: heartshop.yml }`
+```yaml
+menu_title: '&4&lHEART SHOP'
+open_command: heartshop
+size: 27
+items:
+  heart1:
+    material: NETHER_STAR
+    slot: 11
+    display_name: '&c&l1 Heart'
+    lore:
+      - '&ePrice: &f500 Coins'
+      - '&7Your coins: &f%playerpoints_points%'
+    left_click_requirement:
+      requirements:
+        coins:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '500'
+      deny_commands:
+        - '[message] &cCoins kam hain! Website se coins lo.'
+    left_click_commands:
+      - '[console] points take %player_name% 500'
+      - '[console] lifestealz giveItem %player_name% defaultheart 1'
+      - '[message] &a+1 Heart mil gaya!'
+      - '[close]'
+  heart3:
+    material: NETHER_STAR
+    amount: 3
+    slot: 15
+    display_name: '&c&l3 Hearts'
+    lore:
+      - '&ePrice: &f1400 Coins'
+      - '&7Your coins: &f%playerpoints_points%'
+    left_click_requirement:
+      requirements:
+        coins:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1400'
+      deny_commands:
+        - '[message] &cCoins kam hain! Website se coins lo.'
+    left_click_commands:
+      - '[console] points take %player_name% 1400'
+      - '[console] lifestealz giveItem %player_name% defaultheart 3'
+      - '[message] &a+3 Hearts mil gaye!'
+      - '[close]'
+```
+Phir `/dm reload`. (`lifestealz giveItem <player> defaultheart <n>` console se test ho chuka hai.) HEART SHOP NPC Claude lagayega (click = `heartshop`).
+
 ## 7. Website coins → server  `[ ]`
 Website/store se coin kharidne par server console command chalni chahiye:
 `points give <player> <amount>` (PlayerPoints). Store (Tebex/website) me yahi command set karo.
@@ -161,7 +225,7 @@ Crate keys website se: `slimecrates key <player> <rare|epic|legendary|heart> <am
 - [ ] Discord invite link (server-ip / welcome me)
 - [ ] Backups (panel par automatic backup schedule)
 - [ ] LifeStealZ ko sirf lifesteal worlds tak limit (`plugins/LifeStealZ/config.yml` → worlds setting; config paste karo to exact line bataunga)
-- [ ] ENCHANTER aur HEART SHOP NPC kya kholenge (koi plugin abhi nahi)
-- [ ] Market NPC skins (kaunsi skin)
+- [x] Market NPCs: villager type (shop=weapon smith, auction=cartographer, kits=armorer) — skin ki zaroorat nahi
+- [ ] ENCHANTER stall: enchanting table + bookshelves (Claude banayega)
 - [ ] Baqi 4 lobbies (SURVIVAL, PARKOUR, PVP PRACTICE, MINIGAMES, EVENT — abhi "Coming Soon")
 - [ ] PvP arena (`ls_pvp_arena`) in-game test
