@@ -654,3 +654,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Portal ka text_display label hataya, Multiverse portal `lifesteal_portal` remove kiya (frame blocks nahi chhede).
 - **Kaise:** `minecraft:kill @e[type=minecraft:text_display,tag=lifesteal_portal_label]`; `mvp remove lifesteal_portal`.
 - **Result:** "Killed Text Display", "Portal lifesteal_portal was removed successfully!". Manager naya portal bana rahe hain.
+
+### 2026-11-02 09:39 UTC — [MANAGER] Naye lifesteal portal par bada laal LIFESTEAL text
+- **Kisne kaha:** techshotgaming (Manager): "Server Ab is portal ke aage Red colour me bada sa Lifesteal likh do and likh do Enter tge portal to Go to Lifesteal"
+- **Kya kiya:** Manager ka naya `lifesteal_portal` (HUB 14,151,-11 → 17,155,-8, w:lifesteal_lobby) ke upar 2 text_display: "LIFESTEAL" (red, bold, scale 3) aur "Enter the portal to go to Lifesteal" (white, scale 1.2), billboard center.
+- **Kaise:** `mvp info lifesteal_portal`; `execute in minecraft:overworld run summon minecraft:text_display 16 157.5 -9.5 {Tags:["portal_label","lifesteal_portal_label"],billboard:"center",transformation:{...scale:[3f,3f,3f]},text:{text:"LIFESTEAL",color:"red",bold:1b}}` + dusra 16 156.6 -9.5 scale 1.2.
+- **Result:** Dono entities maujood (16.5 157.5 -9.5 aur 16.5 156.6 -9.5). Manager ko tellraw kiya.
