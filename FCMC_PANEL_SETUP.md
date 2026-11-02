@@ -66,17 +66,17 @@ Ye item ke andar save nahi hai, sirf display hai — shayad DonutShop ka worth d
 - **Install:** ajLeaderboards (Spigot/Modrinth) → restart. (LifeStealZ me top-player placeholder nahi hai, isliye zaroori.)
 - Install ke baad Claude ko batao — wo FancyHolograms se lifesteal_lobby NE boards (x 21/28/35, z -35) par holograms lagwayega.
 
-## 6. Paid KITS (coins se)  `[ ]` — prices owner approve kare
-**Starter kit** ho chuka hai: stone tools + 5 steak, har 24h free (`/kit starter`).
+## 6. Paid KITS (coins se)  `[ ]` — kits ban gaye, sirf sale menu baqi
+**Starter kit** `[x]`: stone sword/pickaxe/axe/shovel + 5 steak, har 24h free (`/kit starter`, lifesteal world).
 
-**Proposal (owner confirm kare):**
-| Kit | Items (proposal) | Price |
+Owner: "pehla sasta, phir price ke saath items behtar" → Claude ne decide kiya (badalna ho to owner bataye):
+| Kit | Items (in-game ban chuka `[x]`, delay 0) | Price |
 |---|---|---|
-| Warrior | full iron armor (Prot I), iron sword (Sharp II), 16 steak, 4 golden apple | 150 coins |
-| Archer | full chainmail armor (Prot I), bow (Power III, Punch I), 64 arrows, 16 steak | 150 coins |
-| Tank | full diamond armor (Prot II), shield, diamond sword (Sharp I), 8 golden apple, 16 steak | 300 coins |
+| Archer | chainmail armor (Prot I), bow (Power III, Punch I), 64 arrows, 16 steak | 100 coins |
+| Warrior | iron armor (Prot I), iron sword (Sharp II), 4 golden apple, 16 steak | 200 coins |
+| Tank | diamond armor (Prot II), diamond sword (Sharp I), shield, 8 golden apple, 16 steak | 350 coins |
 
-**Kits banana:** in-game Claude karega (`/createkit` owner ki khali inventory se). Normal players ko `essentials.kits.warrior|archer|tank` permission **mat** dena (warna free mil jayega).
+Paid kits ka delay 0 hai (cooldown hota to coins kat kar kit na milne ka risk). Normal players ko `essentials.kits.warrior|archer|tank` permission **mat** dena (warna free mil jayega).
 
 **Sale menu — `plugins/DeluxeMenus/gui_menus/kitshop.yml`** (naya file) + `plugins/DeluxeMenus/config.yml` me `gui_menus:` ke neeche `kitshop: { file: kitshop.yml }`:
 ```yaml
@@ -90,18 +90,18 @@ items:
     display_name: '&f&lWarrior Kit'
     lore:
       - '&7Iron armor + sword + food'
-      - '&ePrice: &f150 Coins'
+      - '&ePrice: &f200 Coins'
       - '&7Your coins: &f%playerpoints_points%'
     left_click_requirement:
       requirements:
         coins:
           type: '>='
           input: '%playerpoints_points%'
-          output: '150'
+          output: '200'
       deny_commands:
         - '[message] &cCoins kam hain! Website se coins lo.'
     left_click_commands:
-      - '[console] points take %player_name% 150'
+      - '[console] points take %player_name% 200'
       - '[console] kit warrior %player_name%'
       - '[message] &aWarrior kit mil gaya!'
       - '[close]'
@@ -111,18 +111,18 @@ items:
     display_name: '&a&lArcher Kit'
     lore:
       - '&7Chainmail + bow + arrows'
-      - '&ePrice: &f150 Coins'
+      - '&ePrice: &f100 Coins'
       - '&7Your coins: &f%playerpoints_points%'
     left_click_requirement:
       requirements:
         coins:
           type: '>='
           input: '%playerpoints_points%'
-          output: '150'
+          output: '100'
       deny_commands:
         - '[message] &cCoins kam hain! Website se coins lo.'
     left_click_commands:
-      - '[console] points take %player_name% 150'
+      - '[console] points take %player_name% 100'
       - '[console] kit archer %player_name%'
       - '[message] &aArcher kit mil gaya!'
       - '[close]'
@@ -132,18 +132,18 @@ items:
     display_name: '&b&lTank Kit'
     lore:
       - '&7Diamond armor + shield + gapples'
-      - '&ePrice: &f300 Coins'
+      - '&ePrice: &f350 Coins'
       - '&7Your coins: &f%playerpoints_points%'
     left_click_requirement:
       requirements:
         coins:
           type: '>='
           input: '%playerpoints_points%'
-          output: '300'
+          output: '350'
       deny_commands:
         - '[message] &cCoins kam hain! Website se coins lo.'
     left_click_commands:
-      - '[console] points take %player_name% 300'
+      - '[console] points take %player_name% 350'
       - '[console] kit tank %player_name%'
       - '[message] &aTank kit mil gaya!'
       - '[close]'

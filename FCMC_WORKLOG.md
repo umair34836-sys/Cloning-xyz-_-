@@ -352,3 +352,13 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "1 coins = 1pkr alsoo jo jo or plugins etc chaye subki ek saath ek file me likhte rahoo baad me ,me wo file apne dosre ai ko de ker usse wo wala setup apne pc se ker donga"
 - **Kiya:** `FCMC_PANEL_SETUP.md` banaya — saare console-se-na-hone-wale kaam ek jagah: AFK shard (afk.yml), TAB Shards, vote key (Votifier + VoteSites.yml), $ display (DonutShop config pending), ajLeaderboards, paid kits (proposal Warrior 150 / Archer 150 / Tank 300 coins + DeluxeMenus kitshop.yml), website → `points give`, owner decisions. Kit price research me pakka standard nahi mila → proposal, owner approve kare.
 - **Rule:** aage har naya panel/file kaam isi file me add karna.
+
+### 2026-11-02 06:55 UTC — [OWNER] Paid kits bane (Archer/Warrior/Tank)
+- **Owner:** "tum khod decide kro pehla sasta than money bharatay raho ... jaise coins perhtay rahay waise waise jizay bhi achi hoti jai also bana ker dedo agher koi changes kerni hogi to me bata donga"
+- **Kiya:** owner inventory khali verify → har kit: `minecraft:item replace` items → `sudo MrCopper804 createkit <kit> 0` → `minecraft:clear MrCopper804` (85/25/30 items = exactly mere dale hue).
+  - ARCHER (100): chainmail P1 x4, bow Power3 Punch1, 64 arrows, 16 steak
+  - WARRIOR (200): iron armor P1 x4, iron sword Sharp2, 4 gapple, 16 steak
+  - TANK (350): diamond armor P2 x4, diamond sword Sharp1, shield, 8 gapple, 16 steak
+  - Pehle archer 86400 delay se bana, `delkit archer` karke delay 0 (paid = purchase limit; cooldown me coins kat ke kit fail ho sakta tha).
+- Players ko essentials.kits.warrior/archer/tank NAHI diya. `kit` list: Starter Warrior Archer Tank (+ purane Firework Color Notch Dtools Tools).
+- FCMC_PANEL_SETUP.md section 6 update (prices 100/200/350 + DeluxeMenus menu).
