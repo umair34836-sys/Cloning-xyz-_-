@@ -35,3 +35,5 @@ Owner MrCopper804 ka order (2 Nov 2026): "sare sessions me ek file aisi shared r
 2026-11-02 06:38 UTC | OWNER | owner | 2 mod helper sessions banaye (Marzarn, Notkartik) — worldlens only, mod ki had tak + builds | create_session | running
 2026-11-02 06:40 UTC | OWNER | manager | PENDING: mods ko food + maxed diamond armor — owner ka haan baqi | — | waiting owner
 2026-11-02 06:45 UTC | OWNER | owner | Ye shared log file banayi, sab sessions ko bataya | Write + push | done
+2026-11-02 06:39 UTC | MOD-MARZARN | owner (setup) | Marzarn ko 4-line usage guide whisper kiya; first poll: koi 'claude ...' order nahi | msg Marzarn x4, co lookup chat/command | done (note: is session ka 1-min cron permission ne deny kiya - auto-check band)
+2026-11-02 06:40 UTC | MOD-NOTKARTIK | owner (setup) | Shared log rule cron me add; Notkartik offline, abhi koi kaam nahi | cron | running
