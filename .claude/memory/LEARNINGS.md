@@ -39,3 +39,12 @@ Format:
 - `video.talkember.site` ko bhi network allowlist karna pada.
 - **gallery re-test (2026-10-24)**: HSTS+CSP added, /api/health version removed, from-url ab auth-first 401 (SSRF ordering fixed). Sab injection/path-traversal probes 401 (auth-first). Baaki IDOR + temp-link = authenticated-only, test account ke baghair verify nahi.
 - **FCMC manager session (2026-11-01)**: Connector naam badal sakte hain mid-session. `mcp__FCMC__*` = FCMC server (worlds HUB/HUB_nether/HUB_the_end); `mcp__worldlens__*` = FireCraft SMP (world/world_nether). Har bar `worldlens_status` me worlds dekh kar confirm karo. Manager techshotgaming kabhi "Claude"/"Jarvis" se shuru karta hai — rule sirf "server" prefix; unclear ho to owner se poocho.
+
+## FCMC/HUB learnings (2026-11-02)
+- Cross-world copy: `clone from minecraft:<src> x1 y1 z1 x2 y2 z2 to minecraft:<dst> x y z` (raise gamerule max_block_modifications first, forceload both areas; `execute if blocks` is hard-capped 32768).
+- ZNPCsPlus v2: `npc create` console se nahi chalta (player chahiye). Actions: `npc action add consolecommand <id> ANY_CLICK <cooldown> <delayTicks> <cmd>`; player name ke liye `%player_name%` (PlaceholderAPI) use karo.
+- HUB me naye `minecraft:mannequin` summon hote hi gayab (koi plugin/Skript hata raha hai).
+- Chorus plant rule: jis block ke side me chorus_plant ho, uske upar ya neeche air chahiye — branches sirf stalk ke top se.
+- Multiverse-Portals: `mvp create` in-game (WorldEdit selection); console se `mvp info/remove/modify <p> action e:world:x,y,z`.
+- Cross-dimension safe surface tp: `execute as <p> in <dim> run spreadplayers x z 0 1 false @s`.
+- Don't use `execute as <player> run say` for testing (broadcasts as that player).
