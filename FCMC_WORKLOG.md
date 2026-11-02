@@ -218,3 +218,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Pending:** slimecrates 0 crates; ZNPCsPlus NPCs 0; FancyHolograms 0; kits Starter/Warrior/Archer/Tank nahi (sirf Firework Color Notch Dtools Tools); Maintenance ON; Discord invite link; 4 lobbies; Duels/BetterRTP (optional).
 - **Verify nahi ho saka:** AFK zone, Votifier port, backups, LifeStealZ worlds config, lifesteal pregen, TAB header/footer, in-game tests.
 - Owner ko 2 tellraw se bataya. Kuch change nahi kiya.
+
+### 2026-11-02 03:15 UTC — [OWNER] AFK zone (AxAFKZone) research
+- **Kisne kaha:** Owner in-game: "afk wala ... donut wala afk system ready ker k mujhe bula tha k koi command hai wo waha afk zone k pass dalna hai ... research ker k btao"
+- **Research:** AxAFKZone docs (docs.artillex-studios.com/axafkzone.html, SpigotMC 119868) + in-game `/axafkzone` help: reload, wand, create <zone>, delete <zone>, redefine <zone>, tp <zone>. Built-in wand selection; rewards (command/item, chance, interval, bossbar/actionbar) config me.
+- **Owner ko bataya (tellraw):** /axafkzone wand → lifesteal_lobby AFK pool (x21-35 z21-35) corners ~22 63 22 aur ~34 69 34 select → /axafkzone create afk → rewards config (plugins/AxAFKZone) → /axafkzone reload. Selection in-game wand se hi; offer: /warp afk pool par.
+- Kuch change nahi kiya.
