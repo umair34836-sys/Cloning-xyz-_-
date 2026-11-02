@@ -39,3 +39,7 @@ Format:
 ## 2026-11-02 — `clear <player> <item> 0` Essentials ne pakda
 - Kya hua: item count dekhne ke liye `clear MrCopper804 minecraft:iron_ingot 0` chalaya; Essentials ka /clear (clearinventory) chala, output khali. Items bache rahe (minecraft:clear se 4 iron/2 diamond mile) lekin risk tha.
 - Bachao: hamesha `minecraft:clear <player> <item> 0` (vanilla count-only) use karo. Essentials override wali commands (clear, kill, tp, give...) ke liye `minecraft:` prefix.
+
+## 2026-11-02 — SlimeCrates `set` = player ke PAIRON wala block
+- Kya hua: owner ko "pedestal block dekh ke /slimecrates set" bola (fork + maine). Bytecode (handleSet): `player.getLocation().getBlock()` → crate location = player ke feet block. 6 crates + holograms z-38 (owner ki khadi jagah) par bane, pedestal (z-40) par nahi.
+- Bachao: plugin command ka location logic bytecode/source se pehle verify karo (getLocation vs getTargetBlock). SlimeCrates: crate lagane ke liye player usi jagah KHADA ho jahan crate block chahiye; `remove` feet/below/eye block check karta hai.

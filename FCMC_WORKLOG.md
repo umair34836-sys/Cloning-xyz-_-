@@ -287,3 +287,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Holograms (leaderboards) postpone:** top kills/hearts ke liye ajLeaderboards (panel) chahiye, playtime abhi blank — isliye NPCs pehle.
 - **Kaam 3/5 (sent):** owner tp -36.5 65 -8.5 (west market, facing east; pehle -37.5 diya tha, x-38 y65 block solid tha → 1 block east shift). Commands: `/npc create ls_shop player`, `/npc create ls_auction player` (syntax `npc help`: create <id> [<type>]). Baad me console: setlocation stalls (-39.5 65 -8.5 / -2.5), setrotation, naam/skin/action (/shop, /auctionhouse).
 - ZNPCsPlus v2.1.0-SNAPSHOT; FancyHolograms 2.12.0 (`hologram create <name>` player-only, `edit <name> moveTo x y z` console).
+
+### 2026-11-02 04:35 UTC — [OWNER] Crate holograms galat jagah — wajah
+- **Owner:** "jaha me khada tha ... ab waha per mujhe ek holograms show ho rahe hai" + "crates k uper wale holograms ghayeb hogye why"
+- **Check:** slimecrates armor_stand holograms at (x+0.5, 67, -37.5) x=-10..10 (owner ki khadi jagah). Bytecode `handleSet`: `Player.getLocation().getBlock()` → crate = feet block (x,65,-38). `handleRemove`: feet, feet-1, eye block check.
+- "Ghayeb holograms" = maine 6 "Coming Soon" ls_label hataye the.
+- **Owner ko bataya** (meri ghalti maani). Fix plan (NPC kaam ke baad): owner purani jagah (x+0.5 65 -37.5) par `/slimecrates remove` ×6 → pedestal ke upar khade ho kar (x+0.5 67 -39.5) `/slimecrates set <crate>` ×6 → main console se wahan crate block (chest/ender chest) setblock.
