@@ -553,3 +553,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** ZNPC `event` set; purana ★ EVENT mannequin kill. Ab koi lobby_npc mannequin nahi bacha.
 - **Kaise:** `npc setlocation event -17.5 151 10.5`, `npc setrotation event -119 0`, `npc skin event static Notch`, holo "★ EVENT" #FFD21A bold + "Coming Soon"; `minecraft:kill @e[type=minecraft:mannequin,tag=npc_event]`.
 - **Result:** Saare 6 HUB lobby NPC (survival, lifesteal, parkour, minigames, event, pvp_practice) ZNPCsPlus par. Click actions sirf survival + lifesteal par. Manager ko test karne ko kaha.
+
+### 2026-11-02 08:59 UTC — [MANAGER] Lifesteal NPC → lifesteal lobby connect
+- **Kisne kaha:** techshotgaming (Manager): "Server Lifesteal npc ko lifesteal wali lobby se connect karo"
+- **Kya kiya:** Lifesteal ZNPC ka click action vanilla tp se Multiverse safe-tp par badla.
+- **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 2 0 mvtp {player} lifesteal_lobby` (pehle: `execute as {player} in minecraft:lifesteal_lobby run tp @s 0.5 65 0.5 0 0`). lifesteal_lobby spawn = 0.5 65 0.5. Essentials warps me "lobby" bhi hai (location verify nahi ki).
+- **Result:** "Edited action with index 0". Click test manager karenge; agar /warp lobby chahiye to badal denge.
