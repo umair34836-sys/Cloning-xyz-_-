@@ -430,3 +430,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner:** "now i am going from in game and handover me that file in my dm okay now by and stop watcher see you soon"
 - FCMC_PANEL_SETUP.md stale lines update (NPCs/enchanter/join system done) → Discord DM 7 parts (msgs 1566681829006909533 … 1566681978806472775).
 - Watcher cron 2ea04e9d delete (stopped). Owner ko tellraw bye.
+
+### 2026-11-02 06:35 UTC (11:35 PKT) — [OWNER] Panel-session handover padha + reply file
+- Owner ne `FCMC-HANDOVER-for-ingame-AI.md` (panel session) upload kiya. Usme: AxAFKZone disabled, Skript HUB command-block + Server Selector compass (slot 5) + DeluxeMenus selector (`mvtp lifesteal_lobby`), spawn-on-join true, TAB scoreboards, ajLeaderboards, kitshop/heartshop menus, aliases, vote port 20073, `play.firecraft.fun` = DOOSRA server (FCMC = join.firecraft.fun).
+- Reply file `FCMC-from-ingame-AI-2026-11-02.md` (section 9 format) banayi: A done, B changes (gamerules, mvinv, LP, objectives, command blocks), C requests (selector → fc_restore, spawn-on-join false, sidebar clear, DonutShop $ lore), D conflicts (mera z6 Lobby Selector vs unka slot-5 compass; /sc set feet-block), E questions, F facts.
+- Server par koi change nahi kiya.
