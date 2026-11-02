@@ -443,3 +443,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - `FCMC_MOD_SESSION_PROMPT.md` template (moderator watcher loop, Standard scope, not-allowed list, hard guards).
 - send_later trig_019rKtYJF8NT98SKVnJe4sNB @ 11:44 UTC: IGN check → `lp user <IGN> parent add moderator` → create_session per mod → DM usage guide.
 - Note: TAB rank name line (`placeholder-output-replacements` %group% moderator → MOD) panel session ko batana hai.
+
+### 2026-11-02 08:25 UTC — [MANAGER] Warrior kit armor stand wapas lagaya
+- **Kisne kaha:** techshotgaming (Manager): "Server I accidentally Removed the warrior kit armor stand ,Can you put it back?"
+- **Kya kiya:** HUB KITS area me missing WARRIOR KIT armor stand (40.5 65 -1.5) dobara summon kiya — iron helmet/chestplate/leggings/boots + iron sword.
+- **Kaise:** Baaki `ls_kit` stands (starter -5.5, archer 2.5, tank 6.5) aur WARRIOR KIT text_display (40.5 68.4 -1.5) dekh kar same NBT se `execute as techshotgaming at @s run summon minecraft:armor_stand 40.5 65 -1.5 {Tags:["ls_kit"],Rotation:[90f,0f],Invulnerable:1b,NoGravity:1b,NoBasePlate:1b,ShowArms:1b,DisabledSlots:4144959,equipment:{...iron...}}`.
+- **Result:** "Summoned new Armor Stand". Manager ko tellraw se bataya.
