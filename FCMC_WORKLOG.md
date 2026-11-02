@@ -630,3 +630,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Nahi kiya. FCMC connector sirf console commands chalata hai — nayi .sk file likh nahi sakta, aur firecraft-hub.sk ka content padh bhi nahi sakta, to replacement banana possible nahi. Bina replacement disable karne se unknown hub features toot jaate.
 - **Kaise:** tellraw techshotgaming.
 - **Result:** Manager ko kaha owner (MrCopper804) panel se sirf lifesteal proximity-tp wala part hataye, ya file content share kare. Skript enabled hai.
+
+### 2026-11-02 09:21 UTC — [MANAGER] Which block am I standing on (dobara)
+- **Kisne kaha:** techshotgaming (Manager): "Server which block am i standing on" (naya message)
+- **Kya kiya:** Manager ki position se neeche wala block dhoondha.
+- **Kaise:** `execute as techshotgaming run data get entity @s Pos` → (-19.6, 151.0, -14.3) HUB; worldlens_shot neeche dekhte hue → CRIMSON_NYLIUM; `execute in minecraft:overworld if block -20 150 -15 minecraft:crimson_nylium` → Test passed.
+- **Result:** Tellraw: "Crimson Nylium (HUB -20 150 -15)".
