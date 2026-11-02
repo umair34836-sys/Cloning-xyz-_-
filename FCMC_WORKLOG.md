@@ -461,3 +461,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Owner (session):** "fcmc server k her ek session me rule dalo k waha serf fcmc use hoga worldlens nhi"
 - CLAUDE.md me "FCMC server rule" section; .claude/memory/RULES.md; FCMC_MOD_SESSION_PROMPT.md (future moderator sessions); `send_message` → fcmc manager session (session_01JK8TsBgGuzocQqsgSfCLYh).
 - list_sessions: FCMC sessions = fcmc owner (ye), fcmc manager. "FireCraft — Mod (Marzarn/Notkartik) helper" aur "Manager (techshotgaming) build helper" FireCraft SMP (doosra server) ke hain — unhe nahi chheda.
+
+### 2026-11-02 08:45 UTC — [OWNER] Compass "random tp" (still)
+- Owner: "abhi bhi waise hi compass per jab right click ker raha ho to random tp ho raha ho fix it"
+- Check: owner inventory slot 4 = panel ka compass "Server Selector" (lore "Game mode chunne ke liye right-click karo") — mera carrot selector nahi. Owner overworld (HUB) 7.5 21 -231.5 (island ke neeche). HUB spawn 0.5 151 0.5 (mv info). co lookup commands: sirf /hub. Mera z6 chain band; z10/z12 isse match nahi karte.
+- Compass = panel side (Skript firecraft-hub.sk + DeluxeMenus selector.yml) → mera access nahi. Owner se controlled test maanga (/hub → right-click once → 'server test done').
