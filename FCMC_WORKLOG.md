@@ -601,3 +601,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Lifesteal ZNPC action delay 100 → 0 ticks, cooldown 1s; "5 seconds" message action hataya.
 - **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 1 0 mvtp %player_name% lifesteal_lobby`; `npc action delete lifesteal 1`.
 - **Result:** Action list me sirf instant mvtp. Agar phir bhi wait hai to wo firecraft-hub.sk proximity countdown hai (console se edit nahi). Manager ko tellraw kiya.
+
+### 2026-11-02 09:13 UTC — [MANAGER] Lifesteal NPC "abhi bhi nahi ho raha" — debug
+- **Kisne kaha:** techshotgaming (Manager): "Server Abhi bhi nahi ho raha"
+- **Kya kiya:** Diagnose: console `mvtp` pehle hi instant verify tha, isliye shak hai ke ya to NPC click fire nahi ho raha ya delay purani Skript proximity countdown se hai. Temporary debug message action add kiya.
+- **Kaise:** `npc action add message lifesteal ANY_CLICK 0 0 <gray>[Claude debug] NPC click mila - tp ho raha hai</gray>` (action index 1 — fix ke baad hatana hai).
+- **Result:** Manager se click karke batane ko kaha (debug message aaya ya nahi + kaunsa countdown dikhta hai).
