@@ -565,3 +565,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Wajah: ZNPCsPlus v2 console actions me `{player}` replace nahi hota — PlaceholderAPI `%player_name%` chahiye. Lifesteal aur Survival dono actions fix kiye. `mvtp techshotgaming lifesteal_lobby` se command khud verify ki (manager lifesteal_lobby pahunch gaye).
 - **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 2 0 mvtp %player_name% lifesteal_lobby`; `npc action edit survival 0 consolecommand ANY_CLICK 2 0 execute as %player_name% in minecraft:survival run spreadplayers 144 560 0 1 false @s`; `papi parse techshotgaming %player_name%` → techshotgaming.
 - **Result:** Actions fixed (click test manager karenge). Proximity tp Skript `firecraft-hub.sk` ke andar hai — sirf wo part console se nahi hatta; poori script disable karne se hub ki baaki features bhi band ho sakti hain, isliye manager se explicit confirm maanga.
+
+### 2026-11-02 09:02 UTC — [MANAGER] Lifesteal NPC tp delay 5 seconds
+- **Kisne kaha:** techshotgaming (Manager): "Server suno Lifesteal wala npc bahut time le raha hai tp karne me ,Isko fix karo and 5 seconds karo"
+- **Kya kiya:** Lifesteal ZNPC click action me 100 ticks (5s) delay + 5s cooldown; click par chat message action add.
+- **Kaise:** `npc action edit lifesteal 0 consolecommand ANY_CLICK 5 100 mvtp %player_name% lifesteal_lobby`; `npc action add message lifesteal ANY_CLICK 5 0 <green>Lifesteal lobby me 5 seconds me teleport ho rahe ho...</green>`.
+- **Result:** Action list confirm. Agar lamba wait purani firecraft-hub.sk countdown se hai to wo console se edit nahi ho sakta — manager ke skript-disable confirm ka intezaar.
