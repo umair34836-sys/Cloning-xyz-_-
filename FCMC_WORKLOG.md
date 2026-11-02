@@ -210,3 +210,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** Owner in-game: "server serf fcmc connector ka data batao worldlens wala nhi"
 - **Kya kiya:** Sirf FCMC connector se dobara check: CoreProtect (game) + FCMC Discord channels.
 - **Result:** Game: owner ke jaane ke baad koi player/chat/command nahi, TPS 20. Discord (FireCraft MC, 3 members): naya member bhupendra67 (2026-11-01 07:54 UTC, #welcome); tickets/suggestions/reports/game-chat/staff-logs khali. Pichla panel (firecraft) data FireCraft SMP website ka tha — owner ko bataya ke wo ignore karein.
+
+### 2026-11-02 03:05 UTC — [OWNER] DM A-to-Z list status check
+- **Kisne kaha:** Owner in-game: "tumne joo owner k dm me kaam kaa bola tha wo check kro k un mese konse kaam howe hai or konse pending hai ?"
+- **Kaise:** FCMC console: `plugins`, `rg list/info`, `worldborder get`, `mv info lifesteal`, `maintenance status`, `npc list`, `hologram list`, `papi list`, `kit`, `slimecrates list`, `chunky progress`.
+- **Ho gaye:** AxAFKZone, VotingPlugin + Votifier, BetterTeams installed (50 plugins); ls_pvp_arena region (-37 64 19 → -19 80 37, pvp ALLOW, invincible DENY, item-drop ALLOW); PAPI 20 hooks; lifesteal difficulty NORMAL; lifesteal world border 10000.
+- **Pending:** slimecrates 0 crates; ZNPCsPlus NPCs 0; FancyHolograms 0; kits Starter/Warrior/Archer/Tank nahi (sirf Firework Color Notch Dtools Tools); Maintenance ON; Discord invite link; 4 lobbies; Duels/BetterRTP (optional).
+- **Verify nahi ho saka:** AFK zone, Votifier port, backups, LifeStealZ worlds config, lifesteal pregen, TAB header/footer, in-game tests.
+- Owner ko 2 tellraw se bataya. Kuch change nahi kiya.
