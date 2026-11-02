@@ -378,3 +378,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - FCMC_PANEL_SETUP.md: section 0 ECONOMY RULE (balance/shards/coins value high, hearts sabse mehnge), 6b HEART SHOP (1 heart 500 coins, 3 hearts 1400; DeluxeMenus heartshop.yml, `lifestealz giveItem %player_name% defaultheart N`), section 8 update (NPC skins = villagers; enchanter = table+bookshelves).
 - Owner tp -36.5 65 9.5 (HEART SHOP stall, air verified) → `/npc create ls_heartshop player`.
 - **Issue mila:** mvinv `lifesteal_lobby` group = "lobby" (HUB ke saath) → lobby me crates/shop/kits/hearts se mile items lifesteal world me nahi jayenge, lifesteal keys lobby crates par nahi. Fix proposal: lifesteal_lobby ko "lifesteal" group me — owner confirm maanga ("server inv ok").
+
+### 2026-11-02 07:45 UTC — [OWNER] Heart shop NPC + Enchanter stall
+- Owner `/npc create ls_heartshop` (type player default). Console: `npc setlocation ls_heartshop -39.5 65 9.5`, `setrotation -90 0`, `npc type villager`, `villager_profession CLERIC`, action `playercommand ... heartshop`; label (-36.4 66.6 9.5) → "HEART SHOP / Hearts for Coins • Click the NPC".
+- Enchanter stall (original build ls/zones.txt: counter barrels x-38 z2..4, fences, wool roof): `setblock -38 65 3 enchanting_table` (middle counter barrel replace), `fill -40 65 2 -40 66 4 bookshelf` (6, air gap x-39 → ~level 12), lantern -40 67 3, label → "ENCHANTER / Enchanting table • lapis + XP lao".
+- WG lobby __global__: use DENY, chest-access DENY → table blocked. Fix: `sudo MrCopper804 /pos1 -38,65,3`, `/pos2` same, `sudo ... rg define ls_enchanter`, `rg flag -w lifesteal_lobby ls_enchanter use allow` (sirf table block).
+- SlimeCrates CrateInteractListener @EventHandler(priority=HIGH), ignoreCancelled default false → WG use-deny ke bawajood crates normal players ke liye chalenge.
+- Pending: owner "server inv ok" (lifesteal_lobby → lifesteal mvinv group).
