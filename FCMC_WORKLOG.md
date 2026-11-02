@@ -636,3 +636,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ki position se neeche wala block dhoondha.
 - **Kaise:** `execute as techshotgaming run data get entity @s Pos` → (-19.6, 151.0, -14.3) HUB; worldlens_shot neeche dekhte hue → CRIMSON_NYLIUM; `execute in minecraft:overworld if block -20 150 -15 minecraft:crimson_nylium` → Test passed.
 - **Result:** Tellraw: "Crimson Nylium (HUB -20 150 -15)".
+
+### 2026-11-02 09:23 UTC — [MANAGER] NPCs ki jagah Multiverse-Portals? (question)
+- **Kisne kaha:** techshotgaming (Manager): "Server kya ham multiverse portals ka use nahi kar sakte? NPCs ki jagah"
+- **Kya kiya:** `mvp list` → 0 portals (plugin installed). Jawab: haan; portal frame + WorldEdit wand selection + `/mvp create <name> w:lifesteal_lobby` / `w:survival` in-game player se, baad me console se config.
+- **Kaise:** tellraw techshotgaming.
+- **Result:** Manager ke portal create karne ka intezaar.
