@@ -732,3 +732,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby world: din-raat aur weather cycle band, time 6000 (dopahar), weather sun. Survival sky-lobby (survival world ke andar): WorldGuard per-player time-lock 6000 + weather-lock clear, taaki neeche survival gameplay world normal rahe.
 - **Kaise:** `execute in minecraft:lifesteal_lobby run gamerule minecraft:advance_time false` + `minecraft:advance_weather false` (HUB/survival par check: abhi bhi true); Essentials `time set 6000 lifesteal_lobby`, `weather lifesteal_lobby sun` (vanilla `time set` → "world without world clock" error); `rg flag -w survival survival_lobby time-lock 6000`, `... weather-lock clear`.
 - **Result:** Sab set. Manager ko tellraw kiya.
+
+### 2026-11-02 10:17 UTC — [MANAGER] Survival lobby me snow band
+- **Kisne kaha:** techshotgaming (Manager): "Server is. lobby me ab bhi snow gir rahi hai"
+- **Kya kiya:** Survival sky-lobby box ka biome Plains kiya (neeche wala snowy biome lobby tak tha, isliye snowfall); survival world weather abhi sun.
+- **Kaise:** `gamerule minecraft:max_block_modifications 2000000` → `execute in minecraft:survival run fillbiome 88 196 504 200 319 616 minecraft:plains` (26071 biome entries) → gamerule wapas 32768; Essentials `weather survival sun` (survival world ka weather cycle chalta rahega; lobby ke liye WG weather-lock clear pehle se).
+- **Result:** Done; biome change dikhne ke liye chunk reload (rejoin / portal se aana-jaana). Manager ko tellraw kiya.
