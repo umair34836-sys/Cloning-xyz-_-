@@ -170,7 +170,7 @@ items:
       - '[message] &aTank kit mil gaya!'
       - '[close]'
 ```
-Phir in-game: `/dm reload`. (Kits area NPC ka click action Claude `kitshop` menu par set kar dega.)
+Phir in-game: `/dm reload`. (Kits area NPC `ls_kits` ka click pehle se `kitshop` par set hai `[x]`.)
 > Note: DeluxeMenus syntax aur PlayerPoints `points take` ek baar test karna — kits ban jane ke baad.
 
 
@@ -229,7 +229,7 @@ items:
       - '[message] &a+3 Hearts mil gaye!'
       - '[close]'
 ```
-Phir `/dm reload`. (`lifestealz giveItem <player> defaultheart <n>` console se test ho chuka hai.) HEART SHOP NPC Claude lagayega (click = `heartshop`).
+Phir `/dm reload`. (`lifestealz giveItem <player> defaultheart <n>` console se test ho chuka hai.) HEART SHOP NPC `ls_heartshop` lag chuka hai, click = `heartshop` `[x]`.
 
 ## 7. Website coins → server  `[ ]`
 Website/store se coin kharidne par server console command chalni chahiye:
@@ -254,7 +254,9 @@ Phir server restart (ya console `reload commands` agar available ho). Permission
 - [ ] Backups (panel par automatic backup schedule)
 - [ ] LifeStealZ ko sirf lifesteal worlds tak limit (`plugins/LifeStealZ/config.yml` → worlds setting; config paste karo to exact line bataunga)
 - [x] Market NPCs: villager type (shop=weapon smith, auction=cartographer, kits=armorer) — skin ki zaroorat nahi
-- [ ] ENCHANTER stall: enchanting table + bookshelves (Claude banayega)
-- [ ] Baqi 4 lobbies (SURVIVAL, PARKOUR, PVP PRACTICE, MINIGAMES, EVENT — abhi "Coming Soon")
+- [x] ENCHANTER stall: enchanting table + 6 bookshelves + WG region ls_enchanter (use allow)
+- [ ] Baqi lobbies (SURVIVAL, PARKOUR, PVP PRACTICE, MINIGAMES, EVENT — abhi "Coming Soon")
+- [x] Join/rejoin → HUB; LIFESTEAL select → player ki last jagah (command blocks)
+- [x] RTP portal test OK; /spawn + 9 warps
 - [x] Lobby inventory group: lifesteal_lobby → 'lifesteal' group (console se ho gaya)
 - [ ] PvP arena (`ls_pvp_arena`) in-game test
