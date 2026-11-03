@@ -1136,3 +1136,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Pehle galat jagah dekha:** HUB portals check kiye (forceload HUB -16..31/-32..15 temp → remove, [0,0],[1,0] wapas add).
 - **Diagnose:** lifesteal_lobby BACK TO HUB portal frame: pillars x=-3/3, top y73, z=38; andar -2..2 × 66..72 (35 air). block_display tag ls_portal (nether_portal axis x) Pos -1.5 66 38.4, scale 5,7,0.2 → bahut patla + 0.5 khiska.
 - **Fix:** ls_portal → tp -2 66 38, scale [5,7,1], brightness 15, view_range 2. Asli nether_portal blocks nahi (lifesteal_nether travel risk + quartz frame par toot jate). Owner se visual confirm maanga. Multi-color lobby redesign next.
+
+### 2026-11-03 UTC — [OWNER] "server kits banao" — 8 Essentials kits created
+- **Kisne kaha:** MrCopper804: "server kits banao" (pehle offer: inventory khaali karo).
+- **Check:** owner container/armor/offhand khaali (execute if items → failed x3).
+- **Kaise (har kit):** `minecraft:item replace entity MrCopper804 container.N with <styled item>` (English naam 2-colour, trims, enchants, lore flavor + rarity + "✦ FireCraft MC • <Kit> Kit ✦") → `sudo MrCopper804 createkit <kit> 0` → `minecraft:clear MrCopper804`. Clear counts = exact kit counts (scout 25, archer 64, miner 55, warrior 54, knight 63, tank 96, champion 106, legend 139) → owner ka koi item nahi gaya. Purane `delkit archer|warrior|tank` pehle.
+- **Kits (delay 0):** scout, archer, miner, warrior, knight, tank, champion, legend — §6f spec ke mutabiq (champion helmet naam "Champion Crown", legend "Legend Helm/Blade", tank "Titan ...").
+- **Result:** `kit` list me sab 8; owner inventory khaali. Default group ke paas paid kit permissions nahi (sirf starter/tools) → sirf kitshop (console `kit <id> %player_name%`). Kitshop.yml (FCMC_KITSHOP_DELUXEMENUS.md) panel ka.
