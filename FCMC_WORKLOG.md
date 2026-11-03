@@ -876,3 +876,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Menu = DeluxeMenus `kitshop.yml` (console se edit nahi). FCMC_PANEL_SETUP.md §6c me teeno kits (warrior/archer/tank) ka poora copy-paste lore: "Kit me kya milega" item list (armor+enchants, weapon, gapples/arrows/shield, steak) + price + coins + "Left-click = Buy". Reply file C me bhi request.
 - **Interim:** lifesteal_lobby E KITS pad ke 4 armor stands (x40.5) kit gear pehne khade hain.
 - **Result:** Owner ko tellraw; panel AI ke paste + `/dm reload` ka intezaar.
+
+### 2026-11-03 UTC — [OWNER] Kits area redesign + har kit special (PLAN, haan ka intezaar)
+- **Kisne kaha:** MrCopper804: "server kits wale area ko re design kroo and also mujhe in mese ek bhi kit acha nhi laga soo please her ek kit ko special bnao kio k players humay pay ker rahay hai soo unko bhi to kuch special hi milna chaye na"
+- **Check:** E KITS pad (lifesteal_lobby x29..45 z-11..11) = flat polished blackstone + back wall + 4 armor stands (WorldLens shot/top).
+- **Kya kiya:** Plan FCMC_PANEL_SETUP.md §6d (kit contents table + area design) aur owner ko tellraw summary; "server kits haan" ka intezaar. Kit items Essentials kits.yml (panel) me; area build console se.
