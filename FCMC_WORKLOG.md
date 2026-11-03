@@ -909,3 +909,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Preview chest lifesteal_lobby 36 65 -3 (facing west, naam "🏹 ARCHER KIT (Preview)"), `minecraft:item replace block ... container.N` se §6d v2 Archer items: iron helmet/chest/legs/boots Prot II Unbr III (slots 0-3), Ranger Bow Power IV Punch I Infinity Unbr III (9), Archer Blade iron sword Sharp III Unbr III (10), Archer Pickaxe Eff III Unbr III (11), 1 arrow (18), 16 spectral arrow (19), 8 golden apple (20), 32 steak (21). Naam #55FF55 bold + lore "✦ FireCraft MC • Archer Kit ✦". Owner tp 34.5 65 -2.5 (yaw -90).
 - **Note:** plain `item` = Essentials ("Only in-game players") → `minecraft:item`. Preview chest me asli items hain → review ke baad chest hatana (setblock air).
 - **Next:** owner "server archer ok" → Warrior preview, phir Tank.
+
+### 2026-11-03 04:10 UTC — [MANAGER] DeluxeMenus kit menu
+- **Kisne kaha:** techshotgaming (in-game): "Server To DeluxeMenus ko use karo and Kus menu banao"
+- **Kya kiya:** Check kiya — DeluxeMenus me `kitshop` menu pehle se maujood hai, aur `ls_kits` NPC ka action "Player Command: kitshop" hai. Essentials kits: Firework, Color, Starter, Warrior, Archer, Notch, Dtools, Tank, Tools. Menu manager ke liye open kiya aur poocha kya change chahiye.
+- **Kaise:** FCMC connector `worldlens_command` → `dm list`, `kits`, `npc action list ls_kits`, `dm open kitshop techshotgaming`, `tellraw`.
+- **Result:** Naya menu nahi banaya — kitshop already hai; nayi menu .yml file console se nahi likhi ja sakti (file access owner/panel se chahiye). Manager ke jawab ka intezar.
