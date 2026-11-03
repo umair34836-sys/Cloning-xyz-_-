@@ -1341,3 +1341,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** After manager cleared inventory, gave Legendary extras: 3 totem, 16 ender pearl, 32 diamond, 16 golden apple, 4 enchanted golden apple, 32 emerald block, 64 golden carrot, 64 steak, 64 arrow, 64 XP bottle.
 - **Kaise:** Checked inventory (only 11 Legendary items), then `minecraft:give techshotgaming minecraft:<item> <n>` ×10.
 - **Result:** Done.
+
+### 2026-11-03 09:32 UTC — [MANAGER] Legendary crate — extra item suggestions
+- **Kisne kaha:** techshotgaming — "Server do you think ki kuch aur bhi add karna chahiye ? if yes then tell me"
+- **Kya kiya:** Suggested: Elytra (0.5–1%), magenta Shulker Box, enchanted books (Mending, Prot 5, Sharp 6), Beacon, Rare/Epic crate key bonus; keep diamond theme (no netherite template).
+- **Kaise:** tellraw to manager; asked to reply with numbers.
+- **Result:** Waiting for manager's pick.
