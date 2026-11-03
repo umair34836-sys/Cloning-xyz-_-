@@ -238,6 +238,35 @@ Owner: "kits wale area ko re design kroo ... her ek kit ko special bnao kio k pl
 Kits area (lifesteal_lobby E pad x29..45 z-11..11): 4 booths (Starter free + 3 paid), har booth apne rang ka pedestal + canopy + lanterns, armor stand kit pehne, upar ghoomta weapon (item_display), text sign (naam, price, top items, "Right-click Kits NPC / /kitshop"), beech me bada "✦ KITS ✦" title, ls_kits NPC beech me.
 Owner "haan" ke baad: Essentials kits.yml (archer/warrior/tank) — panel; area build — Claude (console); kitshop.yml lore (§6c) naye items ke saath.
 
+### 6e. 8 PAID KITS + marketing (owner, 3 Nov) — v3 PROPOSAL, owner "haan" ka intezaar  `[ ]`
+Owner: "serf 3 se 4 kits mat rakho minimum 8 kits alag alag name or price range me rakho with marketing strategys"
+**Research (3 Nov):**
+- netherite.gg Lifesteal: 6 rank-kit ladder (Lord→Netherite), har tier pe gapples/god apples/cooldown behtar — "seedhi" (ladder) model.
+- Tebex (tebex.io/resources/best-practices-maximize-game-store-revenue): 48% log discount/promotion ki wajah se khareedte hain; holiday/themed sales, apna "sale event" banao, creator codes (YouTuber code = discount + revenue share).
+- Tebex docs (docs.tebex.io/.../engagement/sales): sale max 14 din, same product ki agli sale 30 din baad.
+- NameHero Tebex guide: limited-time offers / seasonal discounts = urgency.
+- Pricing psychology (anchor + decoy): sabse mehnga option baqi ko sasta dikhata hai; beech wala "decoy" target ko best value banata hai.
+**Kits (coins = PKR; har kit ka apna rang, armor trim aur ★ rarity — Archer jaisa style):**
+| # | Kit | Price | Main saaman | Marketing role |
+|---|---|---|---|---|
+| 0 | Starter | FREE / 24h | stone tools + 5 steak (pehle se) | hook |
+| 1 | 🗡 SCOUT | 50 | dyed leather armor P1 (laal) + iron sword S1 + 4 gapple + 16 steak | impulse / pehli khareed |
+| 2 | 🏹 ARCHER | 100 | iron P2 + emerald trim, Ranger Bow P4 Infinity, iron sword S3, pickaxe, 8 gapple | ★★ |
+| 3 | ⛏ MINER | 150 | iron P1, diamond pickaxe Eff V Fortune III, diamond axe/shovel Eff IV, 16 golden carrot, 32 torch | non-PvP (builders) |
+| 4 | ⚔ WARRIOR | 250 | iron P3 U3 + gold trim, diamond sword S3 Fire I, shield, 12 gapple, 4 pearl | ★★★ |
+| 5 | 🛡 KNIGHT | 400 | diamond P2 U3 + quartz trim, diamond sword S4, shield, diamond pickaxe, 16 gapple, 8 pearl | **"MOST POPULAR"** badge |
+| 6 | 🗿 TANK | 650 | diamond P3 U3 + Thorns I, sword S4, axe S3, shield, 24 gapple, 1 totem | **decoy** (Champion ke qareeb price) |
+| 7 | 👑 CHAMPION | 900 | diamond P4 U3 Mending + diamond trim, sword S5 Fire II Looting II Mending, full tools Eff V Fortune III Mending, 32 gapple, 1 god apple, 1 totem | **"BEST VALUE"** |
+| 8 | 🔥 LEGEND | 2500 | netherite P4 U3 Mending + netherite trim, netherite sword S5 Fire II Looting III Mending, netherite tools Eff V Mending, 64 gapple, 2 god apple, 2 totem | **anchor** (sabse upar, exclusive) |
+Hearts kisi kit me NAHI (sirf heart shop). Netherite sirf LEGEND me (owner decide kare — economy rule).
+**Marketing plan:**
+1. Kitshop GUI me kits price ke hisaab se line me; KNIGHT par "MOST POPULAR", CHAMPION par "BEST VALUE" tag; LEGEND sabse aakhir me chamakta (enchant glint) item.
+2. Har kit item par "Kit me kya milega" lore + right-click = preview (chest/menu) — dekh kar khareedna.
+3. Sales: tyohar (Eid, 14 August, New Year, server anniversary) par 20-30% off, max 14 din, phir 30 din tak dobara nahi (Tebex rule).
+4. Launch week: SCOUT/ARCHER 50% off (pehli khareed aasan).
+5. YouTuber/creator code: 10% discount player ko + creator ko hissa (website par).
+6. Kits area me har kit ka booth apne rang me + "Most Popular"/"Best Value" signs.
+
 ## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
 Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
 | Item | Price |

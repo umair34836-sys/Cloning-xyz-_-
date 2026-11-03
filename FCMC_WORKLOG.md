@@ -920,3 +920,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server is archorer kit ne coloring dallo and beautiful banao ta k log dekh ker buy kare"
 - **Kya kiya (preview chest lifesteal_lobby 36 65 -3):** iron armor (slots 0-3) par `trim={material:"minecraft:emerald",pattern:"minecraft:wild"}`; naam list component "✦ " #2EE59D + "Archer " #7CFF4F bold + "<Piece>" #2EE59D bold; lore: flavor line (#B8F5C8), khaali line, "★★☆ RARE" #55FF55 bold, "✦ FireCraft MC • Archer Kit ✦" #8A8A8A italic. Boots + Feather Falling III. Ranger Bow (🏹, lore "Ek teer, ek heart." + Infinity line), Archer Blade (⚔), Archer Pickaxe (⛏), Glow Arrow x16 (#FFE14F). Same enchants as §6d v2.
 - **Result:** sab "Replaced". Owner se dobara chest dekhne ko kaha; "server archer ok" ka intezaar. (Final items panel kits.yml me isi style me jayenge — exact strings ye commands.)
+
+### 2026-11-03 UTC — [OWNER] Minimum 8 kits, alag naam/price + marketing
+- **Kisne kaha:** MrCopper804: "server serf 3 se 4 kits mat rakho minimum 8 kits alag alag name or price range me rakho with marketing strategys"
+- **Research:** netherite.gg kit ladder; Tebex best practices (48% discount-driven, holiday sales, creator codes); Tebex docs sales (max 14 din, 30 din cooldown); NameHero (limited-time offers); anchor/decoy pricing.
+- **Kya kiya:** FCMC_PANEL_SETUP.md §6e v3: Starter free + 8 paid — SCOUT 50, ARCHER 100, MINER 150, WARRIOR 250, KNIGHT 400 (Most Popular), TANK 650 (decoy), CHAMPION 900 (Best Value), LEGEND 2500 (anchor, netherite — owner decide). Hearts kisi kit me nahi. Marketing plan 6 points. Owner ko 3 tellraw; "server 8 kits haan" ka intezaar, phir har kit GUI preview ek ek karke.
