@@ -763,3 +763,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager (Techshot Gaming) ko Discord DM bheja ke Claude roz subah 7 baje public server par ON aur shaam 5 baje OFF hoga; "server ..." se kaam likhne ka tareeqa bhi bataya.
 - **Kaise:** FCMC connector `discord_find_member` → `discord_dm` (id 1376918464379359346).
 - **Result:** DM sent (message 1566853840567926827).
+
+### 2026-11-02 22:15 UTC (3 Nov 03:15 PKT) — [OWNER] Watcher on
+- Owner (session): "owner ko her 30 second jawab do or kaam kro ... wacher on kro" → CronCreate 5c6afdbb every minute (30s possible nahi; pichla cron session restart se khatam ho gaya tha).
+- Marzarn pehli baar FCMC par online: `lp user Marzarn info` → UUID a2549974-18e7-381f-b87f-ebe55914765f (offline UUID match), primary group moderator, prefix "🛡 MOD » " — rank kaam kar raha hai. Owner ne `/maintenance add Marzarn` kiya.
