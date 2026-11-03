@@ -963,3 +963,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ki position (lifesteal_lobby -9.4 66 -39.5) par lime shulker box lagaya. SlimeCrates ke `sc list` / `sc rewards` console par sirf "/sc" dete hain (player-only), isliye crate set nahi kar saka. Manager ko `/sc set <crate>` shulker dekhte hue khud chalane ko kaha, aur purani loot kahan hai poocha.
 - **Kaise:** FCMC `worldlens_command`: `data get entity techshotgaming Pos/Dimension`, `slimecrates help`, `execute in minecraft:lifesteal_lobby run setblock -10 66 -40 minecraft:lime_shulker_box`, `tellraw`.
 - **Result:** Shulker laga; crate binding + loot pending (in-game manager ya owner).
+
+### 2026-11-03 04:25 UTC — [MANAGER] Lime shulker confirm
+- **Kisne kaha:** techshotgaming (in-game): "Server Lime shulker not Line shulker"
+- **Kya kiya:** Confirm kiya ke lime_shulker_box hi lagaya gaya hai (lifesteal_lobby -10 66 -40); /sc set wala step yaad dilaya.
+- **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming`.
+- **Result:** Koi change zaroori nahi tha.
