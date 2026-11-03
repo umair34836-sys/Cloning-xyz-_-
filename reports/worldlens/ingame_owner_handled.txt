@@ -372,3 +372,4 @@
 [2026-11-02 ~08:27 UTC] Restart order resolved: owner ran /restart himself (CoreProtect a:command ~1.35 min before check); WorldLens was Bad Gateway during restart, back now. No action by me.
 [2026-11-02 ~13:44 UTC] (via manager helper) RudraJUSTGOD completed plot5 society build -> society-cut 5 hearts returned (4 -> 9) with OWNER session approval.
 2026-11-03 05:02 UTC | "server stop watcher now" | Watcher (har minute ka owner check) band kiya; server stop nahi kiya. Owner offline tha, msg nahi pahuncha. | done
+2026-11-03 07:25 UTC | (scheduled) Flamefrxg 24h society build check | CoreProtect: Flamefrxg ne plot7 (x651-663 z-56..-44) me 2-floor glass ghar banaya (~23h pehle: glass walls, oak_slab roof, bookshelves, chests, ladder, leaves). Hearts NAHI kaate. Owner offline (msg nahi pahuncha); staff-chat me bataya. | done
