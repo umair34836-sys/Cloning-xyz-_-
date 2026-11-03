@@ -267,6 +267,25 @@ Hearts kisi kit me NAHI (sirf heart shop). Netherite sirf LEGEND me (owner decid
 5. YouTuber/creator code: 10% discount player ko + creator ko hissa (website par).
 6. Kits area me har kit ka booth apne rang me + "Most Popular"/"Best Value" signs.
 
+### 6f. 8 KITS — FINAL (owner approved 3 Nov: "8 kits haan", "all is perfect sub done kro baad me manager changes ker dega")  `[ ]` panel
+**In-game ho chuka (Claude):** 8 ZNPCsPlus showcase NPCs lifesteal_lobby x40.5 y65 (facing west, yaw 90), har NPC kit ka armor + weapon pehne, holo (naam / price + rarity / "▶ Right-click = Kit Shop"), action `playercommand kitshop`:
+kit_scout z-10.5 (skin Dream) · kit_archer z-7.5 (GeorgeNotFound) · kit_miner z-4.5 (Skeppy) · kit_warrior z-1.5 (Technoblade) · kit_knight z1.5 (Sapnap, "⭐ MOST POPULAR ⭐") · kit_tank z4.5 (BadBoyHalo) · kit_champion z7.5 (Notch, "✔ BEST VALUE ✔") · kit_legend z10.5 (Herobrine). ls_kits villager moved 37.5 65 0.5 (yaw 90). Purane 2 armor stands + 4 labels hataye.
+**Panel ka kaam:**
+1. `plugins/Essentials/kits.yml` — 8 kits (scout, archer, miner, warrior, knight, tank, champion, legend), `delay: 0`, items neeche table ke mutabiq. **Style har item par:** naam = "✦ <Kit> <Piece>" kit ke 2 rang (gradient-jaisa), bold, italic off; lore = 1 flavor line + khaali line + rarity line + "✦ FireCraft MC • <Kit> Kit ✦"; armor trim (material/pattern neeche). Exact Archer/Scout example commands FCMC_WORKLOG.md (3 Nov "Archer kit me coloring", "Scout preview") me hain.
+2. Purane `archer/warrior/tank` kits (2 Nov wale) is naye set se replace.
+3. `plugins/DeluxeMenus/gui_menus/kitshop.yml` — 8 items (27 ya 36 slot), price + "Kit me kya milega" lore (§6c style), KNIGHT par "⭐ MOST POPULAR", CHAMPION par "✔ BEST VALUE", left-click = `points take` + `kit <name> %player_name%` (§6 jaisa). `/dm reload`.
+4. Permissions: kisi player ko `essentials.kits.<paid>` NAHI (sirf menu se).
+| Kit | Price | Colors | Trim (material/pattern) | Rarity | Items |
+|---|---|---|---|---|---|
+| scout | 50 | #FF5555/#FF8A5C | leather dyed 13369344 + redstone/sentry | ★☆☆ UNCOMMON | leather armor P1 U2 (boots FF II), iron sword S1 U2, 4 golden apple, 16 steak |
+| archer | 100 | #7CFF4F/#2EE59D | emerald/wild | ★★☆ RARE | iron armor P2 U3 (boots FF III), bow Power IV Punch I Infinity U3, 1 arrow, 16 spectral arrow, iron sword S3 U3, iron pickaxe Eff III U3, 8 golden apple, 32 steak |
+| miner | 150 | #FFB84F/#C0C0C0 | copper/shaper | ★★☆ RARE | iron armor P1 U3, diamond pickaxe Eff V Fortune III U3, diamond axe Eff IV U3, diamond shovel Eff IV U3, 16 golden carrot, 32 torch |
+| warrior | 250 | #FFAA00/#FFD34F | gold/bolt | ★★★ EPIC | iron armor P3 U3, diamond sword S3 Fire Aspect I U3, shield U3, 12 golden apple, 4 ender pearl, 32 steak |
+| knight | 400 | #55FFFF/#B0FFFF | quartz/ward | ★★★ EPIC | diamond armor P2 U3, diamond sword S4 U3, shield U3, diamond pickaxe Eff IV U3, 16 golden apple, 8 ender pearl, 32 steak |
+| tank | 650 | #1FA2A2/#5CE1E6 | lapis/rib | ★★★★ LEGENDARY | diamond armor P3 U3 (chest + Thorns I), diamond sword S4 U3, diamond axe S3 U3, shield U3, 24 golden apple, 1 totem, 64 steak |
+| champion | 900 | #FFD700/#FFF27A | gold/silence | ★★★★ LEGENDARY | diamond armor P4 U3 Mending (helmet Respiration III, boots FF IV), diamond sword S5 Fire II Looting II U3 Mending, diamond pickaxe Eff V Fortune III U3 Mending, diamond axe Eff V U3 Mending, diamond shovel Eff V U3 Mending, 32 golden apple, 1 enchanted golden apple, 1 totem, 64 steak |
+| legend | 2500 | #FF3B1F/#FF9A3C | redstone/spire | ★★★★★ MYTHIC | netherite armor P4 U3 Mending (helmet Respiration III, boots FF IV), netherite sword S5 Fire II Looting III U3 Mending, netherite pickaxe Eff V Fortune III U3 Mending, netherite axe Eff V U3 Mending, 64 golden apple, 2 enchanted golden apple, 2 totem, 64 steak |
+
 ## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
 Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
 | Item | Price |
