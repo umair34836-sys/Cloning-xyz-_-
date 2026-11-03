@@ -815,3 +815,14 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Naye objectives: fc_afk, fc_afkr, fc_const (#1200=1200, #20=20, #60=60, #neg=-1).
 - **Assumption (verify pending):** DonutShop har player ko zone me aane ke 60s baad shard deta hai (per-player timer). Agar wo global 60s cycle hai to countdown shard se match nahi karega → owner se test ("server afk timer sahi/galat").
 - **Undo:** `execute in minecraft:overworld run fill 3 120 13 11 120 13 minecraft:stone` + `scoreboard objectives remove fc_afk|fc_afkr|fc_const`.
+
+### 2026-11-03 UTC — [OWNER] Lifesteal lobby: HUB NPC ↔ RTP portal swap
+- **Kisne kaha:** MrCopper804 (in-game, lifesteal_lobby ~8.8 65 -7.6 se): "server is hub wala npc ko rtp se replace kerdo and rtp wala portal hub se ok"
+- **Matlab (swap):** spawn ke paas `⬅ BACK TO HUB` mannequin → RTP; south RTP portal (z38) → HUB.
+- **Kaise:**
+  - Overworld z12 x12: `...positioned 0.5 65 3.5 run tag @a[distance=..1.3] add fc_go_rtp` (pehle fc_go_hub); x13/x14 hub_click interaction → `fc_go_rtp`.
+  - Overworld z15 x3 (portal volume `positioned -2 66 37.7 @a[dx=4,dy=6,dz=0]`) → `add fc_go_hub` (pehle fc_go_rtp). fc_go_rtp processing z15 x4–x8 aur fc_go_hub processing z12 x17–x20 waise hi.
+  - Mannequin (tag npc_hub_return, 0.5 65 3.5): CustomName "✦ RTP / WILDERNESS ✦" (#A855F7 bold), description "▶ Click karo / paas aao = Lifesteal random jagah". Skin Technoblade same.
+  - Portal label text_display (0.5 ~74.5 37.5): "⬅ BACK TO HUB" (#FFD21A) + "Portal me chalo - HUB wapas".
+- **Result:** Sab "Modified". Owner test pending. Note: `/warp rtp` (0.5 65 33.5) ab HUB-portal ke saamne hai — owner se pucha NPC ke paas move karein?
+- **Undo:** z12 x12–x14 wapas `fc_go_hub`, z15 x3 wapas `fc_go_rtp`, naam/label purane (BACK TO HUB #FFD21A "▶ Click karo / paas aao"; "✦ WILDERNESS / RTP ✦" #A855F7 + "Portal me chalo - Lifesteal world (random jagah)").
