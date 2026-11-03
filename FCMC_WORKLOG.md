@@ -957,3 +957,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Hataya:** 2 purane ls_kit armor stands + 4 unke labels (x40.5 y68.4); preview chest 36 65 -3. ls_kits villager → 37.5 65 0.5 yaw 90.
 - **Panel:** FCMC_PANEL_SETUP.md §6f — 8 kits ka final table (Essentials kits.yml + kitshop.yml 8 items).
 - **Note:** owner ko tellraw me "south se north" likha gaya — sahi "north se south" (Scout north z-10.5).
+
+### 2026-11-03 04:25 UTC — [MANAGER] Vote crate ke liye lime shulker
+- **Kisne kaha:** techshotgaming (in-game): "Server Jahan mai khada hu yaha par ek line shulker Me Pehle waali Vote crate ki loot daal do and us shulker ko Vote crate bana dena"
+- **Kya kiya:** Manager ki position (lifesteal_lobby -9.4 66 -39.5) par lime shulker box lagaya. SlimeCrates ke `sc list` / `sc rewards` console par sirf "/sc" dete hain (player-only), isliye crate set nahi kar saka. Manager ko `/sc set <crate>` shulker dekhte hue khud chalane ko kaha, aur purani loot kahan hai poocha.
+- **Kaise:** FCMC `worldlens_command`: `data get entity techshotgaming Pos/Dimension`, `slimecrates help`, `execute in minecraft:lifesteal_lobby run setblock -10 66 -40 minecraft:lime_shulker_box`, `tellraw`.
+- **Result:** Shulker laga; crate binding + loot pending (in-game manager ya owner).
