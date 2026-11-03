@@ -1239,3 +1239,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** techshotgaming ko in-game owner ki taraf se message (Discord DM check karke reply do) + title "Check your DM!".
 - **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming [...]`, `title techshotgaming title {...}`.
 - **Result:** Deliver (manager online).
+
+### 2026-11-03 08:00 UTC — [MANAGER] Most common armor trim (question)
+- **Kisne kaha:** techshotgaming (in-game): "Server whats the most common Armor trim"
+- **Kya kiya:** Jawab diya: common = Sentry (pillager outpost ~25%), Coast (shipwreck ~17%), Dune (desert temple ~14%), Wild (jungle temple ~33% but rare structure); rarest = Silence (ancient city).
+- **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming` (vanilla loot-table chances).
+- **Result:** Jawab de diya.
