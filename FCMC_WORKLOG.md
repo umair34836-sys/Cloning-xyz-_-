@@ -1371,3 +1371,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added Allay spawn egg to `spawn_eggs` at 0.5% as a test (SlimeCrates decimal support unknown, no console output). Asked manager to confirm preview + how "10% empty" works in this plugin.
 - **Kaise:** Backup slot 0 → 27; `minecraft:item replace ... weapon.mainhand with minecraft:allay_spawn_egg 1`; `sudo techshotgaming crate addreward spawn_eggs 0.5`; restored; `crate preview spawn_eggs`.
 - **Result:** Pending manager confirmation, then add remaining ~38 eggs (+ turtle_egg, sniffer_egg; chicken spawn egg) at 0.5%.
+
+### 2026-11-03 09:51 UTC — [MANAGER] Spawn eggs crate filled — 44 non-hostile eggs @0.5%
+- **Kisne kaha:** techshotgaming — (spawn eggs request) + "Server haa working" (0.5% decimal confirmed)
+- **Kya kiya:** Added to `spawn_eggs` at 0.5% each (total 22%): allay, armadillo, axolotl, bat, bee, camel, cat, chicken (spawn egg), cod, cow, dolphin, donkey, fox, frog, glow squid, goat, horse, iron golem, llama, mooshroom, mule, ocelot, panda, parrot, pig, polar bear, pufferfish, rabbit, salmon, sheep, sniffer_egg (item), snow golem, squid, strider, tadpole, trader llama, tropical fish, turtle_egg (item), villager, wandering trader, wolf, happy ghast, copper golem. No hostile mobs.
+- **Kaise:** Backup slot 0 → 27; per egg `minecraft:item replace entity techshotgaming weapon.mainhand with minecraft:<egg> 1` + `sudo techshotgaming crate addreward spawn_eggs 0.5`; restored slot 0, cleared 27; `crate preview spawn_eggs`.
+- **Result:** Done. "10% empty slot" method unclear in SlimeCrates — asked manager.
