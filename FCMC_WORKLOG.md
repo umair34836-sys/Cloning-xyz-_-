@@ -1053,3 +1053,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - log_admin_commands HUB = false (check).
 - **Note:** MV-Inv last location sirf ab se record hogi → pehli dafa lobby spawn. Owner se dobara test maanga.
 - **Undo:** `mvinv toggle last_location`, `mvinv config apply-last-location-for-all-teleports true`; NPC actions wapas `minecraft:tag %player_name% add fc_restore`; z10 x15-x25 purane commands (FCMC_WORKLOG 2 Nov + yeh entry).
+
+### 2026-11-03 04:50 UTC — [MANAGER] Vote crate texts baar baar kyun aate hain (clarify pending)
+- **Kisne kaha:** techshotgaming (in-game): "Server ye Vote crate ke upar baar baar 3 texts kyu aa jate hai ,Middle wale ko rakh lo ,And baki dono ko hata do"
+- **Kya kiya:** Check: crate (-10 66 -40) ke upar 6 hologram armor stands (VOTE CRATE + "Right-click to open" ke sets; Y 67.75/68.0 aur 68.75/69.0 dekhe). Wajah bataayi: SlimeCrates har `/crate set` / reload par naya hologram spawn karta hai aur purane stands nahi hatata. "Middle" wala ambiguous tha, isliye poocha kaunsa text rakhna hai — abhi kuch delete nahi kiya.
+- **Kaise:** FCMC `worldlens_command`: `execute in minecraft:lifesteal_lobby ... tag/data get ... Pos`, `if entity` (count 6), `tellraw`.
+- **Result:** Pending — manager ka jawab ("server vote" / "server right-click"). Permanent fix: crate config me hologram off/height (panel, FCMC_PANEL_SETUP.md).
