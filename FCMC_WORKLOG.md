@@ -930,3 +930,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server ye wala kit done samjho next" (Archer final) + "server 8 kits haan" (§6e v3 approved, LEGEND netherite bhi).
 - **Kya kiya:** Preview chest lifesteal_lobby 36 65 -3 reset (`setblock air` → chest "🗡 SCOUT KIT (Preview)"). Scout: leather helmet/tunic/pants/boots `dyed_color=13369344` (laal), Prot I Unbr II (boots + Feather Falling II), `trim={material:"minecraft:redstone",pattern:"minecraft:sentry"}`, naam "✦ " #FF8A5C + "Scout " #FF5555 bold + piece #FF8A5C bold, lore flavor (#FFC4B0) + "★☆☆ UNCOMMON" + "✦ FireCraft MC • Scout Kit ✦"; Scout Dagger iron sword S1 Unbr II (slot 9); 4 golden apple (18), 16 steak (19). Owner tp 34.5 65 -2.5.
 - **Final approved:** ARCHER (pichli entry ka styled set). Next: owner "server next" → MINER.
+
+### 2026-11-03 04:15 UTC — [MANAGER] Tank kit armor stand (clarification maangi)
+- **Kisne kaha:** techshotgaming (in-game): "Server Tank kit wale armor stand ko do ara lagaao"
+- **Kya kiya:** lifesteal_lobby me ls_kits NPC (40 65 0) ke 40 blocks aur manager ki position (HUB 1.7 152 -3.2) ke 30 blocks me armor stands search kiye — koi nahi mila. Manager se location aur armor ki detail poochi.
+- **Kaise:** FCMC connector `worldlens_command` → `execute ... as @e[type=armor_stand,...] run data get entity @s ...`, `data get entity techshotgaming Pos`, `tellraw`.
+- **Result:** Pending — manager ke jawab ka intezar.
