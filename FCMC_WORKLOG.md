@@ -1156,3 +1156,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Kit NPC holos (kit_scout … kit_legend): price line → `&eUnlock: <KIT> RANK • stars`; new last line `&7▶ Buy the rank in our &e&lSTORE`.
 - **Pending:** MEDIA Essentials kit (owner must empty inventory → "server media kit banao"); kit cooldowns, kitshop claim menu, store rank delivery, TAB → panel §6g. Owner told by tellraw.
 - **Undo:** `lp deletegroup <id>`; `npc holo set/remove` lines back to the price text (old text in this log: "&e&l<price> Coins &8• ...").
+
+### 2026-11-03 UTC — [OWNER] MEDIA kit created
+- **Who asked:** MrCopper804 (in-game): "server media kit banaao"
+- **Done:** owner inventory verified empty (container/armor/offhand) → `minecraft:item replace entity MrCopper804 container.0-6,9-12` with 11 styled items (red #FF0000 / white names "✦ Media <Piece>", lore flavor + "▶ MEDIA EXCLUSIVE • Not for sale" + "✦ FireCraft MC • Media Kit ✦"): diamond sword S3 U3, diamond pickaxe Eff III U3, 12 golden apple, 4 ender pearl, 16 firework rocket (flight 2), spyglass "Camera", 32 steak, diamond helmet/chest/legs/boots P2 U3 trim amethyst/eye → `sudo MrCopper804 createkit media 86400` → `kit` list shows Media → `minecraft:clear MrCopper804` removed 71 = exactly the kit items.
+- Balance: Knight-level (free, not for sale, so not stronger than paid kits). Claimed only with the `media` group (`essentials.kits.media`).
+- **Undo:** `delkit media`.

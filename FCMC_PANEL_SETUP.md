@@ -316,7 +316,7 @@ Owner's words: "media rank k lie bhi kit bana do jo buy nhi hoga serf media rank
 - Ladder inherits: a higher rank can also claim every lower kit (checked: legend → essentials.kits.scout = true; scout → essentials.kits.legend = undefined).
 - Kit NPC holos now say `Unlock: <KIT> RANK` + `▶ Buy the rank in our STORE` (prices removed from holos).
 - The **media** rank is NOT for sale. Staff give it by hand: `lp user <IGN> parent add media`.
-- The Essentials kit `media` is NOT created yet. It needs the owner's empty inventory (createkit method); the owner was asked in-game.
+- The Essentials kit `media` is created `[x]` (3 Nov, createkit, delay 86400 = 24h): diamond armor P2 U3 amethyst/eye trim, diamond sword S3 U3, diamond pickaxe Eff III U3, 12 golden apple, 4 ender pearl, 16 rocket (flight 2), spyglass "Camera", 32 steak. Red #FF0000 / white names, lore "▶ MEDIA EXCLUSIVE • Not for sale".
 
 **Panel work `[ ]`:**
 1. **Kit cooldowns** (kits.yml `delay:` in seconds). Now every rank holder can claim, so delay 0 = unlimited (MUST change). Suggestion (netherite.gg style, higher rank = shorter wait; owner can change): scout/archer/miner 86400 (24h), warrior/knight 64800 (18h), tank/champion 43200 (12h), legend 21600 (6h), media 86400.
