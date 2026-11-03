@@ -795,3 +795,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** `lp group default permission unset essentials.kits.starter` (global) → `... set essentials.kits.starter true world=lifesteal_lobby`. Marzarn ke 4 stone tools `minecraft:clear` (sirf jab wo overworld/HUB me ho). Clear ke dauran Marzarn `/tp mrcopper804` se lifesteal_lobby chala gaya, isliye HUB inventory me se sab hata ya nahi, 100% verify nahi ho saka (lifesteal group inventory khaali hai — wahan kuch nahi chheda).
 - **Baqi (panel):** `plugins/Essentials/config.yml` → `newbies.kit: ''` + `essentials reload`. FCMC_PANEL_SETUP.md §7c aur reply file C me request likhi.
 - **Result:** Owner ko tellraw kiya.
+
+### 2026-11-03 UTC — [OWNER] Lobby AFK pool kaam nahi kar raha?
+- **Kisne kaha:** MrCopper804 (in-game): "server lobby k under wala afk pool abhi work kio nhi ker raha jab k ye humne kal fix karha bhi tha ?"
+- **Check:** AFK ab sirf DonutShop ka hai (`/shard setafk` = lifesteal_lobby 28.5 64 28.5, radius 10, 60s = 1 shard); AxAFKZone panel ne disable kiya tha. Owner position lifesteal_lobby 21.2 65 21.4 = centre se ~10.2 block (horizontal) → radius ke bahar (pool x21-35 z21-35 ke kone circle me nahi). `shard see MrCopper804` = 2.
+- **Kya kiya:** Kuch change nahi. Owner ko tellraw: pool ke beech 28 64 28 par 1-2 min ruk kar "server afk check" likhein; shards 2 se badhe ya nahi main check karunga.
+- **Agar beech me bhi na mile:** DonutShop AFK config (radius / enabled) panel se dekhna hoga — console se read nahi hota.
+- Owner ke "bhai tum kia hack use ker rahay ho..." / "tum hi" messages kisi player ke liye the (server prefix nahi) — ignore.
