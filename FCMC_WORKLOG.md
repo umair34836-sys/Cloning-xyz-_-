@@ -969,3 +969,17 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Confirm kiya ke lime_shulker_box hi lagaya gaya hai (lifesteal_lobby -10 66 -40); /sc set wala step yaad dilaya.
 - **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming`.
 - **Result:** Koi change zaroori nahi tha.
+
+### 2026-11-03 UTC — [OWNER] Kits area redesign + decorate
+- **Kisne kaha:** MrCopper804: "server ab kits wale area ko sahi se bana k redesign and decorate kerdo with beautiful details"
+- **Check pehle:** pad x30-44 z-10..10 (border red_nether_bricks x29/45, z±11), purani wall x42 y65 z-8..8 + 3 soul lanterns (rakhe), x43-44 y65-71 sab air (322 verify), front path area air.
+- **Kya kiya (lifesteal_lobby, sirf air replace jahan possible):**
+  - Backdrop: `fill 43 65 -11 43 69 11 polished_blackstone_bricks replace air`; cornice x43 y70 chiseled_polished_blackstone, x42 y70 polished_blackstone_brick_stairs[facing=east,half=top] (overhang), x43 y71 brick wall.
+  - Windows x43 y66-68: z-11 red, -8 lime, -5 brown, -2 orange, 1 light_blue, 4 cyan, 7 yellow, 10 black stained glass.
+  - Wall banners x42 y69 (facing west) same rang per NPC z.
+  - Hanging lanterns x42 y69 z-10..9 (14, gaps me).
+  - Floor x40 y64: 4 purane chiseled tiles → polished_blackstone; NPC tiles: -11 redstone_block, -8 emerald_block, -5 waxed_copper_block, -2 gold_block, 1 diamond_block, 4 lapis_block, 7 raw_gold_block, 10 netherite_block.
+  - Red carpet x31-36 y65 z-1..1; lamp posts (brick wall y65-66 + lantern y67) at x31/x36 z±3.
+  - "✦ KITS ✦" title tp 40.5 72 0.5 → 42.5 72.8 0.5; naya text_display (tags ls_label,kits_sub) 42.5 72.1 0.5 "▶ Kisi bhi hero par Right-click = Kit Shop".
+- **Result:** WorldLens shot me sahi dikh raha (shots/20261103-042753_shot_lifesteal_lobby_30_68_0.png). Owner feedback ka intezaar.
+- **Undo:** x43 y65-71 + x42 y69-70 + carpet/posts air; floor tiles polished_blackstone (purane chiseled x40 z -6/-2/2/6).
