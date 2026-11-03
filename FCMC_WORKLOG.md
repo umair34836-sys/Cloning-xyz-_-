@@ -983,3 +983,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - "✦ KITS ✦" title tp 40.5 72 0.5 → 42.5 72.8 0.5; naya text_display (tags ls_label,kits_sub) 42.5 72.1 0.5 "▶ Kisi bhi hero par Right-click = Kit Shop".
 - **Result:** WorldLens shot me sahi dikh raha (shots/20261103-042753_shot_lifesteal_lobby_30_68_0.png). Owner feedback ka intezaar.
 - **Undo:** x43 y65-71 + x42 y69-70 + carpet/posts air; floor tiles polished_blackstone (purane chiseled x40 z -6/-2/2/6).
+
+### 2026-11-03 04:28 UTC — [MANAGER] Vote crate ke duplicate texts hataye
+- **Kisne kaha:** techshotgaming (in-game): "Server Vote crate ke upar do do Text aa rahe hai inko hata do" + "Server only 1 text rakhna"
+- **Kya kiya:** lifesteal_lobby vote crate (-10 66 -40) ke upar 8 hologram armor stands mile: 4x "VOTE CRATE" + 4x "Right-click to open" (purane duplicates). Sab "Right-click to open" aur 3 "VOTE CRATE" hata diye — sirf 1 "VOTE CRATE" bacha.
+- **Kaise:** FCMC `worldlens_command`: `execute in minecraft:lifesteal_lobby if entity @e[...]` (count), `tag ... add cl_seen` se naam padhe, `minecraft:kill @e[type=armor_stand,...,name="Right-click to open"]` (4) aur `name="VOTE CRATE",limit=3` (3), phir temp tag hataya.
+- **Result:** Ab ek hi text. Note: SlimeCrates reload/set par naya hologram ban sakta hai.
