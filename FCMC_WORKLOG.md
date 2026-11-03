@@ -891,3 +891,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server kits ko apne andaze se maat banao dosre public servers ka dekh ker unse idea loo"
 - **Research:** netherite.gg/wiki/lifesteal/store (rank kits: full netherite P4/U3/Mending, Sharp V sword, Eff V/Fortune III tools, 16-64 gapple, 0-3 god apple, 32 steak, 4-9 hearts, cooldown); PikaNetwork OP Lifesteal guide (Legend kit Prot III/Sharp IV, Ultimate Prot V/Sharp V); Jartex KitPvP Warrior P1/S2.
 - **Kya kiya:** FCMC_PANEL_SETUP.md §6d v2 — kits poore set (armor + sword + tools + gapples + food), hearts NAHI, netherite NAHI; price suggestion 150/400/800 (owner decide). Owner ko 2 tellraw; "server kits haan" + price ka intezaar.
+
+### 2026-11-03 04:08 UTC — [MANAGER] Kits shop NPC ki ID batayi
+- **Kisne kaha:** techshotgaming (in-game): "Server Kits shop wale npc ki id kya hai"
+- **Kya kiya:** ZNPCsPlus list check karke ID batayi: `ls_kits` (villager, lifesteal_lobby X:40 Y:65 Z:0).
+- **Kaise:** FCMC connector `worldlens_command` → `npc list`, phir `tellraw techshotgaming`.
+- **Result:** Manager ko ID mil gayi (saath me ls_shop, ls_heartshop, ls_auction bhi bataye).
