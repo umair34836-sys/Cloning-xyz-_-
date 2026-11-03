@@ -248,6 +248,20 @@ aliases:
 ```
 Phir server restart (ya console `reload commands` agar available ho). Permission underlying `/warp` wali lagti hai (default players ke liye lobby/hub/lifesteal sab jagah allow kar di gayi hai).
 
+### 7b-UPDATE (owner, 3 Nov): warps hub/lobby hatao, /hub aur /spawn rahe  `[ ]`
+Owner: "server warp lobby remove ker k /spawn rakhdo lobby k lie and warp hub remove ker k /hub hona chaye"
+- **Claude ne kar diya:** `delwarp rtp`, `delwarp lobby`. Ab warps: afk, crates, hub, kits, leaderboards, pvp, shop. `/spawn` (lifesteal_lobby 0.5 65 0.5) har jagah allowed hai.
+- **`warp hub` abhi RAKHA hai** kyunki `/hub` alias usi par chalta hai. Panel kaam (`commands.yml`, backup pehle):
+```yaml
+aliases:
+  hub:
+  - "mvtp HUB"
+  lobby:
+  - "spawn"
+```
+  HUB ka Multiverse spawn = 0.5 151 0.5 yaw 180 (warp hub jaisa). Players ko mvtp ki permission chahiye (Multiverse 5 ka exact node verify karo, e.g. `multiverse.teleport.self.w`) — bata dena, main LP me de dunga (sirf HUB tak, agar node allow kare).
+- Restart ke baad `/hub` test → phir Claude `delwarp hub`.
+
 ## 7c. HUB me free "Tools" kit (first-join) band karo  `[ ]`  (owner, 3 Nov)
 Owner: "hub me kio players ko free wala kit mil raha hai ? hub ko her ek lobby or world se alag rakhoo"
 **Wajah:** EssentialsX pehli dafa join par `newbies.kit` deta hai (default kit = `tools`: stone sword/shovel/pickaxe/axe). Join HUB me hota hai, isliye kit HUB inventory (MV-Inv group `lobby`) me aa jata hai. Marzarn ke HUB inventory me yahi 4 stone tools mile (3 Nov).

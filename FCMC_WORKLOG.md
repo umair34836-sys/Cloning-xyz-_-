@@ -840,3 +840,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **warp rtp:** `delwarp rtp` → removed (pehle 0.5 65 33.5 y0, lifesteal_lobby). Baqi warps: afk, crates, hub, kits, leaderboards, lobby, pvp, shop. `essentials.tpr` default: global true, lifesteal_lobby + hub me false → /rtp sirf lifesteal worlds me; owner se pucha lobby me bhi chahiye?
 - **Shards = coins:** `papi parse` MrCopper804 shards=8 points=8 (phir points lead 9), Marzarn 2=2 → DonutShop shards PlayerPoints me store hote hain; AFK se free coins. Console se config nahi badalti → FCMC_PANEL_SETUP.md §7d (URGENT) + reply file C. Owner se pucha: tab tak AFK shard band karein ("server afk band")?
 - **Undo warp:** owner ko 0.5 65 33.5 (yaw 0) par tp + `sudo MrCopper804 setwarp rtp`.
+
+### 2026-11-03 UTC — [OWNER] warp lobby/hub hatao, /spawn + /hub rahe
+- **Kisne kaha:** MrCopper804: "server warp lobby remove ker k /spawn rakhdo lobby k lie and warp hub remove ker k /hub hona chaye"
+- **Kya kiya:** `delwarp lobby` → removed (pehle lifesteal_lobby 0.5 65 0.5). `/spawn` default ke liye global + hub + lifesteal_lobby true (check kiya). Warps ab: afk, crates, hub, kits, leaderboards, pvp, shop.
+- **Nahi kiya:** `warp hub` — `/hub` alias (commands.yml) = "warp hub"; hatane se /hub toot jata. HUB MV spawn = 0.5 151 0.5 yaw180 (warp hub jaisa) → panel request: `hub: - "mvtp HUB"`, `lobby: - "spawn"` (FCMC_PANEL_SETUP.md §7b-UPDATE + reply file C). Uske baad `delwarp hub`.
+- **Note:** `/lobby` alias ("warp lobby") ab kaam nahi karega jab tak panel use "spawn" nahi karta.
+- **Undo:** owner ko lifesteal_lobby 0.5 65 0.5 par tp + `sudo MrCopper804 setwarp lobby`.
