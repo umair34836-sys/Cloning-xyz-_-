@@ -897,3 +897,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** ZNPCsPlus list check karke ID batayi: `ls_kits` (villager, lifesteal_lobby X:40 Y:65 Z:0).
 - **Kaise:** FCMC connector `worldlens_command` → `npc list`, phir `tellraw techshotgaming`.
 - **Result:** Manager ko ID mil gayi (saath me ls_shop, ls_heartshop, ls_auction bhi bataye).
+
+### 2026-11-03 04:08 UTC — [MANAGER] EssentialsXGUI check
+- **Kisne kaha:** techshotgaming (in-game): "Server Check karo if essentialsxGUI is present"
+- **Kya kiya:** Plugin list check ki — EssentialsXGUI installed nahi hai (sirf Essentials, EssentialsChat, EssentialsSpawn). Kit GUI ke liye DeluxeMenus available bataya.
+- **Kaise:** FCMC connector `worldlens_command` → `plugins`, phir `tellraw techshotgaming`.
+- **Result:** Manager ko jawab de diya.
