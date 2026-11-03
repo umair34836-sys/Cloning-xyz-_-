@@ -1221,3 +1221,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby: time 18000 (midnight), advance_time pehle se false (freeze), WorldGuard __global__ time-lock 6000 → 18000 (warna players ko din dikhta), gamerule spawn_mobs true → false (WG mob-spawning DENY pehle se tha). Child regions (ls_pvp_arena, ls_enchanter, ls_utility) me time-lock nahi. Lobby me koi hostile mob nahi mila. Baaki worlds untouched (lifesteal advance_time = true).
 - **Kaise:** FCMC `worldlens_command`: `execute in minecraft:lifesteal_lobby run gamerule minecraft:advance_time` (check), `time set 18000 lifesteal_lobby`, `execute in minecraft:lifesteal_lobby run gamerule minecraft:spawn_mobs false`, `rg flag -w lifesteal_lobby __global__ time-lock 18000`, `if entity` checks.
 - **Result:** Lobby hamesha raat, no mob spawns. Undo: `rg flag -w lifesteal_lobby __global__ time-lock 6000`, `time set 6000 lifesteal_lobby`, spawn_mobs true.
+
+### 2026-11-03 07:42 UTC — [MANAGER] Owner ka message manager ko (launch Sunday)
+- **Kisne kaha:** Owner (Claude session chat): "meri traf se in game manager ko kehdoo k barhay barhay kaam jaldi jaldi finish kro ye chotte chote kaam ai se ker lingay anne wale sunday ko launch kerna hai work fast and faster"
+- **Kya kiya:** techshotgaming ko in-game owner ki taraf se message bheja (bade kaam jaldi, chhote kaam Claude ko "server ..." se do, Sunday launch) + title "Launch: Sunday!".
+- **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming [...]`, `title techshotgaming title {...}` (sirf manager ko).
+- **Result:** Message deliver (manager online tha).
