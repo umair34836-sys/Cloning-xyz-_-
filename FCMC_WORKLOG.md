@@ -1275,3 +1275,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Confirmation + crate names mil gaye (rare, epic, legendary, spawn_eggs; common + vote untouched). SlimeCrates `removereward <crate> <reward>` ka reward identifier (index ya naam) pata nahi aur public docs nahi mile (firecrawl search). Andaze se remove nahi kiya. Manager ki screen par `/crate rewards rare` (sudo) chalaya aur ID format + count poocha.
 - **Kaise:** FCMC `worldlens_command` → `sudo techshotgaming crate rewards rare`, `tellraw`.
 - **Result:** Pending — ID format milte hi 4 crates clear.
+
+### 2026-11-03 09:02 UTC — [MANAGER] Crate rewards removed (rare/epic/legendary/spawn_eggs)
+- **Kisne kaha:** techshotgaming — "Server saari crate me diamond and iron ingot hai un dono ko hatana hai and id naam hi hai, Don't touch vote and Common crate"
+- **Kya kiya:** Removed rewards `diamond` and `iron_ingot` from crates rare, epic, legendary, spawn_eggs. Vote and common untouched.
+- **Kaise:** `sudo techshotgaming crate removereward <crate> diamond|iron_ingot` (8 cmds), then `sudo techshotgaming crate rewards rare` for manager to verify.
+- **Result:** Commands ran (SlimeCrates output is player-only); asked manager to confirm the list is empty.
