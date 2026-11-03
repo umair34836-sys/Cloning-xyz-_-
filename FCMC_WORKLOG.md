@@ -1317,3 +1317,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Replaced Epic Bow with Power 4 version (Punch 2, Flame, Infinity, Unbreaking 3 unchanged).
 - **Kaise:** `minecraft:clear techshotgaming minecraft:bow 0` (count check = 1), `minecraft:clear ... minecraft:bow 1`, then `minecraft:give` new bow.
 - **Result:** Done.
+
+### 2026-11-03 09:19 UTC — [MANAGER] Epic items renamed light blue (aqua)
+- **Kisne kaha:** techshotgaming — "Server by the way Epic crate colour is light blue so rename the items again"
+- **Kya kiya:** Changed name colour dark_purple → aqua on all 11 Epic items (sword, spear, axe, pickaxe, shovel, 4 armor, bow, crossbow). Enchants/trim unchanged; offered diamond trim.
+- **Kaise:** `minecraft:item modify entity techshotgaming container.N {function:"minecraft:set_name",target:"custom_name",name:{text:"Epic ...",color:"aqua",bold:true,italic:false}}` for slots 0–8, 20, 21.
+- **Result:** Done.
