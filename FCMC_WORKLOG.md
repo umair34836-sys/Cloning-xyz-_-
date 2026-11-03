@@ -989,3 +989,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby vote crate (-10 66 -40) ke upar 8 hologram armor stands mile: 4x "VOTE CRATE" + 4x "Right-click to open" (purane duplicates). Sab "Right-click to open" aur 3 "VOTE CRATE" hata diye — sirf 1 "VOTE CRATE" bacha.
 - **Kaise:** FCMC `worldlens_command`: `execute in minecraft:lifesteal_lobby if entity @e[...]` (count), `tag ... add cl_seen` se naam padhe, `minecraft:kill @e[type=armor_stand,...,name="Right-click to open"]` (4) aur `name="VOTE CRATE",limit=3` (3), phir temp tag hataya.
 - **Result:** Ab ek hi text. Note: SlimeCrates reload/set par naya hologram ban sakta hai.
+
+### 2026-11-03 04:28 UTC — [MANAGER] Iron armor (Prot 2, Unb 1) diya
+- **Kisne kaha:** techshotgaming (in-game): "Server Give me iron armor with protection 2 unbreaking 1"
+- **Kya kiya:** Manager ko iron helmet, chestplate, leggings, boots — har ek par Protection II + Unbreaking I — de diye.
+- **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:iron_<piece>[enchantments={protection:2,unbreaking:1}]` x4, phir `tellraw`.
+- **Result:** 4 pieces mil gaye.
