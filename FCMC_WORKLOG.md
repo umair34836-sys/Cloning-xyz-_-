@@ -847,3 +847,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Nahi kiya:** `warp hub` — `/hub` alias (commands.yml) = "warp hub"; hatane se /hub toot jata. HUB MV spawn = 0.5 151 0.5 yaw180 (warp hub jaisa) → panel request: `hub: - "mvtp HUB"`, `lobby: - "spawn"` (FCMC_PANEL_SETUP.md §7b-UPDATE + reply file C). Uske baad `delwarp hub`.
 - **Note:** `/lobby` alias ("warp lobby") ab kaam nahi karega jab tak panel use "spawn" nahi karta.
 - **Undo:** owner ko lifesteal_lobby 0.5 65 0.5 par tp + `sudo MrCopper804 setwarp lobby`.
+
+### 2026-11-03 UTC — [OWNER] Leaderboard + info boards ka text kaale me chhupta hai
+- **Kisne kaha:** MrCopper804: "server ab muje leaderboard and info per tp kro and unko fix kerte hai kio k wo black me chup jata hai or dekhta nhi hai sahi se"
+- **Diagnose:** 6 `ls_label` text_displays (TOP KILLS 21.5 / TOP HEARTS 28.5 / TOP PLAYTIME 35.5 y66.1; RULES -34.5 / HOW LIFESTEAL WORKS -27.5 / SERVER INFO -20.5 y66.2) z -34.3 par the; board block (black concrete) z -35 = -35..-34 → text block ke 0.3 andar.
+- **Kya kiya:** owner tp lifesteal_lobby 28.5 65 -28.5 (yaw 180). `minecraft:tp` sab 6 → z -33.8; `brightness:{block:15,sky:15}` sab 6 + 2 headings (✦ LEADERBOARDS ✦ 28.5 73 -34.5, ✦ INFO ✦ -27.5 74 -34.5).
+- **Result:** Teleported x6, Modified x8. WorldLens shot entities nahi dikhata → owner se visual confirm maanga. Info boards par tp owner ke kehne par.
+- **Undo:** z wapas -34.3, brightness hatao (`data remove entity ... brightness`).
