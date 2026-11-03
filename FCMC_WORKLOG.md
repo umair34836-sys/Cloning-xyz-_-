@@ -1353,3 +1353,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Gave 4 shulker shell + Silence, Eye, Ward armor trim smithing templates (rarest trims) to manager's inventory for Legendary crate.
 - **Kaise:** `minecraft:give techshotgaming minecraft:shulker_shell 4`, `minecraft:<silence|eye|ward>_armor_trim_smithing_template 1`.
 - **Result:** Done; waiting for manager to say when to add to Legendary crate.
+
+### 2026-11-03 09:39 UTC — [MANAGER] Legendary items → Legendary crate rewards (≤3%)
+- **Kisne kaha:** techshotgaming — "Server ye samaan legendary crate me daal do and har chij ka chance ≤3% rakhna accordingly"
+- **Kya kiya:** Added 25 rewards to crate `legendary`. 3%: Legendary Sword/Spear/Axe/Pickaxe/Shovel, 4× Legendary Armor, Bow, Crossbow, golden carrot 64, steak 64, arrow 64, XP bottle 64. 2%: ender pearl 16, diamond 32, golden apple 16, emerald block 32. 1%: totem 1, enchanted golden apple 4, shulker shell 4, Silence/Eye/Ward trim templates.
+- **Kaise:** Hand-swap (backup slot 0 → container.27; `minecraft:item replace ... weapon.mainhand from ... container.N` + `sudo techshotgaming crate addreward legendary <3|2|1>`); restored slot 0, cleared 27; opened `crate preview legendary`.
+- **Result:** Done, inventory unchanged; manager asked to verify.
