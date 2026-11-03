@@ -1299,3 +1299,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added 20 rewards to crate `rare`. 5%: Rare Sword/Spear/Axe/Pickaxe/Shovel, 4× Rare Armor pieces, cooked beef 64, cooked porkchop 64, bread 64, golden carrot 64. 1%: totem, ender pearl 16, diamond 6, golden apple 4, enchanted golden apple 1, lapis block 8, emerald block 8.
 - **Kaise:** Hand-swap: backup slot 0 → container.9, `minecraft:item replace entity techshotgaming weapon.mainhand from entity techshotgaming container.N` + `sudo techshotgaming crate addreward rare <5|1>` per item; restored slot 0, cleared 9. Opened `crate preview rare`.
 - **Result:** Done, manager inventory unchanged; asked manager to verify preview.
+
+### 2026-11-03 09:13 UTC — [MANAGER] Epic-tier items given to manager inventory
+- **Kisne kaha:** techshotgaming — "Server Ab mujhe Epic crate ke liye samaan chahiye ... Epic crate is better than Rare crate, Material to diamond hi dena enchants thodi better kar dena, And rest stuff bhi de dena accordingly" + "Server sab kuch meri inventory me daalna crate me nahi"
+- **Kya kiya:** Gave Epic set (diamond, dark_purple bold names): Epic Sword (Sharp 4, Looting 3, Unb 3, Mending), Epic Spear (Sharp 4, Lunge 3, Unb 3, Mending), Epic Axe (Sharp 4, Eff 5, Unb 3, Mending), Epic Pickaxe (Fortune 3, Eff 5, Unb 3, Mending), Epic Shovel (Eff 5, Unb 3, Mending), 4× "Epic Armor" (Prot 4, Unb 3, Mending, amethyst/silence trim; boots + Feather Falling 4). Extras: 2 totem, 16 ender pearl, 16 diamond, 8 golden apple, 2 enchanted golden apple, 64 golden carrot, 16 emerald block.
+- **Kaise:** `minecraft:give techshotgaming minecraft:<item>[enchantments={...},trim={...},custom_name={...}]` ×16.
+- **Result:** Done, all gave successfully. Not added to crate (manager will do/ask later).
