@@ -1168,3 +1168,18 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Analysis:** top shots (shots/20261103-053519_top_lifesteal_lobby_0_0_80.png, 20261103-053530_..._55.png): 8 zones around the star plaza; between them only plain GRASS_BLOCK (6569 in r55); zone floors mostly plain smooth_quartz.
 - **Plan sent (tellraw):** 1) grass area → garden (stone-brick/tuff/calcite paths, flower beds, azalea hedges, small ponds + lily pads, lamp posts, benches); 2) patterned zone floors; 3) fountain upgrade; 4) RANK GALLERY east of the Kit Hall (x48-58, z-15..15): 9 pedestals + ZNPCs in rank colours + holo (rank, kits, "Buy in STORE"; Media "Not for sale").
 - **Status:** waiting for "server lobby plan haan". Nothing built yet.
+
+### 2026-11-03 UTC — [OWNER] Lobby redesign STEP 1 (garden on the grass area) — done
+- **Who asked:** MrCopper804: "server lobby plan haan" (approves the 4-step plan above).
+- **How:** WorldEdit through `sudo MrCopper804 /<cmd>` (Essentials sudo adds one "/", so `/pos1` → `//pos1`). Selection y64 (ground) or y65, x/z -75..75, lifesteal_lobby. `//gmask` limited every op to grass/moss (ground) or air (y65), so no build was touched. Expression masks use ABSOLUTE coords (tested: 57,64,0 became polished_tuff).
+  - Promenade ring: `//replace =abs(sqrt(x^2+z^2)-57)<1.5 65%tuff_bricks,35%polished_tuff`, edges `<2.5 calcite`.
+  - Cardinal connectors: `=min(abs(x),abs(z))<1.5&&sqrt(x^2+z^2)<57` tuff mix, `<2.5` calcite.
+  - Ground texture: `//replace grass_block 90%grass_block,10%moss_block`.
+  - Hedge y65: `=abs(sqrt(x^2+z^2)-61)<1` → 70% azalea_leaves / 30% flowering_azalea_leaves (persistent).
+  - Flowers/grass y65 above grass: 88% air, 6% short_grass, 1% each dandelion/poppy/cornflower/azure_bluet/oxeye_daisy/allium; then vegetation above new paths/water removed.
+  - 4 ponds r≈2.8 at (24,10) (-10,24) (-24,-10) (10,-24): water + rim 70% mossy_stone_bricks/30% stone_bricks, 30% lily pads (checked: none in the plaza fountain).
+  - 12 lamp posts at r55 every 30° from 15°: cherry_fence y65-67 + lantern y68 (conditional on calcite below/air above).
+  - `//gmask` cleared at the end.
+- **Result:** top shot shots/20261103-054200_top_lifesteal_lobby_0_0_66.png. Owner told; next = step 2 after feedback.
+- **Undo:** `sudo MrCopper804 /undo` (WE history of the owner's session, until restart) or the reverse `//replace` with grass_block.
+- Note: a test command was written as `... run say x` (condition was false, nothing ran). `say` must not be used (public chat); use plain `execute if block`.

@@ -57,3 +57,4 @@ Format:
 ## 2026-11-03 — `fill X replace X` se blocks ginna galat
 - Kya hua: block maujood hai ya nahi dekhne ke liye `fill <area> X replace X` chalaya → hamesha "No blocks were filled" (fill sirf BADLE hue blocks ginta hai). Isse galat nateeja nikala (nether_portal/reinforced deepslate "nahi hai").
 - Bachao: maujoodgi ke liye `execute if block`/`execute if blocks <area> <known-air-area> all` ya `clone ... filtered <block>` (scratch jagah par) use karo.
+- (3 Nov, FCMC) Wrote a block test as `execute ... run say x`. `say` is public chat — never use it for tests; plain `execute if block ...` already prints Test passed/failed.
