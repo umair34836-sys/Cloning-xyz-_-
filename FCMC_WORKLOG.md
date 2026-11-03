@@ -1245,3 +1245,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Jawab diya: common = Sentry (pillager outpost ~25%), Coast (shipwreck ~17%), Dune (desert temple ~14%), Wild (jungle temple ~33% but rare structure); rarest = Silence (ancient city).
 - **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming` (vanilla loot-table chances).
 - **Result:** Jawab de diya.
+
+### 2026-11-03 08:04 UTC — [MANAGER] "Common Armor" iron set (P3 U3, emerald sentry trim)
+- **Kisne kaha:** techshotgaming (in-game): "Server mujhe Iron irmor with protection 3 , Unbreakable 3 with emerald sentry armor trim dedo inventory me ,And itemedit pluggin ki madad se us armor ko naam de dena Common Armor Light pink and bold"
+- **Kya kiya:** Manager ko iron helmet/chestplate/leggings/boots diye: Protection III, Unbreaking III ("Unbreakable 3" ko Unbreaking 3 samjha), trim emerald + sentry, naam "Common Armor" (#FFB6C1 light pink, bold, non-italic). ItemEdit ki zarurat nahi padi — vanilla custom_name component se naam diya.
+- **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:iron_<piece>[enchantments={protection:3,unbreaking:3},trim={material:"minecraft:emerald",pattern:"minecraft:sentry"},custom_name={text:"Common Armor",color:"#FFB6C1",bold:true,italic:false}]` x4.
+- **Result:** "Gave 1 [Common Armor]" x4.
