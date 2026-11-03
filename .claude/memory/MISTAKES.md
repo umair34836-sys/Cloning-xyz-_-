@@ -53,3 +53,7 @@ Format:
 - Kya hua: z10 x4 `tp` har tick `fc_wait=1` par; counter `fc_leave` (stat) par depend tha; `mvinv toggle game_statistics` se stat 0 → counter fc_wait=1 par atka → player har tick spawn par tp = hil nahi sakta.
 - Bachao: per-tick repeating tp kabhi aise score par mat lagao jo atak sakta ho; counters self-advancing rakho; koi bhi global setting (MV-Inv shares, stats) badalne se pehle check karo kaunse objectives/criteria us par depend karte hain.
 - CoreProtect `a:command` lookup me /register /login ke passwords dikhte hain — kabhi copy/log mat karo.
+
+## 2026-11-03 — `fill X replace X` se blocks ginna galat
+- Kya hua: block maujood hai ya nahi dekhne ke liye `fill <area> X replace X` chalaya → hamesha "No blocks were filled" (fill sirf BADLE hue blocks ginta hai). Isse galat nateeja nikala (nether_portal/reinforced deepslate "nahi hai").
+- Bachao: maujoodgi ke liye `execute if block`/`execute if blocks <area> <known-air-area> all` ya `clone ... filtered <block>` (scratch jagah par) use karo.
