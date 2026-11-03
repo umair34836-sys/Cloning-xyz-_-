@@ -942,3 +942,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** `lp user Notkartik parent add moderator` (offline UUID dbb3b4ec-f916-3710-8f43-bf1211ef0903, online tha). Info: Primary Group moderator, prefix aaya, weight 800.
 - **Pucha:** Discord 🔨 Moderator role / moderator AI session bhi chahiye?
 - **Undo:** `lp user Notkartik parent remove moderator`.
+
+### 2026-11-03 04:18 UTC — [MANAGER] Tank kit armor stand wapas lagaya
+- **Kisne kaha:** techshotgaming (in-game): "Server Tank kit wala Armor stand mujhse galti se hat gaya ab usko dobara laga do Jaha wo pehle tha"
+- **Kya kiya:** CoreProtect se pata chala manager ne lifesteal_lobby 40 65 6 par armor_stand toda tha aur usse diamond helmet/chestplate/leggings + shield nikle the. Armor stand rollback se wapas laya, phir diamond helmet, chestplate, leggings, boots aur offhand shield pehnaye.
+- **Kaise:** FCMC `worldlens_command`: `co lookup u:techshotgaming t:1h b:armor_stand`, `co lookup ... a:container`, `co rollback u:techshotgaming t:10m b:armor_stand r:#lifesteal_lobby` (1 block), phir `execute in minecraft:lifesteal_lobby as @e[type=armor_stand,x=40,y=65,z=6,distance=..2,limit=1] run minecraft:item replace entity @s armor.* / weapon.offhand ...`.
+- **Result:** Stand wapas apni jagah par, armor ke saath. Note: `item` command ItemEdit plugin override karta hai — `minecraft:item` use karo. Boots log ke page 2 par the (assume kiye); enchant/rotation original jaisa ho ye guarantee nahi.
