@@ -936,3 +936,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby me ls_kits NPC (40 65 0) ke 40 blocks aur manager ki position (HUB 1.7 152 -3.2) ke 30 blocks me armor stands search kiye — koi nahi mila. Manager se location aur armor ki detail poochi.
 - **Kaise:** FCMC connector `worldlens_command` → `execute ... as @e[type=armor_stand,...] run data get entity @s ...`, `data get entity techshotgaming Pos`, `tellraw`.
 - **Result:** Pending — manager ke jawab ka intezar.
+
+### 2026-11-03 UTC — [OWNER] Notkartik ko moderator rank
+- **Kisne kaha:** MrCopper804: "server Notkartik ko modrator wali rank do"
+- **Kya kiya:** `lp user Notkartik parent add moderator` (offline UUID dbb3b4ec-f916-3710-8f43-bf1211ef0903, online tha). Info: Primary Group moderator, prefix aaya, weight 800.
+- **Pucha:** Discord 🔨 Moderator role / moderator AI session bhi chahiye?
+- **Undo:** `lp user Notkartik parent remove moderator`.
