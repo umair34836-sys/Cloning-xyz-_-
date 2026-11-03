@@ -1005,3 +1005,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Area bada:** check — x30-44 z-17..-12 aur z12..16 khaali (sirf x45 par ped ke patte). Floor polished_blackstone x30-44 z-16..16 (purani z±11 border andar le li); nayi red_nether_bricks border z±17 aur x29/x45 (z-16..16, x29 me z0 path gap waisa hi). Backdrop rebuild x43 y65-69 z-16..16 + cornice/stairs/wall top; low wall x42 y65 z-16..16 (purani -8..8 + soul lanterns rakhe). Windows/banners naye z: -14 red, -10 lime, -6 brown, -2 orange, 2 light_blue, 6 cyan, 10 yellow, 14 black; 25 hanging lanterns x42 y69 gaps. Floor tiles x40 y64 naye z (purane hataye). NPCs setlocation x40.5 y65 z: scout -13.5, archer -9.5, miner -5.5, warrior -1.5, knight 2.5, tank 6.5, champion 10.5, legend 14.5 (spacing 4).
 - **Click:** actions same as ls_kits (`playercommand kitshop`); owner 10 block door khada tha (reach ~3). Har kit NPC par `message` action "✦ Kit Shop khul raha hai..." add (feedback + diagnose). Owner ko Knight ke saamne tp (38.5 65 2.5) kar ke right-click test maanga.
 - **Agar message bhi na aaye:** ZNPCsPlus click detect nahi ho raha → interaction entity + `dm open kitshop <player>` console alternative.
+
+### 2026-11-03 04:33 UTC — [MANAGER] Vote crate ke saare texts hataye
+- **Kisne kaha:** techshotgaming (in-game): "Server Vote Crate ke saare Texts hata do"
+- **Kya kiya:** lifesteal_lobby vote crate (-10 66 -40) ke upar ke sab hologram armor stands hata diye (4 mile — plugin ne pichli safai ke baad dobara banaye the). Ab koi entity nahi bachi.
+- **Kaise:** FCMC `worldlens_command` → `execute in minecraft:lifesteal_lobby run minecraft:kill @e[type=armor_stand,x=-9.5,y=67,z=-39.5,distance=..3,tag=!lobby_npc]` (4), verify `if entity` → Test failed (0).
+- **Result:** Koi text nahi. SlimeCrates reload/set par wapas aa sakte hain — permanent hatana ho to crate config me hologram off karna hoga (panel).
