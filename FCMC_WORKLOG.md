@@ -1281,3 +1281,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Removed rewards `diamond` and `iron_ingot` from crates rare, epic, legendary, spawn_eggs. Vote and common untouched.
 - **Kaise:** `sudo techshotgaming crate removereward <crate> diamond|iron_ingot` (8 cmds), then `sudo techshotgaming crate rewards rare` for manager to verify.
 - **Result:** Commands ran (SlimeCrates output is player-only); asked manager to confirm the list is empty.
+
+### 2026-11-03 09:03 UTC — [MANAGER] Iron ingot reward still in crates — retry
+- **Kisne kaha:** techshotgaming — "Server iron ingit remove nahi hue"
+- **Kya kiya:** Retried removal in rare with ID `IRON_INGOT`; reopened `/crate rewards rare` for manager; asked for exact iron reward ID.
+- **Kaise:** `sudo techshotgaming crate removereward rare IRON_INGOT`, `sudo techshotgaming crate rewards rare`, tellraw.
+- **Result:** Pending — waiting for manager to confirm / give exact ID, then apply to epic, legendary, spawn_eggs.
