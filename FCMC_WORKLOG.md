@@ -1162,3 +1162,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Done:** owner inventory verified empty (container/armor/offhand) → `minecraft:item replace entity MrCopper804 container.0-6,9-12` with 11 styled items (red #FF0000 / white names "✦ Media <Piece>", lore flavor + "▶ MEDIA EXCLUSIVE • Not for sale" + "✦ FireCraft MC • Media Kit ✦"): diamond sword S3 U3, diamond pickaxe Eff III U3, 12 golden apple, 4 ender pearl, 16 firework rocket (flight 2), spyglass "Camera", 32 steak, diamond helmet/chest/legs/boots P2 U3 trim amethyst/eye → `sudo MrCopper804 createkit media 86400` → `kit` list shows Media → `minecraft:clear MrCopper804` removed 71 = exactly the kit items.
 - Balance: Knight-level (free, not for sale, so not stronger than paid kits). Claimed only with the `media` group (`essentials.kits.media`).
 - **Undo:** `delkit media`.
+
+### 2026-11-03 UTC — [OWNER] Lobby full redesign + rank area — PLAN sent, waiting for "haan"
+- **Who asked:** MrCopper804 (in-game): "server lobby ko pora analize kro and redesign kerdoo diffrent blocks use kro details decoration use kro and dirt walay part ko bhi ache se design kerdo also ek rank wala area bhi bana do jahan per sare ranks desplay honge"
+- **Analysis:** top shots (shots/20261103-053519_top_lifesteal_lobby_0_0_80.png, 20261103-053530_..._55.png): 8 zones around the star plaza; between them only plain GRASS_BLOCK (6569 in r55); zone floors mostly plain smooth_quartz.
+- **Plan sent (tellraw):** 1) grass area → garden (stone-brick/tuff/calcite paths, flower beds, azalea hedges, small ponds + lily pads, lamp posts, benches); 2) patterned zone floors; 3) fountain upgrade; 4) RANK GALLERY east of the Kit Hall (x48-58, z-15..15): 9 pedestals + ZNPCs in rank colours + holo (rank, kits, "Buy in STORE"; Media "Not for sale").
+- **Status:** waiting for "server lobby plan haan". Nothing built yet.
