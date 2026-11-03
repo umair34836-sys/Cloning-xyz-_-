@@ -96,3 +96,4 @@ Format:
 
 - (3 Nov, FCMC) ZNPCsPlus `npc holo set <id> <line> <text>` replaces one holo line in place (0-based index from `npc holo info <id>`). LuckPerms kit-rank ladder: parent chain makes higher ranks inherit lower `essentials.kits.*`; verify with `lp group <g> permission check <node>`.
 - (3 Nov, FCMC) WorldEdit from console: `sudo MrCopper804 /pos1 x,y,z` (one slash; Essentials sudo adds one). WE expression masks `=...` use absolute block coords; combine with `&&`/`||`; `//gmask <blocks>` protects builds; `>block` mask = "above block". Clear `//gmask` at the end. The owner must stay in the target world.
+- (3 Nov, FCMC) ZNPCsPlus glow: `npc property set <id> glow RED` (enum UPPERCASE; lowercase = "Incorrect usage"). `sudo MrCopper804 npc create <id> player` works while the owner is in the same world.

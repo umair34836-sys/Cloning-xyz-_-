@@ -58,3 +58,5 @@ Format:
 - Kya hua: block maujood hai ya nahi dekhne ke liye `fill <area> X replace X` chalaya → hamesha "No blocks were filled" (fill sirf BADLE hue blocks ginta hai). Isse galat nateeja nikala (nether_portal/reinforced deepslate "nahi hai").
 - Bachao: maujoodgi ke liye `execute if block`/`execute if blocks <area> <known-air-area> all` ya `clone ... filtered <block>` (scratch jagah par) use karo.
 - (3 Nov, FCMC) Wrote a block test as `execute ... run say x`. `say` is public chat — never use it for tests; plain `execute if block ...` already prints Test passed/failed.
+- (3 Nov, FCMC) To COUNT blocks I ran `fill ... air replace #minecraft:logs` — that DELETES them (cut 2 lobby oak trunks). Never use fill to count. Count/test only with `execute if block(s)`. If leaves lose their logs, immediately make them persistent (`//replace oak_leaves oak_leaves[persistent=true]`) and refill trunks.
+- (3 Nov, FCMC) Commands sent in ONE parallel batch can run in any order — for ordered steps (WE pos → replace, holo line order) send them in separate batches.
