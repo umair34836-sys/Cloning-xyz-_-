@@ -1149,3 +1149,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kiya (forceload temp, phir remove):** zone borders (cherry_planks) per-zone rang: Crates N x-13..13 z-46..-29 purpur_block (81), Leaderboards NE x18..38 z-38..-18 yellow_concrete (80), Kits E x29..45 z-17..17 light_blue_concrete (95), RTP/HUB portal S x-7..7 z29..43 amethyst_block (60), Market W x-45..-29 z-13..13 orange_terracotta (79), Info NW x-38..-18 z-38..-18 lime_concrete (80); PvP SW walls quartz_bricks → red_terracotta (645, y65-68). AFK SE me border nahi (cherry roof rakha).
 - `place feature minecraft:flower_cherry` 8 jagah r≈20 (22.5° angles); `place feature minecraft:cherry` 8 trees r≈48-50 (47,22 / 15,47 / -15,47 / -47,22 / -47,-22 / -17,-48 / 17,-48 / 48,-24).
 - **Result:** top view (shots/20261103-052320_top_lifesteal_lobby_0_0_60.png) — har zone alag rang, pink trees/flowers. Owner feedback pending.
+
+### 2026-11-03 UTC — [OWNER] Rank per kit + MEDIA rank (kits are claimed with a rank, the rank is bought in the store)
+- **Who asked:** MrCopper804 (in-game): "server now ab media rank k lie bhi kit bana do jo buy nhi hoga serf media rank walo ko milaiga also ye sare jitne kits hai sub k lie ek rank bana do ... rank buy ker ne k lie hamare shop se rank buy kerna hoga"
+- **Done (console, LuckPerms):** `lp creategroup` scout/archer/miner/warrior/knight/tank/champion/legend/media; parent ladder scout←default … legend←champion, media←default; weights 10..80, media 90; `essentials.kits.<id> true` per group; hex prefixes (see FCMC_PANEL_SETUP.md §6g). Verified: legend inherits essentials.kits.scout = true, scout has no legend kit.
+- Kit NPC holos (kit_scout … kit_legend): price line → `&eUnlock: <KIT> RANK • stars`; new last line `&7▶ Buy the rank in our &e&lSTORE`.
+- **Pending:** MEDIA Essentials kit (owner must empty inventory → "server media kit banao"); kit cooldowns, kitshop claim menu, store rank delivery, TAB → panel §6g. Owner told by tellraw.
+- **Undo:** `lp deletegroup <id>`; `npc holo set/remove` lines back to the price text (old text in this log: "&e&l<price> Coins &8• ...").

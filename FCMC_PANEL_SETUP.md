@@ -298,6 +298,38 @@ kit_scout z-10.5 (skin Dream) · kit_archer z-7.5 (GeorgeNotFound) · kit_miner 
 | champion | 900 | #FFD700/#FFF27A | gold/silence | ★★★★ LEGENDARY | diamond armor P4 U3 Mending (helmet Respiration III, boots FF IV), diamond sword S5 Fire II Looting II U3 Mending, diamond pickaxe Eff V Fortune III U3 Mending, diamond axe Eff V U3 Mending, diamond shovel Eff V U3 Mending, 32 golden apple, 1 enchanted golden apple, 1 totem, 64 steak |
 | legend | 2500 | #FF3B1F/#FF9A3C | redstone/spire | ★★★★★ MYTHIC | netherite armor P4 U3 Mending (helmet Respiration III, boots FF IV), netherite sword S5 Fire II Looting III U3 Mending, netherite pickaxe Eff V Fortune III U3 Mending, netherite axe Eff V U3 Mending, 64 golden apple, 2 enchanted golden apple, 2 totem, 64 steak |
 
+## 6g. KIT RANKS model (owner, 3 Nov) — kits ab RANK se milte hain, rank STORE se  `[ ]`
+Owner's words: "media rank k lie bhi kit bana do jo buy nhi hoga serf media rank walo ko milaiga also ye sare jitne kits hai sub k lie ek rank bana do jis k pass wo rank hoga wo ye kit le sakta hai or rank buy ker ne k lie hamare shop se rank buy kerna hoga"
+
+**Already done in-game (console, LuckPerms) `[x]`:**
+| Group | Weight | Parent | Permission | Prefix |
+|---|---|---|---|---|
+| scout | 10 | default | essentials.kits.scout | `&#FF5555&lSCOUT &8» &f` |
+| archer | 20 | scout | essentials.kits.archer | `&#7CFF4F&lARCHER ...` |
+| miner | 30 | archer | essentials.kits.miner | `&#FFB84F&lMINER ...` |
+| warrior | 40 | miner | essentials.kits.warrior | `&#FFAA00&lWARRIOR ...` |
+| knight | 50 | warrior | essentials.kits.knight | `&#55FFFF&lKNIGHT ...` |
+| tank | 60 | knight | essentials.kits.tank | `&#1FA2A2&lTANK ...` |
+| champion | 70 | tank | essentials.kits.champion | `&#FFD700&l👑 CHAMPION ...` |
+| legend | 80 | champion | essentials.kits.legend | gradient `🔥 LEGEND` |
+| media | 90 | default | essentials.kits.media | `&#FF0000&l▶ &f&lMEDIA &8» &f` |
+- Ladder inherits: a higher rank can also claim every lower kit (checked: legend → essentials.kits.scout = true; scout → essentials.kits.legend = undefined).
+- Kit NPC holos now say `Unlock: <KIT> RANK` + `▶ Buy the rank in our STORE` (prices removed from holos).
+- The **media** rank is NOT for sale. Staff give it by hand: `lp user <IGN> parent add media`.
+- The Essentials kit `media` is NOT created yet. It needs the owner's empty inventory (createkit method); the owner was asked in-game.
+
+**Panel work `[ ]`:**
+1. **Kit cooldowns** (kits.yml `delay:` in seconds). Now every rank holder can claim, so delay 0 = unlimited (MUST change). Suggestion (netherite.gg style, higher rank = shorter wait; owner can change): scout/archer/miner 86400 (24h), warrior/knight 64800 (18h), tank/champion 43200 (12h), legend 21600 (6h), media 86400.
+2. **kitshop.yml → claim menu.** In `FCMC_KITSHOP_DELUXEMENUS.md` replace the left-click coin purchase with:
+   - `view_requirement`/`left_click_requirement`: `type: has permission`, `permission: essentials.kits.<id>`
+   - success: `[console] kit <id> %player_name%` (Essentials enforces the cooldown)
+   - deny: `[message] &cYou need the <KIT> rank. &7Buy it in our &e&lSTORE&7.`
+   - keep right-click preview menus; change lore "Price: N coins" → "Unlock: <KIT> RANK".
+   - Remove the `points take` actions (no coin sale of kits any more).
+3. **Store (website) delivery:** each rank package runs `lp user {player} parent add <rank>` (permanent) or `lp user {player} parent addtemp <rank> 30d` (monthly). Rank prices = owner decision (not guessed).
+4. **TAB:** add the 9 groups to TAB groups.yml / prefix placeholder so the prefixes show in tab and nametags (if TAB uses `%luckperms-prefix%` nothing more is needed).
+5. **Lifesteal-only:** if kits must only work in lifesteal, set the permissions with context `world=lifesteal` (HUB already has `* false world=hub`).
+
 ## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
 Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
 | Item | Price |
