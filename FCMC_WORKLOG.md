@@ -1117,3 +1117,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server now ab ye dekho k opening kit shop to araha hai liken open nhi ho raha hai why fix this"
 - **Wajah:** ZNPC `playercommand kitshop` = player.performCommand → DeluxeMenus open_command (register nahi, chat-typed command preprocess se pakadta hai) → menu nahi khulta. Owner ka khud `/kitshop` type karna chalta tha.
 - **Kiya:** action 0 → `consolecommand dm open kitshop %player_name%` (kit_scout..kit_legend, ls_kits) aur `dm open heartshop %player_name%` (ls_heartshop). Syntax test `dm open kitshop FcTestNobody` → "is not online" (valid); `dm open kitshop MrCopper804` console se owner ke liye khola (test). ls_shop (`shop`) aur ls_auction (`auctionhouse`) asli plugin commands — nahi chheda.
+
+### 2026-11-03 UTC — [OWNER] Lifesteal lobby dark → lovely light theme
+- **Kisne kaha:** MrCopper804: "server now ab lobby ka theme change kro dark se lovely light with smooth detaling theme kerdoo lifesteal lobby ok"
+- **Kaise:** forceload lifesteal_lobby -64..63 (temp), gamerule max_block_modifications 1000000 (temp → wapas 32768), box x/z -60..60 y55..115 me `fill ... replace` palette swap (state-wise for stairs/slabs/logs/lanterns):
+  polished_blackstone→smooth_quartz (2530), polished_blackstone_bricks→quartz_bricks (2248), chiseled_polished_blackstone→chiseled_quartz_block (39), pb_brick_wall/pb_wall→diorite_wall (113+16), red_nether_bricks→cherry_planks (1089), black_concrete→light_blue_concrete (87), shroomlight→pearlescent_froglight (18), gilded_blackstone→gold_block (8), pb_brick_stairs[east,top]→quartz_stairs (33, kit hall chajja), soul_lantern→lantern (3), crimson_stem→cherry_log (20), crimson_slab→cherry_slab (48 bottom + 121 top), crimson_fence→cherry_fence (71), obsidian→quartz_pillar (24), crying_obsidian→amethyst_block (4), dark_oak_fence→cherry_fence (40). Baqi types 0.
+- **Nahi chheda:** HEART monument (red concrete/nether wart), ghaas/ped, wool awnings, crates, NPC tiles, kit hall stained glass.
+- **Result:** WorldLens top + shot (shots/20261103-051124_shot_lifesteal_lobby_-8_72_10.png) — light theme. Owner feedback pending.
+- **Undo:** ulta fill (smooth_quartz→polished_blackstone waghera) same box.
