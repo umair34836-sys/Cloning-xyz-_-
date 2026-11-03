@@ -1205,3 +1205,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby crate row (z -39.5, x -9.5..10.5, 6 crates) ke 46 hologram armor stands (23 "Right-click to open" + 23 crate names, duplicates) hata diye. Pehle Pos list + count se confirm kiya ke box me sirf Marker+Invisible stands hain.
 - **Kaise:** FCMC `worldlens_command`: `execute ... as @e[name="Right-click to open"] run data get entity @s Pos`, `if entity` count (46), `minecraft:kill @e[type=armor_stand,x=-10,y=66,z=-40,dx=21,dy=4,dz=2,nbt={Marker:1b,Invisible:1b}]` → Killed 46, verify → 0.
 - **Result:** Abhi koi crate hologram nahi. Permanent ke liye SlimeCrates config me hologram off karna hoga — FCMC_PANEL_SETUP.md me task likha. Manager ko bata diya.
+
+### 2026-11-03 07:15 UTC — [MANAGER] Rank NPCs se glow hataya
+- **Kisne kaha:** techshotgaming (in-game): "Server Remove Glow from Rank npcs"
+- **Kya kiya:** lifesteal_lobby x49 ke 9 rank ZNPCs (rank_scout, rank_archer, rank_miner, rank_warrior, rank_media, rank_knight, rank_tank, rank_champion, rank_legend) se `glow` property hata di. Kit NPCs (kit_*) unchanged.
+- **Kaise:** FCMC `worldlens_command` → `npc list`, phir har ek par `npc property remove <id> glow` (sab "Removed property glow"). Undo: `npc property set <id> glow <color>`.
+- **Result:** Rank NPCs ab glow nahi karte. Manager ko bata diya.
