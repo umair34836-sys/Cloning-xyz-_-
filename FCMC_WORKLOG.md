@@ -774,3 +774,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Root cause (mera):** z10 x4 `@a[scores={fc_wait=1}] tp HUB spawn` har tick; fc_wait 1 par atka kyunki z3 x5 sirf `fc_leave=1..` par count karta tha aur fc_leave (leave_game stat) MV-Inv `game_statistics` share (jo maine on kiya) ki wajah se 0 ho gaya → counter ruk gaya → har tick tp = freeze.
 - **Fix:** Marzarn fc_wait → 2/3 (turant chhoda) → z3 x5 = `scoreboard players add @a[scores={fc_wait=1..}] fc_wait 1` (start ke baad stat par depend nahi); z10 x31 (new chain) = `execute as @a[scores={fc_leave=1..}] unless score @s fc_wait matches 1.. run scoreboard players set @s fc_wait 1` (start); z10 x4 = `scores={fc_wait=1..2}` (tick-order safe, max 2 tp). Marzarn disconnect hua → `scoreboard players reset Marzarn fc_wait` (rejoin clean).
 - Note: CoreProtect command lookup me players ke /register /login passwords dikhte hain — kabhi log/repo/chat me copy mat karna.
+
+### 2026-11-03 UTC — [OWNER] "Manager session ne kal kia kia kaam kiya?"
+- **Kisne kaha:** MrCopper804 (in-game): "server dekho fcmc manager session ne kal kia kia kaam kiya hai ?"
+- **Kya kiya:** Is worklog ki 2 Nov `[MANAGER]` entries (08:25–10:24 UTC) se summary banayi aur 2 tellraw me bheji (1 command ki 1000-char limit).
+- **Summary:** survival world + alag inventory; HUB NPCs → ZNPCsPlus (baad me lifesteal/survival NPC delete); HUB Multiverse portals lifesteal_portal + survival_portal with LIFESTEAL/SURVIVAL text; lifesteal lobby copy → survival sky (barriers, mob kill, lights, WG `survival_lobby`); road borders, weather/day, snow off, SW room raise + utility room; warrior kit armor stand, chorus plant.
+- **Pending/nahi kiya:** firecraft-hub.sk replace (console se possible nahi), "ZNPCs hatao mannequins wapas".
+- **Result:** Owner ko tellraw delivered.
