@@ -1227,3 +1227,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** techshotgaming ko in-game owner ki taraf se message bheja (bade kaam jaldi, chhote kaam Claude ko "server ..." se do, Sunday launch) + title "Launch: Sunday!".
 - **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming [...]`, `title techshotgaming title {...}` (sirf manager ko).
 - **Result:** Message deliver (manager online tha).
+
+### 2026-11-03 07:52 UTC — [MANAGER] Manager ko Lifesteal lobby tp
+- **Kisne kaha:** techshotgaming (in-game): "Server tp me in Lifesteal lobby"
+- **Kya kiya:** Manager ko lifesteal_lobby spawn par teleport kiya.
+- **Kaise:** FCMC `worldlens_command` → `mv tp techshotgaming lifesteal_lobby`, phir `tellraw`.
+- **Result:** "Teleported techshotgaming to lifesteal_lobby."
