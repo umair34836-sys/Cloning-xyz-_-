@@ -1233,3 +1233,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ko lifesteal_lobby spawn par teleport kiya.
 - **Kaise:** FCMC `worldlens_command` → `mv tp techshotgaming lifesteal_lobby`, phir `tellraw`.
 - **Result:** "Teleported techshotgaming to lifesteal_lobby."
+
+### 2026-11-03 07:59 UTC — [MANAGER] Owner: manager DM check kare
+- **Kisne kaha:** Owner (Claude session chat): "manager ko bolo dm check ker k reply de"
+- **Kya kiya:** techshotgaming ko in-game owner ki taraf se message (Discord DM check karke reply do) + title "Check your DM!".
+- **Kaise:** FCMC `worldlens_command` → `tellraw techshotgaming [...]`, `title techshotgaming title {...}`.
+- **Result:** Deliver (manager online).
