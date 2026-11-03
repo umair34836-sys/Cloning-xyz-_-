@@ -1199,3 +1199,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - Title text_display (tag `rank_gallery_title`) at 49.5 71 0.5, scale 2.2: "✦ RANK GALLERY ✦ / Ranks unlock kits • Buy them in our STORE".
 - **MISTAKE + fix:** wanted to count logs, ran `fill 47 66 -14 51 69 14 air replace #minecraft:logs` → removed 10 oak logs (two trunks y66-69 at 49,±14 + 2 branch logs). Fixed: `//replace oak_leaves oak_leaves[persistent=true]` and cherry_leaves likewise in 36,64,-36..64,85,36 (no leaf decay), trunks refilled `fill 49 66 ±14 49 69 ±14 oak_log replace air` (8). 2 branch logs not found (inside canopy, not visible). Also trimmed 8 leaves at y68-69 inside the gallery box. Owner told.
 - **Undo:** `npc delete rank_<id>`; `kill @e[type=text_display,tag=rank_gallery_title]`; stage `fill 47 65 -12 51 66 12 air` + ground y64 untouched.
+
+### 2026-11-03 06:59 UTC — [MANAGER] Saare crate holograms hataye
+- **Kisne kaha:** techshotgaming (in-game): "Server delete All the Crate name hollograms permanently"
+- **Kya kiya:** lifesteal_lobby crate row (z -39.5, x -9.5..10.5, 6 crates) ke 46 hologram armor stands (23 "Right-click to open" + 23 crate names, duplicates) hata diye. Pehle Pos list + count se confirm kiya ke box me sirf Marker+Invisible stands hain.
+- **Kaise:** FCMC `worldlens_command`: `execute ... as @e[name="Right-click to open"] run data get entity @s Pos`, `if entity` count (46), `minecraft:kill @e[type=armor_stand,x=-10,y=66,z=-40,dx=21,dy=4,dz=2,nbt={Marker:1b,Invisible:1b}]` → Killed 46, verify → 0.
+- **Result:** Abhi koi crate hologram nahi. Permanent ke liye SlimeCrates config me hologram off karna hoga — FCMC_PANEL_SETUP.md me task likha. Manager ko bata diya.

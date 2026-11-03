@@ -448,3 +448,8 @@ Owner: "shard and coins dono mil rahay hai mujhe jab k coins alag chizz hai or s
 - [x] RTP portal test OK; /spawn + 9 warps
 - [x] Lobby inventory group: lifesteal_lobby → 'lifesteal' group (console se ho gaya)
 - [ ] PvP arena (`ls_pvp_arena`) in-game test
+
+## SlimeCrates: crate holograms permanently off (manager request, 3 Nov)
+- Manager techshotgaming: "delete All the Crate name hollograms permanently".
+- Console se 46 hologram armor stands (6 crates, lifesteal_lobby z -39.5, x -9.5/-5.5/-1.5/2.5/6.5/10.5) kill kiye, lekin SlimeCrates har restart / `/crate reload` / `/crate set` par naye spawn karta hai aur purane nahi hatata (isliye duplicates jama hote hain).
+- **Panel task:** `plugins/slimecrates/` ki crate config(s) me hologram setting off karo (ya hologram lines empty), phir reload. Uske baad lifesteal_lobby me bache marker armor stands ek baar hata do: `execute in minecraft:lifesteal_lobby run minecraft:kill @e[type=armor_stand,x=-10,y=66,z=-40,dx=21,dy=4,dz=2,nbt={Marker:1b,Invisible:1b}]`.
