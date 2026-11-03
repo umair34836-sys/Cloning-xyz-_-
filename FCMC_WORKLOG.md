@@ -1033,3 +1033,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ki inventory ke 10 stacks (golden_carrot x8, iron helmet/chest/legs/boots P2 U1, iron_spear Sharp3 Lunge2, iron_sword Sharp3 Unb2, cooked_beef x16, cooked_porkchop x16, iron_ingot x8) SlimeCrates crate `vote` me reward ke taur par add kiye, har ek chance 10.
 - **Kaise:** FCMC `worldlens_command`: selected slot 1 ka backup container.20 me; har slot ke liye `minecraft:item replace entity techshotgaming weapon.mainhand from entity techshotgaming container.N` + `sudo techshotgaming crate addreward vote 10`; end me slot 1 restore + container.20 air. Verify: `data get entity techshotgaming Inventory` (same), `co lookup u:techshotgaming a:command t:3m` (addreward entries).
 - **Result:** 10 rewards add. Note: manager ne pehle khud ek reward chance 5 se add kiya tha (`/crate addreward vote 5`) — wo bhi crate me hai, isliye bilkul barabar nahi; hatana ho to `/crate removereward vote <reward>`.
+
+### 2026-11-03 04:42 UTC — [MANAGER] Lime green colour code
+- **Kisne kaha:** techshotgaming (in-game): "Server what is the Colour Code for lime green"
+- **Kya kiya:** Bataya: legacy `&a` (= #55FF55); hex options #32CD32 (lime green), #7CFC00 (lawn green); hex format `&#55FF55`.
+- **Kaise:** FCMC `worldlens_command` → coloured `tellraw techshotgaming`.
+- **Result:** Jawab de diya.
