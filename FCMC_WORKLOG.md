@@ -854,3 +854,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** owner tp lifesteal_lobby 28.5 65 -28.5 (yaw 180). `minecraft:tp` sab 6 → z -33.8; `brightness:{block:15,sky:15}` sab 6 + 2 headings (✦ LEADERBOARDS ✦ 28.5 73 -34.5, ✦ INFO ✦ -27.5 74 -34.5).
 - **Result:** Teleported x6, Modified x8. WorldLens shot entities nahi dikhata → owner se visual confirm maanga. Info boards par tp owner ke kehne par.
 - **Undo:** z wapas -34.3, brightness hatao (`data remove entity ... brightness`).
+
+### 2026-11-03 UTC — [OWNER] Sab staff + manager ko staff VC bulao
+- **Note:** Is se pehle FCMC server restart hua (connector Bad Gateway, phir TPS 20.8, 0 players) → AFK timer #gclk phase dobara milana baqi (owner pool me ho tab).
+- **Kisne kaha:** MrCopper804: "server all staff ko manager ko staff vc bulao fcmc k"
+- **Kya kiya:** `#🛡️┃staff-chat` (1566039466676719750) me message 1567022161925902378 — role pings ⚙️ Manager, 🛡️ Admin, 🔨 Moderator, 🤝 Helper + user pings Techshot Gaming (1376918464379359346), Marzarn (1465026976095146237): "Owner bula rahe hain — sab staff abhi FCMC staff VC me aa jao". DM bhi dono ko (1567022178480693290, 1567022184877260852). @everyone NAHI. Discord tool sirf text channels deta hai → VC link nahi diya.
+- **Result:** Bheja gaya; owner ko tellraw.
