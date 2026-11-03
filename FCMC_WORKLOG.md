@@ -886,3 +886,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server fcmc manager wale session ko kaho her 30 seconds ka wacher on ker de"
 - **Kya kiya:** send_message → session_01JK8TsBgGuzocQqsgSfCLYh (fcmc manager): watcher ON karo, har 1 minute (30s possible nahi, cron minimum 1 min), sirf FCMC connector. Delivered. Owner ko tellraw.
 - Owner ka "tech apne claude se keh k her ek npc ko replace kerde znpc se..." message techshotgaming ke liye tha (server prefix nahi).
+
+### 2026-11-03 UTC — [OWNER] Kits andaze se nahi — public servers research
+- **Kisne kaha:** MrCopper804: "server kits ko apne andaze se maat banao dosre public servers ka dekh ker unse idea loo"
+- **Research:** netherite.gg/wiki/lifesteal/store (rank kits: full netherite P4/U3/Mending, Sharp V sword, Eff V/Fortune III tools, 16-64 gapple, 0-3 god apple, 32 steak, 4-9 hearts, cooldown); PikaNetwork OP Lifesteal guide (Legend kit Prot III/Sharp IV, Ultimate Prot V/Sharp V); Jartex KitPvP Warrior P1/S2.
+- **Kya kiya:** FCMC_PANEL_SETUP.md §6d v2 — kits poore set (armor + sword + tools + gapples + food), hearts NAHI, netherite NAHI; price suggestion 150/400/800 (owner decide). Owner ko 2 tellraw; "server kits haan" + price ka intezaar.

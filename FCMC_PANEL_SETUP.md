@@ -222,16 +222,21 @@ Owner: "kitshop per serf kits name or price wala seen hai liken kits k under kia
 Items Essentials kits (archer/warrior/tank, 2 Nov in-game banaye) ke hisaab se hain — agar panel ko `plugins/Essentials/kits.yml` me kuch alag dikhe to lore usi ke mutabiq karo (andaza nahi).
 Optional: starter kit ka bhi ek item slot (free, 24h) — `[console] kit starter %player_name%` nahi, sirf info lore, kyunki starter `/kit starter` se milta hai.
 
-### 6d. SPECIAL paid kits (owner, 3 Nov) — PROPOSAL, owner "haan" ka intezaar  `[ ]`
-Owner: "kits wale area ko re design kroo and also mujhe in mese ek bhi kit acha nhi laga soo please her ek kit ko special bnao kio k players humay pay ker rahay hai soo unko bhi to kuch special hi milna chaye na"
-Usool: paid = special (naam + rang + lore + achhe enchants), lekin **economy rule** — server easily beat na ho: koi netherite nahi, Protection IV nahi, hearts nahi, sirf 1 totem (sirf Tank me). Har item ka naam kit ke rang me + lore "✦ FireCraft MC • <Kit> Kit ✦".
-| Kit (price) | Saaman |
+### 6d. SPECIAL paid kits (owner, 3 Nov) — v2 RESEARCH-BASED, owner "haan" ka intezaar  `[ ]`
+Owner: "kits wale area ko re design kroo ... her ek kit ko special bnao kio k players humay pay ker rahay hai" + "kits ko apne andaze se maat banao dosre public servers ka dekh ker unse idea loo"
+**Research (3 Nov):**
+- netherite.gg Lifesteal (https://netherite.gg/wiki/lifesteal/store): har paid rank kit = full Netherite set Prot IV + Unbreaking III + Mending (helmet Respiration III/Aqua Affinity, boots Feather Falling IV/Depth Strider III); sword Sharp V, Looting III, Fire Aspect II, Sweeping Edge III, Unbr III, Mending; pickaxe/axe/shovel/hoe Eff V, Fortune III, Unbr III, Mending; 16→64 golden apple, 0→3 enchanted golden apple, 32 steak, 4→9 hearts; cooldown 16h→2h.
+- PikaNetwork OP Lifesteal (pika-network.net/threads/op-lifesteal-guide.543357): kit vouchers — Prot III gear + Sharp IV weapons + golden apples (Legend), Prot V/Sharp V + god apples (Ultimate).
+- JartexNetwork KitPvP: Warrior kit = all Prot I + Sharp II (sabse neeche wala).
+**Pattern:** paid kit = poora set (armor + sword + TOOLS), Unbreaking/Mending, khana + gapples; tier badhne par enchant level + gapples badhte hain. Hamare rule ke hisaab se: **hearts kit me NAHI** (hearts sirf heart shop), netherite nahi (endgame ke liye).
+| Kit (price) | Saaman (har item kit ke rang ka naam + lore "✦ FireCraft MC • <Kit> Kit ✦") |
 |---|---|
-| 🏹 ARCHER (100 coins) | "Ranger Bow" Power IV, Punch I, Infinity, Unbreaking III; 1 arrow + 16 spectral arrows; iron armor Prot II, boots Feather Falling III; iron sword Sharp II; 6 golden apple; 32 golden carrot |
-| ⚔ WARRIOR (200 coins) | "Warrior Blade" diamond sword Sharp III, Fire Aspect I, Unbreaking III; full iron armor Prot III, Unbreaking II; shield; 10 golden apple; 8 ender pearl; 32 golden carrot |
-| 🛡 TANK (350 coins) | full diamond armor "Titan" Prot III, Unbreaking III (+ Thorns I chestplate); diamond sword Sharp III Unbreaking III; diamond axe Sharp II; shield Unbreaking III; 16 golden apple; 1 Totem of Undying; 64 golden carrot |
-Kits area (lifesteal_lobby E pad x29..45 z-11..11): 4 booths (Starter free + 3 paid), har booth apne rang ka pedestal + canopy + lanterns, armor stand kit pehne, upar ghoomta weapon (item_display), text sign (naam, price, top items, "Right-click Kits NPC / /kitshop"), beech me bada "✦ KITS ✦" title. ls_kits NPC beech me.
-Owner "haan" ke baad: kits.yml (Essentials) me ye items — panel; area build — Claude (console). kitshop.yml lore (§6c) bhi naye items ke saath update hoga.
+| 🏹 ARCHER (100) | iron armor Prot II, Unbr III; bow Power IV, Punch I, Infinity, Unbr III + 1 arrow + 16 spectral arrow; iron sword Sharp III, Unbr III; iron pickaxe Eff III, Unbr III; 8 golden apple; 32 steak |
+| ⚔ WARRIOR (200) | diamond armor Prot III, Unbr III; diamond sword Sharp IV, Fire Aspect I, Unbr III; diamond pickaxe Eff IV, Fortune II, Unbr III; diamond axe Eff IV, Unbr III; shield Unbr III; 16 golden apple; 8 ender pearl; 32 steak |
+| 🛡 TANK (350) | diamond armor Prot IV, Unbr III, Mending (helmet Respiration III, boots Feather Falling IV); diamond sword Sharp V, Looting II, Fire Aspect II, Unbr III, Mending; diamond pickaxe/axe/shovel Eff V, Fortune III (pick), Unbr III, Mending; shield Unbr III; 32 golden apple; 1 enchanted golden apple; 1 Totem of Undying; 64 steak |
+**Price note (economy rule):** in kits ki value badh gayi hai (Tank ≈ netherite.gg ke sabse neeche wale rank kit se thoda kam) — owner chahe to price badha sakta hai (suggestion: Archer 150, Warrior 400, Tank 800 coins). Owner decide karega.
+Kits area (lifesteal_lobby E pad x29..45 z-11..11): 4 booths (Starter free + 3 paid), har booth apne rang ka pedestal + canopy + lanterns, armor stand kit pehne, upar ghoomta weapon (item_display), text sign (naam, price, top items, "Right-click Kits NPC / /kitshop"), beech me bada "✦ KITS ✦" title, ls_kits NPC beech me.
+Owner "haan" ke baad: Essentials kits.yml (archer/warrior/tank) — panel; area build — Claude (console); kitshop.yml lore (§6c) naye items ke saath.
 
 ## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
 Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
