@@ -1329,3 +1329,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added 22 rewards to crate `epic`. 5%: Epic Sword/Spear/Axe/Pickaxe/Shovel, 4× Epic Armor, Epic Bow, Epic Crossbow, golden carrot 64, cooked porkchop 64, steak 64, bread 64. 1%: totem 1, ender pearl 16, diamond 16, golden apple 8, enchanted golden apple 2, emerald block 16, arrow 64.
 - **Kaise:** Hand-swap (backup slot 0 → container.23; `minecraft:item replace ... weapon.mainhand from ... container.N` + `sudo techshotgaming crate addreward epic <5|1>`); restored slot 0, cleared 23; opened `crate preview epic`.
 - **Result:** Done, inventory unchanged; manager asked to verify preview.
+
+### 2026-11-03 09:28 UTC — [MANAGER] Legendary-tier gear given (Prot 5 diamond, magenta)
+- **Kisne kaha:** techshotgaming — "Server Ab mujhe Legendary crate (magenta) ke liye samaan chahiye accordingly samaan dedo and Netherite ka samaan mat dena, instead Itemefit ki madad se protection 5 wala diamond hi de dena and accordingly dusre tools bhi"
+- **Kya kiya:** Gave 11 diamond items named "Legendary ..." (light_purple/magenta, bold): Sword (Sharp 6, Looting 4, Fire Aspect 2, Unb 4, Mending), Spear (Sharp 6, Lunge 3, Unb 4, Mending), Axe (Sharp 6, Eff 6, Unb 4, Mending), Pickaxe (Fortune 4, Eff 6, Unb 4, Mending), Shovel (Eff 6, Unb 4, Mending), 4× Legendary Armor (Prot 5, Unb 4, Mending, amethyst/eye trim; boots FF 4), Bow (Power 5, Punch 2, Flame, Infinity, Unb 4), Crossbow (Quick Charge 3, Piercing 4, Unb 4, Mending). No netherite.
+- **Kaise:** Vanilla `minecraft:give` with enchantments component (above-max levels allowed, no ItemEdit plugin needed).
+- **Result:** Gear done. Extras (totems/pearls/gapples etc.) held back because inventory is full — asked manager to free space and say "server extras".
