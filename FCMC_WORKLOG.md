@@ -1183,3 +1183,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Result:** top shot shots/20261103-054200_top_lifesteal_lobby_0_0_66.png. Owner told; next = step 2 after feedback.
 - **Undo:** `sudo MrCopper804 /undo` (WE history of the owner's session, until restart) or the reverse `//replace` with grass_block.
 - Note: a test command was written as `... run say x` (condition was false, nothing ran). `say` must not be used (public chat); use plain `execute if block`.
+
+### 2026-11-03 UTC — [OWNER] Lobby redesign STEP 2 (zone floors + plaza fountains + halo) — done
+- **Who asked:** MrCopper804: "server step 2"
+- **Zone floors (WE, `//gmask smooth_quartz,polished_diorite`, y64 per zone box):** `//replace =abs((floor(x/2)+floor(z/2))%2)==1 polished_diorite` (2x2 checker) then `//replace =abs(x%6)==0||abs(z%6)==0 <accent>` (grid every 6). Accents: Crates N (-13,-46..13,-29) purpur_block; Leaderboards NE (18,-38..38,-18) smooth_sandstone; Kits E (29,-17..45,17) light_blue_terracotta; Portal S (-7,29..7,43) amethyst_block; Market W (-45,-13..-29,13) smooth_red_sandstone; Info NW (-38,-38..-18,-18) lime_terracotta. PvP SW and AFK SE floors untouched (gameplay areas).
+- **Plaza:** no fountain existed (spawn 0.5 65 0.5 on a redstone lamp with a gold 3x3). Spawn kept free. 4 corner fountains at (±6,±6): 3x3 water y64 (y63 solid checked), smooth_quartz_slab 5x5 rim y65 with inner 3x3 cleared, quartz_pillar y64-66, pearlescent_froglight y67. Halo above spawn: y74 ring r5 (`=abs(sqrt(x^2+z^2)-5)<0.6`, gmask air) 75% pearlescent_froglight / 25% sea_lantern.
+- **Result:** shots/20261103-054543_top_lifesteal_lobby_0_0_50.png. Owner told; next = step 3 Rank Gallery on "server step 3".
+- **Undo:** floors `//replace polished_diorite,<accent> smooth_quartz` per zone box; fountains `fill` back to plaza blocks (smooth_quartz); halo `fill -8 74 -8 8 74 8 air`.
