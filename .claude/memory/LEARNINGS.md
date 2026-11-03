@@ -88,3 +88,4 @@ Format:
 - (3 Nov) DonutShop AFK shard = fixed 60s cycle (zone entry se nahi). AFK actionbar `#gclk fc_const` se aligned; RESTART ke baad phase dobara naapna (owner pool me, `shard see` + `fc_afk`, `#gclk = fc_afk - <shard tick>`).
 - (3 Nov) Moderator group ko `grim.exempt` diya (owner ne Grim Timer alerts spam band karwaye).
 - (3 Nov) FCMC: DonutShop shards abhi PlayerPoints (coins) me store hote hain (shards == points har player). Panel fix §7d pending. Economy rule ke hisaab se URGENT.
+- (3 Nov) FCMC manager session bhi isi branch par FCMC_WORKLOG.md me push karta hai → push reject ho to `git pull --rebase`, conflict me DONO entries rakho (markers hatao), `git rebase --continue`, push.
