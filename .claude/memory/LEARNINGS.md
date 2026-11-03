@@ -85,3 +85,5 @@ Format:
 - (3 Nov) FCMC: HUB me stone tools = EssentialsX `newbies.kit` (default `tools`) first join par. Console se band nahi hota — panel config `newbies.kit: ''`.
 - (3 Nov) `execute as X if dimension ...` console ki position check karta hai; player ki dimension ke liye `execute as X at @s if dimension ...` chahiye.
 - (3 Nov) DonutShop (byebye_gg 1.5.6) AFK timer ka koi PAPI placeholder nahi; AFK actionbar timer = mera command-block chain overworld y120 z13 (fc_afk/fc_afkr/fc_const).
+- (3 Nov) DonutShop AFK shard = fixed 60s cycle (zone entry se nahi). AFK actionbar `#gclk fc_const` se aligned; RESTART ke baad phase dobara naapna (owner pool me, `shard see` + `fc_afk`, `#gclk = fc_afk - <shard tick>`).
+- (3 Nov) Moderator group ko `grim.exempt` diya (owner ne Grim Timer alerts spam band karwaye).

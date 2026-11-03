@@ -826,3 +826,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Portal label text_display (0.5 ~74.5 37.5): "⬅ BACK TO HUB" (#FFD21A) + "Portal me chalo - HUB wapas".
 - **Result:** Sab "Modified". Owner test pending. Note: `/warp rtp` (0.5 65 33.5) ab HUB-portal ke saamne hai — owner se pucha NPC ke paas move karein?
 - **Undo:** z12 x12–x14 wapas `fc_go_hub`, z15 x3 wapas `fc_go_rtp`, naam/label purane (BACK TO HUB #FFD21A "▶ Click karo / paas aao"; "✦ WILDERNESS / RTP ✦" #A855F7 + "Portal me chalo - Lifesteal world (random jagah)").
+
+### 2026-11-03 UTC — [OWNER] Grim Timer alerts (moderator) + AFK timer galat
+- **Kisne kaha:** MrCopper804 (in-game): "server timer ghalat hai mujhe timer complete se pehle shard mil gya check console" aur "server grim anticheat ka jo timer failed araha hai modrator ka iska kia seen hai isko fix kerwao bhot tang ker raha hai baar baar show ho raha hai"
+- **Grim:** owner `grim.exempt` = true (`*` se); Marzarn false. `lp group moderator permission set grim.exempt true` → Marzarn check true. (Grim exempt join par cache ho sakta hai → rejoin.)
+- **AFK timer naap:** owner pool me AFK; `shard see` + owner `fc_afk` (ticks in zone) baar baar. Shard 6→7 fc_afk 4114–4160 ke beech (mere per-entry timer me ~35s baqi the) → DonutShop per-entry nahi, apna fixed 60s cycle.
+- **Fix:** naya global clock `#gclk fc_const`; overworld y120 z13 x12 (chain) `scoreboard players add #gclk fc_const 1`; x6 ab `fc_afkr = #gclk` (pehle fc_afk). Phase set: `#gclk = MrCopper804 fc_afk - 4137` (shard moment ≈ 4137 → #gclk%1200 = 0).
+- **Verify:** agla shard 7→8 fc_afk 5294–~5370 ke beech, expected 5337 ✓ (±2s).
+- **Caveat:** server restart par DonutShop ka cycle naye sire se shuru hota hai → #gclk phase phir milana padega (owner pool me AFK + shard see naap). Agar DonutShop cycle per-player (join se) hai to doosre players ke liye offset alag ho sakta hai — sirf owner par test hua.
