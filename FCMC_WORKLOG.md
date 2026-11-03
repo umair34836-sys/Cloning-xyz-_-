@@ -1107,3 +1107,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 ### 2026-11-03 UTC — [OWNER] Join + last-location test PASS
 - **Owner:** "server filhaal to sub theek tha me hub me aya than lifetseal me waha aya jahan per leave howa tha khod se nhi aya server selector se me khod aya ok"
 - **Result:** naya tick-based join detection (z13 x13-x17) → join par HUB ✓; MV-Inv `ll:lifesteal_lobby` (selector fc_restore → z10 x15) → last location ✓ (restart ke baad bhi).
+
+### 2026-11-03 UTC — [OWNER] ZNPC click message colors nahi, raw text
+- **Kisne kaha:** MrCopper804: "server ab ye sub bhi fix kro jab znpcs per click kerte hai to wo text normal ata hai colors etc nhi ata command type text hota hai"
+- **Wajah:** message actions me MiniMessage `<green>...</green>` tha; ZNPCsPlus `MessageAction` (github Pyrbu/ZNPCsPlus 2.X) `LegacyComponentSerializer` use karta hai → sirf `&` codes.
+- **Kiya:** `npc action edit <id> 1 message ...` → kit_scout..kit_legend (8) "&a✦ Opening the Kit Shop...", hub_lifesteal "&c❤ Sending you to &4&lLifesteal&c...", hub_survival "&6⚔ Sending you to &e&lSurvival&6...".
