@@ -870,3 +870,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - RTP mannequin description → "▶ Right-click karo = Lifesteal random jagah".
 - **Pending:** owner right-click test (WG use/build deny interaction cancel kar sakta hai). firecraft-hub.sk proximity countdown console se nahi hatta (panel).
 - **Undo:** x3 → `execute in minecraft:overworld positioned 17.5 151 -9.5 run tag @a[distance=..1.3] add fc_go_ls`; x12 → `execute in minecraft:lifesteal_lobby positioned 0.5 65 3.5 run tag @a[distance=..1.3] add fc_go_rtp`.
+
+### 2026-11-03 UTC — [OWNER] Kitshop me kit contents dikhao
+- **Kisne kaha:** MrCopper804: "server kitshop per serf kits name or price wala seen hai liken kits k under kia haui wo players kaise dekhingay please fix it"
+- **Kya kiya:** Menu = DeluxeMenus `kitshop.yml` (console se edit nahi). FCMC_PANEL_SETUP.md §6c me teeno kits (warrior/archer/tank) ka poora copy-paste lore: "Kit me kya milega" item list (armor+enchants, weapon, gapples/arrows/shield, steak) + price + coins + "Left-click = Buy". Reply file C me bhi request.
+- **Interim:** lifesteal_lobby E KITS pad ke 4 armor stands (x40.5) kit gear pehne khade hain.
+- **Result:** Owner ko tellraw; panel AI ke paste + `/dm reload` ka intezaar.

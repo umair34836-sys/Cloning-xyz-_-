@@ -174,6 +174,54 @@ Phir in-game: `/dm reload`. (Kits area NPC `ls_kits` ka click pehle se `kitshop`
 > Note: DeluxeMenus syntax aur PlayerPoints `points take` ek baar test karna — kits ban jane ke baad.
 
 
+### 6c. Kitshop me kit ke ANDAR ka saaman dikhao  `[ ]`  (owner, 3 Nov)
+Owner: "kitshop per serf kits name or price wala seen hai liken kits k under kia haui wo players kaise dekhingay please fix it"
+**File:** `plugins/DeluxeMenus/gui_menus/kitshop.yml` (backup pehle). Har kit ka `lore:` poora is se badlo (baqi keys same), phir `/dm reload`:
+```yaml
+  warrior:
+    lore:
+      - '&8&m                        '
+      - '&f&lKit me kya milega:'
+      - '&7• &fIron Helmet, Chestplate, Leggings, Boots &b(Protection I)'
+      - '&7• &fIron Sword &b(Sharpness II)'
+      - '&7• &64x Golden Apple'
+      - '&7• &f16x Steak'
+      - '&8&m                        '
+      - '&ePrice: &f200 Coins'
+      - '&7Your coins: &f%playerpoints_points%'
+      - ''
+      - '&a▶ Left-click = Buy'
+  archer:
+    lore:
+      - '&8&m                        '
+      - '&f&lKit me kya milega:'
+      - '&7• &fChainmail Helmet, Chestplate, Leggings, Boots &b(Protection I)'
+      - '&7• &fBow &b(Power III, Punch I)'
+      - '&7• &f64x Arrow'
+      - '&7• &f16x Steak'
+      - '&8&m                        '
+      - '&ePrice: &f100 Coins'
+      - '&7Your coins: &f%playerpoints_points%'
+      - ''
+      - '&a▶ Left-click = Buy'
+  tank:
+    lore:
+      - '&8&m                        '
+      - '&f&lKit me kya milega:'
+      - '&7• &fDiamond Helmet, Chestplate, Leggings, Boots &b(Protection II)'
+      - '&7• &fDiamond Sword &b(Sharpness I)'
+      - '&7• &fShield'
+      - '&7• &68x Golden Apple'
+      - '&7• &f16x Steak'
+      - '&8&m                        '
+      - '&ePrice: &f350 Coins'
+      - '&7Your coins: &f%playerpoints_points%'
+      - ''
+      - '&a▶ Left-click = Buy'
+```
+Items Essentials kits (archer/warrior/tank, 2 Nov in-game banaye) ke hisaab se hain — agar panel ko `plugins/Essentials/kits.yml` me kuch alag dikhe to lore usi ke mutabiq karo (andaza nahi).
+Optional: starter kit ka bhi ek item slot (free, 24h) — `[console] kit starter %player_name%` nahi, sirf info lore, kyunki starter `/kit starter` se milta hai.
+
 ## 6b. HEART SHOP (sirf hearts, sirf coins se, sabse mehnga)  `[ ]`
 Owner: "heart shop me hearts only buy ker sakte ho using coins or hearts cost sub se high". Claude ka decision:
 | Item | Price |
