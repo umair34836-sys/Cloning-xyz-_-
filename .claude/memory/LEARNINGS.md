@@ -89,3 +89,4 @@ Format:
 - (3 Nov) Moderator group ko `grim.exempt` diya (owner ne Grim Timer alerts spam band karwaye).
 - (3 Nov) FCMC: DonutShop shards abhi PlayerPoints (coins) me store hote hain (shards == points har player). Panel fix §7d pending. Economy rule ke hisaab se URGENT.
 - (3 Nov) FCMC manager session bhi isi branch par FCMC_WORKLOG.md me push karta hai → push reject ho to `git pull --rebase`, conflict me DONO entries rakho (markers hatao), `git rebase --continue`, push.
+- (3 Nov) Marker ko door (unloaded chunk) Pos dene ke baad wo usi tick me bhi @e se nahi milta → marker-based "tp to score coords" system door ki jagah par toot jata hai. Last location ke liye MV-Inventories `ll:<world>` destination + `mvinv toggle last_location` + `apply-last-location-for-all-teleports false` use karo. MV5 `mvtp` command block se `@a[...]` selectors aur `--silent` support karta hai.

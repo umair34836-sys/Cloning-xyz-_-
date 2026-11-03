@@ -1039,3 +1039,17 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Bataya: legacy `&a` (= #55FF55); hex options #32CD32 (lime green), #7CFC00 (lawn green); hex format `&#55FF55`.
 - **Kaise:** FCMC `worldlens_command` → coloured `tellraw techshotgaming`.
 - **Result:** Jawab de diya.
+
+### 2026-11-03 UTC — [OWNER] HUB lifesteal NPC click se lifesteal nahi gaya + commands dikhna
+- **Kisne kaha:** MrCopper804: "server zara check kro console in per click kerne se kia likha arha hai also ye jo commands show ho rahay hai inko off kro also lifesteal wale per click kerne se me kio nhi gya lifesteal per ?"
+- **Diagnose:**
+  1. Last-location save chain (overworld z10 x6) survival world exclude nahi karta tha → owner ke fc_lx/ly/lz = survival 144.5/201/560.5 (fc_ld 4 hi raha).
+  2. Restore marker `fc_tpm` server par MAUJOOD NAHI. Test chain (z14, baad me stone) se proof: marker ko door (5000,5000) Pos dene ke baad agla block usi tick me @e se nahi pakad paya (SuccessCount 0) → har door wali jagah par marker unloaded chunk me gum → restore chupchap fail. Purana system sirf lobby ke paas test hua tha.
+- **Fix (research: mvplugins.org/inventories/how-to/configure-last-location + MV-Inv source LastLocationDestinationInstance):**
+  - `mvinv config apply-last-location-for-all-teleports false` (sirf `ll:` teleports par lagu — /spawn, /hub, portals, survival par asar nahi).
+  - `mvinv toggle last_location` → lifesteal group Applicable Shares me last_location.
+  - hub_lifesteal action 0 → `consolecommand mvtp %player_name% ll:lifesteal_lobby --silent`; hub_survival action 0 → `mvtp %player_name% e:survival:144.5,201,560.5 --silent` (--silent = MV teleport messages band).
+  - z10 x15 → `execute if entity @a[tag=fc_restore] run mvtp @a[tag=fc_restore] ll:lifesteal_lobby --silent` (MV selectors support verified: "No player(s) matched selector"); x16 → `tag @a[tag=fc_restore] add fc_rdone`; x17-x25 (marker blocks) → no-op `scoreboard players add #noop fc_const 0`. x6 save → `unless dimension minecraft:survival` add.
+  - log_admin_commands HUB = false (check).
+- **Note:** MV-Inv last location sirf ab se record hogi → pehli dafa lobby spawn. Owner se dobara test maanga.
+- **Undo:** `mvinv toggle last_location`, `mvinv config apply-last-location-for-all-teleports true`; NPC actions wapas `minecraft:tag %player_name% add fc_restore`; z10 x15-x25 purane commands (FCMC_WORKLOG 2 Nov + yeh entry).
