@@ -82,3 +82,5 @@ Format:
 - WorldEdit navigation wand default item = COMPASS → OP/WE-perm player compass right-click = `/jumpto` (block par tp). HUB selector compass isi wajah se "random tp" karta tha; panel ne BLAZE_POWDER kar diya. Custom right-click items ke liye compass/wooden_axe (WE wand) mat use karo.
 - FCMC online-mode=false: jo player kabhi join nahi hua uska LP user naam se nahi milta → offline UUID (MD5 'OfflinePlayer:<name>', version 3) se 'lp user <uuid> parent add <group>'. Bedrock (.name) ka UUID alag.
 - (3 Nov) FCMC LP prefixes me hex gradient: per-letter `&#RRGGBB&l` (hex code formatting reset karta hai, isliye bold har letter ke baad dobara). LP output me codes strip ho kar dikhte hain — normal hai. Moderator prefix = cyan→blue "🛡 MOD »".
+- (3 Nov) FCMC: HUB me stone tools = EssentialsX `newbies.kit` (default `tools`) first join par. Console se band nahi hota — panel config `newbies.kit: ''`.
+- (3 Nov) `execute as X if dimension ...` console ki position check karta hai; player ki dimension ke liye `execute as X at @s if dimension ...` chahiye.

@@ -248,6 +248,17 @@ aliases:
 ```
 Phir server restart (ya console `reload commands` agar available ho). Permission underlying `/warp` wali lagti hai (default players ke liye lobby/hub/lifesteal sab jagah allow kar di gayi hai).
 
+## 7c. HUB me free "Tools" kit (first-join) band karo  `[ ]`  (owner, 3 Nov)
+Owner: "hub me kio players ko free wala kit mil raha hai ? hub ko her ek lobby or world se alag rakhoo"
+**Wajah:** EssentialsX pehli dafa join par `newbies.kit` deta hai (default kit = `tools`: stone sword/shovel/pickaxe/axe). Join HUB me hota hai, isliye kit HUB inventory (MV-Inv group `lobby`) me aa jata hai. Marzarn ke HUB inventory me yahi 4 stone tools mile (3 Nov).
+**File:** `plugins/Essentials/config.yml` → `newbies:` section (backup pehle)
+```yaml
+newbies:
+  kit: ''
+```
+Phir console `essentials reload` (ya restart batch me). Starter kit lifesteal me `/kit starter` (24h) se milta rahega.
+**Console side (Claude ne kar diya, 3 Nov):** `essentials.kits.starter` default group me global se hata kar sirf `world=lifesteal_lobby` (jahan `essentials.kit` bhi hai). Marzarn ke HUB inventory se stone tools hataye.
+
 ## 8. Baqi owner decisions / panel kaam
 - [ ] Maintenance OFF kab karna hai (launch)
 - [ ] Discord invite link (server-ip / welcome me)
