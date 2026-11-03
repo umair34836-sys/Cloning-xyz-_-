@@ -1125,3 +1125,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Nahi chheda:** HEART monument (red concrete/nether wart), ghaas/ped, wool awnings, crates, NPC tiles, kit hall stained glass.
 - **Result:** WorldLens top + shot (shots/20261103-051124_shot_lifesteal_lobby_-8_72_10.png) — light theme. Owner feedback pending.
 - **Undo:** ulta fill (smooth_quartz→polished_blackstone waghera) same box.
+
+### 2026-11-03 UTC — [OWNER] Kitshop me purane 3 kits + preview GUI nahi
+- **Kisne kaha:** MrCopper804: "server kitshop kulta to hai liken usme to wahi porane wale 3 kits show ho rahayhai and un kits k under kia saman hai unki gui bhi open nhi ho rahay hai why ?"
+- **Wajah:** `dm open` fix kaam kar gaya (menu khulta hai), lekin `kitshop.yml` panel ne abhi update nahi kiya (purane 3 kits); preview menus bane hi nahi — DeluxeMenus files console se nahi bante.
+- **Kiya:** `FCMC_KITSHOP_DELUXEMENUS.md` generate (python, YAML validated 10 blocks): kitshop.yml (45 slots, 8 kits slots 19-25 + 31, lore "What you get" + price + coins, KNIGHT Most Popular, CHAMPION Best Value, left-click `points take` + `kit <id>`, right-click `[openguimenu] kit_<id>_preview`), 8 preview menus (asli items + enchants + leather rgb, Back + Buy buttons), config.yml gui_menus registration. FCMC_PANEL_SETUP.md §6f item 5 me link. Owner ko tellraw; offer: Essentials kits khud `createkit` se banana (owner ka inventory khaali chahiye) — "server kits banao" ka intezaar.

@@ -286,6 +286,7 @@ kit_scout z-10.5 (skin Dream) · kit_archer z-7.5 (GeorgeNotFound) · kit_miner 
 2. Purane `archer/warrior/tank` kits (2 Nov wale) is naye set se replace.
 3. `plugins/DeluxeMenus/gui_menus/kitshop.yml` — 8 items (27 ya 36 slot), price + "What you get" lore (§6c style), KNIGHT par "⭐ MOST POPULAR", CHAMPION par "✔ BEST VALUE", left-click = `points take` + `kit <name> %player_name%` (§6 jaisa). `/dm reload`.
 4. Permissions: kisi player ko `essentials.kits.<paid>` NAHI (sirf menu se).
+5. **READY FILES (3 Nov):** `FCMC_KITSHOP_DELUXEMENUS.md` — naya `kitshop.yml` (8 kits, left-click buy / right-click preview) + 8 `kit_<name>_preview.yml` + `config.yml` gui_menus registration. YAML validated. Bas paste + `/dm reload`. (Owner: "kitshop kulta to hai liken usme to wahi porane wale 3 kits show ho rahay hai ... unki gui bhi open nhi ho rahay hai".)
 | Kit | Price | Colors | Trim (material/pattern) | Rarity | Items |
 |---|---|---|---|---|---|
 | scout | 50 | #FF5555/#FF8A5C | leather dyed 13369344 + redstone/sentry | ★☆☆ UNCOMMON | leather armor P1 U2 (boots FF II), iron sword S1 U2, 4 golden apple, 16 steak |
