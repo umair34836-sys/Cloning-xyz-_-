@@ -36,3 +36,5 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Economy rule (owner): balance/shards/coins value bahut high; hearts sabse mehnge (heart shop: 1=500 coins).
 - 2026-11-02 Owner RULE: HUB ko lifesteal aur har naye mode se har lihaaz se alag rakho (playtime, coins, balance, inventory, stats — everything). Naya mode = naya mvinv group; global plugins (PlayerPoints/DonutShop/hPlaytime/LifeStealZ) ke liye alag server ya per-mode plugin.
 - 2026-11-02 OWNER RULE: FCMC server ke HAR session me sirf FCMC connector (mcp__FCMC__*) — WorldLens connector (mcp__worldlens__*) kabhi nahi (wo FireCraft SMP hai). CLAUDE.md me bhi likha.
+
+- (3 Nov, owner) FCMC server ka har player-facing content ENGLISH me (holograms, NPC text, tellraw, lore, menus, Discord topics). Hinglish nahi. Owner/manager ko replies Roman Urdu me chal sakte hain.

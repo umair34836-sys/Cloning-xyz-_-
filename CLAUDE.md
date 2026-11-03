@@ -24,6 +24,12 @@ FireCraft MC (FCMC) server ke **har session** me sirf **FCMC connector** (`mcp__
 **`mcp__worldlens__*` (WorldLens connector) FCMC kaam ke liye kabhi use mat karo** — wo doosra server (FireCraft SMP) hai.
 Owner ke alfaaz: "fcmc server k her ek session me rule dalo k waha serf fcmc use hoga worldlens nhi".
 
+## FCMC ENGLISH rule (owner, 3 Nov 2026 — IMPORTANT)
+
+FCMC server par har player-facing cheez **English** me banao: holograms, text displays, NPC holo/messages, tellraw/title/actionbar, item names/lore, menus, kit lore, Discord topics/posts.
+Owner ke alfaaz: "pore server ko hinglish se english me shift kerdoo ... her ek session ko samjha do k server ko english me agay se banana".
+(Owner/manager ko session me ya tellraw me jawab Roman Urdu me de sakte ho — ye rule server content ke liye hai.)
+
 ## Branch
 
 Development branch: `ccr-7349d8d1-89knkk`. Bina explicit permission ke doosri branch par push na karo. PR sirf tab banao jab user kahe.

@@ -45,6 +45,11 @@ Read this fully once. After that, follow it in every loop.
 - Owner's words: "apne andaze se kuch mat karo".
 - Research first: plugin source or docs, and how public servers do it (netherite.gg, PikaNetwork, Tebex). Then build.
 
+## 2b. ENGLISH rule (owner, 3 Nov) — NEW
+- Everything players see on the server must be **English**: holograms, text_display, NPC holos/messages, tellraw/title/actionbar, item names/lore, menus, Discord topics/posts. No Hinglish in server content.
+- Owner's words: "pore server ko hinglish se english me shift kerdoo ... her ek session ko samjha do k server ko english me agay se banana".
+- Short replies to the manager in tellraw can stay in Roman Urdu (that is a conversation, not server content).
+
 ## 3. How to work faster (tested techniques)
 
 | Need | Method |

@@ -71,3 +71,5 @@ Format:
 - 2026-11-02 09:00 UTC: watcher off (a2e626b4 deleted).
 - 2026-11-02 11:47 UTC: Marzarn moderator (offline UUID) + session_01JK8TsAyYCgHr8UkEQo6Mqy. Techshot pending IGN + owner decision (moderator vs manager).
 - 3 Nov 03:15 PKT: watcher on (cron 5c6afdbb, every minute).
+
+- (3 Nov) Owner (session): "server also pore server ko hinglish se english me shift kerdoo jaha jahan hinglish use howa hai subko english me kro also her ek session ko samjha do k server ko english me agay se banana okay"

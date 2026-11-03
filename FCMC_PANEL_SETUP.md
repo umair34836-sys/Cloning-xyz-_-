@@ -33,6 +33,17 @@ Owner: "hub se her ek jizz ko alag kro, lifesteal ko alag and baqi incoming ko b
 
 ---
 
+## 0c. ENGLISH RULE (owner, 3 Nov) — server ka har player-facing text English me
+Owner: "pore server ko hinglish se english me shift kerdoo jaha jahan hinglish use howa hai subko english me kro also her ek session ko samjha do k server ko english me agay se banana okay"
+- Aage se har naya text (menus, lore, messages, holograms, NPC text, titles, Discord topics/posts) **English** me.
+- **In-game AI (Claude) ne console se badal diya (3 Nov):** lobby/HUB text_displays (RULES, AFK, ENCHANTER, BACK TO HUB, kits subtitle, HUB welcome board), RTP mannequin subtitle, command-block tellraw/title (welcome, first join, hourly key, LS/HUB/RTP teleport msgs, AFK actionbar), ZNPC messages, saare Discord channel topics.
+- **Panel ka kaam (config files — console se nahi hote), English me badlo:**
+  - [ ] `plugins/Skript/scripts/firecraft-hub.sk` — Server Selector item lore "Game mode chunne ke liye right-click karo" → "Right-click to choose a game mode"; lifesteal countdown "Lifesteal lobby me ja rahe ho..." aur baqi saare Hinglish messages.
+  - [ ] `plugins/DeluxeMenus/gui_menus/*.yml` (selector, kitshop, heartshop) — titles/lore/messages (e.g. "Coins kam hain! Website se coins lo." → "Not enough coins! Buy coins on the website."; "... kit mil gaya!" → "You received the ... kit!").
+  - [ ] Essentials / EssentialsChat custom messages, MOTD, `newbies` broadcast, TAB header/footer/scoreboard lines, DiscordSRV messages, LifeStealZ/DonutShop/SlimeCrates custom messages — jahan bhi Hinglish ho.
+  - [ ] Discord bot ke purane EMBED posts (#rules, #creator-info, #server-ip, #link-account, #welcome...) — FCMC Discord tool embed padh/edit nahi kar sakta; agar Hinglish hain to English me dobara post/edit.
+- Is file ke saare naye copy-paste blocks (§6, §6b, §6c) ab English messages ke saath hain.
+
 ## 1. AFK zone: har 1 minute = 1 Shard  `[ ]`
 **File:** `plugins/AxAFKZone/zones/afk.yml` (zone "afk" lifesteal_lobby AFK pool par ban chuka hai)
 
@@ -121,11 +132,11 @@ items:
           input: '%playerpoints_points%'
           output: '200'
       deny_commands:
-        - '[message] &cCoins kam hain! Website se coins lo.'
+        - '[message] &cNot enough coins! Buy coins on the website.'
     left_click_commands:
       - '[console] points take %player_name% 200'
       - '[console] kit warrior %player_name%'
-      - '[message] &aWarrior kit mil gaya!'
+      - '[message] &aYou received the Warrior kit!'
       - '[close]'
   archer:
     material: BOW
@@ -142,11 +153,11 @@ items:
           input: '%playerpoints_points%'
           output: '100'
       deny_commands:
-        - '[message] &cCoins kam hain! Website se coins lo.'
+        - '[message] &cNot enough coins! Buy coins on the website.'
     left_click_commands:
       - '[console] points take %player_name% 100'
       - '[console] kit archer %player_name%'
-      - '[message] &aArcher kit mil gaya!'
+      - '[message] &aYou received the Archer kit!'
       - '[close]'
   tank:
     material: DIAMOND_CHESTPLATE
@@ -163,11 +174,11 @@ items:
           input: '%playerpoints_points%'
           output: '350'
       deny_commands:
-        - '[message] &cCoins kam hain! Website se coins lo.'
+        - '[message] &cNot enough coins! Buy coins on the website.'
     left_click_commands:
       - '[console] points take %player_name% 350'
       - '[console] kit tank %player_name%'
-      - '[message] &aTank kit mil gaya!'
+      - '[message] &aYou received the Tank kit!'
       - '[close]'
 ```
 Phir in-game: `/dm reload`. (Kits area NPC `ls_kits` ka click pehle se `kitshop` par set hai `[x]`.)
@@ -181,7 +192,7 @@ Owner: "kitshop per serf kits name or price wala seen hai liken kits k under kia
   warrior:
     lore:
       - '&8&m                        '
-      - '&f&lKit me kya milega:'
+      - '&f&lWhat you get:'
       - '&7• &fIron Helmet, Chestplate, Leggings, Boots &b(Protection I)'
       - '&7• &fIron Sword &b(Sharpness II)'
       - '&7• &64x Golden Apple'
@@ -194,7 +205,7 @@ Owner: "kitshop per serf kits name or price wala seen hai liken kits k under kia
   archer:
     lore:
       - '&8&m                        '
-      - '&f&lKit me kya milega:'
+      - '&f&lWhat you get:'
       - '&7• &fChainmail Helmet, Chestplate, Leggings, Boots &b(Protection I)'
       - '&7• &fBow &b(Power III, Punch I)'
       - '&7• &f64x Arrow'
@@ -207,7 +218,7 @@ Owner: "kitshop per serf kits name or price wala seen hai liken kits k under kia
   tank:
     lore:
       - '&8&m                        '
-      - '&f&lKit me kya milega:'
+      - '&f&lWhat you get:'
       - '&7• &fDiamond Helmet, Chestplate, Leggings, Boots &b(Protection II)'
       - '&7• &fDiamond Sword &b(Sharpness I)'
       - '&7• &fShield'
@@ -261,7 +272,7 @@ Owner: "serf 3 se 4 kits mat rakho minimum 8 kits alag alag name or price range 
 Hearts kisi kit me NAHI (sirf heart shop). Netherite sirf LEGEND me (owner decide kare — economy rule).
 **Marketing plan:**
 1. Kitshop GUI me kits price ke hisaab se line me; KNIGHT par "MOST POPULAR", CHAMPION par "BEST VALUE" tag; LEGEND sabse aakhir me chamakta (enchant glint) item.
-2. Har kit item par "Kit me kya milega" lore + right-click = preview (chest/menu) — dekh kar khareedna.
+2. Har kit item par "What you get" lore + right-click = preview (chest/menu) — dekh kar khareedna.
 3. Sales: tyohar (Eid, 14 August, New Year, server anniversary) par 20-30% off, max 14 din, phir 30 din tak dobara nahi (Tebex rule).
 4. Launch week: SCOUT/ARCHER 50% off (pehli khareed aasan).
 5. YouTuber/creator code: 10% discount player ko + creator ko hissa (website par).
@@ -273,7 +284,7 @@ kit_scout z-10.5 (skin Dream) · kit_archer z-7.5 (GeorgeNotFound) · kit_miner 
 **Panel ka kaam:**
 1. `plugins/Essentials/kits.yml` — 8 kits (scout, archer, miner, warrior, knight, tank, champion, legend), `delay: 0`, items neeche table ke mutabiq. **Style har item par:** naam = "✦ <Kit> <Piece>" kit ke 2 rang (gradient-jaisa), bold, italic off; lore = 1 flavor line + khaali line + rarity line + "✦ FireCraft MC • <Kit> Kit ✦"; armor trim (material/pattern neeche). Exact Archer/Scout example commands FCMC_WORKLOG.md (3 Nov "Archer kit me coloring", "Scout preview") me hain.
 2. Purane `archer/warrior/tank` kits (2 Nov wale) is naye set se replace.
-3. `plugins/DeluxeMenus/gui_menus/kitshop.yml` — 8 items (27 ya 36 slot), price + "Kit me kya milega" lore (§6c style), KNIGHT par "⭐ MOST POPULAR", CHAMPION par "✔ BEST VALUE", left-click = `points take` + `kit <name> %player_name%` (§6 jaisa). `/dm reload`.
+3. `plugins/DeluxeMenus/gui_menus/kitshop.yml` — 8 items (27 ya 36 slot), price + "What you get" lore (§6c style), KNIGHT par "⭐ MOST POPULAR", CHAMPION par "✔ BEST VALUE", left-click = `points take` + `kit <name> %player_name%` (§6 jaisa). `/dm reload`.
 4. Permissions: kisi player ko `essentials.kits.<paid>` NAHI (sirf menu se).
 | Kit | Price | Colors | Trim (material/pattern) | Rarity | Items |
 |---|---|---|---|---|---|
@@ -313,11 +324,11 @@ items:
           input: '%playerpoints_points%'
           output: '500'
       deny_commands:
-        - '[message] &cCoins kam hain! Website se coins lo.'
+        - '[message] &cNot enough coins! Buy coins on the website.'
     left_click_commands:
       - '[console] points take %player_name% 500'
       - '[console] lifestealz giveItem %player_name% defaultheart 1'
-      - '[message] &a+1 Heart mil gaya!'
+      - '[message] &aYou received +1 Heart!'
       - '[close]'
   heart3:
     material: NETHER_STAR
@@ -334,11 +345,11 @@ items:
           input: '%playerpoints_points%'
           output: '1400'
       deny_commands:
-        - '[message] &cCoins kam hain! Website se coins lo.'
+        - '[message] &cNot enough coins! Buy coins on the website.'
     left_click_commands:
       - '[console] points take %player_name% 1400'
       - '[console] lifestealz giveItem %player_name% defaultheart 3'
-      - '[message] &a+3 Hearts mil gaye!'
+      - '[message] &aYou received +3 Hearts!'
       - '[close]'
 ```
 Phir `/dm reload`. (`lifestealz giveItem <player> defaultheart <n>` console se test ho chuka hai.) HEART SHOP NPC `ls_heartshop` lag chuka hai, click = `heartshop` `[x]`.
