@@ -1335,3 +1335,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Gave 11 diamond items named "Legendary ..." (light_purple/magenta, bold): Sword (Sharp 6, Looting 4, Fire Aspect 2, Unb 4, Mending), Spear (Sharp 6, Lunge 3, Unb 4, Mending), Axe (Sharp 6, Eff 6, Unb 4, Mending), Pickaxe (Fortune 4, Eff 6, Unb 4, Mending), Shovel (Eff 6, Unb 4, Mending), 4× Legendary Armor (Prot 5, Unb 4, Mending, amethyst/eye trim; boots FF 4), Bow (Power 5, Punch 2, Flame, Infinity, Unb 4), Crossbow (Quick Charge 3, Piercing 4, Unb 4, Mending). No netherite.
 - **Kaise:** Vanilla `minecraft:give` with enchantments component (above-max levels allowed, no ItemEdit plugin needed).
 - **Result:** Gear done. Extras (totems/pearls/gapples etc.) held back because inventory is full — asked manager to free space and say "server extras".
+
+### 2026-11-03 09:29 UTC — [MANAGER] Legendary extras given
+- **Kisne kaha:** techshotgaming — "Server extras"
+- **Kya kiya:** After manager cleared inventory, gave Legendary extras: 3 totem, 16 ender pearl, 32 diamond, 16 golden apple, 4 enchanted golden apple, 32 emerald block, 64 golden carrot, 64 steak, 64 arrow, 64 XP bottle.
+- **Kaise:** Checked inventory (only 11 Legendary items), then `minecraft:give techshotgaming minecraft:<item> <n>` ×10.
+- **Result:** Done.
