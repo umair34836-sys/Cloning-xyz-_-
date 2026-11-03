@@ -781,3 +781,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Summary:** survival world + alag inventory; HUB NPCs → ZNPCsPlus (baad me lifesteal/survival NPC delete); HUB Multiverse portals lifesteal_portal + survival_portal with LIFESTEAL/SURVIVAL text; lifesteal lobby copy → survival sky (barriers, mob kill, lights, WG `survival_lobby`); road borders, weather/day, snow off, SW room raise + utility room; warrior kit armor stand, chorus plant.
 - **Pending/nahi kiya:** firecraft-hub.sk replace (console se possible nahi), "ZNPCs hatao mannequins wapas".
 - **Result:** Owner ko tellraw delivered.
+
+### 2026-11-03 UTC — [OWNER] Moderator rank gradient + permissions
+- **Kisne kaha:** MrCopper804 (in-game): "server ek kaam kroo modrator k rank ko ache se color greding kro also usko us k permisions dedo"
+- **Kya kiya:** LP group `moderator` prefix ko cyan→blue hex gradient diya; moderation ki view/notify permissions add ki (Standard scope ke andar; koi economy/item/modify/permanent-ban permission nahi).
+- **Kaise:** `lp group moderator meta removeprefix 800` → `lp group moderator meta setprefix 800 "&#00F5FF🛡 &#00F5FF&lM&#00B4FF&lO&#0072FF&lD &8» &f"` (purana: "🛡 MOD » "). Permissions (global): essentials.kick.notify, essentials.mute.notify, essentials.ban.notify, essentials.mute.offline, essentials.tempban.offline, essentials.invsee (modify NAHI), essentials.seen, essentials.socialspy, essentials.helpop.receive, essentials.vanish.see, grim.alerts, grim.alerts.enable-on-join. essentials.fly sirf world=hub aur world=lifesteal_lobby.
+- **Result:** LP ne sab set confirm kiya. Hex rang chat (EssentialsChat) / TAB me dikhta hai ya nahi: owner se check karwaya. TAB scoreboard ka "Rank" text (`%group%` → MODERATOR) panel ki TAB config se aata hai, wo is change se nahi badla.
+- **Undo:** `lp group moderator meta removeprefix 800` + `lp group moderator meta setprefix 800 "🛡 MOD » "`; permissions `lp group moderator permission unset <node>`.
