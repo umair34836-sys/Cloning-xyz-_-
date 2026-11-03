@@ -881,3 +881,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server kits wale area ko re design kroo and also mujhe in mese ek bhi kit acha nhi laga soo please her ek kit ko special bnao kio k players humay pay ker rahay hai soo unko bhi to kuch special hi milna chaye na"
 - **Check:** E KITS pad (lifesteal_lobby x29..45 z-11..11) = flat polished blackstone + back wall + 4 armor stands (WorldLens shot/top).
 - **Kya kiya:** Plan FCMC_PANEL_SETUP.md §6d (kit contents table + area design) aur owner ko tellraw summary; "server kits haan" ka intezaar. Kit items Essentials kits.yml (panel) me; area build console se.
+
+### 2026-11-03 UTC — [OWNER] Manager session ko watcher on karne ko kaho
+- **Kisne kaha:** MrCopper804: "server fcmc manager wale session ko kaho her 30 seconds ka wacher on ker de"
+- **Kya kiya:** send_message → session_01JK8TsBgGuzocQqsgSfCLYh (fcmc manager): watcher ON karo, har 1 minute (30s possible nahi, cron minimum 1 min), sirf FCMC connector. Delivered. Owner ko tellraw.
+- Owner ka "tech apne claude se keh k her ek npc ko replace kerde znpc se..." message techshotgaming ke liye tha (server prefix nahi).
