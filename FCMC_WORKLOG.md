@@ -1359,3 +1359,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added 25 rewards to crate `legendary`. 3%: Legendary Sword/Spear/Axe/Pickaxe/Shovel, 4× Legendary Armor, Bow, Crossbow, golden carrot 64, steak 64, arrow 64, XP bottle 64. 2%: ender pearl 16, diamond 32, golden apple 16, emerald block 32. 1%: totem 1, enchanted golden apple 4, shulker shell 4, Silence/Eye/Ward trim templates.
 - **Kaise:** Hand-swap (backup slot 0 → container.27; `minecraft:item replace ... weapon.mainhand from ... container.N` + `sudo techshotgaming crate addreward legendary <3|2|1>`); restored slot 0, cleared 27; opened `crate preview legendary`.
 - **Result:** Done, inventory unchanged; manager asked to verify.
+
+### 2026-11-03 09:41 UTC — [MANAGER] Legendary crate: porkchop, bread, villager eggs added
+- **Kisne kaha:** techshotgaming — "Server 1 stack each of porkchop, Bread daal do and 2 villager spawn egg bhi daal dena"
+- **Kya kiya:** Added to crate `legendary`: cooked porkchop 64 (3%), bread 64 (3%), villager spawn egg ×2 (1%).
+- **Kaise:** Backup slot 0 → 27; `minecraft:item replace entity techshotgaming weapon.mainhand with minecraft:<item> <n>` + `sudo techshotgaming crate addreward legendary <3|1>`; restored slot 0, cleared 27.
+- **Result:** Done; told manager (offered inventory copy if that was meant).
