@@ -1251,3 +1251,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ko iron helmet/chestplate/leggings/boots diye: Protection III, Unbreaking III ("Unbreakable 3" ko Unbreaking 3 samjha), trim emerald + sentry, naam "Common Armor" (#FFB6C1 light pink, bold, non-italic). ItemEdit ki zarurat nahi padi — vanilla custom_name component se naam diya.
 - **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:iron_<piece>[enchantments={protection:3,unbreaking:3},trim={material:"minecraft:emerald",pattern:"minecraft:sentry"},custom_name={text:"Common Armor",color:"#FFB6C1",bold:true,italic:false}]` x4.
 - **Result:** "Gave 1 [Common Armor]" x4.
+
+### 2026-11-03 08:11 UTC — [MANAGER] Light pink colour code
+- **Kisne kaha:** techshotgaming (in-game): "Server what is Colour code of light pink"
+- **Kya kiya:** Bataya: hex #FFB6C1 (`&#FFB6C1`, wahi Common Armor me use hua); legacy me exact light pink nahi, closest `&d` (#FF55FF); options #FFC0CB, #FF9EC7.
+- **Kaise:** FCMC `worldlens_command` → coloured `tellraw techshotgaming`.
+- **Result:** Jawab de diya.
