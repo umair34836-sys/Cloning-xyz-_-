@@ -1211,3 +1211,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby x49 ke 9 rank ZNPCs (rank_scout, rank_archer, rank_miner, rank_warrior, rank_media, rank_knight, rank_tank, rank_champion, rank_legend) se `glow` property hata di. Kit NPCs (kit_*) unchanged.
 - **Kaise:** FCMC `worldlens_command` → `npc list`, phir har ek par `npc property remove <id> glow` (sab "Removed property glow"). Undo: `npc property set <id> glow <color>`.
 - **Result:** Rank NPCs ab glow nahi karte. Manager ko bata diya.
+### 2026-11-03 UTC — [OWNER] Owner armour equipped
+- **Who asked:** MrCopper804: "server mujhe owner armour pehnao" (owner was in `survival`; armour slots verified empty first).
+- **Done:** `minecraft:item replace entity MrCopper804 armor.head|chest|legs|feet` with netherite pieces: Protection IV, Unbreaking III, Mending; helmet + Respiration III, Aqua Affinity; leggings + Swift Sneak III; boots + Feather Falling IV, Depth Strider III, Soul Speed III. Trim gold/silence. Names "♛ OWNER Crown/Chestplate/Leggings/Boots" (#FFD700 / #FF3B1F, bold), lore "Forged for the King of FireCraft." + "✦ FireCraft MC • Owner ✦". All 4 confirmed "Replaced a slot". Owner told by tellraw.
+- Also seen (not a "server" request, addressed to the manager): "manager ye npc k glow hatha dena ok" — left for the manager (`npc property remove rank_<id> glow`).
