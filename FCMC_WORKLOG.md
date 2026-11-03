@@ -1011,3 +1011,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** lifesteal_lobby vote crate (-10 66 -40) ke upar ke sab hologram armor stands hata diye (4 mile — plugin ne pichli safai ke baad dobara banaye the). Ab koi entity nahi bachi.
 - **Kaise:** FCMC `worldlens_command` → `execute in minecraft:lifesteal_lobby run minecraft:kill @e[type=armor_stand,x=-9.5,y=67,z=-39.5,distance=..3,tag=!lobby_npc]` (4), verify `if entity` → Test failed (0).
 - **Result:** Koi text nahi. SlimeCrates reload/set par wapas aa sakte hain — permanent hatana ho to crate config me hologram off karna hoga (panel).
+
+### 2026-11-03 UTC — [OWNER] HUB portals → ZNPCs (sirf right-click) — PLAN, owner ka wait
+- **Kisne kaha:** MrCopper804: "server after completing all work than hub me jo portals lage hai lobbys me jane k lie soo unko replace kerdo with znpcs or pass jane se kuch na ho only right click se activate ho okay"
+- **Check:** `mvp list` = lifesteal_portal (HUB 14,151,-11 → 17,155,-8, w:lifesteal_lobby) + survival_portal (HUB -2,151,-17 → 2,155,-17, e:survival:144.5,201,560.5). Andar koi nether_portal block nahi (fill replace count 0) → region-trigger portals; red stained glass frame. Labels: text_display tags lifesteal_portal_label / survival_portal_label. Purana ls_click interaction 17.5 151 -9.5 (z12 chain click → fc_go_ls → fc_restore).
+- **Research:** ZNPCsPlus SetLocationCommand sirf same-world coords (NpcLocation bina world) → HUB NPC ke liye creator (owner) HUB me hona chahiye.
+- **Plan:** owner "server hub npc ready" → owner tp HUB → `sudo MrCopper804 npc create hub_lifesteal player` / `hub_survival` → setlocation portal ke beech (≈15.5 151 -9.5 / 0.5 151 -16.5) → holo + action: lifesteal `consolecommand minecraft:tag %player_name% add fc_restore`, survival `consolecommand mvtp %player_name% survival` (ya e:survival:144.5,201,560.5) → `mvp remove lifesteal_portal` + `mvp remove survival_portal` → owner wapas.
