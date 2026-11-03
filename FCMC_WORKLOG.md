@@ -1077,3 +1077,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Baaki crates (e.g. -5.5 / 10.5, -39.5) ka hologram Y 67.75 ("Right-click to open") + ~68.0 (name) par hai. Vote crate (-10 66 -40) par upar wala set (Y 68.75/69.0) hataya (2) aur same-level duplicates me se 1 VOTE CRATE + 1 Right-click hataye. Ab 1 VOTE CRATE (68.0) + 1 Right-click to open (67.75) — baaki crates jaisa.
 - **Kaise:** FCMC `worldlens_command`: `data get entity ... Pos` (compare), `minecraft:kill @e[type=armor_stand,x=-10,y=68.5,z=-40,dx=1,dy=1,dz=1]` (2), `minecraft:kill @e[...,name="VOTE CRATE",limit=1]` + `name="Right-click to open",limit=1`, count verify.
 - **Result:** Done. Note: baaki crates (-5.5) par bhi 8 stands hain (duplicates) — manager ne nahi kaha, chheda nahi. Dobara /crate set/reload se duplicates aa sakte hain.
+
+### 2026-11-03 04:54 UTC — [MANAGER] Vote crate: upar wala hologram rakha (fix)
+- **Kisne kaha:** techshotgaming (in-game): "Server ye wala nahi iske upar wala rakhna tha"
+- **Kya kiya:** Pichli entry me maine galat (neeche wala, 68/67.75) set rakha tha. Ab bache hue set ko +1 Y upar kiya (69.0/68.75). Galti se tp me pados ke 2 stray stands (z -38.5) bhi upar chale gaye the — unhe wapas neeche kiya, phir check kiya: wo -10 65 -39 (floor block, koi crate nahi) ka stray hologram tha — use hata diya. Upar ke duplicate me se 1 VOTE CRATE + 1 Right-click hataya.
+- **Kaise:** FCMC `worldlens_command`: `execute ... as @e[type=armor_stand,...] at @s run minecraft:tp @s ~ ~1 ~`, revert `~ ~-1 ~` for z -38.5, `if block` check, `minecraft:kill` (stray 2 + duplicates 2), final `data get ... Pos`.
+- **Result:** Vote crate par sirf 1 hologram: VOTE CRATE (69.0) + Right-click to open (68.75). **Mistake/learning:** tp/kill ke selector me `distance=..1.5` pados ke stands bhi pakad leta hai — exact column (`dx/dy/dz` ya `distance=..0.1`) use karo, aur pehle sab stands ki Pos list karo.
