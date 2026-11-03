@@ -1269,3 +1269,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Kaam permanent/destructive hai aur SlimeCrates ka output (crate names, reward ids) sirf player ko dikhta hai, console ko nahi. Manager ke liye `/crate list` (sudo) chalayi taaki naam unki screen par aayen, aur confirmation + crate names maange ("server haan clear <crates>"). Abhi kuch remove nahi kiya.
 - **Kaise:** FCMC `worldlens_command` → `sudo techshotgaming crate list`, `tellraw techshotgaming`.
 - **Result:** Pending — manager ke jawab ka intezar.
+
+### 2026-11-03 08:59 UTC — [MANAGER] Crate rewards clear — confirmed, reward ID format pending
+- **Kisne kaha:** techshotgaming (in-game): "Server haan clear kardo ,Vote and Common crate chhodkar" + "Server rare , epic , legendary , spawn_eggs"
+- **Kya kiya:** Confirmation + crate names mil gaye (rare, epic, legendary, spawn_eggs; common + vote untouched). SlimeCrates `removereward <crate> <reward>` ka reward identifier (index ya naam) pata nahi aur public docs nahi mile (firecrawl search). Andaze se remove nahi kiya. Manager ki screen par `/crate rewards rare` (sudo) chalaya aur ID format + count poocha.
+- **Kaise:** FCMC `worldlens_command` → `sudo techshotgaming crate rewards rare`, `tellraw`.
+- **Result:** Pending — ID format milte hi 4 crates clear.
