@@ -834,3 +834,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Fix:** naya global clock `#gclk fc_const`; overworld y120 z13 x12 (chain) `scoreboard players add #gclk fc_const 1`; x6 ab `fc_afkr = #gclk` (pehle fc_afk). Phase set: `#gclk = MrCopper804 fc_afk - 4137` (shard moment ≈ 4137 → #gclk%1200 = 0).
 - **Verify:** agla shard 7→8 fc_afk 5294–~5370 ke beech, expected 5337 ✓ (±2s).
 - **Caveat:** server restart par DonutShop ka cycle naye sire se shuru hota hai → #gclk phase phir milana padega (owner pool me AFK + shard see naap). Agar DonutShop cycle per-player (join se) hai to doosre players ke liye offset alag ho sakta hai — sirf owner par test hua.
+
+### 2026-11-03 UTC — [OWNER] warp rtp hatao + shards/coins ek saath mil rahe
+- **Kisne kaha:** MrCopper804: "server warp rtp ko remove kerdo serf /rtp hona chaye" aur "server shard and coins dono mil rahay hai mujhe jab k coins alag chizz hai or shards alag"
+- **warp rtp:** `delwarp rtp` → removed (pehle 0.5 65 33.5 y0, lifesteal_lobby). Baqi warps: afk, crates, hub, kits, leaderboards, lobby, pvp, shop. `essentials.tpr` default: global true, lifesteal_lobby + hub me false → /rtp sirf lifesteal worlds me; owner se pucha lobby me bhi chahiye?
+- **Shards = coins:** `papi parse` MrCopper804 shards=8 points=8 (phir points lead 9), Marzarn 2=2 → DonutShop shards PlayerPoints me store hote hain; AFK se free coins. Console se config nahi badalti → FCMC_PANEL_SETUP.md §7d (URGENT) + reply file C. Owner se pucha: tab tak AFK shard band karein ("server afk band")?
+- **Undo warp:** owner ko 0.5 65 33.5 (yaw 0) par tp + `sudo MrCopper804 setwarp rtp`.

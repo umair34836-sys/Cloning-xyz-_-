@@ -87,3 +87,4 @@ Format:
 - (3 Nov) DonutShop (byebye_gg 1.5.6) AFK timer ka koi PAPI placeholder nahi; AFK actionbar timer = mera command-block chain overworld y120 z13 (fc_afk/fc_afkr/fc_const).
 - (3 Nov) DonutShop AFK shard = fixed 60s cycle (zone entry se nahi). AFK actionbar `#gclk fc_const` se aligned; RESTART ke baad phase dobara naapna (owner pool me, `shard see` + `fc_afk`, `#gclk = fc_afk - <shard tick>`).
 - (3 Nov) Moderator group ko `grim.exempt` diya (owner ne Grim Timer alerts spam band karwaye).
+- (3 Nov) FCMC: DonutShop shards abhi PlayerPoints (coins) me store hote hain (shards == points har player). Panel fix §7d pending. Economy rule ke hisaab se URGENT.

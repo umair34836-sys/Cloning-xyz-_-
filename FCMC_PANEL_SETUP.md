@@ -259,6 +259,13 @@ newbies:
 Phir console `essentials reload` (ya restart batch me). Starter kit lifesteal me `/kit starter` (24h) se milta rahega.
 **Console side (Claude ne kar diya, 3 Nov):** `essentials.kits.starter` default group me global se hata kar sirf `world=lifesteal_lobby` (jahan `essentials.kit` bhi hai). Marzarn ke HUB inventory se stone tools hataye.
 
+## 7d. URGENT: DonutShop SHARDS = PlayerPoints COINS (alag karo)  `[ ]`  (owner, 3 Nov)
+Owner: "shard and coins dono mil rahay hai mujhe jab k coins alag chizz hai or shards alag"
+**Saboot (3 Nov):** `papi parse` → MrCopper804 `%donutshop_shards%`=8 aur `%playerpoints_points%`=8 (phir dono 9); Marzarn 2 = 2. `points lead` = shard balances. Yaani DonutShop (1.5.6-SNAPSHOT, byebye_gg) shards ko **PlayerPoints me store** kar raha hai → AFK pool se FREE coins (1 coin = 1 PKR) ban rahe hain. Economy rule ke khilaaf.
+**File:** `plugins/DonutShop/config.yml` (aur agar alag ho to shards/AFK wali yml) — backup pehle. Koi setting jaise `shards.storage` / `use-playerpoints` / `economy: PLAYERPOINTS` / `currency` dhoondo aur shards ko DonutShop ki apni storage (internal/sqlite/yml) par karo. Exact key file dekh kar hi — andaza nahi.
+**Phir:** `/shard reload` (ya restart batch). Check: `papi parse <player> %donutshop_shards% %playerpoints_points%` alag values dikhaye.
+**Saaf-safai (owner decide):** abhi tak ke AFK se bane points coins me jud gaye (MrCopper804 9, Marzarn 2). Separate hone ke baad PlayerPoints reset karna hai ya nahi — owner ka faisla.
+
 ## 8. Baqi owner decisions / panel kaam
 - [ ] Maintenance OFF kab karna hai (launch)
 - [ ] Discord invite link (server-ip / welcome me)
