@@ -1323,3 +1323,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Changed name colour dark_purple → aqua on all 11 Epic items (sword, spear, axe, pickaxe, shovel, 4 armor, bow, crossbow). Enchants/trim unchanged; offered diamond trim.
 - **Kaise:** `minecraft:item modify entity techshotgaming container.N {function:"minecraft:set_name",target:"custom_name",name:{text:"Epic ...",color:"aqua",bold:true,italic:false}}` for slots 0–8, 20, 21.
 - **Result:** Done.
+
+### 2026-11-03 09:24 UTC — [MANAGER] Epic items → Epic crate rewards (5% / 1%)
+- **Kisne kaha:** techshotgaming — "Server ab ye samaan Epic crate me daal do According to The way jo maine pehle bataya tha"
+- **Kya kiya:** Added 22 rewards to crate `epic`. 5%: Epic Sword/Spear/Axe/Pickaxe/Shovel, 4× Epic Armor, Epic Bow, Epic Crossbow, golden carrot 64, cooked porkchop 64, steak 64, bread 64. 1%: totem 1, ender pearl 16, diamond 16, golden apple 8, enchanted golden apple 2, emerald block 16, arrow 64.
+- **Kaise:** Hand-swap (backup slot 0 → container.23; `minecraft:item replace ... weapon.mainhand from ... container.N` + `sudo techshotgaming crate addreward epic <5|1>`); restored slot 0, cleared 23; opened `crate preview epic`.
+- **Result:** Done, inventory unchanged; manager asked to verify preview.
