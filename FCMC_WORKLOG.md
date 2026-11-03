@@ -1017,3 +1017,13 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Check:** `mvp list` = lifesteal_portal (HUB 14,151,-11 → 17,155,-8, w:lifesteal_lobby) + survival_portal (HUB -2,151,-17 → 2,155,-17, e:survival:144.5,201,560.5). Andar koi nether_portal block nahi (fill replace count 0) → region-trigger portals; red stained glass frame. Labels: text_display tags lifesteal_portal_label / survival_portal_label. Purana ls_click interaction 17.5 151 -9.5 (z12 chain click → fc_go_ls → fc_restore).
 - **Research:** ZNPCsPlus SetLocationCommand sirf same-world coords (NpcLocation bina world) → HUB NPC ke liye creator (owner) HUB me hona chahiye.
 - **Plan:** owner "server hub npc ready" → owner tp HUB → `sudo MrCopper804 npc create hub_lifesteal player` / `hub_survival` → setlocation portal ke beech (≈15.5 151 -9.5 / 0.5 151 -16.5) → holo + action: lifesteal `consolecommand minecraft:tag %player_name% add fc_restore`, survival `consolecommand mvtp %player_name% survival` (ya e:survival:144.5,201,560.5) → `mvp remove lifesteal_portal` + `mvp remove survival_portal` → owner wapas.
+
+### 2026-11-03 UTC — [OWNER] HUB portals → ZNPCs DONE
+- **Kisne kaha:** MrCopper804: "server hub npc ready" (pichla plan approve).
+- **Kya kiya:** owner tp HUB 10.5 151 -6.5 → `sudo MrCopper804 npc create hub_lifesteal player` + `hub_survival` → owner wapas lifesteal_lobby 34.9 65.06 0.35 (pehli jagah).
+  - hub_lifesteal: setlocation 15.5 151 -9.5, rot 58.5; skin Sapnap; holo "&#ff2a2a&l❤ LIFESTEAL ❤" + "&7▶ Right-click = JOIN"; actions `consolecommand minecraft:tag %player_name% add fc_restore` (last-location system) + message.
+  - hub_survival: setlocation 0.5 151 -16.5, rot 0; skin Technoblade; holo "&#ff7a1a&l⚔ SURVIVAL ⚔" + JOIN; actions `consolecommand mvtp %player_name% e:survival:144.5,201,560.5` + message.
+  - `mvp remove lifesteal_portal`, `mvp remove survival_portal` → 0 portals (andar nether_portal blocks the hi nahi; red glass frames sajawat me rahe).
+  - Portal labels "Enter the portal to go to X" → "Right-click the NPC to go to X".
+- **Note:** purana ls_click interaction 17.5 151 -9.5 (click → fc_go_ls → fc_restore) waisa hi hai (same result). Owner click test pending.
+- **Undo:** `mvp create` wapas (in-game WE selection + `mvp create lifesteal_portal w:lifesteal_lobby`, survival `e:survival:144.5,201,560.5`), `npc delete hub_lifesteal|hub_survival`.
