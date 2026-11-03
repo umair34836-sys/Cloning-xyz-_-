@@ -1293,3 +1293,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Removed reward `iron` from crates rare, epic, legendary, spawn_eggs. Vote and common untouched.
 - **Kaise:** `sudo techshotgaming crate removereward <crate> iron` ×4, tellraw.
 - **Result:** Done; asked manager to verify with /crate rewards rare. Note: SlimeCrates reward ID = config name (here "iron", not the item id).
+
+### 2026-11-03 09:09 UTC — [MANAGER] Manager inventory → Rare crate rewards (5% / 1%)
+- **Kisne kaha:** techshotgaming — "Server meri inventory me jitna bhi samaan hai usko Rare Crate me daal dena, Armor and tools and normal food 5% chances, Rest each 1% chances"
+- **Kya kiya:** Added 20 rewards to crate `rare`. 5%: Rare Sword/Spear/Axe/Pickaxe/Shovel, 4× Rare Armor pieces, cooked beef 64, cooked porkchop 64, bread 64, golden carrot 64. 1%: totem, ender pearl 16, diamond 6, golden apple 4, enchanted golden apple 1, lapis block 8, emerald block 8.
+- **Kaise:** Hand-swap: backup slot 0 → container.9, `minecraft:item replace entity techshotgaming weapon.mainhand from entity techshotgaming container.N` + `sudo techshotgaming crate addreward rare <5|1>` per item; restored slot 0, cleared 9. Opened `crate preview rare`.
+- **Result:** Done, manager inventory unchanged; asked manager to verify preview.
