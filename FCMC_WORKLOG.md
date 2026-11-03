@@ -1263,3 +1263,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ko diamond helmet/chestplate/leggings/boots diye: Protection III, Unbreaking III, Mending, trim emerald + wild, naam "Rare Armor" (gold = dark yellow &6, bold, non-italic). Vanilla custom_name se naam (ItemEdit jaisa result).
 - **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:diamond_<piece>[enchantments={protection:3,unbreaking:3,mending:1},trim={material:"minecraft:emerald",pattern:"minecraft:wild"},custom_name={text:"Rare Armor",color:"gold",bold:true,italic:false}]` x4.
 - **Result:** "Gave 1 [Rare Armor]" x4.
+
+### 2026-11-03 08:53 UTC — [MANAGER] Crate rewards clear (confirmation pending)
+- **Kisne kaha:** techshotgaming (in-game): "Server remove every reward from crates ,Except common and vote crate"
+- **Kya kiya:** Kaam permanent/destructive hai aur SlimeCrates ka output (crate names, reward ids) sirf player ko dikhta hai, console ko nahi. Manager ke liye `/crate list` (sudo) chalayi taaki naam unki screen par aayen, aur confirmation + crate names maange ("server haan clear <crates>"). Abhi kuch remove nahi kiya.
+- **Kaise:** FCMC `worldlens_command` → `sudo techshotgaming crate list`, `tellraw techshotgaming`.
+- **Result:** Pending — manager ke jawab ka intezar.
