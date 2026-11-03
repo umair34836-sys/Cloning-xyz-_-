@@ -19,3 +19,7 @@ Format:
 - User ne baar baar kaha: LifeStealZ (kisi aur ka published plugin) ko REA se decompile karke "uski files use karo / clone banao". Ye **copyright infringement** hai — decline kiya (chahe tool REA ho). Issue tool nahi, ownership hai: LifeStealZ user ka apna nahi (author: KartoffelChipss/ZetaPlugins).
 - Legit raasta jo diya: **original** lifesteal plugin (FireSteal) scratch se banaya `firecraft-lifesteal/` me — same mechanics, par original code + hardened (anti-dupe, signed heart items, prepared statements, anti-farm, Electron-style clamps). REA sirf user ke APNE / owner-authorized binary par use hoga.
 - REA se decompiled 3rd-party code ko naye plugin me copy karna = NAHI (IP reminder bhi).
+
+## 2026-11-03 — FCMC vote crate holograms: wrong set kept + neighbour stands moved
+- Ghalti: Manager ne "baaki crates ke level wala" rakhne ko kaha; maine neeche wala rakha jabki wo upar wala chahte the. Phir `distance=..1.5` selector se tp kiya to pados (z -38.5) ke stray stands bhi move ho gaye.
+- Bachne ka tareeqa: (1) Ambiguous ho to pehle har stand ki Pos list karke manager ko options do, phir delete karo. (2) Kill/tp ke liye exact column selector (`x,y,z,dx=0,dy=..,dz=0` ya `distance=..0.1`) use karo; pehle `execute as @e[...] run data get entity @s Pos` se dekh lo kaun match ho raha hai. (3) SlimeCrates har /crate set ya reload par naya hologram banata hai, purane nahi hatata.
