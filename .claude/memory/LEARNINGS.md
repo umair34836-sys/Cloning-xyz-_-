@@ -93,3 +93,5 @@ Format:
 - (3 Nov) MV-Inv `game_statistics` share = stat-criteria objectives (leave_game waghera) group change par badalte hain → join detection kabhi stats se mat karo. Ab FCMC join = tick-based `fc_last` vs `#t-1` (overworld z13 x13-x17), fc_leave dummy.
 - (3 Nov) ZNPCsPlus message action + holo = LEGACY `&` / `&#RRGGBB` codes (LegacyComponentSerializer). MiniMessage `<green>` raw text dikhata hai.
 - (3 Nov) DeluxeMenus menu ZNPC/plugin se kholna ho to `playercommand <open_command>` NAHI chalta (open_command chat-typed preprocess se pakda jata hai) → `consolecommand dm open <menu> %player_name%`.
+
+- (3 Nov, FCMC) ZNPCsPlus `npc holo set <id> <line> <text>` replaces one holo line in place (0-based index from `npc holo info <id>`). LuckPerms kit-rank ladder: parent chain makes higher ranks inherit lower `essentials.kits.*`; verify with `lp group <g> permission check <node>`.
