@@ -1365,3 +1365,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added to crate `legendary`: cooked porkchop 64 (3%), bread 64 (3%), villager spawn egg ×2 (1%).
 - **Kaise:** Backup slot 0 → 27; `minecraft:item replace entity techshotgaming weapon.mainhand with minecraft:<item> <n>` + `sudo techshotgaming crate addreward legendary <3|1>`; restored slot 0, cleared 27.
 - **Result:** Done; told manager (offered inventory copy if that was meant).
+
+### 2026-11-03 09:47 UTC — [MANAGER] Spawn eggs crate — decimal chance test (in progress)
+- **Kisne kaha:** techshotgaming — "Server Spawn eggs crate me 1 of each non hostile mob spawn egg (eggs in case of Animals who lay egg, except chicken) daal do Sabke chances kam rakhna 1% se bhi niche rakhna and last me 10% chances ka khali space bachaye rakhna"
+- **Kya kiya:** Added Allay spawn egg to `spawn_eggs` at 0.5% as a test (SlimeCrates decimal support unknown, no console output). Asked manager to confirm preview + how "10% empty" works in this plugin.
+- **Kaise:** Backup slot 0 → 27; `minecraft:item replace ... weapon.mainhand with minecraft:allay_spawn_egg 1`; `sudo techshotgaming crate addreward spawn_eggs 0.5`; restored; `crate preview spawn_eggs`.
+- **Result:** Pending manager confirmation, then add remaining ~38 eggs (+ turtle_egg, sniffer_egg; chicken spawn egg) at 0.5%.
