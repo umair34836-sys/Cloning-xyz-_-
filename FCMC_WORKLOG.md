@@ -1377,3 +1377,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Added to `spawn_eggs` at 0.5% each (total 22%): allay, armadillo, axolotl, bat, bee, camel, cat, chicken (spawn egg), cod, cow, dolphin, donkey, fox, frog, glow squid, goat, horse, iron golem, llama, mooshroom, mule, ocelot, panda, parrot, pig, polar bear, pufferfish, rabbit, salmon, sheep, sniffer_egg (item), snow golem, squid, strider, tadpole, trader llama, tropical fish, turtle_egg (item), villager, wandering trader, wolf, happy ghast, copper golem. No hostile mobs.
 - **Kaise:** Backup slot 0 → 27; per egg `minecraft:item replace entity techshotgaming weapon.mainhand with minecraft:<egg> 1` + `sudo techshotgaming crate addreward spawn_eggs 0.5`; restored slot 0, cleared 27; `crate preview spawn_eggs`.
 - **Result:** Done. "10% empty slot" method unclear in SlimeCrates — asked manager.
+
+### 2026-11-03 09:52 UTC — [MANAGER] Spawn eggs crate: zombie egg added, chance change pending
+- **Kisne kaha:** techshotgaming — "Server saare rewards ka Chance badhake 1.5% kardo only spawn egg wali crate me, And Zombie spawn egg bhi add kardo"
+- **Kya kiya:** Added zombie spawn egg to `spawn_eggs` at 1.5%. Changing the 44 existing rewards' chance needs their reward IDs (no known setchance command) — opened `/crate rewards spawn_eggs` for manager and asked for ID format.
+- **Kaise:** Hand-swap (slot 0 backup → 27) + `sudo techshotgaming crate addreward spawn_eggs 1.5`; `sudo techshotgaming crate rewards spawn_eggs`.
+- **Result:** Zombie done; 1.5% update pending manager reply (plan: removereward each, re-add at 1.5).
