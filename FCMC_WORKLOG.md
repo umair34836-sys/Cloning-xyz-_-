@@ -1257,3 +1257,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Bataya: hex #FFB6C1 (`&#FFB6C1`, wahi Common Armor me use hua); legacy me exact light pink nahi, closest `&d` (#FF55FF); options #FFC0CB, #FF9EC7.
 - **Kaise:** FCMC `worldlens_command` → coloured `tellraw techshotgaming`.
 - **Result:** Jawab de diya.
+
+### 2026-11-03 08:43 UTC — [MANAGER] "Rare Armor" diamond set (P3 U3 Mending, emerald wild trim)
+- **Kisne kaha:** techshotgaming (in-game): "Server Give me Diamond armor Enchanted with Protection 3 , Unbreakable 3 and mending with emerald wild armor trim ,Rename them eith itemedit pluggin in Dark yellow and Bold Rare Armor"
+- **Kya kiya:** Manager ko diamond helmet/chestplate/leggings/boots diye: Protection III, Unbreaking III, Mending, trim emerald + wild, naam "Rare Armor" (gold = dark yellow &6, bold, non-italic). Vanilla custom_name se naam (ItemEdit jaisa result).
+- **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:diamond_<piece>[enchantments={protection:3,unbreaking:3,mending:1},trim={material:"minecraft:emerald",pattern:"minecraft:wild"},custom_name={text:"Rare Armor",color:"gold",bold:true,italic:false}]` x4.
+- **Result:** "Gave 1 [Rare Armor]" x4.
