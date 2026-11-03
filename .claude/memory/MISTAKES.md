@@ -48,3 +48,8 @@ Format:
 - Kya hua: setwarp ke liye ek hi batch me 6 alag jagah `minecraft:tp` + sudo kiya → owner do baar logout/login (shayad "moved too quickly"/client lag), 4 setwarp "Player not found".
 - Bachao: player ko tp karne ke baad har step ke beech status/Pos check karo; ek message me 1-2 tp se zyada nahi.
 - Kisi ke public messages me 'code'/password jaisi cheez ho to repo/log me kabhi copy mat karo (commit block hua tha).
+
+## 2026-11-02 — Join tp ne Marzarn ko freeze kar diya
+- Kya hua: z10 x4 `tp` har tick `fc_wait=1` par; counter `fc_leave` (stat) par depend tha; `mvinv toggle game_statistics` se stat 0 → counter fc_wait=1 par atka → player har tick spawn par tp = hil nahi sakta.
+- Bachao: per-tick repeating tp kabhi aise score par mat lagao jo atak sakta ho; counters self-advancing rakho; koi bhi global setting (MV-Inv shares, stats) badalne se pehle check karo kaunse objectives/criteria us par depend karte hain.
+- CoreProtect `a:command` lookup me /register /login ke passwords dikhte hain — kabhi copy/log mat karo.

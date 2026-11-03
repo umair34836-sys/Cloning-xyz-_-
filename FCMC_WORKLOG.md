@@ -767,3 +767,10 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 ### 2026-11-02 22:15 UTC (3 Nov 03:15 PKT) — [OWNER] Watcher on
 - Owner (session): "owner ko her 30 second jawab do or kaam kro ... wacher on kro" → CronCreate 5c6afdbb every minute (30s possible nahi; pichla cron session restart se khatam ho gaya tha).
 - Marzarn pehli baar FCMC par online: `lp user Marzarn info` → UUID a2549974-18e7-381f-b87f-ebe55914765f (offline UUID match), primary group moderator, prefix "🛡 MOD » " — rank kaam kar raha hai. Owner ne `/maintenance add Marzarn` kiya.
+
+### 2026-11-02 22:20 UTC (3 Nov 03:20 PKT) — [OWNER] "Marzarn hil kyun nahi pa raha" → mera bug, fixed
+- Owner in-game: "server check kro Marzarn hil kio nhi pa raha hai ?"
+- Marzarn ne AuthMe register + login kar liya tha (`authme lastlogin` OK), lekin Pos 0.5 151 0.5 par atka. Scores: fc_wait=1, fc_leave=0, tag fc_new.
+- **Root cause (mera):** z10 x4 `@a[scores={fc_wait=1}] tp HUB spawn` har tick; fc_wait 1 par atka kyunki z3 x5 sirf `fc_leave=1..` par count karta tha aur fc_leave (leave_game stat) MV-Inv `game_statistics` share (jo maine on kiya) ki wajah se 0 ho gaya → counter ruk gaya → har tick tp = freeze.
+- **Fix:** Marzarn fc_wait → 2/3 (turant chhoda) → z3 x5 = `scoreboard players add @a[scores={fc_wait=1..}] fc_wait 1` (start ke baad stat par depend nahi); z10 x31 (new chain) = `execute as @a[scores={fc_leave=1..}] unless score @s fc_wait matches 1.. run scoreboard players set @s fc_wait 1` (start); z10 x4 = `scores={fc_wait=1..2}` (tick-order safe, max 2 tp). Marzarn disconnect hua → `scoreboard players reset Marzarn fc_wait` (rejoin clean).
+- Note: CoreProtect command lookup me players ke /register /login passwords dikhte hain — kabhi log/repo/chat me copy mat karna.
