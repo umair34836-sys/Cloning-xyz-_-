@@ -371,3 +371,4 @@
 [2026-11-02 ~08:22 UTC] CHAT "server subko 1 minute ki warning de ker server restart kerdo" -> restart needs in-game confirm per rules; asked owner to type "server haan restart". PENDING.
 [2026-11-02 ~08:27 UTC] Restart order resolved: owner ran /restart himself (CoreProtect a:command ~1.35 min before check); WorldLens was Bad Gateway during restart, back now. No action by me.
 [2026-11-02 ~13:44 UTC] (via manager helper) RudraJUSTGOD completed plot5 society build -> society-cut 5 hearts returned (4 -> 9) with OWNER session approval.
+2026-11-03 05:02 UTC | "server stop watcher now" | Watcher (har minute ka owner check) band kiya; server stop nahi kiya. Owner offline tha, msg nahi pahuncha. | done
