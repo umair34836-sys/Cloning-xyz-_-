@@ -84,3 +84,4 @@ Format:
 - (3 Nov) FCMC LP prefixes me hex gradient: per-letter `&#RRGGBB&l` (hex code formatting reset karta hai, isliye bold har letter ke baad dobara). LP output me codes strip ho kar dikhte hain — normal hai. Moderator prefix = cyan→blue "🛡 MOD »".
 - (3 Nov) FCMC: HUB me stone tools = EssentialsX `newbies.kit` (default `tools`) first join par. Console se band nahi hota — panel config `newbies.kit: ''`.
 - (3 Nov) `execute as X if dimension ...` console ki position check karta hai; player ki dimension ke liye `execute as X at @s if dimension ...` chahiye.
+- (3 Nov) DonutShop (byebye_gg 1.5.6) AFK timer ka koi PAPI placeholder nahi; AFK actionbar timer = mera command-block chain overworld y120 z13 (fc_afk/fc_afkr/fc_const).

@@ -802,3 +802,16 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Kuch change nahi. Owner ko tellraw: pool ke beech 28 64 28 par 1-2 min ruk kar "server afk check" likhein; shards 2 se badhe ya nahi main check karunga.
 - **Agar beech me bhi na mile:** DonutShop AFK config (radius / enabled) panel se dekhna hoga — console se read nahi hota.
 - Owner ke "bhai tum kia hack use ker rahay ho..." / "tum hi" messages kisi player ke liye the (server prefix nahi) — ignore.
+
+### 2026-11-03 UTC — [OWNER] AFK pool me timer (actionbar)
+- **Kisne kaha:** MrCopper804 (in-game): "server shard to mil raha hai liken timer yaha ka off hai user ko kaise pata lagega k kia ho raha hai ?"
+- **Research:** DonutShop 1.5.6-SNAPSHOT (byebye_gg) — `papi info donutshop` me placeholder list nahi; `%donutshop_afk%`, `_afk_timer`, `_afktime`, `_afk_seconds`, `_afk_remaining`, `_next_shard` sab invalid. Web par docs nahi mile. Yaani DonutShop ka AFK timer bahar nahi aata → apna command-block timer.
+- **Kya kiya:** Overworld y120 z13 (force-loaded chunk [0,0]) naya chain, facing east, auto:
+  - x3 (repeating): `execute in minecraft:lifesteal_lobby as @a[x=28.5,y=64,z=28.5,distance=..10] run scoreboard players add @s fc_afk 1`
+  - x4: daire ke bahar (lifesteal_lobby, distance=10.01..) → `scoreboard players reset @s fc_afk`
+  - x5: `execute as @a[scores={fc_afk=1..}] at @s unless dimension minecraft:lifesteal_lobby run scoreboard players reset @s fc_afk`
+  - x6–x10: zone players ke liye `fc_afkr = fc_afk`, `%= #1200`, `/= #20`, `-= #60`, `*= #neg` → bache hue seconds (60…1)
+  - x11: `minecraft:title @s actionbar` "⏳ AFK ZONE • Next Shard: <fc_afkr>s • har 60s = 1 Shard"
+  - Naye objectives: fc_afk, fc_afkr, fc_const (#1200=1200, #20=20, #60=60, #neg=-1).
+- **Assumption (verify pending):** DonutShop har player ko zone me aane ke 60s baad shard deta hai (per-player timer). Agar wo global 60s cycle hai to countdown shard se match nahi karega → owner se test ("server afk timer sahi/galat").
+- **Undo:** `execute in minecraft:overworld run fill 3 120 13 11 120 13 minecraft:stone` + `scoreboard objectives remove fc_afk|fc_afkr|fc_const`.
