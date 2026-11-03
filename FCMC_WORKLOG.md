@@ -903,3 +903,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Plugin list check ki — EssentialsXGUI installed nahi hai (sirf Essentials, EssentialsChat, EssentialsSpawn). Kit GUI ke liye DeluxeMenus available bataya.
 - **Kaise:** FCMC connector `worldlens_command` → `plugins`, phir `tellraw techshotgaming`.
 - **Result:** Manager ko jawab de diya.
+
+### 2026-11-03 UTC — [OWNER] Kits haan — GUI me ek ek karke dikhao (Archer 1/3)
+- **Kisne kaha:** MrCopper804: "server kits haan hai liken mujhe as a gui show kro one by one" (price par kuch nahi kaha — baad me poochna).
+- **Kya kiya:** Preview chest lifesteal_lobby 36 65 -3 (facing west, naam "🏹 ARCHER KIT (Preview)"), `minecraft:item replace block ... container.N` se §6d v2 Archer items: iron helmet/chest/legs/boots Prot II Unbr III (slots 0-3), Ranger Bow Power IV Punch I Infinity Unbr III (9), Archer Blade iron sword Sharp III Unbr III (10), Archer Pickaxe Eff III Unbr III (11), 1 arrow (18), 16 spectral arrow (19), 8 golden apple (20), 32 steak (21). Naam #55FF55 bold + lore "✦ FireCraft MC • Archer Kit ✦". Owner tp 34.5 65 -2.5 (yaw -90).
+- **Note:** plain `item` = Essentials ("Only in-game players") → `minecraft:item`. Preview chest me asli items hain → review ke baad chest hatana (setblock air).
+- **Next:** owner "server archer ok" → Warrior preview, phir Tank.
