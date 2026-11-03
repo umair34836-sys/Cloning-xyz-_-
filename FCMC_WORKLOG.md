@@ -995,3 +995,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Manager ko iron helmet, chestplate, leggings, boots — har ek par Protection II + Unbreaking I — de diye.
 - **Kaise:** FCMC `worldlens_command` → `minecraft:give techshotgaming minecraft:iron_<piece>[enchantments={protection:2,unbreaking:1}]` x4, phir `tellraw`.
 - **Result:** 4 pieces mil gaye.
+
+### 2026-11-03 UTC — [OWNER] Manager session ko training
+- **Kisne kaha:** MrCopper804: "server jis trah tum kaam ker rahay ho same fcmc manager ko bhi traning do k wo kaam kare zayada se zayada or manager ka kaam fast ho manager k traf se us k behalf per kaam kare jaise tum kerte ho ta k sub kuch perfect ho"
+- **Kya kiya:** `FCMC_MANAGER_TRAINING.md` banaya (rules, tested techniques table, ZNPC 3-step gear recipe, limits, purani ghaltiyan, har kaam ka order, current state) aur fcmc manager session (session_01JK8TsBgGuzocQqsgSfCLYh) ko send_message se bheja.
