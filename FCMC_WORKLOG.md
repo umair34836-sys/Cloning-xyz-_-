@@ -1103,3 +1103,7 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kiya:** owner lifesteal_lobby me tha → `sudo MrCopper804 npc create ls_rtp player`; setlocation 0.5 65 3.5, rot 180, skin Technoblade, holo "&#a855f7&l✦ RTP / WILDERNESS ✦" + "&7▶ Right-click = random spot in Lifesteal", action `consolecommand minecraft:tag %player_name% add fc_go_rtp` (z15 RTP chain). Phir `kill` mannequin tag=npc_hub_return + interactions tag=npc_click (2). Mannequins ab 0.
 - **Note:** z12 x3-x20 (purane click chain) ab koi interaction nahi pakdte — bezarar; x8-x11 (fc_go_ls) aur x17-x20 (fc_go_hub, portal) abhi bhi kaam ke.
 - **Undo:** `npc delete ls_rtp`; mannequin dobara summon (FCMC_WORKLOG 1 Nov entry) + interaction.
+
+### 2026-11-03 UTC — [OWNER] Join + last-location test PASS
+- **Owner:** "server filhaal to sub theek tha me hub me aya than lifetseal me waha aya jahan per leave howa tha khod se nhi aya server selector se me khod aya ok"
+- **Result:** naya tick-based join detection (z13 x13-x17) → join par HUB ✓; MV-Inv `ll:lifesteal_lobby` (selector fc_restore → z10 x15) → last location ✓ (restart ke baad bhi).
