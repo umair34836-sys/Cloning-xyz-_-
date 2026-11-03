@@ -1112,3 +1112,8 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server ab ye sub bhi fix kro jab znpcs per click kerte hai to wo text normal ata hai colors etc nhi ata command type text hota hai"
 - **Wajah:** message actions me MiniMessage `<green>...</green>` tha; ZNPCsPlus `MessageAction` (github Pyrbu/ZNPCsPlus 2.X) `LegacyComponentSerializer` use karta hai → sirf `&` codes.
 - **Kiya:** `npc action edit <id> 1 message ...` → kit_scout..kit_legend (8) "&a✦ Opening the Kit Shop...", hub_lifesteal "&c❤ Sending you to &4&lLifesteal&c...", hub_survival "&6⚔ Sending you to &e&lSurvival&6...".
+
+### 2026-11-03 UTC — [OWNER] "opening kit shop araha hai liken open nhi ho raha"
+- **Kisne kaha:** MrCopper804: "server now ab ye dekho k opening kit shop to araha hai liken open nhi ho raha hai why fix this"
+- **Wajah:** ZNPC `playercommand kitshop` = player.performCommand → DeluxeMenus open_command (register nahi, chat-typed command preprocess se pakadta hai) → menu nahi khulta. Owner ka khud `/kitshop` type karna chalta tha.
+- **Kiya:** action 0 → `consolecommand dm open kitshop %player_name%` (kit_scout..kit_legend, ls_kits) aur `dm open heartshop %player_name%` (ls_heartshop). Syntax test `dm open kitshop FcTestNobody` → "is not online" (valid); `dm open kitshop MrCopper804` console se owner ke liye khola (test). ls_shop (`shop`) aur ls_auction (`auctionhouse`) asli plugin commands — nahi chheda.
