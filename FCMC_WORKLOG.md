@@ -1311,3 +1311,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Gave Epic Bow (Power 5, Punch 2, Flame, Infinity, Unbreaking 3) and Epic Crossbow (Quick Charge 3, Multishot, Unbreaking 3, Mending), dark_purple bold names, plus 64 arrows.
 - **Kaise:** `minecraft:give techshotgaming minecraft:bow[...]`, `minecraft:crossbow[...]`, `minecraft:arrow 64`.
 - **Result:** Done (all "Gave"); manager informed.
+
+### 2026-11-03 09:18 UTC — [MANAGER] Epic Bow Power 5 → 4
+- **Kisne kaha:** techshotgaming — "Server Power 4 do 5 nahi"
+- **Kya kiya:** Replaced Epic Bow with Power 4 version (Punch 2, Flame, Infinity, Unbreaking 3 unchanged).
+- **Kaise:** `minecraft:clear techshotgaming minecraft:bow 0` (count check = 1), `minecraft:clear ... minecraft:bow 1`, then `minecraft:give` new bow.
+- **Result:** Done.
