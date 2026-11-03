@@ -1305,3 +1305,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Gave Epic set (diamond, dark_purple bold names): Epic Sword (Sharp 4, Looting 3, Unb 3, Mending), Epic Spear (Sharp 4, Lunge 3, Unb 3, Mending), Epic Axe (Sharp 4, Eff 5, Unb 3, Mending), Epic Pickaxe (Fortune 3, Eff 5, Unb 3, Mending), Epic Shovel (Eff 5, Unb 3, Mending), 4× "Epic Armor" (Prot 4, Unb 3, Mending, amethyst/silence trim; boots + Feather Falling 4). Extras: 2 totem, 16 ender pearl, 16 diamond, 8 golden apple, 2 enchanted golden apple, 64 golden carrot, 16 emerald block.
 - **Kaise:** `minecraft:give techshotgaming minecraft:<item>[enchantments={...},trim={...},custom_name={...}]` ×16.
 - **Result:** Done, all gave successfully. Not added to crate (manager will do/ask later).
+
+### 2026-11-03 09:16 UTC — [MANAGER] Epic Bow + Epic Crossbow given
+- **Kisne kaha:** techshotgaming — "Server ek Epic bow and Epic crossbow bhi daal do" + "Server inventory me"
+- **Kya kiya:** Gave Epic Bow (Power 5, Punch 2, Flame, Infinity, Unbreaking 3) and Epic Crossbow (Quick Charge 3, Multishot, Unbreaking 3, Mending), dark_purple bold names, plus 64 arrows.
+- **Kaise:** `minecraft:give techshotgaming minecraft:bow[...]`, `minecraft:crossbow[...]`, `minecraft:arrow 64`.
+- **Result:** Done (all "Gave"); manager informed.
