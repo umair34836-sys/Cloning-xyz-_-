@@ -1071,3 +1071,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Online players ke liye pehle x17/fc_last chalaya, x16 baad me → kisi ko galti se HUB tp nahi hua (fc_wait/fc_leave = none verify).
 - **Test pending:** owner NPC click + rejoin.
 - **Undo:** z13 x13-x17 stone; `scoreboard objectives remove fc_leave` + `add fc_leave minecraft.custom:minecraft.leave_game`.
+
+### 2026-11-03 04:52 UTC — [MANAGER] Vote crate hologram baaki crates ke level par
+- **Kisne kaha:** techshotgaming (in-game): "Server Wo wala rakh do jo baaki crates ke hologram ke same level par hai"
+- **Kya kiya:** Baaki crates (e.g. -5.5 / 10.5, -39.5) ka hologram Y 67.75 ("Right-click to open") + ~68.0 (name) par hai. Vote crate (-10 66 -40) par upar wala set (Y 68.75/69.0) hataya (2) aur same-level duplicates me se 1 VOTE CRATE + 1 Right-click hataye. Ab 1 VOTE CRATE (68.0) + 1 Right-click to open (67.75) — baaki crates jaisa.
+- **Kaise:** FCMC `worldlens_command`: `data get entity ... Pos` (compare), `minecraft:kill @e[type=armor_stand,x=-10,y=68.5,z=-40,dx=1,dy=1,dz=1]` (2), `minecraft:kill @e[...,name="VOTE CRATE",limit=1]` + `name="Right-click to open",limit=1`, count verify.
+- **Result:** Done. Note: baaki crates (-5.5) par bhi 8 stands hain (duplicates) — manager ne nahi kaha, chheda nahi. Dobara /crate set/reload se duplicates aa sakte hain.
