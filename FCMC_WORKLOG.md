@@ -860,3 +860,13 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kisne kaha:** MrCopper804: "server all staff ko manager ko staff vc bulao fcmc k"
 - **Kya kiya:** `#🛡️┃staff-chat` (1566039466676719750) me message 1567022161925902378 — role pings ⚙️ Manager, 🛡️ Admin, 🔨 Moderator, 🤝 Helper + user pings Techshot Gaming (1376918464379359346), Marzarn (1465026976095146237): "Owner bula rahe hain — sab staff abhi FCMC staff VC me aa jao". DM bhi dono ko (1567022178480693290, 1567022184877260852). @everyone NAHI. Discord tool sirf text channels deta hai → VC link nahi diya.
 - **Result:** Bheja gaya; owner ko tellraw.
+
+### 2026-11-03 UTC — [OWNER] Har NPC sirf right-click se (proximity band)
+- **Kisne kaha:** MrCopper804: "server her ek npc ko click wala banao pass jane wala nhi means right click ker ne se hi wowork kare"
+- **Check:** ZNPCsPlus NPCs (ls_shop, ls_auction, ls_heartshop, ls_kits, pvp_practice, minigames, parkour, event) sab click actions — proximity nahi. Proximity sirf mere command blocks me tha.
+- **Kya kiya:**
+  - Overworld z12 x3 (repeating, chain driver) `...positioned 17.5 151 -9.5 run tag @a[distance=..1.3] add fc_go_ls` → `scoreboard players add #noop fc_const 0` (HUB purana lifesteal NPC spot, ab lifesteal_portal ke andar). ls_click interaction (x4/x5 click) waisa hi.
+  - z12 x12 `...positioned 0.5 65 3.5 ... add fc_go_rtp` (lifesteal_lobby RTP mannequin proximity) → no-op. Click x13/x14 (hub_click interaction, 1x2.1) → fc_go_rtp rehta hai.
+  - RTP mannequin description → "▶ Right-click karo = Lifesteal random jagah".
+- **Pending:** owner right-click test (WG use/build deny interaction cancel kar sakta hai). firecraft-hub.sk proximity countdown console se nahi hatta (panel).
+- **Undo:** x3 → `execute in minecraft:overworld positioned 17.5 151 -9.5 run tag @a[distance=..1.3] add fc_go_ls`; x12 → `execute in minecraft:lifesteal_lobby positioned 0.5 65 3.5 run tag @a[distance=..1.3] add fc_go_rtp`.
