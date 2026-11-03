@@ -1095,3 +1095,11 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Discord: saare Hinglish channel topics English (general, create-ticket, creator-info, staff-chat, welcome, rules, report-player, creator-uploads, announcements, media, bug-reports, owner-private, mod-alerts, suggestions, link-account, memes, updates, bot-commands, events, game-chat). Purane bot EMBED posts tool se padh/edit nahi hote → panel/owner.
 - **Docs/rule:** CLAUDE.md "FCMC ENGLISH rule", .claude/memory RULES/INSTRUCTIONS, FCMC_MANAGER_TRAINING.md §2b, FCMC_MOD_SESSION_PROMPT.md, FCMC_PANEL_SETUP.md §0c (config-file checklist) + §6/6b/6c messages English.
 - **Sessions:** send_message → fcmc manager (delivered), FCMC Mod Assistant Marzarn (delivered). Panel session (owner PC, bridge) → blocked (elevated_session_untrusted_device) — owner ko FCMC_PANEL_SETUP.md §0c panel AI ko dena hoga.
+
+### 2026-11-03 UTC — [OWNER] "kia sub kuch english me hai?" + saare NPCs → ZNPCs
+- **Kisne kaha:** MrCopper804: "server kia sub kuch english me hai abhi ?" aur "server pore server me jahan jahan bhi npcs use howe hai sub ko znpcs me replace kerdo"
+- **Jawab (tellraw):** console-editable sab English; config files (Skript selector lore/countdown, DeluxeMenus messages, Essentials/TAB) + Discord embeds → panel (FCMC_PANEL_SETUP.md §0c).
+- **Scan:** mannequins — sirf lifesteal_lobby RTP mannequin (0.5 65 3.5, tag npc_hub_return); survival/HUB 0. Interaction click-boxes: ls_click (HUB 17.5 151 -9.5), hub_click (lobby 0.5 65 3.5). Villagers ls_shop/auction/heartshop/kits pehle se ZNPCs.
+- **Kiya:** owner lifesteal_lobby me tha → `sudo MrCopper804 npc create ls_rtp player`; setlocation 0.5 65 3.5, rot 180, skin Technoblade, holo "&#a855f7&l✦ RTP / WILDERNESS ✦" + "&7▶ Right-click = random spot in Lifesteal", action `consolecommand minecraft:tag %player_name% add fc_go_rtp` (z15 RTP chain). Phir `kill` mannequin tag=npc_hub_return + interactions tag=npc_click (2). Mannequins ab 0.
+- **Note:** z12 x3-x20 (purane click chain) ab koi interaction nahi pakdte — bezarar; x8-x11 (fc_go_ls) aur x17-x20 (fc_go_hub, portal) abhi bhi kaam ke.
+- **Undo:** `npc delete ls_rtp`; mannequin dobara summon (FCMC_WORKLOG 1 Nov entry) + interaction.
