@@ -1059,3 +1059,15 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
 - **Kya kiya:** Check: crate (-10 66 -40) ke upar 6 hologram armor stands (VOTE CRATE + "Right-click to open" ke sets; Y 67.75/68.0 aur 68.75/69.0 dekhe). Wajah bataayi: SlimeCrates har `/crate set` / reload par naya hologram spawn karta hai aur purane stands nahi hatata. "Middle" wala ambiguous tha, isliye poocha kaunsa text rakhna hai — abhi kuch delete nahi kiya.
 - **Kaise:** FCMC `worldlens_command`: `execute in minecraft:lifesteal_lobby ... tag/data get ... Pos`, `if entity` (count 6), `tellraw`.
 - **Result:** Pending — manager ka jawab ("server vote" / "server right-click"). Permanent fix: crate config me hologram off/height (panel, FCMC_PANEL_SETUP.md).
+
+### 2026-11-03 UTC — [OWNER] "lifesteal me ja rahay ho keh ker hub pe tp ker diya"
+- **Kisne kaha:** MrCopper804: "server lifesteal me ja rahay ho keh ker hub pe tp ker diya"
+- **Diagnose:** NPC click + `mvtp ll:` chal raha tha; phir join system ne HUB bheja. Join detect `fc_leave` = `minecraft.custom:minecraft.leave_game` stat objective tha → MV-Inv `game_statistics` share group change par lifesteal group ke stats load karta hai → fc_leave badla → z10 x31 fc_wait=1 → x4 tp HUB (wahi bug jo Marzarn freeze ka tha).
+- **Fix:** naya tick-based online detector overworld z13 (AFK chain ke aage, chunk [0,0]):
+  - x13 `scoreboard players add #t fc_const 1`; x14 `#tm1 = #t`; x15 `#tm1 -= 1`;
+  - x16 `execute as @a unless score @s fc_last = #tm1 fc_const run scoreboard players set @s fc_leave 1` (pichle tick online nahi tha = join);
+  - x17 `scoreboard players operation @a fc_last = #t fc_const`. Naya objective fc_last (dummy).
+  - `scoreboard objectives remove fc_leave` → `add fc_leave dummy` (stat se nahi). Baqi join chain (z3 x3-x15, z10 x31/x4) same.
+  - Online players ke liye pehle x17/fc_last chalaya, x16 baad me → kisi ko galti se HUB tp nahi hua (fc_wait/fc_leave = none verify).
+- **Test pending:** owner NPC click + rejoin.
+- **Undo:** z13 x13-x17 stone; `scoreboard objectives remove fc_leave` + `add fc_leave minecraft.custom:minecraft.leave_game`.
