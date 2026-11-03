@@ -1027,3 +1027,9 @@ Likhne se pehle: `git fetch origin claude/amazing-pascal-sbsbez && git checkout 
   - Portal labels "Enter the portal to go to X" → "Right-click the NPC to go to X".
 - **Note:** purana ls_click interaction 17.5 151 -9.5 (click → fc_go_ls → fc_restore) waisa hi hai (same result). Owner click test pending.
 - **Undo:** `mvp create` wapas (in-game WE selection + `mvp create lifesteal_portal w:lifesteal_lobby`, survival `e:survival:144.5,201,560.5`), `npc delete hub_lifesteal|hub_survival`.
+
+### 2026-11-03 04:42 UTC — [MANAGER] Manager ki inventory vote crate me (equal chance)
+- **Kisne kaha:** techshotgaming (in-game): "Server Add All the stuff from my inventory to Vote crate with equal chances"
+- **Kya kiya:** Manager ki inventory ke 10 stacks (golden_carrot x8, iron helmet/chest/legs/boots P2 U1, iron_spear Sharp3 Lunge2, iron_sword Sharp3 Unb2, cooked_beef x16, cooked_porkchop x16, iron_ingot x8) SlimeCrates crate `vote` me reward ke taur par add kiye, har ek chance 10.
+- **Kaise:** FCMC `worldlens_command`: selected slot 1 ka backup container.20 me; har slot ke liye `minecraft:item replace entity techshotgaming weapon.mainhand from entity techshotgaming container.N` + `sudo techshotgaming crate addreward vote 10`; end me slot 1 restore + container.20 air. Verify: `data get entity techshotgaming Inventory` (same), `co lookup u:techshotgaming a:command t:3m` (addreward entries).
+- **Result:** 10 rewards add. Note: manager ne pehle khud ek reward chance 5 se add kiya tha (`/crate addreward vote 5`) — wo bhi crate me hai, isliye bilkul barabar nahi; hatana ho to `/crate removereward vote <reward>`.
