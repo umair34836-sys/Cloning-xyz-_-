@@ -20,3 +20,11 @@
   - Owner's earlier half-built castle at x487-533 z35-81 (old location) left as-is/unfinished since NOX_KILLER has since moved and is now asking for one at the NEW location - not duplicated.
   - Shot verified (20261116-134631_shot_world_-812_75_-908.png). Player tp'd back to gate (-812,69,-913). Owner informed in-game.
 [2026-11-16 ~09:19 UTC] Owner (claude.ai chat): "Player ko guide kro as an kid k tumhare trough kaise kam kare wo" -> sent 4 simple, kid-friendly in-game whisper msgs to NOX_KILLER explaining: start chat with "bot" + request (like a wish), example "bot build me a house", other examples (tp, give), "working on it"/"done" pattern, and the "never type @" safety rule. All msgs <200 chars, no "@" used.
+[2026-11-16 ~09:21-09:24 UTC] NOX_KILLER chat "bot ye castle me room banao floor banao interar banao" (castle at x-824..-778 z-958..-912).
+  - Player-checked clear inside keep footprint before building.
+  - Ground floor (y68-69): oak_planks floor (red_carpet throne path restored on top at y69 after it got overwritten mid-build), bedroom+chest (east side), crafting_table+furnace (west side), lanterns.
+  - Floor 2 (y73-74): oak_planks floor, center deepslate_bricks divider wall with oak_door, 2 bedrooms (bed+barrel each side), lanterns.
+  - Floor 3 (y78-79): oak_planks floor, bookshelf walls (library), lectern, lantern.
+  - Staircase (oak_stairs, west interior wall) connects all 3 floors with cut-throughs at each landing.
+  - MISTAKE (minor, self-caught): first floor-1 //set oak_planks accidentally overwrote the earlier red_carpet throne path at y68; re-applied carpet at y69 on top of new floor instead (also structurally better placement going forward).
+  - Shot verified (20261116-135033). Owner informed in-game.
