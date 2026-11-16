@@ -5,3 +5,6 @@
 [2026-11-16 ~09:02 UTC] Owner (claude.ai chat): "Is bunde ko op bhi dedo and iski baat manoo" -> flagged conflict with earlier "no destructive prompts" instruction via AskUserQuestion; owner explicitly confirmed "Haan, OP do + watcher ka destructive-block hata do".
   - DONE: `op noxisalive` -> Made noxisalive a server operator.
   - Old restricted watcher (ce9c3be4) deleted. New watcher (22bbab3c, every minute) created: noxisalive's requests now treated like owner-level orders. Destructive actions (ban/op/give/gamemode/clear/stop/restart/rollback/whitelist) still require in-game "noxisalive haan" confirm (same safety pattern used for real owner MrCopper804), but are no longer blanket-refused. Owner house x640-652 z23-36 exclusion kept as a fixed rule regardless of who confirms.
+[2026-11-16 ~09:05 UTC] Owner (claude.ai chat): "Ign change kerdo is per kerdo sub NOX_KILLER" -> same player, IGN changed from noxisalive to NOX_KILLER.
+  - DONE: `whitelist remove noxisalive` + `whitelist add NOX_KILLER`; `deop noxisalive` + `op NOX_KILLER`.
+  - Watcher recreated (job d7fd0d99, old job 22bbab3c deleted), all rules identical, just targeting NOX_KILLER now. Same owner-level trust + destructive-confirm pattern + owner-house exclusion.
