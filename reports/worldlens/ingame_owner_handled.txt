@@ -406,3 +406,4 @@
   - Green room: 3-point lighting rig (oak_fence stands + light[level=15] heads) at corners (931,-219) (959,-219) and back-center (945,-219); black_carpet blocking mark on floor (945,62,-210).
   - Exterior: "ON AIR" red wall sign + redstone_lamp[lit=true] above entrance (945,68-69,-189); 2 potted_fern at entrance (940/950,62,-189).
   - No player-occupied blocks touched (owner's exact standing cell skipped). WE override removed. Owner informed in-game.
+[2026-11-16 ~07:59 UTC] CHAT "server now mujhe players k bases per tp kro or dekho jis player ka sub se bhara base hai waha per direct tp kerdo" -> CoreProtect block-placed counts (t:60d): Itskillerxd1 13988, Suko_inf 29727, XREAMxPRO 56065, .Mr_shadow_6232 5523. XREAMxPRO = fullest -> tp MrCopper804 -8929 88 -1412. Owner informed with counts.
