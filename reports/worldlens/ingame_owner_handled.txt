@@ -400,3 +400,9 @@
   - Equipment: tripod+camera (oak_fence + black_concrete) at 945,62-63,-203/-204/-205; director's chair (dark_oak_stairs+black_carpet) + control desk (smooth_stone_slab, 935-955,-198) with 2 black_concrete "monitors" in control room.
   - Exterior "STUDIO" sign above entrance (945,68,-187). WE override removed, owner tp'd back to 945,62,-192 (just outside entrance). Shot verified (20261116-075126) - green screen clean through observation window.
   - Owner informed in-game.
+[2026-11-16 ~07:54-07:57 UTC] CHAT "server is studio me detailing and profesionalizm add kero" (owner inside control room, 939.8,64,-196, not touched)
+  - Soundproofing: gray_wool panels y64-67 on control room east/west walls (x929 & x961, z-198..-189), 80 blocks.
+  - Control desk: 2 black_concrete+light_blue_glass_pane "monitors" (940/950,65,-198/-197), jukebox mixer console (945,64,-197), 2nd director's chair added (935,62-63,-195, dark_oak_stairs+red_carpet) to match existing one at 955.
+  - Green room: 3-point lighting rig (oak_fence stands + light[level=15] heads) at corners (931,-219) (959,-219) and back-center (945,-219); black_carpet blocking mark on floor (945,62,-210).
+  - Exterior: "ON AIR" red wall sign + redstone_lamp[lit=true] above entrance (945,68-69,-189); 2 potted_fern at entrance (940/950,62,-189).
+  - No player-occupied blocks touched (owner's exact standing cell skipped). WE override removed. Owner informed in-game.
