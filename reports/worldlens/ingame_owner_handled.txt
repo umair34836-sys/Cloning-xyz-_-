@@ -444,3 +444,4 @@
   - VERIFIED throughout with execute-if-block height checks + worldlens_top screenshots (20261116-083738, 20261116-083752) before and after each major phase, matching against the exact original log text rather than guessing.
   - NOT YET independently re-verified: exact original azimuth/rotation values on every sign/door, and the "4 cell windows" exact per-cell count (built 1 iron_bars window per cell, matching "iron bars" singular per cell description). Flagged to owner as the one area not 100% matched if they want further detail.
   - Owner informed via chat (not in-game, since this exchange happened in claude.ai chat).
+[2026-11-16 ~08:58 UTC] (claude.ai) Owner: "watcher band kardo" -> OWNER WATCH cron job 9a75972d deleted. No more per-minute in-game order checks until restarted.
