@@ -428,3 +428,4 @@
   - New vertical shaft x668,y52-70,z49-50 (air, 114 blocks) with ladder y53-69.
   - Cherry-wood station house at x664-672 y70-76 z46-54 (//faces cherry_planks, 414 blocks), south door (667-668,70-72,46), glass_pane windows on east/west walls, cherry_slab hip-style roof y77, "METRO: ARENA" sign + 2 lanterns at entrance, positioned off the main road among existing cherry trees (less visually intrusive).
   - WE override removed, owner tp'd to 668,70,44 to view. Shot verified (20261116-080913). Owner informed in-game.
+[2026-11-16 ~08:11 UTC] CHAT "server pichle 10 minute ka sara kaam back kerdo sara kaam backup kerdo" -> ROLLBACK request, needs "server haan" confirm (dangerous action rule). Asked owner to confirm in-game. PENDING.
