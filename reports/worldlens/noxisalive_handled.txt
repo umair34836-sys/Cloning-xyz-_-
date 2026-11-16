@@ -9,3 +9,4 @@
   - DONE: `whitelist remove noxisalive` + `whitelist add NOX_KILLER`; `deop noxisalive` + `op NOX_KILLER`.
   - Watcher recreated (job d7fd0d99, old job 22bbab3c deleted), all rules identical, just targeting NOX_KILLER now. Same owner-level trust + destructive-confirm pattern + owner-house exclusion.
 [2026-11-16 ~09:06 UTC] NOX_KILLER joined server. Guide msg sent: "Hi! Type 'bot <request>' in chat and I will help (builds, commands, tp, etc). No @ please."
+[2026-11-16 ~09:08 UTC] NOX_KILLER sent greetings only ("bot hi", "hi", "bot", "hi bot") - no actual request. Replied with examples of what to ask. No action taken.
