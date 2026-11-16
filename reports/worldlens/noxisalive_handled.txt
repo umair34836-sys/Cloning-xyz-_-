@@ -28,3 +28,4 @@
   - Staircase (oak_stairs, west interior wall) connects all 3 floors with cut-throughs at each landing.
   - MISTAKE (minor, self-caught): first floor-1 //set oak_planks accidentally overwrote the earlier red_carpet throne path at y68; re-applied carpet at y69 on top of new floor instead (also structurally better placement going forward).
   - Shot verified (20261116-135033). Owner informed in-game.
+[2026-11-16 ~09:26 UTC] Owner (claude.ai chat): "Player ko ingame boldo k mrcopper804 bol raha hi k vc ajao" -> player offline (list = 0 players), msg failed "No player was found". PENDING: deliver "MrCopper804 says: come join the VC (voice chat)!" to NOX_KILLER next time watcher sees them online.
