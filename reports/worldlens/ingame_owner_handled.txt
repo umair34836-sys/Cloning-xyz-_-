@@ -414,3 +414,10 @@
   - MISTAKE: first "done" msg to owner contained the word "everyone" inside a sentence with no "@", should have been safe, but in-game chat auto-converted "@everyone" text I typed (from copying the Discord ping language) into an actual @ selector -> flooded owner's chat with full entity list dump. ROOT CAUSE: typed literal "@everyone" in the whisper message. FIX: resent corrected msg without any "@" character at all; standing rule reinforced (never type "@" in in-game messages, not even inside a word like "@everyone").
   - Owner informed (corrected message sent).
 [2026-11-16 ~08:04 UTC] CHAT "server pvp arena me mujhe tp kerdo" -> tp MrCopper804 430 63 40 (arena). Done.
+[2026-11-16 ~08:03-08:06 UTC] CHAT "server spawn se pvp arena tak ek under ground train tunnel bana do and than pvp arena me details add kerdo"
+  - Underground minecart tunnel at y49-52, x455-675, z56-58 (stone_bricks //faces shell, 3118 blocks); rail x456-674 z57 y50 (219 rail); 14 powered_rail boosters on redstone_block every 16 blocks (456..664) for momentum; side wall (z56) lit with sea_lantern (438 blocks, brighter than planned sparse lanterns but acceptable).
+  - Spawn station: shaft 673-675,51-70,56-58 (ladder x674 y51-69), sign "METRO: ARENA" at 674,70,57.
+  - Arena station: shaft through arena east wall at x455 y50-66 z56-58, ladder x454 y51-65, sign "METRO: SPAWN" at 455,66,57 (needed temp forceload, chunk far from loaded area).
+  - Minecarts summoned at both ends (457,50.5,57 and 673,50.5,57) for owner's use.
+  - Arena detailing: 4 cobblestone cover pillars (3x3x3) at corners (416/444, 26/53 approx, all >10 blocks from owner's position, player-checked clear); torch ring on inner wall faces y66 (//walls torch, 196); red_carpet center marker at 430,63,40 (owner's exact spot, needed temp forceload - vanilla setblock would not reach that chunk despite player presence there, unclear why).
+  - All WE overrides + forceloads removed after use. Shot verified (20261116-080510). Owner informed in-game.
