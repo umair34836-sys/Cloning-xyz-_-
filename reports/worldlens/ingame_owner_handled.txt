@@ -390,3 +390,13 @@
   - WE world override removed. Owner tp'd back to 763.5,70,55.5 (plaza in front of mosque). Screenshots verified (20261116-074644, 20261116-074702) - clean build, no players caught inside fills.
   - Note (not acted on, pre-existing/unrelated): old shot showed some FIRE pixels far south near z10-30 tree line, outside this build footprint - likely leftover natural fire-spread from earlier known issue, not touched.
   - Owner informed in-game.
+[2026-11-16 ~07:49-07:52 UTC] CHAT "server jis area me me kara ho yaha per mere lie ek studio bana do jahan per me apni videos record ker sako also is me green screen area bhi add kerna ok and full detailing dalna" (owner pos 947.9,62,-205.4)
+  - Owner tp'd to spawn temporarily (player check: only owner online, moved away before building).
+  - Flattened x920-976 y50-60 z-230..-174 -> stone (35739 blocks); cleared y61-90 -> air (97470); surface y61 -> grass_block (3249).
+  - Studio shell x928-962 z-222..-188 y62-74 dark_oak_planks (//faces, 4270); entrance 943-947,62-65,-188; exterior window band y64-69 north wall -> glass (176).
+  - Interior split: control room (z-199..-188) + green-screen filming room (z-221..-200) via white_concrete partition wall at z-199 with observation glass_pane window (944-946,63-66).
+  - Green-screen cyclorama: south wall (z-221) + east wall (x961) + west wall (x929) + floor (930-960,62,-220..-201) all lime_concrete, seamless (1215 total blocks).
+  - Lighting: white_concrete ceiling at y73 + 6 hidden light[level=15] blocks (935/945/955, -215/-206) for even studio lighting.
+  - Equipment: tripod+camera (oak_fence + black_concrete) at 945,62-63,-203/-204/-205; director's chair (dark_oak_stairs+black_carpet) + control desk (smooth_stone_slab, 935-955,-198) with 2 black_concrete "monitors" in control room.
+  - Exterior "STUDIO" sign above entrance (945,68,-187). WE override removed, owner tp'd back to 945,62,-192 (just outside entrance). Shot verified (20261116-075126) - green screen clean through observation window.
+  - Owner informed in-game.
