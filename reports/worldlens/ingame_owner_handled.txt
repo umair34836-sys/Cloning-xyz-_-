@@ -421,3 +421,10 @@
   - Minecarts summoned at both ends (457,50.5,57 and 673,50.5,57) for owner's use.
   - Arena detailing: 4 cobblestone cover pillars (3x3x3) at corners (416/444, 26/53 approx, all >10 blocks from owner's position, player-checked clear); torch ring on inner wall faces y66 (//walls torch, 196); red_carpet center marker at 430,63,40 (owner's exact spot, needed temp forceload - vanilla setblock would not reach that chunk despite player presence there, unclear why).
   - All WE overrides + forceloads removed after use. Shot verified (20261116-080510). Owner informed in-game.
+[2026-11-16 ~08:06-08:09 UTC] CHAT "server under ground tunner ki entrence yaha se hatha ker tora sahi jagha shift kerdo and achi si entrence bana do beatuful and detailed" (owner found at 672.9,84,69.9, right at old spawn-side tunnel entrance which was poking as a bare stone_bricks box through the decorative cherry-tree road)
+  - Owner tp'd away (690,70,65) during rebuild.
+  - Removed old intrusive shaft box (673-675,51-70,56-58) -> stone fill, then restored surface (dirt+grass_block at y69-70) to blend with the road/lawn.
+  - New connector: branch corridor from main tunnel at x668,z57 -> z50 (stone_bricks //faces shell, floor/ceiling/walls, 150 blocks), opened junction into main tunnel interior (668,50-51,56 -> air).
+  - New vertical shaft x668,y52-70,z49-50 (air, 114 blocks) with ladder y53-69.
+  - Cherry-wood station house at x664-672 y70-76 z46-54 (//faces cherry_planks, 414 blocks), south door (667-668,70-72,46), glass_pane windows on east/west walls, cherry_slab hip-style roof y77, "METRO: ARENA" sign + 2 lanterns at entrance, positioned off the main road among existing cherry trees (less visually intrusive).
+  - WE override removed, owner tp'd to 668,70,44 to view. Shot verified (20261116-080913). Owner informed in-game.
