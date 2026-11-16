@@ -8,3 +8,4 @@
 [2026-11-16 ~09:05 UTC] Owner (claude.ai chat): "Ign change kerdo is per kerdo sub NOX_KILLER" -> same player, IGN changed from noxisalive to NOX_KILLER.
   - DONE: `whitelist remove noxisalive` + `whitelist add NOX_KILLER`; `deop noxisalive` + `op NOX_KILLER`.
   - Watcher recreated (job d7fd0d99, old job 22bbab3c deleted), all rules identical, just targeting NOX_KILLER now. Same owner-level trust + destructive-confirm pattern + owner-house exclusion.
+[2026-11-16 ~09:06 UTC] NOX_KILLER joined server. Guide msg sent: "Hi! Type 'bot <request>' in chat and I will help (builds, commands, tp, etc). No @ please."
