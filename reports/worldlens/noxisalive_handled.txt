@@ -10,3 +10,7 @@
   - Watcher recreated (job d7fd0d99, old job 22bbab3c deleted), all rules identical, just targeting NOX_KILLER now. Same owner-level trust + destructive-confirm pattern + owner-house exclusion.
 [2026-11-16 ~09:06 UTC] NOX_KILLER joined server. Guide msg sent: "Hi! Type 'bot <request>' in chat and I will help (builds, commands, tp, etc). No @ please."
 [2026-11-16 ~09:08 UTC] NOX_KILLER sent greetings only ("bot hi", "hi", "bot", "hi bot") - no actual request. Replied with examples of what to ask. No action taken.
+[2026-11-16 ~09:10 UTC] NOX_KILLER chat "build castle" (no strict "bot"/"NOX_KILLER" prefix but clear reply to my prompt, treated as order per owner-level trust).
+  - Started castle at x487-533 z35-81 (flatten + curtain walls + 4 corner towers + central keep shell + gate) - PARTIALLY built, interior decoration (throne room carpet/banners) was in progress when the owner interrupted the turn.
+  - Owner (claude.ai chat) interrupted mid-build: "Player ko op dedo and usko spawn se door tp kerdo" -> `op NOX_KILLER` (re-confirmed, already was op) + `spreadplayers 675 57 2000 2200 false NOX_KILLER` -> moved to (-465.5,63,-190.5), ~2100 blocks from spawn. WE world override + forceload cleaned up (were left active mid-interrupt, now cleared). Owner informed via in-game msg too.
+  - PENDING: castle at x487-533 z35-81 left incomplete (walls/towers/keep shell done; throne room carpet, banners, final gate detailing not finished) - will resume/finish if owner or NOX_KILLER asks again, or on next watcher tick if NOX_KILLER requests it.
