@@ -7,6 +7,10 @@ Format:
 
 ---
 
+## 2026-11-19
+
+- User ne `PDF_ALL_CIRCULAR_2026.zip` upload kiya: "Study this project". Auto-parts price circulars (101 files) study kiye → `analysis/pdf-all-circular-2026-study.md`. Raw files commit nahi kiye (business data).
+
 ## 2026-10-30
 
 - **POSTPONED (2026-10-30, user ne kaha):** FireCraft economy plugin idea abhi hold par hai. Jab tak user dobara na kahe, is par kaam na karo.

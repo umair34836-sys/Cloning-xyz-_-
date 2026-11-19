@@ -7,6 +7,11 @@ Format:
 
 ---
 
+## 2026-11-19
+
+- **Circular PDFs (auto parts)**: Excel se export hui PDFs hain → `pdftotext -layout` se clean rows milti hain, OCR nahi chahiye. Master data `1. SUZUKI CIRCULAR ... .xlsx` (38 brand sheets + INDEX). Lucas consumer price = dealer × 1.15. File-name date aur andar wali "EFFECTIVE" date kabhi match nahi karti; andar wali date maano. Summary: `analysis/pdf-all-circular-2026-study.md`.
+- Is session ki designated branch `ccr-d40c679d-f85t7g` thi (CLAUDE.md me purani branch likhi hai; session wali branch follow karo).
+
 ## 2026-10-23
 
 - **Google Drive download (cloud env)**: file ko "Anyone with the link" share karna zaroori hai, aur network policy me `drive.google.com` + `drive.usercontent.google.com` allow hone chahiye. Bari files ka asal download: `https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t`. gdown proxy ke peeche aksar fail hota hai → direct curl use karo.
