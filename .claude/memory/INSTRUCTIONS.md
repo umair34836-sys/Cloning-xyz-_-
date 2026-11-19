@@ -9,6 +9,7 @@ Format:
 
 ## 2026-11-19
 
+- User apne VPS par Price Finder deploy karna chahta hai, PC paas nahi (sirf phone). Zip (site + install.sh) bhej diya; phone se Termius/JuiceSSH ya provider web console se deploy.
 - "Make a searchable price lookup app or web which can i open in my browser" → Circular Price Finder banaya (artifact https://claude.ai/artifact/AKvZhLrg7rCKKHo6yrhVAo), source `apps/circular-price-finder/`.
 - User ne `PDF_ALL_CIRCULAR_2026.zip` upload kiya: "Study this project". Auto-parts price circulars (101 files) study kiye → `analysis/pdf-all-circular-2026-study.md`. Raw files commit nahi kiye (business data).
 

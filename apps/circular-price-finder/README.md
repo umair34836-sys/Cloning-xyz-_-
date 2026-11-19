@@ -17,3 +17,6 @@ Put `data.json` next to `index.html` and serve the folder (`python3 -m http.serv
 - `pdfplumber` reads the Excel-exported tables, and `openpyxl` reads the master workbook (one sheet per brand).
 - Files whose names contain "WITHOUT PRICE" are skipped.
 - The same part across different circular dates is grouped by brand plus its code, model, size and description fields. The newest dated version is shown, and order lists never count as the latest version.
+
+## Deploy to a VPS (Ubuntu/Debian)
+Folder layout: `install.sh` next to `site/` (`site/index.html` + `site/data.json`; the standalone index has its own `<head>`). Run `bash install.sh` for IP access, or `bash install.sh your-domain.com` to add free HTTPS via certbot.

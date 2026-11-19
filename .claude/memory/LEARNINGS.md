@@ -9,6 +9,7 @@ Format:
 
 ## 2026-11-19
 
+- Is container se outbound SSH (port 22) blocked hai, sirf HTTPS proxy. User ke VPS par main khud deploy nahi kar sakta; user ko commands/zip do (phone: Termius SFTP ya provider web console).
 - **Excel-PDF tables**: `pdfplumber` `extract_tables()` gives clean cells (wrapped cells and vertically centred prices are handled), which beats `pdftotext -layout` for row parsing. `pip install pdfplumber` works in the container.
 - The circular **xlsx master is the most up to date** (sheets dated up to 21.10.2026, e.g. TAIHO 15.10.26). Its sheets keep old price columns next to the new one.
 - **Circular PDFs (auto parts)**: Excel se export hui PDFs hain → `pdftotext -layout` se clean rows milti hain, OCR nahi chahiye. Master data `1. SUZUKI CIRCULAR ... .xlsx` (38 brand sheets + INDEX). Lucas consumer price = dealer × 1.15. File-name date aur andar wali "EFFECTIVE" date kabhi match nahi karti; andar wali date maano. Summary: `analysis/pdf-all-circular-2026-study.md`.
