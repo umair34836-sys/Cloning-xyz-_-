@@ -1,0 +1,288 @@
+<meta charset="utf-8">
+<title>Circular Price Finder</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky search console on top, a dense parts ledger below; each row = one part, price pinned right like a counter price tag. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#16212b; --muted:#5d6b78; --line:#dde3e9;
+  --accent:#d9661c; --accent-ink:#ffffff; --accent-soft:#fbe9dc; --steel:#244a6b; --steel-soft:#e3ecf4;
+  --up:#b4361f; --down:#1f7a4a; --chip:#eef1f4;
+  --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f151b; --surface:#16202a; --ink:#e6ecf1; --muted:#93a2b0; --line:#26323e;
+  --accent:#f08a43; --accent-ink:#1a0f06; --accent-soft:#3a2416; --steel:#8db8de; --steel-soft:#1d2f40;
+  --up:#ff8a73; --down:#62d39a; --chip:#1e2a35; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --surface:#16202a; --ink:#e6ecf1; --muted:#93a2b0; --line:#26323e;
+  --accent:#f08a43; --accent-ink:#1a0f06; --accent-soft:#3a2416; --steel:#8db8de; --steel-soft:#1d2f40;
+  --up:#ff8a73; --down:#62d39a; --chip:#1e2a35; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.console{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.console .wrap{padding-block:14px 12px;display:grid;gap:10px}
+.brandline{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--f-display);font-weight:700;font-size:1.7rem;letter-spacing:.01em;margin:0;line-height:1;text-wrap:balance}
+h1 span{color:var(--accent)}
+.meta{color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums}
+.searchrow{display:flex;gap:8px}
+.search{flex:1;min-width:0;position:relative}
+.search input{width:100%;font:500 1.05rem var(--f-body);padding:12px 40px 12px 14px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);outline:none}
+.search input:focus{border-color:var(--accent)}
+.clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);font-size:1.3rem;cursor:pointer;padding:4px 8px;border-radius:6px}
+.clear:focus-visible,button:focus-visible,select:focus-visible,label.tog:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--ink);font:500 .82rem var(--f-body);padding:7px 11px;cursor:pointer;letter-spacing:.02em}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--steel);color:var(--surface)}
+select{font:500 .85rem var(--f-body);padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);max-width:100%}
+label.tog{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);cursor:pointer;user-select:none}
+label.tog input{accent-color:var(--accent)}
+.hints{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.8rem;color:var(--muted)}
+.hints button{font:500 .8rem var(--f-mono);border:1px dashed var(--line);background:none;color:var(--steel);padding:3px 8px;border-radius:5px;cursor:pointer}
+main .wrap{padding-block:14px 48px}
+.summary{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.summary b{color:var(--ink)}
+.list{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:12px 14px;border-top:1px solid var(--line);cursor:pointer}
+.item:first-child{border-top:0}
+.item:hover{background:var(--bg)}
+.item:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.tag{background:var(--chip);color:var(--muted);padding:2px 7px;border-radius:4px;font-weight:600}
+.tag.brand{background:var(--steel-soft);color:var(--steel)}
+.tag.old{background:var(--accent-soft);color:var(--accent)}
+.sec{color:var(--muted);text-transform:none;letter-spacing:0;font-size:.78rem}
+.main{min-width:0}
+.title{font-weight:600;margin-top:4px;overflow-wrap:anywhere}
+.fields{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:.84rem;color:var(--muted);margin-top:3px}
+.fields span{overflow-wrap:anywhere}
+.fields i{font-style:normal;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-right:4px;opacity:.8}
+.code{font-family:var(--f-mono);color:var(--ink);font-size:.86rem}
+mark{background:var(--accent-soft);color:inherit;border-radius:2px;padding:0 1px}
+.price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.amt{font-family:var(--f-display);font-weight:700;font-size:1.55rem;line-height:1.05}
+.amt small{font-size:.8rem;color:var(--muted);font-family:var(--f-body);font-weight:500;margin-right:3px}
+.amt.na{font-size:1rem;color:var(--muted);font-family:var(--f-body);font-weight:500}
+.sub{font-size:.75rem;color:var(--muted)}
+.chg{font-size:.75rem;font-weight:600}
+.chg.up{color:var(--up)} .chg.down{color:var(--down)}
+.detail{grid-column:1/-1;margin-top:8px;padding:10px 12px;background:var(--bg);border-radius:8px;font-size:.84rem;display:grid;gap:10px;cursor:auto}
+.detail table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.detail th,.detail td{text-align:left;padding:4px 8px 4px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.detail th{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap}
+.detail td.r{text-align:right}
+.tbl{overflow-x:auto}
+.copy{font:500 .78rem var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 10px;cursor:pointer;justify-self:start}
+.more{display:block;margin:14px auto 0;font:600 .9rem var(--f-body);background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:10px 18px;cursor:pointer}
+.empty{padding:28px 16px;text-align:center;color:var(--muted)}
+.note{color:var(--muted);font-size:.78rem;margin-top:18px;max-width:70ch}
+@media (max-width:560px){header.console{position:static}h1{font-size:1.45rem}.amt{font-size:1.3rem}.item{padding:11px 12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="console">
+  <div class="wrap">
+    <div class="brandline">
+      <h1>Circular <span>Price</span> Finder</h1>
+      <div class="meta" id="meta">Loading circulars…</div>
+    </div>
+    <div class="searchrow">
+      <div class="search">
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search model, part no, brand… e.g. mehran clutch" aria-label="Search parts">
+        <button class="clear" id="clear" aria-label="Clear search" hidden>×</button>
+      </div>
+    </div>
+    <div class="filters">
+      <div class="seg" id="make" role="group" aria-label="Vehicle make">
+        <button data-v="" aria-pressed="true">All</button>
+        <button data-v="SUZUKI" aria-pressed="false">Suzuki</button>
+        <button data-v="TOYOTA" aria-pressed="false">Toyota</button>
+        <button data-v="HEAVY DUTY" aria-pressed="false">Heavy duty</button>
+        <button data-v="MULTI" aria-pressed="false">Multi-make</button>
+      </div>
+      <select id="brand" aria-label="Brand"><option value="">All brands</option></select>
+      <select id="sort" aria-label="Sort">
+        <option value="rel">Best match</option>
+        <option value="asc">Price: low to high</option>
+        <option value="desc">Price: high to low</option>
+        <option value="new">Newest circular</option>
+      </select>
+      <label class="tog"><input type="checkbox" id="priced"> Priced only</label>
+      <label class="tog"><input type="checkbox" id="older"> Include older circulars</label>
+    </div>
+    <div class="hints" id="hints">Try:
+      <button>mehran clutch set</button><button>HT276</button><button>DAC3562</button><button>cultus clutch cable</button><button>liana water pump</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="summary"><div id="count"></div><div id="hintsort"></div></div>
+    <div class="list" id="list" aria-live="polite"><div class="empty">Loading price lists…</div></div>
+    <button class="more" id="more" hidden>Show more</button>
+    <p class="note">Prices are dealer prices in PKR from the 2026 circulars. By default each part shows its newest circular; the arrow shows the change from the previous one. Tap a row to see every field, the price history and the source file. Circulars state that prices can change with the exchange rate, so confirm before quoting.</p>
+  </div>
+</main>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const fmt=n=>n.toLocaleString('en-PK');
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fdate=d=>{if(!d)return'undated';const[y,m,dd]=d.split('-');return `${+dd} ${MONTHS[m-1]} ${y}`};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const compact=s=>s.toUpperCase().replace(/[^A-Z0-9]/g,'');
+const CODE=/PART|NO$|NO\b|COMP|NUMBER|REF|BANDO|OPTI BELT/i;
+let D,ROWS=[],latestOf=new Map(),groupRows=new Map(),shown=150,state={q:'',make:'',brand:'',sort:'rel',priced:false,older:false},open=new Set();
+
+fetch('data.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(init).catch(e=>{
+  $('#list').innerHTML='<div class="empty">The price data could not be loaded. Reload the page to try again.</div>';
+});
+
+function init(d){
+  D=d;const H=d.headers;
+  ROWS=d.rows.map((r,i)=>{
+    const f=d.files[r[0]];
+    const fields=r[2].map(([h,v])=>[H[h]||'',v]);
+    const text=[f.brand,f.make,r[1],...fields.map(x=>x[1])].join(' ').toUpperCase();
+    return{i,f,fi:r[0],sec:r[1],fields,p:r[3],cp:r[4],na:r[5],g:r[6],old:r[7].map(([h,v])=>[H[h]||'',v]),hay:text,hayc:compact(text),date:f.date||''};
+  });
+  for(const r of ROWS){if(!groupRows.has(r.g))groupRows.set(r.g,[]);groupRows.get(r.g).push(r)}
+  for(const [g,rs] of groupRows){
+    rs.sort((a,b)=>((a.f.kind==='order')-(b.f.kind==='order'))||(b.date.localeCompare(a.date))||(kindRank(a)-kindRank(b))||(b.fi-a.fi));
+    latestOf.set(g,rs[0]);
+  }
+  const brands=[...new Set(d.files.map(f=>f.brand))].sort();
+  $('#brand').insertAdjacentHTML('beforeend',brands.map(b=>`<option>${esc(b)}</option>`).join(''));
+  const dates=d.files.map(f=>f.date).filter(Boolean).sort();
+  const lists=d.files.filter(f=>f.kind!=='master').length;
+  $('#meta').textContent=`${fmt(groupRows.size)} parts · ${lists} circulars + Excel master · newest ${fdate(dates[dates.length-1])}`;
+  try{const s=JSON.parse(localStorage.getItem('cpf')||'{}');Object.assign(state,s,{q:''})}catch(e){}
+  syncControls();render();
+}
+function kindRank(r){return r.f.kind==='list'?0:r.f.kind==='master'?1:2}
+function syncControls(){
+  $('#q').value=state.q;$('#brand').value=state.brand;$('#sort').value=state.sort;
+  $('#priced').checked=state.priced;$('#older').checked=state.older;
+  document.querySelectorAll('#make button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v===state.make)));
+  $('#clear').hidden=!state.q;
+}
+function save(){try{const{q,...rest}=state;localStorage.setItem('cpf',JSON.stringify(rest))}catch(e){}}
+
+function score(r,toks){
+  let s=0;
+  for(const t of toks){
+    const tc=compact(t);
+    if(r.hay.includes(t)) s+=2; else if(tc && r.hayc.includes(tc)) s+=1; else return -1;
+    for(const[h,v]of r.fields){const vc=compact(v);if(vc===tc){s+=CODE.test(h)?8:4}else if(CODE.test(h)&&vc.startsWith(tc)&&tc.length>=3)s+=3}
+  }
+  return s;
+}
+function prevChange(r){
+  const rs=groupRows.get(r.g);if(r.p==null)return null;
+  for(const o of rs){ if(o===r||!o.date||o.date>=r.date||o.p==null)continue; if(o.p!==r.p)return{from:o.p,date:o.date};return null }
+  if(r.old.length){const o=r.old[r.old.length-1];if(o[1]!==r.p)return{from:o[1],date:null,label:o[0]}}
+  return null;
+}
+function compute(){
+  const toks=state.q.toUpperCase().split(/\s+/).filter(Boolean);
+  let out=[];
+  for(const r of ROWS){
+    if(!state.older && latestOf.get(r.g)!==r) continue;
+    if(state.make && r.f.make!==state.make) continue;
+    if(state.brand && r.f.brand!==state.brand) continue;
+    if(state.priced && r.p==null) continue;
+    let s=0; if(toks.length){s=score(r,toks);if(s<0)continue}
+    out.push([r,s]);
+  }
+  const by={rel:(a,b)=>(b[1]-a[1])||(b[0].date.localeCompare(a[0].date))||(a[0].i-b[0].i),
+    asc:(a,b)=>((a[0].p??1e12)-(b[0].p??1e12)),desc:(a,b)=>((b[0].p??-1)-(a[0].p??-1)),
+    new:(a,b)=>(b[0].date.localeCompare(a[0].date))||(a[0].i-b[0].i)};
+  if(toks.length||state.sort!=='rel') out.sort(by[state.sort]);
+  return{out:out.map(x=>x[0]),toks};
+}
+function hl(text,toks){
+  let s=esc(text);if(!toks.length)return s;
+  for(const t of toks){if(t.length<2)continue;const re=new RegExp('('+esc(t).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');s=s.replace(re,'<mark>$1</mark>')}
+  return s;
+}
+function titleOf(r){
+  const pick=r.fields.find(([h])=>/DESC|DISCRIP|BEARING/i.test(h));
+  const model=r.fields.find(([h])=>/MODEL|MODAL|FITMENT|VEHICLE/i.test(h));
+  const t=[pick&&pick[1],model&&model[1]].filter(Boolean).join(' — ');
+  return t||r.sec||r.fields.map(x=>x[1]).slice(0,2).join(' — ');
+}
+function render(){
+  const{out,toks}=compute();
+  $('#count').innerHTML=`<b>${fmt(out.length)}</b> ${out.length===1?'result':'results'}${state.older?' (all circular versions)':''}`;
+  $('#hints').hidden=!!state.q;
+  const list=$('#list');
+  if(!out.length){list.innerHTML=`<div class="empty">No parts match “${esc(state.q)}”. Try fewer words, a different spelling (e.g. AXIL, BIGUN), or clear the filters.</div>`;$('#more').hidden=true;return}
+  list.innerHTML=out.slice(0,shown).map(r=>rowHTML(r,toks)).join('');
+  $('#more').hidden=out.length<=shown;
+  $('#more').textContent=`Show more (${fmt(out.length-shown)} left)`;
+}
+function rowHTML(r,toks){
+  const isLatest=latestOf.get(r.g)===r;
+  const ch=prevChange(r);
+  const t=titleOf(r);
+  const fields=r.fields.filter(([h,v])=>v && !(t.includes(v)&&/DESC|DISCRIP|MODEL|MODAL|BEARING|FITMENT|VEHICLE/i.test(h)));
+  const price=r.p!=null?`<div class="amt"><small>Rs</small>${fmt(r.p)}</div>`:`<div class="amt na">${r.na?'Not available':r.f.kind==='order'?'Order list':'No price'}</div>`;
+  const chg=ch?`<div class="chg ${ch.from<r.p?'up':'down'}">${ch.from<r.p?'▲':'▼'} from ${fmt(ch.from)}${ch.date?' · '+fdate(ch.date):''}</div>`:'';
+  const cons=r.cp?`<div class="sub">Consumer Rs ${fmt(r.cp)}</div>`:'';
+  return `<div class="item" tabindex="0" role="button" aria-expanded="${open.has(r.i)}" data-i="${r.i}">
+    <div class="main">
+      <div class="tags"><span class="tag brand">${esc(r.f.brand)}</span><span class="tag">${esc(r.f.make==='MULTI'?'Multi-make':r.f.make)}</span>${!isLatest?'<span class="tag old">Older circular</span>':''}${r.f.kind==='order'?'<span class="tag old">Order</span>':''}<span class="sec">${hl(r.sec,toks)}</span></div>
+      <div class="title">${hl(t,toks)}</div>
+      <div class="fields">${fields.map(([h,v])=>`<span><i>${esc(h||'—')}</i><span class="${CODE.test(h)?'code':''}">${hl(v,toks)}</span></span>`).join('')}</div>
+    </div>
+    <div class="price">${price}${cons}${chg}<div class="sub">${fdate(r.date)}</div></div>
+    ${open.has(r.i)?detailHTML(r):''}
+  </div>`;
+}
+function detailHTML(r){
+  const rs=groupRows.get(r.g);
+  const hist=rs.map(o=>`<tr><td>${fdate(o.date)}</td><td class="r">${o.p!=null?'Rs '+fmt(o.p):(o.na?'N/A':'—')}</td><td>${esc(o.f.file)}</td></tr>`).join('');
+  const oldcols=r.old.length?`<p class="sub">Earlier price columns on this circular: ${r.old.map(([h,v])=>esc(h)+' Rs '+fmt(v)).join(', ')}</p>`:'';
+  const fl=r.fields.map(([h,v])=>`<tr><th>${esc(h||'—')}</th><td>${esc(v)}</td></tr>`).join('');
+  return `<div class="detail" data-stop>
+    <div class="tbl"><table><tbody>${fl}<tr><th>Section</th><td>${esc(r.sec||'—')}</td></tr><tr><th>Source</th><td>${esc(r.f.file)}</td></tr></tbody></table></div>
+    ${oldcols}
+    <div class="tbl"><table><thead><tr><th>Effective</th><th style="text-align:right">Price</th><th>Circular</th></tr></thead><tbody>${hist}</tbody></table></div>
+    <button class="copy" data-copy="${r.i}">Copy part line</button>
+  </div>`;
+}
+function lineText(r){return `${r.f.brand} ${r.f.make} | ${r.fields.map(([h,v])=>`${h}: ${v}`).join(' | ')} | ${r.p!=null?'Rs '+fmt(r.p):'no price'} (${fdate(r.date)})`}
+
+let tmr;
+$('#q').addEventListener('input',e=>{clearTimeout(tmr);tmr=setTimeout(()=>{state.q=e.target.value.trim();shown=150;$('#clear').hidden=!state.q;render()},120)});
+$('#clear').addEventListener('click',()=>{state.q='';$('#q').value='';$('#clear').hidden=true;render();$('#q').focus()});
+$('#make').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;state.make=b.dataset.v;shown=150;syncControls();save();render()});
+$('#brand').addEventListener('change',e=>{state.brand=e.target.value;shown=150;save();render()});
+$('#sort').addEventListener('change',e=>{state.sort=e.target.value;save();render()});
+$('#priced').addEventListener('change',e=>{state.priced=e.target.checked;save();render()});
+$('#older').addEventListener('change',e=>{state.older=e.target.checked;save();render()});
+$('#hints').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;state.q=b.textContent;syncControls();render()});
+$('#more').addEventListener('click',()=>{shown+=150;render()});
+$('#list').addEventListener('click',e=>{
+  const c=e.target.closest('[data-copy]');
+  if(c){const r=ROWS[+c.dataset.copy];const t=lineText(r);
+    const done=()=>{c.textContent='Copied'};
+    try{navigator.clipboard.writeText(t).then(done,()=>fallback(c,t))}catch(err){fallback(c,t)}return}
+  if(e.target.closest('[data-stop]'))return;
+  const it=e.target.closest('.item');if(!it)return;toggle(+it.dataset.i);
+});
+$('#list').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('item')){e.preventDefault();toggle(+e.target.dataset.i)}});
+function toggle(i){open.has(i)?open.delete(i):open.add(i);render();const el=document.querySelector(`.item[data-i="${i}"]`);el&&el.focus({preventScroll:true})}
+function fallback(btn,t){const d=btn.closest('.detail');let ta=d.querySelector('textarea');if(!ta){ta=document.createElement('textarea');ta.style.width='100%';ta.rows=2;d.appendChild(ta)}ta.value=t;ta.select();btn.textContent='Selected, press Ctrl+C'}
+})();
+</script>
