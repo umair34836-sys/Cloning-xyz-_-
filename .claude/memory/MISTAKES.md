@@ -23,3 +23,6 @@ Format:
 ## 2026-11-03 — FCMC vote crate holograms: wrong set kept + neighbour stands moved
 - Ghalti: Manager ne "baaki crates ke level wala" rakhne ko kaha; maine neeche wala rakha jabki wo upar wala chahte the. Phir `distance=..1.5` selector se tp kiya to pados (z -38.5) ke stray stands bhi move ho gaye.
 - Bachne ka tareeqa: (1) Ambiguous ho to pehle har stand ki Pos list karke manager ko options do, phir delete karo. (2) Kill/tp ke liye exact column selector (`x,y,z,dx=0,dy=..,dz=0` ya `distance=..0.1`) use karo; pehle `execute as @e[...] run data get entity @s Pos` se dekh lo kaun match ho raha hai. (3) SlimeCrates har /crate set ya reload par naya hologram banata hai, purane nahi hatata.
+
+- 2026-11-20: Private business data (phone numbers, photos) PUBLIC repo me push kar diya bina visibility check kiye. Bachao: push se pehle `list_repos` se visibility dekho; private data repo me nahi.
+- 2026-11-20: Excel me text cell "=" se shuru kiya to formula ban gaya (#VALUE!); header '#' bhi confusing. Text '=' se shuru na karo.

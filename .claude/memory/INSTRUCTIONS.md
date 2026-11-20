@@ -26,3 +26,4 @@ Format:
 - **Standing rule (memory):** Jab bhi user koi instruction de — usay GitHub par store karo. Rules bhi store karo. Jo cheezein seekhein (learnings) wo bhi. Jo ghaltiyan hon (mistakes) wo bhi — taake same ghalti dobara na ho. Ek memory file rakho aur hamesha up-to-date rakho.
 
 - 2026-11-02: "Dc per dm kerdo manager ko or bata do k subah 7am ko claude tumhare lie public server me on hoga and 5pm ko off hoga — aisa hi kro ab se, new rule." → DM bheja, cron 7am–5pm PKT kar diya, RULES.md me add.
+

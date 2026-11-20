@@ -26,3 +26,7 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Claude manager ke liye sirf **subah 7 baje se shaam 5 baje (Pakistan time, PKT)** ON rahega = 02:00–11:59 UTC.
 - Is waqt ke bahar FCMC manager chat check nahi hota. Cron: `* 2-11 * * *` (UTC).
 - Manager (techshotgaming95yt) ko Discord DM se bata diya gaya hai.
+
+## Private business data — standing rule (20 Nov 2026)
+- Repo PUBLIC hai. User ka business data (contacts, phone numbers, photos, reports) is repo me KABHI commit/push mat karo.
+- Aisi files sirf scratchpad me banao aur user ko file/zip bhejo. Push se pehle hamesha repo visibility check karo.
