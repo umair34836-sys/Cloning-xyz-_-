@@ -29,3 +29,4 @@ Format:
 
 - 2026-11-20: Company kaam ki files me kabhi mention na ho ke kisne banaya (AI/human) → RULES.md me rule.
 - 2026-11-21: Offline data-entry tool maanga (format + manual entry + organized final file, data safe/offline) → single HTML tool diya (CSP se internet block, local storage, AES backup, Excel/ZIP export). Business data repo me nahi daala.
+- 2026-11-21: Tool me location hierarchy add karwai (Country>Province>District>City/Tehsil>Area/Village>Market/Street): linked dropdowns, Locations tab, bulk set, Excel by location. Karachi district andaze se set nahi kiya.

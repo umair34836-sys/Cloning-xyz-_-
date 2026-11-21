@@ -49,3 +49,4 @@ Format:
 - Cross-dimension safe surface tp: `execute as <p> in <dim> run spreadplayers x z 0 1 false @s`.
 - Don't use `execute as <player> run say` for testing (broadcasts as that player).
 - Offline browser tool: ExcelJS/JSZip npm se le kar HTML me inline karo; CSP connect-src 'none' se internet block. ExcelJS empty creator ko 'Unknown' likhta hai → JSZip se core.xml patch karo. Bash heredoc me lambi JS likhne se safety check atak sakta hai → Write tool se file likho.
+- JS: btoa(String.fromCharCode(...bigArray)) bare data par 'Maximum call stack' deta hai → 8KB chunks me convert karo. Locale sort me '~' letters se PEHLE aata hai → blanks last ke liye custom comparator.
