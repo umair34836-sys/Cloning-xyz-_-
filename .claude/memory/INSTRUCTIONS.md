@@ -28,3 +28,4 @@ Format:
 - 2026-11-02: "Dc per dm kerdo manager ko or bata do k subah 7am ko claude tumhare lie public server me on hoga and 5pm ko off hoga — aisa hi kro ab se, new rule." → DM bheja, cron 7am–5pm PKT kar diya, RULES.md me add.
 
 - 2026-11-20: Company kaam ki files me kabhi mention na ho ke kisne banaya (AI/human) → RULES.md me rule.
+- 2026-11-21: Offline data-entry tool maanga (format + manual entry + organized final file, data safe/offline) → single HTML tool diya (CSP se internet block, local storage, AES backup, Excel/ZIP export). Business data repo me nahi daala.

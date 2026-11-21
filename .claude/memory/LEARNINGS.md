@@ -48,3 +48,4 @@ Format:
 - Multiverse-Portals: `mvp create` in-game (WorldEdit selection); console se `mvp info/remove/modify <p> action e:world:x,y,z`.
 - Cross-dimension safe surface tp: `execute as <p> in <dim> run spreadplayers x z 0 1 false @s`.
 - Don't use `execute as <player> run say` for testing (broadcasts as that player).
+- Offline browser tool: ExcelJS/JSZip npm se le kar HTML me inline karo; CSP connect-src 'none' se internet block. ExcelJS empty creator ko 'Unknown' likhta hai → JSZip se core.xml patch karo. Bash heredoc me lambi JS likhne se safety check atak sakta hai → Write tool se file likho.
