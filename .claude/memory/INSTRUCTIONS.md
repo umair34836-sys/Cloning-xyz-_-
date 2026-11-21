@@ -34,3 +34,4 @@ Format:
 - 2026-11-21: Tool me alag 'Circulars' page (brand price lists): xlsx/csv/PDF upload, brand/make/date auto, price search + history, price changes, manual entry, Circulars Excel. pdf.js inline (fake worker).
 - 2026-11-21: Circular me brand missing → fix (no-space naam, naya brand file-naam se guess, per-row Brand column, Edit, brand yaad). 'Search website' export banaya (kohinoor.firecraft.fun Price Finder jaisa, fuzzy search, password AES). Site khud deploy nahi kiya.
 - 2026-11-21: Tool ka full user + hacker test maanga; manual entry 6 saal ke bache jaisa aasaan; custom/adhoora address samjhe; ZIP tarteeb. → Security fixes (XSS, CSV injection, zip-slip, proto, CSP hashes), Quick Add form, parseAddress, ZIP 00-06 layout. 156/156 tests.
+- 2026-11-21: Circular me model/comp.code ghalat column (Part No) me → tool me khud-test system: auto-check → fix → re-test → final result; 'Test & fix all' saved; Settings self-test (18 checks). 173/173 tests.
