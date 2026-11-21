@@ -31,3 +31,4 @@ Format:
 - 2026-11-21: Offline data-entry tool maanga (format + manual entry + organized final file, data safe/offline) → single HTML tool diya (CSP se internet block, local storage, AES backup, Excel/ZIP export). Business data repo me nahi daala.
 - 2026-11-21: Tool me location hierarchy add karwai (Country>Province>District>City/Tehsil>Area/Village>Market/Street): linked dropdowns, Locations tab, bulk set, Excel by location. Karachi district andaze se set nahi kiya.
 - 2026-11-21: Tool me 'Import Files' section maanga (PC ka purana kaam upload → samjhe → organize → ZIP). Banaya: xlsx/csv/txt/paste parse, column auto-detect (Roman Urdu), dedupe/merge, preview, photos/PDF ZIP me sorted. Photos/PDF offline parhe nahi ja sakte — user ko bataya.
+- 2026-11-21: Tool me alag 'Circulars' page (brand price lists): xlsx/csv/PDF upload, brand/make/date auto, price search + history, price changes, manual entry, Circulars Excel. pdf.js inline (fake worker).
