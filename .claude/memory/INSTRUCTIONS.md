@@ -36,3 +36,4 @@ Format:
 - 2026-11-21: Tool ka full user + hacker test maanga; manual entry 6 saal ke bache jaisa aasaan; custom/adhoora address samjhe; ZIP tarteeb. → Security fixes (XSS, CSV injection, zip-slip, proto, CSP hashes), Quick Add form, parseAddress, ZIP 00-06 layout. 156/156 tests.
 - 2026-11-21: Circular me model/comp.code ghalat column (Part No) me → tool me khud-test system: auto-check → fix → re-test → final result; 'Test & fix all' saved; Settings self-test (18 checks). 173/173 tests.
 - 2026-11-21: Model/code number se bhi shuru hote hain → 'lakeer ka fakeer' nahi, smart test+fix: har circular ki sahi rows se column profile seekh kar cells rakhna (move/split/swap). 179/179, self-test 21/21.
+- 2026-11-23: Tool ko future-ready production project banana (ek HTML par depend na ho), naam KOHINOOR TRADERS, 'Made by Muhammad Umair', ads; baqi sab waisa hi. → project split (byte-identical build verify), brand/credit/ads module, anonymized fixtures, 193 tests.
