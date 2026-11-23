@@ -44,3 +44,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - "Jaisa hai waisa rehne do": maujooda features ko bina kahe na badlo; naye features alag module me, aur har change ke baad poore tests chalao.
 - Source/project public repo me push NAHI (Kohinoor branded + rule); user ko zip do. Test fixtures sirf nakli data.
 - User rule: import me koi data zaaya / skip na ho — jo use na ho sake wo bhi poore data + issue ke saath output me dikhao.
+- Ads ki jagah: Coalition for Better Ads standards (betterads.org/standards) — no pop-up, prestitial, sticky, flashing; mobile density < 30%. Andaze se nahi.
