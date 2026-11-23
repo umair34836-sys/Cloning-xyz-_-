@@ -27,3 +27,4 @@ Format:
 - 2026-11-20: Private business data (phone numbers, photos) PUBLIC repo me push kar diya bina visibility check kiye. Bachao: push se pehle `list_repos` se visibility dekho; private data repo me nahi.
 - 2026-11-20: Excel me text cell "=" se shuru kiya to formula ban gaya (#VALUE!); header '#' bhi confusing. Text '=' se shuru na karo.
 - Phone fixer ne adhoora mobile (10 digit "0304-...") ko landline samajh kar format kar diya tha. Bachao: sirf wahi number badlo jo normalize hone ke baad Mobile/Landline bane; adhoora/unclear user ke liye chhodo. Self-test me case add hai.
+- Calendar sheet (row me >=5 din ke naam) Import me kabhi contacts na bane — pehle November sheet se bogus dukanein ban rahi thin.
