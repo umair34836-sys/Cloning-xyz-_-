@@ -46,3 +46,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - User rule: import me koi data zaaya / skip na ho — jo use na ho sake wo bhi poore data + issue ke saath output me dikhao.
 - Ads ki jagah: Coalition for Better Ads standards (betterads.org/standards) — no pop-up, prestitial, sticky, flashing; mobile density < 30%. Andaze se nahi.
 - Reminder (visit) web page par 24h timer kabhi mat lagana — user ki hidayat. Price/contacts pages par timer hai.
+- Talk / report to the user in English (user's request 2026-11-24).

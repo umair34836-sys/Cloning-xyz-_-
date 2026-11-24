@@ -60,3 +60,4 @@ Format:
 - Auto-fix banane ke baad asli data par DRY-RUN (sirf local, save nahi) karke dekho kya badlega — isi se "0304-657694 → 030-4657694" wala ghalat fix pakra gaya.
 - Template me data placeholders single-pass regex se bharo (__TITLE__/__PAYLOAD__/__ADS__), warna data me placeholder likha ho to page toot sakta hai. Contacts template me init() TDZ bug tha (bina password page khaali) — har web page ka no-password version bhi test karo.
 - Calendar-shape Excel (Sat..Fri dabbe): tareekh box ki position se nikalo (likhe numbers ka mode offset) — ek typo poora mahina nahi khiskata; spelling ke liye KPK city alias + lev<=1. Asli user file sirf local dry-run, repo/source zip me nahi.
+- Test checkers that treat any '#...' cell as an Excel error: never use a bare '#' as a column heading — use 'No.'.
