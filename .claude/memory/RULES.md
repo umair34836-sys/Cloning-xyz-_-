@@ -48,3 +48,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Reminder (visit) web page par 24h timer kabhi mat lagana — user ki hidayat. Price/contacts pages par timer hai.
 - Talk / report to the user in English (user's request 2026-11-24).
 - Never silently default a field (e.g. shop type 'Other') — keep file's value, or leave empty, and mark tool-guessed values for recheck.
+- Trial/expiry builds must NOT modify real source — do it as a build-time add-on (separate build script + guard), output to a separate dir, and keep the real build byte-identical.
