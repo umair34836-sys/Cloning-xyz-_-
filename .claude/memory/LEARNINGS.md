@@ -62,3 +62,4 @@ Format:
 - Calendar-shape Excel (Sat..Fri dabbe): tareekh box ki position se nikalo (likhe numbers ka mode offset) — ek typo poora mahina nahi khiskata; spelling ke liye KPK city alias + lev<=1. Asli user file sirf local dry-run, repo/source zip me nahi.
 - Test checkers that treat any '#...' cell as an Excel error: never use a bare '#' as a column heading — use 'No.'.
 - Tailscale free plan = non-commercial only (tailscale.com/pricing); business Standard = $8/user/month. Domain + Cloudflare Tunnel ~$10/yr is cheapest. Android needs HTTPS for GPS + install. Node 22.5+ has built-in node:sqlite (no install). PWA must open offline with the last logged-in user, else the offline queue never syncs.
+- Cloudflare quick tunnels: random URL each restart, no uptime guarantee — not for an installed app. Node fetch ignores a custom Host header; use node:http to test reverse-proxy behaviour. CGNAT (WAN IP 100.64-100.127 or differs from public IP) blocks port forwarding.
