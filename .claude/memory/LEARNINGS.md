@@ -61,3 +61,4 @@ Format:
 - Template me data placeholders single-pass regex se bharo (__TITLE__/__PAYLOAD__/__ADS__), warna data me placeholder likha ho to page toot sakta hai. Contacts template me init() TDZ bug tha (bina password page khaali) — har web page ka no-password version bhi test karo.
 - Calendar-shape Excel (Sat..Fri dabbe): tareekh box ki position se nikalo (likhe numbers ka mode offset) — ek typo poora mahina nahi khiskata; spelling ke liye KPK city alias + lev<=1. Asli user file sirf local dry-run, repo/source zip me nahi.
 - Test checkers that treat any '#...' cell as an Excel error: never use a bare '#' as a column heading — use 'No.'.
+- Tailscale free plan = non-commercial only (tailscale.com/pricing); business Standard = $8/user/month. Domain + Cloudflare Tunnel ~$10/yr is cheapest. Android needs HTTPS for GPS + install. Node 22.5+ has built-in node:sqlite (no install). PWA must open offline with the last logged-in user, else the offline queue never syncs.
