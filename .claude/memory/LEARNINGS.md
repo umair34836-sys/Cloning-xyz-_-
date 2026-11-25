@@ -76,3 +76,4 @@ Format:
 - Dynamic tabs: nav button data-v="cs_<id>" + <section id="v-cs_<id>"> appended to main; 05_views render() calls renderCustomView(view) which also rebuilds the menu (so restore/replace updates tabs).
 - Values that don't fit a field type are never dropped → "Changed values" (id note_changed) long field.
 - Phone-width bug: date/number inputs in a CSS grid overflow → inputs need width:100%;min-width:0 and labels min-width:0.
+- Printing ExcelJS sheets as HTML: merged cells return the master value in EVERY covered cell → skip covered cells (ws.model.merges). Use table-layout:auto + overflow-wrap:break-word (not "anywhere") so words aren't cut; nowrap for dates/numbers/Rs.
