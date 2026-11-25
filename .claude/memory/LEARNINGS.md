@@ -64,3 +64,9 @@ Format:
 - Tailscale free plan = non-commercial only (tailscale.com/pricing); business Standard = $8/user/month. Domain + Cloudflare Tunnel ~$10/yr is cheapest. Android needs HTTPS for GPS + install. Node 22.5+ has built-in node:sqlite (no install). PWA must open offline with the last logged-in user, else the offline queue never syncs.
 - Cloudflare quick tunnels: random URL each restart, no uptime guarantee — not for an installed app. Node fetch ignores a custom Host header; use node:http to test reverse-proxy behaviour. CGNAT (WAN IP 100.64-100.127 or differs from public IP) blocks port forwarding.
 - Cloudflare free plan: tunnel needs FULL DNS (nameservers) on Cloudflare; partial CNAME setup is Business/Enterprise only (Cloudflare docs). firecraft.fun has other live sub-sites (plugin., editor.) — never advise a nameserver move without copying every record first.
+
+## Locked single-file HTML app (25 Nov 2026)
+- Chromium, file://: a loader page can decrypt the app HTML and `document.open(); document.write(html); document.close()` — window globals (e.g. `window.__PV`) survive, localStorage works. The loader's meta CSP must also list the app's script hashes.
+- Copy of self for "save new locked file": capture `"<!doctype html>\n"+document.documentElement.outerHTML` at script start and replace the JSON blob text; script text + CSP survive serialization (tested by opening the downloaded file).
+- WebCrypto: DecompressionStream("gzip") for the compressed app; AES-GCM tag = last 16 bytes, Node `getAuthTag()` appended to ciphertext matches WebCrypto.
+- Playwright 1.48 `page.clock.install()` + `clock.runFor()` tests idle auto-lock.

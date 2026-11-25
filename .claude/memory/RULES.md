@@ -50,3 +50,9 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Never silently default a field (e.g. shop type 'Other') — keep file's value, or leave empty, and mark tool-guessed values for recheck.
 - Trial/expiry builds must NOT modify real source — do it as a build-time add-on (separate build script + guard), output to a separate dir, and keep the real build byte-identical.
 - Field app: only free tools (no paid services). Tailscale free plan = non-commercial; a company's sales-team app is commercial even if private, so don't build on it.
+
+## UMAIR WORKDESK — owner's personal tool (25 Nov 2026)
+- The Kohinoor tool is now the owner's personal tool **UMAIR WORKDESK** (project `my-workdesk/`, a copy; Kohinoor project frozen at v1.8.0). It is for any company → never hard-code one company's names/brands in it.
+- Deliver ONLY the locked build (`node build_locked.mjs` → dist-locked/Workdesk.html) to the PC. Source = private zip for USB. Never push source or business data to the public repo.
+- Lock design must stay: code encrypted in the file (AES-GCM, PBKDF2 600k), data encrypted per company with a random data key wrapped by the password, Lock button + 15-min auto-lock. Never store plaintext business data in localStorage/IndexedDB in locked mode.
+- Never ask the user to send their password in chat; only a one-time setup code goes in chat.
