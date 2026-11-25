@@ -70,3 +70,9 @@ Format:
 - Copy of self for "save new locked file": capture `"<!doctype html>\n"+document.documentElement.outerHTML` at script start and replace the JSON blob text; script text + CSP survive serialization (tested by opening the downloaded file).
 - WebCrypto: DecompressionStream("gzip") for the compressed app; AES-GCM tag = last 16 bytes, Node `getAuthTag()` appended to ciphertext matches WebCrypto.
 - Playwright 1.48 `page.clock.install()` + `clock.runFor()` tests idle auto-lock.
+
+## Workdesk customizer (25 Nov 2026)
+- Own sections live in DB.custom {sections[{id,name,icon,desc,fields[{id,label,type,options,req}],rows[{id,v:{fieldId:value},at}]}], nav{order,hidden,names}} — cleaned by cleanCustom() in 03_data_security.js.
+- Dynamic tabs: nav button data-v="cs_<id>" + <section id="v-cs_<id>"> appended to main; 05_views render() calls renderCustomView(view) which also rebuilds the menu (so restore/replace updates tabs).
+- Values that don't fit a field type are never dropped → "Changed values" (id note_changed) long field.
+- Phone-width bug: date/number inputs in a CSS grid overflow → inputs need width:100%;min-width:0 and labels min-width:0.
