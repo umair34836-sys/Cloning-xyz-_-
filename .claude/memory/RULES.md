@@ -56,3 +56,4 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Deliver ONLY the locked build (`node build_locked.mjs` → dist-locked/Workdesk.html) to the PC. Source = private zip for USB. Never push source or business data to the public repo.
 - Lock design must stay: code encrypted in the file (AES-GCM, PBKDF2 600k), data encrypted per company with a random data key wrapped by the password, Lock button + 15-min auto-lock. Never store plaintext business data in localStorage/IndexedDB in locked mode.
 - Never ask the user to send their password in chat; only a one-time setup code goes in chat.
+- Workdesk: file layouts must be TEMPLATE-driven and editable in the GUI (no hard-coded columns). New columns in a user's file → add to template, never drop. Removing a template column must never delete stored data.
