@@ -77,3 +77,4 @@ Format:
 - Values that don't fit a field type are never dropped → "Changed values" (id note_changed) long field.
 - Phone-width bug: date/number inputs in a CSS grid overflow → inputs need width:100%;min-width:0 and labels min-width:0.
 - Printing ExcelJS sheets as HTML: merged cells return the master value in EVERY covered cell → skip covered cells (ws.model.merges). Use table-layout:auto + overflow-wrap:break-word (not "anywhere") so words aren't cut; nowrap for dates/numbers/Rs.
+- Print readability: 18 columns can't be readable on A4 even landscape (needs ~1260px at 11px vs 1047px). Solutions that read well: cards (label: value blocks) for few entries, column-split table (repeat ID/name) for long lists. Chromium supports named pages (@page wide + page:wide) → portrait + landscape in one PDF, and @page @bottom-right page counters.
