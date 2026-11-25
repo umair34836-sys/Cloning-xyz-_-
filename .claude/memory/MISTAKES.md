@@ -34,3 +34,7 @@ Format:
 - Galti: header detector (≥5 matching columns) ne "Lucas Visits" (S.No, City, Area, Visit Date, Remarks + Shop Name) ko visit report samjha → contacts test fail.
 - Bachao: naye file-type detector me (1) sirf us type ke KHAAS columns ko "strong" maano (mechanics/khiradi/order/complaint/suggestion), aam columns (date/city/area/remarks) ko nahi; (2) shop-name column ho to contacts hi rahe; (3) hamesha poora test suite chalao.
 - Also: `$$` wale python heredoc ko safety check parse nahi kar saka → script file (Write) se chalao.
+
+## 2026-11-25 — Print text size did nothing
+- Galti: app.css `table{font-size:13px}` overrode the print document's size → "Text size" option and fit-measurement were ineffective (widths constant at every size).
+- Bachao: print/document CSS must reset inherited fixed sizes (`.pd table{font-size:inherit}`) and a test must check that the computed font-size actually changes.
