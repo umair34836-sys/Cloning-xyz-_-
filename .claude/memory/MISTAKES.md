@@ -29,3 +29,8 @@ Format:
 - Phone fixer ne adhoora mobile (10 digit "0304-...") ko landline samajh kar format kar diya tha. Bachao: sirf wahi number badlo jo normalize hone ke baad Mobile/Landline bane; adhoora/unclear user ke liye chhodo. Self-test me case add hai.
 - Calendar sheet (row me >=5 din ke naam) Import me kabhi contacts na bane — pehle November sheet se bogus dukanein ban rahi thin.
 - Import preview must not change lists/DB (it ran recordsOf → added list values → lost recheck mark). Forms must always show a record's current multi values even if not in the list (data loss bug).
+
+## 2026-11-25 — Visit-report detector caught a contacts sheet
+- Galti: header detector (≥5 matching columns) ne "Lucas Visits" (S.No, City, Area, Visit Date, Remarks + Shop Name) ko visit report samjha → contacts test fail.
+- Bachao: naye file-type detector me (1) sirf us type ke KHAAS columns ko "strong" maano (mechanics/khiradi/order/complaint/suggestion), aam columns (date/city/area/remarks) ko nahi; (2) shop-name column ho to contacts hi rahe; (3) hamesha poora test suite chalao.
+- Also: `$$` wale python heredoc ko safety check parse nahi kar saka → script file (Write) se chalao.
