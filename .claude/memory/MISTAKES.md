@@ -26,3 +26,7 @@ Format:
 
 ## 2026-11-27 — wrong source version uploaded
 - Owner uploaded WORKDESK v2.0.0 instead of v3.0.0 (v2 lacks market visit reports, Customize, Print). Caught it by reading src/config/app.json before building. → Always check the version in app.json/CHANGELOG of any uploaded source before starting; ask owner if it's not the expected one. Owner will upload v3.0.0.
+
+## 2026-11-27 — renaming a copied tool
+- Renamed output Workdesk.html → Organizer_AI.html but missed the hard-coded download name in src/personal/loader.js (locked-copy test failed). → After a rename, `grep -rn` the OLD name across src/, tests/, tools/ and build scripts, not only tests.
+- New AI auto-connect polling to 127.0.0.1 tripped the "no internet requests" test → tests must allow loopback only, never widen to other hosts.
