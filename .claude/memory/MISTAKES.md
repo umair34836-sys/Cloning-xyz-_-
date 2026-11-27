@@ -23,3 +23,6 @@ Format:
 ## 2026-11-03 — FCMC vote crate holograms: wrong set kept + neighbour stands moved
 - Ghalti: Manager ne "baaki crates ke level wala" rakhne ko kaha; maine neeche wala rakha jabki wo upar wala chahte the. Phir `distance=..1.5` selector se tp kiya to pados (z -38.5) ke stray stands bhi move ho gaye.
 - Bachne ka tareeqa: (1) Ambiguous ho to pehle har stand ki Pos list karke manager ko options do, phir delete karo. (2) Kill/tp ke liye exact column selector (`x,y,z,dx=0,dy=..,dz=0` ya `distance=..0.1`) use karo; pehle `execute as @e[...] run data get entity @s Pos` se dekh lo kaun match ho raha hai. (3) SlimeCrates har /crate set ya reload par naya hologram banata hai, purane nahi hatata.
+
+## 2026-11-27 — wrong source version uploaded
+- Owner uploaded WORKDESK v2.0.0 instead of v3.0.0 (v2 lacks market visit reports, Customize, Print). Caught it by reading src/config/app.json before building. → Always check the version in app.json/CHANGELOG of any uploaded source before starting; ask owner if it's not the expected one. Owner will upload v3.0.0.
