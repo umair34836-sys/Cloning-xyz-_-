@@ -26,3 +26,6 @@ Standing rules jo har session me follow karni hain. Ye user ki di hui hidayaat s
 - Claude manager ke liye sirf **subah 7 baje se shaam 5 baje (Pakistan time, PKT)** ON rahega = 02:00–11:59 UTC.
 - Is waqt ke bahar FCMC manager chat check nahi hota. Cron: `* 2-11 * * *` (UTC).
 - Manager (techshotgaming95yt) ko Discord DM se bata diya gaya hai.
+
+## New organizer tool (2026-11-27)
+- Original WORKDESK source is read-only: always work on a separate copy (new folder/name), never edit the original.
