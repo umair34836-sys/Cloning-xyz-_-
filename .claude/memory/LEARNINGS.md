@@ -48,3 +48,6 @@ Format:
 - Multiverse-Portals: `mvp create` in-game (WorldEdit selection); console se `mvp info/remove/modify <p> action e:world:x,y,z`.
 - Cross-dimension safe surface tp: `execute as <p> in <dim> run spreadplayers x z 0 1 false @s`.
 - Don't use `execute as <player> run say` for testing (broadcasts as that player).
+
+## 2026-11-27 — local AI in an offline HTML tool
+- A browser page can't load an ~11 GB model itself. Use a tiny local server on 127.0.0.1 (llama.cpp `llama-server`, MIT, fully offline, OpenAI-compatible `/v1/chat/completions`, supports gpt-oss GGUF + tool calls) or a small Python bridge if the model is safetensors/transformers. HTML CSP must allow `connect-src http://127.0.0.1:<port>`; server must send CORS for `null` (file://) origin.
