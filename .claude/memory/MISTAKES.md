@@ -35,3 +35,9 @@ Format:
 - Fake-data generator used an LCG with `% n` → low bits repeat → thousands of identical phone numbers; I first thought the tool was wrongly merging rows. → Use a proper PRNG (mulberry32) and check uniqueness of generated data before blaming the tool.
 - Added a global `const XT` that clashed with an existing global `XT` regex → whole app failed to start (SyntaxError at load). → grep for the name before adding any global; run a smoke test (no page errors) after every edit.
 - Python text-mode open() converted CRLF→LF silently, so replacements with "\r" never matched. → open with newline="" for CRLF files and convert back explicitly.
+
+## 2026-11-27 — agent build
+- Python helper ended with `open(p,"w").write(open(p).read())` → "w" truncates BEFORE reading → wiped 28_ai_assistant.js. Restored from the v1.1.0 source zip. → Never open the same file for write and read in one expression; always keep the last packaged source as a restore point; `wc -c` / node --check after scripted edits.
+- csConv / rConv return objects ({ok,v} / {v,…}), I stored the object → section/report values empty. A test that only counted rows did not catch it. → Tests must check real stored VALUES, not just counts.
+- Long agent jobs: context trimming dropped the user's own request (oldest message) → model forgot the task. → Always keep the current job (from the last user message) whole; shorten older tool results instead.
+- Test files without extension ("first" instead of "first.csv") → tool ignored them correctly; I first suspected the tool. → Check test inputs first.
