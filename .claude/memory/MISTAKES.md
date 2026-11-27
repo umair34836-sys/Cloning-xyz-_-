@@ -30,3 +30,8 @@ Format:
 ## 2026-11-27 — renaming a copied tool
 - Renamed output Workdesk.html → Organizer_AI.html but missed the hard-coded download name in src/personal/loader.js (locked-copy test failed). → After a rename, `grep -rn` the OLD name across src/, tests/, tools/ and build scripts, not only tests.
 - New AI auto-connect polling to 127.0.0.1 tripped the "no internet requests" test → tests must allow loopback only, never widen to other hosts.
+
+## 2026-11-27 — heavy-test lessons
+- Fake-data generator used an LCG with `% n` → low bits repeat → thousands of identical phone numbers; I first thought the tool was wrongly merging rows. → Use a proper PRNG (mulberry32) and check uniqueness of generated data before blaming the tool.
+- Added a global `const XT` that clashed with an existing global `XT` regex → whole app failed to start (SyntaxError at load). → grep for the name before adding any global; run a smoke test (no page errors) after every edit.
+- Python text-mode open() converted CRLF→LF silently, so replacements with "\r" never matched. → open with newline="" for CRLF files and convert back explicitly.
